@@ -37,7 +37,6 @@ int main(void)
     CyGlobalIntEnable; /* Enable global interrupts. */
     UART_1_Start();
     
-    PWM_1_Start();
     PWM_2_Start();
     Counter_1_Start();
     

@@ -44,9 +44,9 @@ extern uint8 Counter_1_initVar;
 *           Parameter Defaults        
 **************************************/
 
-#define Counter_1_Resolution            32u
+#define Counter_1_Resolution            16u
 #define Counter_1_UsingFixedFunction    0u
-#define Counter_1_ControlRegRemoved     0u
+#define Counter_1_ControlRegRemoved     1u
 #define Counter_1_COMPARE_MODE_SOFTWARE 0u
 #define Counter_1_CAPTURE_MODE_SOFTWARE 0u
 #define Counter_1_RunModeUsed           0u
@@ -64,7 +64,7 @@ extern uint8 Counter_1_initVar;
 typedef struct
 {
     uint8 CounterEnableState; 
-    uint32 CounterUdb;         /* Current Counter Value */
+    uint16 CounterUdb;         /* Current Counter Value */
 
     #if (!Counter_1_ControlRegRemoved)
         uint8 CounterControlRegister;               /* Counter Control Register */
@@ -87,18 +87,18 @@ uint8   Counter_1_ReadStatusRegister(void) ;
         ;
 #endif /* (!Counter_1_ControlRegRemoved) */
 #if (!(Counter_1_UsingFixedFunction && (CY_PSOC5A)))
-    void    Counter_1_WriteCounter(uint32 counter) \
+    void    Counter_1_WriteCounter(uint16 counter) \
             ; 
 #endif /* (!(Counter_1_UsingFixedFunction && (CY_PSOC5A))) */
-uint32  Counter_1_ReadCounter(void) ;
-uint32  Counter_1_ReadCapture(void) ;
-void    Counter_1_WritePeriod(uint32 period) \
+uint16  Counter_1_ReadCounter(void) ;
+uint16  Counter_1_ReadCapture(void) ;
+void    Counter_1_WritePeriod(uint16 period) \
     ;
-uint32  Counter_1_ReadPeriod( void ) ;
+uint16  Counter_1_ReadPeriod( void ) ;
 #if (!Counter_1_UsingFixedFunction)
-    void    Counter_1_WriteCompare(uint32 compare) \
+    void    Counter_1_WriteCompare(uint16 compare) \
         ;
-    uint32  Counter_1_ReadCompare( void ) \
+    uint16  Counter_1_ReadCompare( void ) \
         ;
 #endif /* (!Counter_1_UsingFixedFunction) */
 
@@ -163,7 +163,7 @@ void Counter_1_Wakeup(void)        ;
 #else
 #define Counter_1_INIT_COMPARE_VALUE      32000u
 #define Counter_1_INIT_INTERRUPTS_MASK ((uint8)((uint8)0u << Counter_1_STATUS_ZERO_INT_EN_MASK_SHIFT) | \
-        ((uint8)((uint8)1u << Counter_1_STATUS_CAPTURE_INT_EN_MASK_SHIFT)) | \
+        ((uint8)((uint8)0u << Counter_1_STATUS_CAPTURE_INT_EN_MASK_SHIFT)) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_CMP_INT_EN_MASK_SHIFT)) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_OVERFLOW_INT_EN_MASK_SHIFT)) | \
         ((uint8)((uint8)0u << Counter_1_STATUS_UNDERFLOW_INT_EN_MASK_SHIFT)))
@@ -199,143 +199,143 @@ void Counter_1_Wakeup(void)        ;
     #if (Counter_1_Resolution <= 8u) /* 8-bit Counter */
     
         #define Counter_1_STATICCOUNT_LSB     (*(reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
         #define Counter_1_STATICCOUNT_LSB_PTR ( (reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
         #define Counter_1_PERIOD_LSB          (*(reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
         #define Counter_1_PERIOD_LSB_PTR      ( (reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
         #define Counter_1_COMPARE_LSB         (*(reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
         #define Counter_1_COMPARE_LSB_PTR     ( (reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
         #define Counter_1_COUNTER_LSB         (*(reg8 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )  
+            Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )  
         #define Counter_1_COUNTER_LSB_PTR     ( (reg8 *)\
-            Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )
     
     #elif(Counter_1_Resolution <= 16u) /* 16-bit Counter */
         #if(CY_PSOC3) /* 8-bit address space */ 
             #define Counter_1_STATICCOUNT_LSB     (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
             #define Counter_1_STATICCOUNT_LSB_PTR ( (reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
             #define Counter_1_PERIOD_LSB          (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
             #define Counter_1_PERIOD_LSB_PTR      ( (reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
             #define Counter_1_COMPARE_LSB         (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
             #define Counter_1_COMPARE_LSB_PTR     ( (reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
             #define Counter_1_COUNTER_LSB         (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )  
+                Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )  
             #define Counter_1_COUNTER_LSB_PTR     ( (reg16 *)\
-                Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )
         #else /* 16-bit address space */
             #define Counter_1_STATICCOUNT_LSB     (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_F0_REG )
             #define Counter_1_STATICCOUNT_LSB_PTR ( (reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_F0_REG )
             #define Counter_1_PERIOD_LSB          (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_D0_REG )
             #define Counter_1_PERIOD_LSB_PTR      ( (reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_D0_REG )
             #define Counter_1_COMPARE_LSB         (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_D1_REG )
             #define Counter_1_COMPARE_LSB_PTR     ( (reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_D1_REG )
             #define Counter_1_COUNTER_LSB         (*(reg16 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_A0_REG )  
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_A0_REG )  
             #define Counter_1_COUNTER_LSB_PTR     ( (reg16 *)\
-                Counter_1_CounterUDB_sC32_counterdp_u0__16BIT_A0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__16BIT_A0_REG )
         #endif /* CY_PSOC3 */   
     #elif(Counter_1_Resolution <= 24u) /* 24-bit Counter */
         
         #define Counter_1_STATICCOUNT_LSB     (*(reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
         #define Counter_1_STATICCOUNT_LSB_PTR ( (reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
         #define Counter_1_PERIOD_LSB          (*(reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
         #define Counter_1_PERIOD_LSB_PTR      ( (reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
         #define Counter_1_COMPARE_LSB         (*(reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
         #define Counter_1_COMPARE_LSB_PTR     ( (reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
         #define Counter_1_COUNTER_LSB         (*(reg32 *) \
-            Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )  
+            Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )  
         #define Counter_1_COUNTER_LSB_PTR     ( (reg32 *)\
-            Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )
+            Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )
     
     #else /* 32-bit Counter */
         #if(CY_PSOC3 || CY_PSOC5) /* 8-bit address space */
             #define Counter_1_STATICCOUNT_LSB     (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
             #define Counter_1_STATICCOUNT_LSB_PTR ( (reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__F0_REG )
             #define Counter_1_PERIOD_LSB          (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
             #define Counter_1_PERIOD_LSB_PTR      ( (reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D0_REG )
             #define Counter_1_COMPARE_LSB         (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
             #define Counter_1_COMPARE_LSB_PTR     ( (reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__D1_REG )
             #define Counter_1_COUNTER_LSB         (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )  
+                Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )  
             #define Counter_1_COUNTER_LSB_PTR     ( (reg32 *)\
-                Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )
         #else /* 32-bit address space */
             #define Counter_1_STATICCOUNT_LSB     (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_F0_REG )
             #define Counter_1_STATICCOUNT_LSB_PTR ( (reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_F0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_F0_REG )
             #define Counter_1_PERIOD_LSB          (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_D0_REG )
             #define Counter_1_PERIOD_LSB_PTR      ( (reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_D0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_D0_REG )
             #define Counter_1_COMPARE_LSB         (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_D1_REG )
             #define Counter_1_COMPARE_LSB_PTR     ( (reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_D1_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_D1_REG )
             #define Counter_1_COUNTER_LSB         (*(reg32 *) \
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_A0_REG )  
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_A0_REG )  
             #define Counter_1_COUNTER_LSB_PTR     ( (reg32 *)\
-                Counter_1_CounterUDB_sC32_counterdp_u0__32BIT_A0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__32BIT_A0_REG )
         #endif /* CY_PSOC3 || CY_PSOC5 */   
     #endif
 
 	#define Counter_1_COUNTER_LSB_PTR_8BIT     ( (reg8 *)\
-                Counter_1_CounterUDB_sC32_counterdp_u0__A0_REG )
+                Counter_1_CounterUDB_sC16_counterdp_u0__A0_REG )
 				
     #define Counter_1_AUX_CONTROLDP0 \
-        (*(reg8 *) Counter_1_CounterUDB_sC32_counterdp_u0__DP_AUX_CTL_REG)
+        (*(reg8 *) Counter_1_CounterUDB_sC16_counterdp_u0__DP_AUX_CTL_REG)
     
     #define Counter_1_AUX_CONTROLDP0_PTR \
-        ( (reg8 *) Counter_1_CounterUDB_sC32_counterdp_u0__DP_AUX_CTL_REG)
+        ( (reg8 *) Counter_1_CounterUDB_sC16_counterdp_u0__DP_AUX_CTL_REG)
     
     #if (Counter_1_Resolution == 16 || Counter_1_Resolution == 24 || Counter_1_Resolution == 32)
        #define Counter_1_AUX_CONTROLDP1 \
-           (*(reg8 *) Counter_1_CounterUDB_sC32_counterdp_u1__DP_AUX_CTL_REG)
+           (*(reg8 *) Counter_1_CounterUDB_sC16_counterdp_u1__DP_AUX_CTL_REG)
        #define Counter_1_AUX_CONTROLDP1_PTR \
-           ( (reg8 *) Counter_1_CounterUDB_sC32_counterdp_u1__DP_AUX_CTL_REG)
+           ( (reg8 *) Counter_1_CounterUDB_sC16_counterdp_u1__DP_AUX_CTL_REG)
     #endif /* (Counter_1_Resolution == 16 || Counter_1_Resolution == 24 || Counter_1_Resolution == 32) */
     
     #if (Counter_1_Resolution == 24 || Counter_1_Resolution == 32)
        #define Counter_1_AUX_CONTROLDP2 \
-           (*(reg8 *) Counter_1_CounterUDB_sC32_counterdp_u2__DP_AUX_CTL_REG)
+           (*(reg8 *) Counter_1_CounterUDB_sC16_counterdp_u2__DP_AUX_CTL_REG)
        #define Counter_1_AUX_CONTROLDP2_PTR \
-           ( (reg8 *) Counter_1_CounterUDB_sC32_counterdp_u2__DP_AUX_CTL_REG)
+           ( (reg8 *) Counter_1_CounterUDB_sC16_counterdp_u2__DP_AUX_CTL_REG)
     #endif /* (Counter_1_Resolution == 24 || Counter_1_Resolution == 32) */
     
     #if (Counter_1_Resolution == 32)
        #define Counter_1_AUX_CONTROLDP3 \
-           (*(reg8 *) Counter_1_CounterUDB_sC32_counterdp_u3__DP_AUX_CTL_REG)
+           (*(reg8 *) Counter_1_CounterUDB_sC16_counterdp_u3__DP_AUX_CTL_REG)
        #define Counter_1_AUX_CONTROLDP3_PTR \
-           ( (reg8 *) Counter_1_CounterUDB_sC32_counterdp_u3__DP_AUX_CTL_REG)
+           ( (reg8 *) Counter_1_CounterUDB_sC16_counterdp_u3__DP_AUX_CTL_REG)
     #endif /* (Counter_1_Resolution == 32) */
 
 #endif  /* (Counter_1_UsingFixedFunction) */
