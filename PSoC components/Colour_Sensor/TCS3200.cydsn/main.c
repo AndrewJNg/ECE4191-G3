@@ -2,7 +2,7 @@
  *
  * Copyright YOUR COMPANY, THE YEAR
  * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
+ * UNPUBLISHED, LICENSED SOFTWARECount7_1ms
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
@@ -14,21 +14,13 @@
 #include <stdio.h>
 
 uint32 value = 0;
-CY_ISR(colour_sensor_isr){
-    //Control_Reg_1_Write(1);
 
-    //Counter_1_ReadStatusRegister();
-    //isr_1_Stop();
-    //value= Counter_1_ReadCapture();
-    
-    value= Counter_1_ReadCounter(); 
-    
-    //LED_Write(~LED_1_Read());
-    
-    
-    Control_Reg_1_Write(1);
-    CyDelay(5);
-    Control_Reg_1_Write(0);
+uint32 colourSensor_Scan_freq(int S2,int S3);
+
+bool colour_sensor_ready = 0;
+CY_ISR(colour_sensor_isr){
+    value= Pulse_counter_ReadCounter();
+    colour_sensor_ready =1;
     
 }
 
@@ -37,53 +29,31 @@ int main(void)
     CyGlobalIntEnable; /* Enable global interrupts. */
     UART_1_Start();
     
-    PWM_2_Start();
-    Counter_1_Start();
+    // Test Signal setup
+    PWM_Test_Signal_Start();
     
-    Count7_1_Start();
-    
-    isr_1_ClearPending(); 
-    isr_1_StartEx(colour_sensor_isr);
+    // Colour sensor setup
+    Pulse_counter_Start();
+    Count7_1ms_Start();
+    freq_isr_ClearPending(); 
+    freq_isr_StartEx(colour_sensor_isr);
     
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
     for(;;)
     {
         
-    //LED_Write(!LED_1_Read());
-    //CyDelay(500);
-    
-      /*  
-    Counter_1_Start();
-    PWM_1_Start();
-    PWM_2_Start();
-        
-    uint32 red = Counter_1_ReadCapture(); 
-    uint32 blue = 0;
-    uint32 clear = 0;
-    uint32 green = 0;
-    
-    Control_Reg_1_Write(1);
-    CyDelay(1);
-    Control_Reg_1_Write(0);
-    
-    char str[50];
-    sprintf(str, "red: %lu\tgreen: %lu\tblue: %lu\tclear: %lu\t \n", red, green, blue, clear);
-    UART_1_PutString(str);
-    
-    
-    Control_Reg_1_Write(1);
-    PWM_1_Stop();
-    PWM_2_Stop();
-    Counter_1_Stop();
-    
-    CyDelay(500);
-    */
-        
-    uint32 red = Counter_1_ReadCounter(); 
+    ColourSensor_S2_Write(1);
+    ColourSensor_S3_Write(1);
+    uint32 red = Pulse_counter_ReadCounter(); 
     uint32 blue = value;
     uint32 clear = 0;
     uint32 green = 0;
+    
+    //uint32 red   = colourSensor_Scan_freq(0,0);
+    //uint32 blue  = colourSensor_Scan_freq(0,1);
+    //uint32 clear = colourSensor_Scan_freq(1,0);
+    //uint32 green = colourSensor_Scan_freq(1,1);
     
     char str[50];
     sprintf(str, "red: %lu\tgreen: %lu\tblue: %lu\tclear: %lu\t \n", red, green, blue, clear);
@@ -95,6 +65,21 @@ int main(void)
     }
 }
 
+uint32 colourSensor_Scan_freq(int S2,int S3)
+{
+    ColourSensor_S2_Write(S2);
+    ColourSensor_S3_Write(S3);
+    colour_sensor_ready =0;
+    
+    while(colour_sensor_ready==0)
+    {
+        
+    }
+    CyDelay(500);
+    
+    
+    return value;
+}
 
 
 /* [] END OF FILE */

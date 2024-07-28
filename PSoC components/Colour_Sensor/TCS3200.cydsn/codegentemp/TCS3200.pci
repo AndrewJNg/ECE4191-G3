@@ -1,5 +1,5 @@
 # TCS3200
-# 2024-07-27 18:02:22Z
+# 2024-07-28 03:28:59Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -12,3 +12,8 @@ set_io "Tx_1(0)" iocell 12 7
 set_io "LED(0)" iocell 2 1
 set_io "LED_1(0)" iocell 0 2
 set_io "Pin_1(0)" iocell 2 2
+set_io "ColourSensor_S0(0)" iocell 0 7
+set_io "ColourSensor_S1(0)" iocell 0 6
+set_io "ColourSensor_S2(0)" iocell 0 4
+set_io "ColourSensor_S3(0)" iocell 0 3
+set_io "ColourSensor_OUT(0)" iocell 0 5

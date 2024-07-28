@@ -1,0 +1,2037 @@
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Counter_pulse_counter.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Counter_pulse_counter_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	Counter_pulse_counter_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Counter_pulse_counter_Enable, %function
+  25              	Counter_pulse_counter_Enable:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC5\\Counter_pulse_counter.c"
+   1:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Counter_pulse_counter.c **** * File Name: Counter_pulse_counter.c  
+   3:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Version 3.0
+   4:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+   5:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  Description:
+   6:Generated_Source\PSoC5/Counter_pulse_counter.c **** *     The Counter component consists of a 8, 16, 24 or 32-bit counter with
+   7:Generated_Source\PSoC5/Counter_pulse_counter.c **** *     a selectable period between 2 and 2^Width - 1.  
+   8:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+   9:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   Note:
+  10:Generated_Source\PSoC5/Counter_pulse_counter.c **** *     None
+  11:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+  12:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+  13:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC5/Counter_pulse_counter.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:Generated_Source\PSoC5/Counter_pulse_counter.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:Generated_Source\PSoC5/Counter_pulse_counter.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+  18:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+  19:Generated_Source\PSoC5/Counter_pulse_counter.c **** #include "Counter_pulse_counter.h"
+  20:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+  21:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint8 Counter_pulse_counter_initVar = 0u;
+  22:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+  23:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+  24:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+  25:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_Init
+  26:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+  27:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+  28:Generated_Source\PSoC5/Counter_pulse_counter.c **** *     Initialize to the schematic state
+  29:Generated_Source\PSoC5/Counter_pulse_counter.c **** * 
+  30:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void  
+  32:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+  33:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+  34:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+  35:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+  36:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+  37:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_Init(void) 
+  38:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+  39:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (!Counter_pulse_counter_UsingFixedFunction && !Counter_pulse_counter_ControlRegRemoved)
+  40:Generated_Source\PSoC5/Counter_pulse_counter.c ****             uint8 ctrl;
+  41:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!Counter_pulse_counter_UsingFixedFunction && !Counter_pulse_counter_ControlRegRe
+  42:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+  43:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if(!Counter_pulse_counter_UsingFixedFunction) 
+  44:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Interrupt State Backup for Critical Region*/
+  45:Generated_Source\PSoC5/Counter_pulse_counter.c ****             uint8 Counter_pulse_counter_interruptState;
+  46:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!Counter_pulse_counter_UsingFixedFunction) */
+  47:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+  48:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (Counter_pulse_counter_UsingFixedFunction)
+  49:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Clear all bits but the enable bit (if it's already set for Timer operation */
+  50:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_CONTROL &= Counter_pulse_counter_CTRL_ENABLE;
+  51:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+  52:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Clear the mode bits for continuous run mode */
+  53:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #if (CY_PSOC5A)
+  54:Generated_Source\PSoC5/Counter_pulse_counter.c ****                 Counter_pulse_counter_CONTROL2 &= ((uint8)(~Counter_pulse_counter_CTRL_MODE_MASK));
+  55:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #endif /* (CY_PSOC5A) */
+  56:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+  57:Generated_Source\PSoC5/Counter_pulse_counter.c ****                 Counter_pulse_counter_CONTROL3 &= ((uint8)(~Counter_pulse_counter_CTRL_MODE_MASK));
+  58:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #endif /* (CY_PSOC3 || CY_PSOC5LP) */
+  59:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Check if One Shot mode is enabled i.e. RunMode !=0*/
+  60:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #if (Counter_pulse_counter_RunModeUsed != 0x0u)
+  61:Generated_Source\PSoC5/Counter_pulse_counter.c ****                 /* Set 3rd bit of Control register to enable one shot mode */
+  62:Generated_Source\PSoC5/Counter_pulse_counter.c ****                 Counter_pulse_counter_CONTROL |= Counter_pulse_counter_ONESHOT;
+  63:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #endif /* (Counter_pulse_counter_RunModeUsed != 0x0u) */
+  64:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+  65:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Set the IRQ to use the status register interrupts */
+  66:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_CONTROL2 |= Counter_pulse_counter_CTRL2_IRQ_SEL;
+  67:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+  68:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+  69:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_RT1 &= ((uint8)(~Counter_pulse_counter_RT1_MASK));
+  70:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_RT1 |= Counter_pulse_counter_SYNC;     
+  71:Generated_Source\PSoC5/Counter_pulse_counter.c ****                     
+  72:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /*Enable DSI Sync all all inputs of the Timer*/
+  73:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_RT1 &= ((uint8)(~Counter_pulse_counter_SYNCDSI_MASK));
+  74:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_RT1 |= Counter_pulse_counter_SYNCDSI_EN;
+  75:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+  76:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #else
+  77:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #if(!Counter_pulse_counter_ControlRegRemoved)
+  78:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Set the default compare mode defined in the parameter */
+  79:Generated_Source\PSoC5/Counter_pulse_counter.c ****             ctrl = Counter_pulse_counter_CONTROL & ((uint8)(~Counter_pulse_counter_CTRL_CMPMODE_MAS
+  80:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_CONTROL = ctrl | Counter_pulse_counter_DEFAULT_COMPARE_MODE;
+  81:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+  82:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Set the default capture mode defined in the parameter */
+  83:Generated_Source\PSoC5/Counter_pulse_counter.c ****             ctrl = Counter_pulse_counter_CONTROL & ((uint8)(~Counter_pulse_counter_CTRL_CAPMODE_MAS
+  84:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+  85:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #if( 0 != Counter_pulse_counter_CAPTURE_MODE_CONF)
+  86:Generated_Source\PSoC5/Counter_pulse_counter.c ****                 Counter_pulse_counter_CONTROL = ctrl | Counter_pulse_counter_DEFAULT_CAPTURE_MODE;
+  87:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #else
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 3
+
+
+  88:Generated_Source\PSoC5/Counter_pulse_counter.c ****                 Counter_pulse_counter_CONTROL = ctrl;
+  89:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #endif /* 0 != Counter_pulse_counter_CAPTURE_MODE */ 
+  90:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+  91:Generated_Source\PSoC5/Counter_pulse_counter.c ****             #endif /* (!Counter_pulse_counter_ControlRegRemoved) */
+  92:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+  93:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+  94:Generated_Source\PSoC5/Counter_pulse_counter.c ****         /* Clear all data in the FIFO's */
+  95:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (!Counter_pulse_counter_UsingFixedFunction)
+  96:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_ClearFIFO();
+  97:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!Counter_pulse_counter_UsingFixedFunction) */
+  98:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+  99:Generated_Source\PSoC5/Counter_pulse_counter.c ****         /* Set Initial values from Configuration */
+ 100:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_WritePeriod(Counter_pulse_counter_INIT_PERIOD_VALUE);
+ 101:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (!(Counter_pulse_counter_UsingFixedFunction && (CY_PSOC5A)))
+ 102:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_WriteCounter(Counter_pulse_counter_INIT_COUNTER_VALUE);
+ 103:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!(Counter_pulse_counter_UsingFixedFunction && (CY_PSOC5A))) */
+ 104:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_SetInterruptMode(Counter_pulse_counter_INIT_INTERRUPTS_MASK);
+ 105:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+ 106:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (!Counter_pulse_counter_UsingFixedFunction)
+ 107:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Read the status register to clear the unwanted interrupts */
+ 108:Generated_Source\PSoC5/Counter_pulse_counter.c ****             (void)Counter_pulse_counter_ReadStatusRegister();
+ 109:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Set the compare value (only available to non-fixed function implementation */
+ 110:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_WriteCompare(Counter_pulse_counter_INIT_COMPARE_VALUE);
+ 111:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 112:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 113:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
+ 114:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Enter Critical Region*/
+ 115:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_interruptState = CyEnterCriticalSection();
+ 116:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 117:Generated_Source\PSoC5/Counter_pulse_counter.c ****             Counter_pulse_counter_STATUS_AUX_CTRL |= Counter_pulse_counter_STATUS_ACTL_INT_EN_MASK;
+ 118:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 119:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Exit Critical Region*/
+ 120:Generated_Source\PSoC5/Counter_pulse_counter.c ****             CyExitCriticalSection(Counter_pulse_counter_interruptState);
+ 121:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 122:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!Counter_pulse_counter_UsingFixedFunction) */
+ 123:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 124:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 125:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 126:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 127:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_Enable
+ 128:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 129:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 130:Generated_Source\PSoC5/Counter_pulse_counter.c **** *     Enable the Counter
+ 131:Generated_Source\PSoC5/Counter_pulse_counter.c **** * 
+ 132:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 133:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void  
+ 134:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 135:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 136:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 137:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 138:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Side Effects: 
+ 139:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   If the Enable mode is set to Hardware only then this function has no effect 
+ 140:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   on the operation of the counter.
+ 141:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 142:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 143:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_Enable(void) 
+ 144:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 4
+
+
+  28              		.loc 1 144 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 7047     		bx	lr
+  34              		.cfi_endproc
+  35              	.LFE1:
+  36              		.size	Counter_pulse_counter_Enable, .-Counter_pulse_counter_Enable
+  37 0002 00BF     		.section	.text.Counter_pulse_counter_Stop,"ax",%progbits
+  38              		.align	2
+  39              		.global	Counter_pulse_counter_Stop
+  40              		.thumb
+  41              		.thumb_func
+  42              		.type	Counter_pulse_counter_Stop, %function
+  43              	Counter_pulse_counter_Stop:
+  44              	.LFB3:
+ 145:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 146:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if (Counter_pulse_counter_UsingFixedFunction)
+ 147:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_GLOBAL_ENABLE |= Counter_pulse_counter_BLOCK_EN_MASK;
+ 148:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_GLOBAL_STBY_ENABLE |= Counter_pulse_counter_BLOCK_STBY_EN_MASK;
+ 149:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */  
+ 150:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+ 151:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Enable the counter from the control register  */
+ 152:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* If Fixed Function then make sure Mode is set correctly */
+ 153:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* else make sure reset is clear */
+ 154:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(!Counter_pulse_counter_ControlRegRemoved || Counter_pulse_counter_UsingFixedFunction)
+ 155:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_CONTROL |= Counter_pulse_counter_CTRL_ENABLE;                
+ 156:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (!Counter_pulse_counter_ControlRegRemoved || Counter_pulse_counter_UsingFixedFunction
+ 157:Generated_Source\PSoC5/Counter_pulse_counter.c ****     
+ 158:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 159:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 160:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 161:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 162:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_Start
+ 163:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 164:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 165:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  Enables the counter for operation 
+ 166:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 167:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 168:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void  
+ 169:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 170:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 171:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 172:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 173:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Global variables:
+ 174:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  Counter_pulse_counter_initVar: Is modified when this function is called for the  
+ 175:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   first time. Is used to ensure that initialization happens only once.
+ 176:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 177:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 178:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_Start(void) 
+ 179:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 180:Generated_Source\PSoC5/Counter_pulse_counter.c ****     if(Counter_pulse_counter_initVar == 0u)
+ 181:Generated_Source\PSoC5/Counter_pulse_counter.c ****     {
+ 182:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_Init();
+ 183:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+ 184:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_initVar = 1u; /* Clear this bit for Initialization */        
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 5
+
+
+ 185:Generated_Source\PSoC5/Counter_pulse_counter.c ****     }
+ 186:Generated_Source\PSoC5/Counter_pulse_counter.c ****     
+ 187:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Enable the Counter */
+ 188:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_Enable();        
+ 189:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 190:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 191:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 192:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 193:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_Stop
+ 194:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 195:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 196:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Halts the counter, but does not change any modes or disable interrupts.
+ 197:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 198:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 199:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void  
+ 200:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 201:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 202:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 203:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 204:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+ 205:Generated_Source\PSoC5/Counter_pulse_counter.c **** *               has no effect on the operation of the counter.
+ 206:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 207:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 208:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_Stop(void) 
+ 209:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+  45              		.loc 1 209 0
+  46              		.cfi_startproc
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49              		@ link register save eliminated.
+  50 0000 7047     		bx	lr
+  51              		.cfi_endproc
+  52              	.LFE3:
+  53              		.size	Counter_pulse_counter_Stop, .-Counter_pulse_counter_Stop
+  54 0002 00BF     		.section	.text.Counter_pulse_counter_SetInterruptMode,"ax",%progbits
+  55              		.align	2
+  56              		.global	Counter_pulse_counter_SetInterruptMode
+  57              		.thumb
+  58              		.thumb_func
+  59              		.type	Counter_pulse_counter_SetInterruptMode, %function
+  60              	Counter_pulse_counter_SetInterruptMode:
+  61              	.LFB4:
+ 210:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Disable Counter */
+ 211:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(!Counter_pulse_counter_ControlRegRemoved || Counter_pulse_counter_UsingFixedFunction)
+ 212:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_CONTROL &= ((uint8)(~Counter_pulse_counter_CTRL_ENABLE));        
+ 213:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (!Counter_pulse_counter_ControlRegRemoved || Counter_pulse_counter_UsingFixedFunction
+ 214:Generated_Source\PSoC5/Counter_pulse_counter.c ****     
+ 215:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Globally disable the Fixed Function Block chosen */
+ 216:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if (Counter_pulse_counter_UsingFixedFunction)
+ 217:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_GLOBAL_ENABLE &= ((uint8)(~Counter_pulse_counter_BLOCK_EN_MASK));
+ 218:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_GLOBAL_STBY_ENABLE &= ((uint8)(~Counter_pulse_counter_BLOCK_STBY_EN_M
+ 219:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ 220:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 221:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 222:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 223:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 224:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_SetInterruptMode
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 6
+
+
+ 225:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 226:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 227:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Configures which interrupt sources are enabled to generate the final interrupt
+ 228:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 229:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 230:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  InterruptsMask: This parameter is an or'd collection of the status bits
+ 231:Generated_Source\PSoC5/Counter_pulse_counter.c **** *                   which will be allowed to generate the counters interrupt.   
+ 232:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 233:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 234:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 235:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 236:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 237:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_SetInterruptMode(uint8 interruptsMask) 
+ 238:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+  62              		.loc 1 238 0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67              	.LVL0:
+ 239:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_STATUS_MASK = interruptsMask;
+  68              		.loc 1 239 0
+  69 0000 014B     		ldr	r3, .L4
+  70 0002 1870     		strb	r0, [r3]
+  71 0004 7047     		bx	lr
+  72              	.L5:
+  73 0006 00BF     		.align	2
+  74              	.L4:
+  75 0008 8D640040 		.word	1073767565
+  76              		.cfi_endproc
+  77              	.LFE4:
+  78              		.size	Counter_pulse_counter_SetInterruptMode, .-Counter_pulse_counter_SetInterruptMode
+  79              		.section	.text.Counter_pulse_counter_ReadStatusRegister,"ax",%progbits
+  80              		.align	2
+  81              		.global	Counter_pulse_counter_ReadStatusRegister
+  82              		.thumb
+  83              		.thumb_func
+  84              		.type	Counter_pulse_counter_ReadStatusRegister, %function
+  85              	Counter_pulse_counter_ReadStatusRegister:
+  86              	.LFB5:
+ 240:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 241:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 242:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 243:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 244:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ReadStatusRegister
+ 245:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 246:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 247:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   Reads the status register and returns it's state. This function should use
+ 248:Generated_Source\PSoC5/Counter_pulse_counter.c **** *       defined types for the bit-field information as the bits in this
+ 249:Generated_Source\PSoC5/Counter_pulse_counter.c **** *       register may be permuteable.
+ 250:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 251:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 252:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 253:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 254:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 255:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint8) The contents of the status register
+ 256:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 7
+
+
+ 257:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Side Effects:
+ 258:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   Status register bits may be clear on read. 
+ 259:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 260:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 261:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint8   Counter_pulse_counter_ReadStatusRegister(void) 
+ 262:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+  87              		.loc 1 262 0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91              		@ link register save eliminated.
+ 263:Generated_Source\PSoC5/Counter_pulse_counter.c ****     return Counter_pulse_counter_STATUS;
+  92              		.loc 1 263 0
+  93 0000 014B     		ldr	r3, .L7
+  94 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 264:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+  95              		.loc 1 264 0
+  96 0004 7047     		bx	lr
+  97              	.L8:
+  98 0006 00BF     		.align	2
+  99              	.L7:
+ 100 0008 6D640040 		.word	1073767533
+ 101              		.cfi_endproc
+ 102              	.LFE5:
+ 103              		.size	Counter_pulse_counter_ReadStatusRegister, .-Counter_pulse_counter_ReadStatusRegister
+ 104              		.section	.text.Counter_pulse_counter_WriteCounter,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	Counter_pulse_counter_WriteCounter
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	Counter_pulse_counter_WriteCounter, %function
+ 110              	Counter_pulse_counter_WriteCounter:
+ 111              	.LFB6:
+ 265:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 266:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 267:Generated_Source\PSoC5/Counter_pulse_counter.c **** #if(!Counter_pulse_counter_ControlRegRemoved)
+ 268:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 269:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ReadControlRegister
+ 270:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 271:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 272:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   Reads the control register and returns it's state. This function should use
+ 273:Generated_Source\PSoC5/Counter_pulse_counter.c **** *       defined types for the bit-field information as the bits in this
+ 274:Generated_Source\PSoC5/Counter_pulse_counter.c **** *       register may be permuteable.
+ 275:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 276:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 277:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 278:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 279:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 280:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint8) The contents of the control register
+ 281:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 282:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 283:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint8   Counter_pulse_counter_ReadControlRegister(void) 
+ 284:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 285:Generated_Source\PSoC5/Counter_pulse_counter.c ****     return Counter_pulse_counter_CONTROL;
+ 286:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 287:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 288:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 8
+
+
+ 289:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 290:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_WriteControlRegister
+ 291:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 292:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 293:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   Sets the bit-field of the control register.  This function should use
+ 294:Generated_Source\PSoC5/Counter_pulse_counter.c **** *       defined types for the bit-field information as the bits in this
+ 295:Generated_Source\PSoC5/Counter_pulse_counter.c **** *       register may be permuteable.
+ 296:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 297:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 298:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 299:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 300:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 301:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint8) The contents of the control register
+ 302:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 303:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 304:Generated_Source\PSoC5/Counter_pulse_counter.c **** void    Counter_pulse_counter_WriteControlRegister(uint8 control) 
+ 305:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 306:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_CONTROL = control;
+ 307:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 308:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 309:Generated_Source\PSoC5/Counter_pulse_counter.c **** #endif  /* (!Counter_pulse_counter_ControlRegRemoved) */
+ 310:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 311:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 312:Generated_Source\PSoC5/Counter_pulse_counter.c **** #if (!(Counter_pulse_counter_UsingFixedFunction && (CY_PSOC5A)))
+ 313:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 314:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_WriteCounter
+ 315:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 316:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 317:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   This funtion is used to set the counter to a specific value
+ 318:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 319:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 320:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  counter:  New counter value. 
+ 321:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 322:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 323:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void 
+ 324:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 325:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 326:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_WriteCounter(uint16 counter) \
+ 327:Generated_Source\PSoC5/Counter_pulse_counter.c ****                                    
+ 328:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 112              		.loc 1 328 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+ 117              	.LVL1:
+ 329:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ 330:Generated_Source\PSoC5/Counter_pulse_counter.c ****         /* assert if block is already enabled */
+ 331:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CYASSERT (0u == (Counter_pulse_counter_GLOBAL_ENABLE & Counter_pulse_counter_BLOCK_EN_MASK)
+ 332:Generated_Source\PSoC5/Counter_pulse_counter.c ****         /* If block is disabled, enable it and then write the counter */
+ 333:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_GLOBAL_ENABLE |= Counter_pulse_counter_BLOCK_EN_MASK;
+ 334:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CY_SET_REG16(Counter_pulse_counter_COUNTER_LSB_PTR, (uint16)counter);
+ 335:Generated_Source\PSoC5/Counter_pulse_counter.c ****         Counter_pulse_counter_GLOBAL_ENABLE &= ((uint8)(~Counter_pulse_counter_BLOCK_EN_MASK));
+ 336:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #else
+ 337:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CY_SET_REG16(Counter_pulse_counter_COUNTER_LSB_PTR, counter);
+ 118              		.loc 1 337 0
+ 119 0000 014B     		ldr	r3, .L10
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 9
+
+
+ 120 0002 1880     		strh	r0, [r3]	@ movhi
+ 121 0004 7047     		bx	lr
+ 122              	.L11:
+ 123 0006 00BF     		.align	2
+ 124              	.L10:
+ 125 0008 18680040 		.word	1073768472
+ 126              		.cfi_endproc
+ 127              	.LFE6:
+ 128              		.size	Counter_pulse_counter_WriteCounter, .-Counter_pulse_counter_WriteCounter
+ 129              		.section	.text.Counter_pulse_counter_ReadCounter,"ax",%progbits
+ 130              		.align	2
+ 131              		.global	Counter_pulse_counter_ReadCounter
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.type	Counter_pulse_counter_ReadCounter, %function
+ 135              	Counter_pulse_counter_ReadCounter:
+ 136              	.LFB7:
+ 338:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ 339:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 340:Generated_Source\PSoC5/Counter_pulse_counter.c **** #endif /* (!(Counter_pulse_counter_UsingFixedFunction && (CY_PSOC5A))) */
+ 341:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 342:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 343:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 344:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ReadCounter
+ 345:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 346:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 347:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Returns the current value of the counter.  It doesn't matter
+ 348:Generated_Source\PSoC5/Counter_pulse_counter.c **** * if the counter is enabled or running.
+ 349:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 350:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 351:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void:  
+ 352:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 353:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 354:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint16) The present value of the counter.
+ 355:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 356:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 357:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint16 Counter_pulse_counter_ReadCounter(void) 
+ 358:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 137              		.loc 1 358 0
+ 138              		.cfi_startproc
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141              		@ link register save eliminated.
+ 359:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Force capture by reading Accumulator */
+ 360:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Must first do a software capture to be able to read the counter */
+ 361:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 362:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ 363:Generated_Source\PSoC5/Counter_pulse_counter.c **** 		(void)CY_GET_REG16(Counter_pulse_counter_COUNTER_LSB_PTR);
+ 364:Generated_Source\PSoC5/Counter_pulse_counter.c **** 	#else
+ 365:Generated_Source\PSoC5/Counter_pulse_counter.c **** 		(void)CY_GET_REG8(Counter_pulse_counter_COUNTER_LSB_PTR_8BIT);
+ 142              		.loc 1 365 0
+ 143 0000 024B     		ldr	r3, .L13
+ 144 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 366:Generated_Source\PSoC5/Counter_pulse_counter.c **** 	#endif/* (Counter_pulse_counter_UsingFixedFunction) */
+ 367:Generated_Source\PSoC5/Counter_pulse_counter.c ****     
+ 368:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 369:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 10
+
+
+ 370:Generated_Source\PSoC5/Counter_pulse_counter.c ****         return ((uint16)CY_GET_REG16(Counter_pulse_counter_STATICCOUNT_LSB_PTR));
+ 371:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #else
+ 372:Generated_Source\PSoC5/Counter_pulse_counter.c ****         return (CY_GET_REG16(Counter_pulse_counter_STATICCOUNT_LSB_PTR));
+ 145              		.loc 1 372 0
+ 146 0004 024B     		ldr	r3, .L13+4
+ 147 0006 1888     		ldrh	r0, [r3]
+ 373:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ 374:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 148              		.loc 1 374 0
+ 149 0008 80B2     		uxth	r0, r0
+ 150 000a 7047     		bx	lr
+ 151              	.L14:
+ 152              		.align	2
+ 153              	.L13:
+ 154 000c 0C640040 		.word	1073767436
+ 155 0010 98680040 		.word	1073768600
+ 156              		.cfi_endproc
+ 157              	.LFE7:
+ 158              		.size	Counter_pulse_counter_ReadCounter, .-Counter_pulse_counter_ReadCounter
+ 159              		.section	.text.Counter_pulse_counter_ReadCapture,"ax",%progbits
+ 160              		.align	2
+ 161              		.global	Counter_pulse_counter_ReadCapture
+ 162              		.thumb
+ 163              		.thumb_func
+ 164              		.type	Counter_pulse_counter_ReadCapture, %function
+ 165              	Counter_pulse_counter_ReadCapture:
+ 166              	.LFB8:
+ 375:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 376:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 377:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 378:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ReadCapture
+ 379:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 380:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 381:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   This function returns the last value captured.
+ 382:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 383:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 384:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 385:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 386:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 387:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint16) Present Capture value.
+ 388:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 389:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 390:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint16 Counter_pulse_counter_ReadCapture(void) 
+ 391:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 167              		.loc 1 391 0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 392:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ 393:Generated_Source\PSoC5/Counter_pulse_counter.c ****         return ((uint16)CY_GET_REG16(Counter_pulse_counter_STATICCOUNT_LSB_PTR));
+ 394:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #else
+ 395:Generated_Source\PSoC5/Counter_pulse_counter.c ****         return (CY_GET_REG16(Counter_pulse_counter_STATICCOUNT_LSB_PTR));
+ 172              		.loc 1 395 0
+ 173 0000 014B     		ldr	r3, .L16
+ 174 0002 1888     		ldrh	r0, [r3]
+ 396:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 11
+
+
+ 397:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 175              		.loc 1 397 0
+ 176 0004 80B2     		uxth	r0, r0
+ 177 0006 7047     		bx	lr
+ 178              	.L17:
+ 179              		.align	2
+ 180              	.L16:
+ 181 0008 98680040 		.word	1073768600
+ 182              		.cfi_endproc
+ 183              	.LFE8:
+ 184              		.size	Counter_pulse_counter_ReadCapture, .-Counter_pulse_counter_ReadCapture
+ 185              		.section	.text.Counter_pulse_counter_WritePeriod,"ax",%progbits
+ 186              		.align	2
+ 187              		.global	Counter_pulse_counter_WritePeriod
+ 188              		.thumb
+ 189              		.thumb_func
+ 190              		.type	Counter_pulse_counter_WritePeriod, %function
+ 191              	Counter_pulse_counter_WritePeriod:
+ 192              	.LFB9:
+ 398:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 399:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 400:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 401:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_WritePeriod
+ 402:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 403:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 404:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Changes the period of the counter.  The new period 
+ 405:Generated_Source\PSoC5/Counter_pulse_counter.c **** * will be loaded the next time terminal count is detected.
+ 406:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 407:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 408:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  period: (uint16) A value of 0 will result in
+ 409:Generated_Source\PSoC5/Counter_pulse_counter.c **** *         the counter remaining at zero.  
+ 410:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 411:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 412:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 413:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 414:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 415:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_WritePeriod(uint16 period) 
+ 416:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 193              		.loc 1 416 0
+ 194              		.cfi_startproc
+ 195              		@ args = 0, pretend = 0, frame = 0
+ 196              		@ frame_needed = 0, uses_anonymous_args = 0
+ 197              		@ link register save eliminated.
+ 198              	.LVL2:
+ 417:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ 418:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CY_SET_REG16(Counter_pulse_counter_PERIOD_LSB_PTR,(uint16)period);
+ 419:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #else
+ 420:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CY_SET_REG16(Counter_pulse_counter_PERIOD_LSB_PTR, period);
+ 199              		.loc 1 420 0
+ 200 0000 014B     		ldr	r3, .L19
+ 201 0002 1880     		strh	r0, [r3]	@ movhi
+ 202 0004 7047     		bx	lr
+ 203              	.L20:
+ 204 0006 00BF     		.align	2
+ 205              	.L19:
+ 206 0008 58680040 		.word	1073768536
+ 207              		.cfi_endproc
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 12
+
+
+ 208              	.LFE9:
+ 209              		.size	Counter_pulse_counter_WritePeriod, .-Counter_pulse_counter_WritePeriod
+ 210              		.section	.text.Counter_pulse_counter_ReadPeriod,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	Counter_pulse_counter_ReadPeriod
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.type	Counter_pulse_counter_ReadPeriod, %function
+ 216              	Counter_pulse_counter_ReadPeriod:
+ 217              	.LFB10:
+ 421:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ 422:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 423:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 424:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 425:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 426:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ReadPeriod
+ 427:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 428:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 429:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Reads the current period value without affecting counter operation.
+ 430:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 431:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 432:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void:  
+ 433:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 434:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 435:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint16) Present period value.
+ 436:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 437:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 438:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint16 Counter_pulse_counter_ReadPeriod(void) 
+ 439:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 218              		.loc 1 439 0
+ 219              		.cfi_startproc
+ 220              		@ args = 0, pretend = 0, frame = 0
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222              		@ link register save eliminated.
+ 440:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ 441:Generated_Source\PSoC5/Counter_pulse_counter.c ****         return ((uint16)CY_GET_REG16(Counter_pulse_counter_PERIOD_LSB_PTR));
+ 442:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #else
+ 443:Generated_Source\PSoC5/Counter_pulse_counter.c ****         return (CY_GET_REG16(Counter_pulse_counter_PERIOD_LSB_PTR));
+ 223              		.loc 1 443 0
+ 224 0000 014B     		ldr	r3, .L22
+ 225 0002 1888     		ldrh	r0, [r3]
+ 444:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ 445:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 226              		.loc 1 445 0
+ 227 0004 80B2     		uxth	r0, r0
+ 228 0006 7047     		bx	lr
+ 229              	.L23:
+ 230              		.align	2
+ 231              	.L22:
+ 232 0008 58680040 		.word	1073768536
+ 233              		.cfi_endproc
+ 234              	.LFE10:
+ 235              		.size	Counter_pulse_counter_ReadPeriod, .-Counter_pulse_counter_ReadPeriod
+ 236              		.section	.text.Counter_pulse_counter_WriteCompare,"ax",%progbits
+ 237              		.align	2
+ 238              		.global	Counter_pulse_counter_WriteCompare
+ 239              		.thumb
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 13
+
+
+ 240              		.thumb_func
+ 241              		.type	Counter_pulse_counter_WriteCompare, %function
+ 242              	Counter_pulse_counter_WriteCompare:
+ 243              	.LFB11:
+ 446:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 447:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 448:Generated_Source\PSoC5/Counter_pulse_counter.c **** #if (!Counter_pulse_counter_UsingFixedFunction)
+ 449:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 450:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_WriteCompare
+ 451:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 452:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 453:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Changes the compare value.  The compare output will 
+ 454:Generated_Source\PSoC5/Counter_pulse_counter.c **** * reflect the new value on the next UDB clock.  The compare output will be 
+ 455:Generated_Source\PSoC5/Counter_pulse_counter.c **** * driven high when the present counter value compares true based on the 
+ 456:Generated_Source\PSoC5/Counter_pulse_counter.c **** * configured compare mode setting. 
+ 457:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 458:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 459:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  Compare:  New compare value. 
+ 460:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 461:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 462:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 463:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 464:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 465:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_WriteCompare(uint16 compare) \
+ 466:Generated_Source\PSoC5/Counter_pulse_counter.c ****                                    
+ 467:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 244              		.loc 1 467 0
+ 245              		.cfi_startproc
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248              		@ link register save eliminated.
+ 249              	.LVL3:
+ 468:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #if(Counter_pulse_counter_UsingFixedFunction)
+ 469:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CY_SET_REG16(Counter_pulse_counter_COMPARE_LSB_PTR, (uint16)compare);
+ 470:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #else
+ 471:Generated_Source\PSoC5/Counter_pulse_counter.c ****         CY_SET_REG16(Counter_pulse_counter_COMPARE_LSB_PTR, compare);
+ 250              		.loc 1 471 0
+ 251 0000 014B     		ldr	r3, .L25
+ 252 0002 1880     		strh	r0, [r3]	@ movhi
+ 253 0004 7047     		bx	lr
+ 254              	.L26:
+ 255 0006 00BF     		.align	2
+ 256              	.L25:
+ 257 0008 78680040 		.word	1073768568
+ 258              		.cfi_endproc
+ 259              	.LFE11:
+ 260              		.size	Counter_pulse_counter_WriteCompare, .-Counter_pulse_counter_WriteCompare
+ 261              		.section	.text.Counter_pulse_counter_ReadCompare,"ax",%progbits
+ 262              		.align	2
+ 263              		.global	Counter_pulse_counter_ReadCompare
+ 264              		.thumb
+ 265              		.thumb_func
+ 266              		.type	Counter_pulse_counter_ReadCompare, %function
+ 267              	Counter_pulse_counter_ReadCompare:
+ 268              	.LFB12:
+ 472:Generated_Source\PSoC5/Counter_pulse_counter.c ****     #endif /* (Counter_pulse_counter_UsingFixedFunction) */
+ 473:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 14
+
+
+ 474:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 475:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 476:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 477:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ReadCompare
+ 478:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 479:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 480:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Returns the compare value.
+ 481:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 482:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 483:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void:
+ 484:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 485:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 486:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  (uint16) Present compare value.
+ 487:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 488:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 489:Generated_Source\PSoC5/Counter_pulse_counter.c **** uint16 Counter_pulse_counter_ReadCompare(void) 
+ 490:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 269              		.loc 1 490 0
+ 270              		.cfi_startproc
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273              		@ link register save eliminated.
+ 491:Generated_Source\PSoC5/Counter_pulse_counter.c ****     return (CY_GET_REG16(Counter_pulse_counter_COMPARE_LSB_PTR));
+ 274              		.loc 1 491 0
+ 275 0000 014B     		ldr	r3, .L28
+ 276 0002 1888     		ldrh	r0, [r3]
+ 492:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 277              		.loc 1 492 0
+ 278 0004 80B2     		uxth	r0, r0
+ 279 0006 7047     		bx	lr
+ 280              	.L29:
+ 281              		.align	2
+ 282              	.L28:
+ 283 0008 78680040 		.word	1073768568
+ 284              		.cfi_endproc
+ 285              	.LFE12:
+ 286              		.size	Counter_pulse_counter_ReadCompare, .-Counter_pulse_counter_ReadCompare
+ 287              		.section	.text.Counter_pulse_counter_ClearFIFO,"ax",%progbits
+ 288              		.align	2
+ 289              		.global	Counter_pulse_counter_ClearFIFO
+ 290              		.thumb
+ 291              		.thumb_func
+ 292              		.type	Counter_pulse_counter_ClearFIFO, %function
+ 293              	Counter_pulse_counter_ClearFIFO:
+ 294              	.LFB13:
+ 493:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 494:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 495:Generated_Source\PSoC5/Counter_pulse_counter.c **** #if (Counter_pulse_counter_COMPARE_MODE_SOFTWARE)
+ 496:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 497:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_SetCompareMode
+ 498:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 499:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 500:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  Sets the software controlled Compare Mode.
+ 501:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 502:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:
+ 503:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  compareMode:  Compare Mode Enumerated Type.
+ 504:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 15
+
+
+ 505:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return:
+ 506:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 507:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 508:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 509:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_SetCompareMode(uint8 compareMode) 
+ 510:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 511:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Clear the compare mode bits in the control register */
+ 512:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_CONTROL &= ((uint8)(~Counter_pulse_counter_CTRL_CMPMODE_MASK));
+ 513:Generated_Source\PSoC5/Counter_pulse_counter.c ****     
+ 514:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Write the new setting */
+ 515:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_CONTROL |= compareMode;
+ 516:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 517:Generated_Source\PSoC5/Counter_pulse_counter.c **** #endif  /* (Counter_pulse_counter_COMPARE_MODE_SOFTWARE) */
+ 518:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 519:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 520:Generated_Source\PSoC5/Counter_pulse_counter.c **** #if (Counter_pulse_counter_CAPTURE_MODE_SOFTWARE)
+ 521:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 522:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_SetCaptureMode
+ 523:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 524:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 525:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  Sets the software controlled Capture Mode.
+ 526:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 527:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:
+ 528:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  captureMode:  Capture Mode Enumerated Type.
+ 529:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 530:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return:
+ 531:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void
+ 532:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 533:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 534:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_SetCaptureMode(uint8 captureMode) 
+ 535:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 536:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Clear the capture mode bits in the control register */
+ 537:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_CONTROL &= ((uint8)(~Counter_pulse_counter_CTRL_CAPMODE_MASK));
+ 538:Generated_Source\PSoC5/Counter_pulse_counter.c ****     
+ 539:Generated_Source\PSoC5/Counter_pulse_counter.c ****     /* Write the new setting */
+ 540:Generated_Source\PSoC5/Counter_pulse_counter.c ****     Counter_pulse_counter_CONTROL |= ((uint8)((uint8)captureMode << Counter_pulse_counter_CTRL_CAPM
+ 541:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 542:Generated_Source\PSoC5/Counter_pulse_counter.c **** #endif  /* (Counter_pulse_counter_CAPTURE_MODE_SOFTWARE) */
+ 543:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 544:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 545:Generated_Source\PSoC5/Counter_pulse_counter.c **** /*******************************************************************************
+ 546:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Function Name: Counter_pulse_counter_ClearFIFO
+ 547:Generated_Source\PSoC5/Counter_pulse_counter.c **** ********************************************************************************
+ 548:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Summary:
+ 549:Generated_Source\PSoC5/Counter_pulse_counter.c **** *   This function clears all capture data from the capture FIFO
+ 550:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 551:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Parameters:  
+ 552:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  void:
+ 553:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 554:Generated_Source\PSoC5/Counter_pulse_counter.c **** * Return: 
+ 555:Generated_Source\PSoC5/Counter_pulse_counter.c **** *  None
+ 556:Generated_Source\PSoC5/Counter_pulse_counter.c **** *
+ 557:Generated_Source\PSoC5/Counter_pulse_counter.c **** *******************************************************************************/
+ 558:Generated_Source\PSoC5/Counter_pulse_counter.c **** void Counter_pulse_counter_ClearFIFO(void) 
+ 559:Generated_Source\PSoC5/Counter_pulse_counter.c **** {
+ 295              		.loc 1 559 0
+ 296              		.cfi_startproc
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 16
+
+
+ 297              		@ args = 0, pretend = 0, frame = 0
+ 298              		@ frame_needed = 0, uses_anonymous_args = 0
+ 299 0000 08B5     		push	{r3, lr}
+ 300              		.cfi_def_cfa_offset 8
+ 301              		.cfi_offset 3, -8
+ 302              		.cfi_offset 14, -4
+ 560:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 561:Generated_Source\PSoC5/Counter_pulse_counter.c ****     while(0u != (Counter_pulse_counter_ReadStatusRegister() & Counter_pulse_counter_STATUS_FIFONEMP
+ 303              		.loc 1 561 0
+ 304 0002 01E0     		b	.L31
+ 305              	.L32:
+ 562:Generated_Source\PSoC5/Counter_pulse_counter.c ****     {
+ 563:Generated_Source\PSoC5/Counter_pulse_counter.c ****         (void)Counter_pulse_counter_ReadCapture();
+ 306              		.loc 1 563 0
+ 307 0004 FFF7FEFF 		bl	Counter_pulse_counter_ReadCapture
+ 308              	.LVL4:
+ 309              	.L31:
+ 561:Generated_Source\PSoC5/Counter_pulse_counter.c ****     {
+ 310              		.loc 1 561 0
+ 311 0008 FFF7FEFF 		bl	Counter_pulse_counter_ReadStatusRegister
+ 312              	.LVL5:
+ 313 000c 10F0400F 		tst	r0, #64
+ 314 0010 F8D1     		bne	.L32
+ 564:Generated_Source\PSoC5/Counter_pulse_counter.c ****     }
+ 565:Generated_Source\PSoC5/Counter_pulse_counter.c **** 
+ 566:Generated_Source\PSoC5/Counter_pulse_counter.c **** }
+ 315              		.loc 1 566 0
+ 316 0012 08BD     		pop	{r3, pc}
+ 317              		.cfi_endproc
+ 318              	.LFE13:
+ 319              		.size	Counter_pulse_counter_ClearFIFO, .-Counter_pulse_counter_ClearFIFO
+ 320              		.section	.text.Counter_pulse_counter_Init,"ax",%progbits
+ 321              		.align	2
+ 322              		.global	Counter_pulse_counter_Init
+ 323              		.thumb
+ 324              		.thumb_func
+ 325              		.type	Counter_pulse_counter_Init, %function
+ 326              	Counter_pulse_counter_Init:
+ 327              	.LFB0:
+  38:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (!Counter_pulse_counter_UsingFixedFunction && !Counter_pulse_counter_ControlRegRemoved)
+ 328              		.loc 1 38 0
+ 329              		.cfi_startproc
+ 330              		@ args = 0, pretend = 0, frame = 0
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332 0000 08B5     		push	{r3, lr}
+ 333              		.cfi_def_cfa_offset 8
+ 334              		.cfi_offset 3, -8
+ 335              		.cfi_offset 14, -4
+  96:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!Counter_pulse_counter_UsingFixedFunction) */
+ 336              		.loc 1 96 0
+ 337 0002 FFF7FEFF 		bl	Counter_pulse_counter_ClearFIFO
+ 338              	.LVL6:
+ 100:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #if (!(Counter_pulse_counter_UsingFixedFunction && (CY_PSOC5A)))
+ 339              		.loc 1 100 0
+ 340 0006 4FF6FE70 		movw	r0, #65534
+ 341 000a FFF7FEFF 		bl	Counter_pulse_counter_WritePeriod
+ 342              	.LVL7:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 17
+
+
+ 102:Generated_Source\PSoC5/Counter_pulse_counter.c ****         #endif /* (!(Counter_pulse_counter_UsingFixedFunction && (CY_PSOC5A))) */
+ 343              		.loc 1 102 0
+ 344 000e 0020     		movs	r0, #0
+ 345 0010 FFF7FEFF 		bl	Counter_pulse_counter_WriteCounter
+ 346              	.LVL8:
+ 104:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+ 347              		.loc 1 104 0
+ 348 0014 0020     		movs	r0, #0
+ 349 0016 FFF7FEFF 		bl	Counter_pulse_counter_SetInterruptMode
+ 350              	.LVL9:
+ 108:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Set the compare value (only available to non-fixed function implementation */
+ 351              		.loc 1 108 0
+ 352 001a FFF7FEFF 		bl	Counter_pulse_counter_ReadStatusRegister
+ 353              	.LVL10:
+ 110:Generated_Source\PSoC5/Counter_pulse_counter.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 354              		.loc 1 110 0
+ 355 001e 4FF4FA40 		mov	r0, #32000
+ 356 0022 FFF7FEFF 		bl	Counter_pulse_counter_WriteCompare
+ 357              	.LVL11:
+ 115:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 358              		.loc 1 115 0
+ 359 0026 FFF7FEFF 		bl	CyEnterCriticalSection
+ 360              	.LVL12:
+ 117:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 361              		.loc 1 117 0
+ 362 002a 044A     		ldr	r2, .L36
+ 363 002c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 364 002e 43F01003 		orr	r3, r3, #16
+ 365 0032 1370     		strb	r3, [r2]
+ 120:Generated_Source\PSoC5/Counter_pulse_counter.c ****             
+ 366              		.loc 1 120 0
+ 367 0034 FFF7FEFF 		bl	CyExitCriticalSection
+ 368              	.LVL13:
+ 369 0038 08BD     		pop	{r3, pc}
+ 370              	.L37:
+ 371 003a 00BF     		.align	2
+ 372              	.L36:
+ 373 003c 9D640040 		.word	1073767581
+ 374              		.cfi_endproc
+ 375              	.LFE0:
+ 376              		.size	Counter_pulse_counter_Init, .-Counter_pulse_counter_Init
+ 377              		.section	.text.Counter_pulse_counter_Start,"ax",%progbits
+ 378              		.align	2
+ 379              		.global	Counter_pulse_counter_Start
+ 380              		.thumb
+ 381              		.thumb_func
+ 382              		.type	Counter_pulse_counter_Start, %function
+ 383              	Counter_pulse_counter_Start:
+ 384              	.LFB2:
+ 179:Generated_Source\PSoC5/Counter_pulse_counter.c ****     if(Counter_pulse_counter_initVar == 0u)
+ 385              		.loc 1 179 0
+ 386              		.cfi_startproc
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389 0000 08B5     		push	{r3, lr}
+ 390              		.cfi_def_cfa_offset 8
+ 391              		.cfi_offset 3, -8
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 18
+
+
+ 392              		.cfi_offset 14, -4
+ 180:Generated_Source\PSoC5/Counter_pulse_counter.c ****     {
+ 393              		.loc 1 180 0
+ 394 0002 044B     		ldr	r3, .L41
+ 395 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 396 0006 23B9     		cbnz	r3, .L38
+ 182:Generated_Source\PSoC5/Counter_pulse_counter.c ****         
+ 397              		.loc 1 182 0
+ 398 0008 FFF7FEFF 		bl	Counter_pulse_counter_Init
+ 399              	.LVL14:
+ 184:Generated_Source\PSoC5/Counter_pulse_counter.c ****     }
+ 400              		.loc 1 184 0
+ 401 000c 0122     		movs	r2, #1
+ 402 000e 014B     		ldr	r3, .L41
+ 403 0010 1A70     		strb	r2, [r3]
+ 404              	.L38:
+ 405 0012 08BD     		pop	{r3, pc}
+ 406              	.L42:
+ 407              		.align	2
+ 408              	.L41:
+ 409 0014 00000000 		.word	.LANCHOR0
+ 410              		.cfi_endproc
+ 411              	.LFE2:
+ 412              		.size	Counter_pulse_counter_Start, .-Counter_pulse_counter_Start
+ 413              		.global	Counter_pulse_counter_initVar
+ 414              		.bss
+ 415              		.set	.LANCHOR0,. + 0
+ 416              		.type	Counter_pulse_counter_initVar, %object
+ 417              		.size	Counter_pulse_counter_initVar, 1
+ 418              	Counter_pulse_counter_initVar:
+ 419 0000 00       		.space	1
+ 420              		.text
+ 421              	.Letext0:
+ 422              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 423              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
+ 424              		.section	.debug_info,"",%progbits
+ 425              	.Ldebug_info0:
+ 426 0000 EE020000 		.4byte	0x2ee
+ 427 0004 0400     		.2byte	0x4
+ 428 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 429 000a 04       		.byte	0x4
+ 430 000b 01       		.uleb128 0x1
+ 431 000c 11010000 		.4byte	.LASF38
+ 432 0010 0C       		.byte	0xc
+ 433 0011 0C040000 		.4byte	.LASF39
+ 434 0015 6D000000 		.4byte	.LASF40
+ 435 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 436 001d 00000000 		.4byte	0
+ 437 0021 00000000 		.4byte	.Ldebug_line0
+ 438 0025 02       		.uleb128 0x2
+ 439 0026 01       		.byte	0x1
+ 440 0027 06       		.byte	0x6
+ 441 0028 F8030000 		.4byte	.LASF0
+ 442 002c 02       		.uleb128 0x2
+ 443 002d 01       		.byte	0x1
+ 444 002e 08       		.byte	0x8
+ 445 002f 03010000 		.4byte	.LASF1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 19
+
+
+ 446 0033 02       		.uleb128 0x2
+ 447 0034 02       		.byte	0x2
+ 448 0035 05       		.byte	0x5
+ 449 0036 64020000 		.4byte	.LASF2
+ 450 003a 02       		.uleb128 0x2
+ 451 003b 02       		.byte	0x2
+ 452 003c 07       		.byte	0x7
+ 453 003d CB000000 		.4byte	.LASF3
+ 454 0041 02       		.uleb128 0x2
+ 455 0042 04       		.byte	0x4
+ 456 0043 05       		.byte	0x5
+ 457 0044 C8030000 		.4byte	.LASF4
+ 458 0048 02       		.uleb128 0x2
+ 459 0049 04       		.byte	0x4
+ 460 004a 07       		.byte	0x7
+ 461 004b CD010000 		.4byte	.LASF5
+ 462 004f 02       		.uleb128 0x2
+ 463 0050 08       		.byte	0x8
+ 464 0051 05       		.byte	0x5
+ 465 0052 3F030000 		.4byte	.LASF6
+ 466 0056 02       		.uleb128 0x2
+ 467 0057 08       		.byte	0x8
+ 468 0058 07       		.byte	0x7
+ 469 0059 EC000000 		.4byte	.LASF7
+ 470 005d 03       		.uleb128 0x3
+ 471 005e 04       		.byte	0x4
+ 472 005f 05       		.byte	0x5
+ 473 0060 696E7400 		.ascii	"int\000"
+ 474 0064 02       		.uleb128 0x2
+ 475 0065 04       		.byte	0x4
+ 476 0066 07       		.byte	0x7
+ 477 0067 AE020000 		.4byte	.LASF8
+ 478 006b 04       		.uleb128 0x4
+ 479 006c DF010000 		.4byte	.LASF9
+ 480 0070 02       		.byte	0x2
+ 481 0071 E801     		.2byte	0x1e8
+ 482 0073 2C000000 		.4byte	0x2c
+ 483 0077 04       		.uleb128 0x4
+ 484 0078 6E020000 		.4byte	.LASF10
+ 485 007c 02       		.byte	0x2
+ 486 007d E901     		.2byte	0x1e9
+ 487 007f 3A000000 		.4byte	0x3a
+ 488 0083 02       		.uleb128 0x2
+ 489 0084 04       		.byte	0x4
+ 490 0085 04       		.byte	0x4
+ 491 0086 DE000000 		.4byte	.LASF11
+ 492 008a 02       		.uleb128 0x2
+ 493 008b 08       		.byte	0x8
+ 494 008c 04       		.byte	0x4
+ 495 008d 17020000 		.4byte	.LASF12
+ 496 0091 02       		.uleb128 0x2
+ 497 0092 01       		.byte	0x1
+ 498 0093 08       		.byte	0x8
+ 499 0094 D1030000 		.4byte	.LASF13
+ 500 0098 04       		.uleb128 0x4
+ 501 0099 9F010000 		.4byte	.LASF14
+ 502 009d 02       		.byte	0x2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 20
+
+
+ 503 009e 9202     		.2byte	0x292
+ 504 00a0 A4000000 		.4byte	0xa4
+ 505 00a4 05       		.uleb128 0x5
+ 506 00a5 6B000000 		.4byte	0x6b
+ 507 00a9 04       		.uleb128 0x4
+ 508 00aa 00000000 		.4byte	.LASF15
+ 509 00ae 02       		.byte	0x2
+ 510 00af 9302     		.2byte	0x293
+ 511 00b1 B5000000 		.4byte	0xb5
+ 512 00b5 05       		.uleb128 0x5
+ 513 00b6 77000000 		.4byte	0x77
+ 514 00ba 02       		.uleb128 0x2
+ 515 00bb 08       		.byte	0x8
+ 516 00bc 04       		.byte	0x4
+ 517 00bd 2A030000 		.4byte	.LASF16
+ 518 00c1 02       		.uleb128 0x2
+ 519 00c2 04       		.byte	0x4
+ 520 00c3 07       		.byte	0x7
+ 521 00c4 36030000 		.4byte	.LASF17
+ 522 00c8 06       		.uleb128 0x6
+ 523 00c9 90030000 		.4byte	.LASF18
+ 524 00cd 01       		.byte	0x1
+ 525 00ce 8F       		.byte	0x8f
+ 526 00cf 00000000 		.4byte	.LFB1
+ 527 00d3 02000000 		.4byte	.LFE1-.LFB1
+ 528 00d7 01       		.uleb128 0x1
+ 529 00d8 9C       		.byte	0x9c
+ 530 00d9 06       		.uleb128 0x6
+ 531 00da AD030000 		.4byte	.LASF19
+ 532 00de 01       		.byte	0x1
+ 533 00df D0       		.byte	0xd0
+ 534 00e0 00000000 		.4byte	.LFB3
+ 535 00e4 02000000 		.4byte	.LFE3-.LFB3
+ 536 00e8 01       		.uleb128 0x1
+ 537 00e9 9C       		.byte	0x9c
+ 538 00ea 07       		.uleb128 0x7
+ 539 00eb 4D030000 		.4byte	.LASF20
+ 540 00ef 01       		.byte	0x1
+ 541 00f0 ED       		.byte	0xed
+ 542 00f1 00000000 		.4byte	.LFB4
+ 543 00f5 0C000000 		.4byte	.LFE4-.LFB4
+ 544 00f9 01       		.uleb128 0x1
+ 545 00fa 9C       		.byte	0x9c
+ 546 00fb 0D010000 		.4byte	0x10d
+ 547 00ff 08       		.uleb128 0x8
+ 548 0100 E5010000 		.4byte	.LASF22
+ 549 0104 01       		.byte	0x1
+ 550 0105 ED       		.byte	0xed
+ 551 0106 6B000000 		.4byte	0x6b
+ 552 010a 01       		.uleb128 0x1
+ 553 010b 50       		.byte	0x50
+ 554 010c 00       		.byte	0
+ 555 010d 09       		.uleb128 0x9
+ 556 010e A4010000 		.4byte	.LASF24
+ 557 0112 01       		.byte	0x1
+ 558 0113 0501     		.2byte	0x105
+ 559 0115 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 21
+
+
+ 560 0119 00000000 		.4byte	.LFB5
+ 561 011d 0C000000 		.4byte	.LFE5-.LFB5
+ 562 0121 01       		.uleb128 0x1
+ 563 0122 9C       		.byte	0x9c
+ 564 0123 0A       		.uleb128 0xa
+ 565 0124 F4010000 		.4byte	.LASF21
+ 566 0128 01       		.byte	0x1
+ 567 0129 4601     		.2byte	0x146
+ 568 012b 00000000 		.4byte	.LFB6
+ 569 012f 0C000000 		.4byte	.LFE6-.LFB6
+ 570 0133 01       		.uleb128 0x1
+ 571 0134 9C       		.byte	0x9c
+ 572 0135 48010000 		.4byte	0x148
+ 573 0139 0B       		.uleb128 0xb
+ 574 013a E4000000 		.4byte	.LASF23
+ 575 013e 01       		.byte	0x1
+ 576 013f 4601     		.2byte	0x146
+ 577 0141 77000000 		.4byte	0x77
+ 578 0145 01       		.uleb128 0x1
+ 579 0146 50       		.byte	0x50
+ 580 0147 00       		.byte	0
+ 581 0148 09       		.uleb128 0x9
+ 582 0149 D6030000 		.4byte	.LASF25
+ 583 014d 01       		.byte	0x1
+ 584 014e 6501     		.2byte	0x165
+ 585 0150 77000000 		.4byte	0x77
+ 586 0154 00000000 		.4byte	.LFB7
+ 587 0158 14000000 		.4byte	.LFE7-.LFB7
+ 588 015c 01       		.uleb128 0x1
+ 589 015d 9C       		.byte	0x9c
+ 590 015e 09       		.uleb128 0x9
+ 591 015f 29000000 		.4byte	.LASF26
+ 592 0163 01       		.byte	0x1
+ 593 0164 8601     		.2byte	0x186
+ 594 0166 77000000 		.4byte	0x77
+ 595 016a 00000000 		.4byte	.LFB8
+ 596 016e 0C000000 		.4byte	.LFE8-.LFB8
+ 597 0172 01       		.uleb128 0x1
+ 598 0173 9C       		.byte	0x9c
+ 599 0174 0A       		.uleb128 0xa
+ 600 0175 4B000000 		.4byte	.LASF27
+ 601 0179 01       		.byte	0x1
+ 602 017a 9F01     		.2byte	0x19f
+ 603 017c 00000000 		.4byte	.LFB9
+ 604 0180 0C000000 		.4byte	.LFE9-.LFB9
+ 605 0184 01       		.uleb128 0x1
+ 606 0185 9C       		.byte	0x9c
+ 607 0186 99010000 		.4byte	0x199
+ 608 018a 0B       		.uleb128 0xb
+ 609 018b C4000000 		.4byte	.LASF28
+ 610 018f 01       		.byte	0x1
+ 611 0190 9F01     		.2byte	0x19f
+ 612 0192 77000000 		.4byte	0x77
+ 613 0196 01       		.uleb128 0x1
+ 614 0197 50       		.byte	0x50
+ 615 0198 00       		.byte	0
+ 616 0199 09       		.uleb128 0x9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 22
+
+
+ 617 019a 43020000 		.4byte	.LASF29
+ 618 019e 01       		.byte	0x1
+ 619 019f B601     		.2byte	0x1b6
+ 620 01a1 77000000 		.4byte	0x77
+ 621 01a5 00000000 		.4byte	.LFB10
+ 622 01a9 0C000000 		.4byte	.LFE10-.LFB10
+ 623 01ad 01       		.uleb128 0x1
+ 624 01ae 9C       		.byte	0x9c
+ 625 01af 0A       		.uleb128 0xa
+ 626 01b0 06000000 		.4byte	.LASF30
+ 627 01b4 01       		.byte	0x1
+ 628 01b5 D101     		.2byte	0x1d1
+ 629 01b7 00000000 		.4byte	.LFB11
+ 630 01bb 0C000000 		.4byte	.LFE11-.LFB11
+ 631 01bf 01       		.uleb128 0x1
+ 632 01c0 9C       		.byte	0x9c
+ 633 01c1 D4010000 		.4byte	0x1d4
+ 634 01c5 0B       		.uleb128 0xb
+ 635 01c6 04040000 		.4byte	.LASF31
+ 636 01ca 01       		.byte	0x1
+ 637 01cb D101     		.2byte	0x1d1
+ 638 01cd 77000000 		.4byte	0x77
+ 639 01d1 01       		.uleb128 0x1
+ 640 01d2 50       		.byte	0x50
+ 641 01d3 00       		.byte	0
+ 642 01d4 09       		.uleb128 0x9
+ 643 01d5 75020000 		.4byte	.LASF32
+ 644 01d9 01       		.byte	0x1
+ 645 01da E901     		.2byte	0x1e9
+ 646 01dc 77000000 		.4byte	0x77
+ 647 01e0 00000000 		.4byte	.LFB12
+ 648 01e4 0C000000 		.4byte	.LFE12-.LFB12
+ 649 01e8 01       		.uleb128 0x1
+ 650 01e9 9C       		.byte	0x9c
+ 651 01ea 0A       		.uleb128 0xa
+ 652 01eb BB020000 		.4byte	.LASF33
+ 653 01ef 01       		.byte	0x1
+ 654 01f0 2E02     		.2byte	0x22e
+ 655 01f2 00000000 		.4byte	.LFB13
+ 656 01f6 14000000 		.4byte	.LFE13-.LFB13
+ 657 01fa 01       		.uleb128 0x1
+ 658 01fb 9C       		.byte	0x9c
+ 659 01fc 13020000 		.4byte	0x213
+ 660 0200 0C       		.uleb128 0xc
+ 661 0201 08000000 		.4byte	.LVL4
+ 662 0205 5E010000 		.4byte	0x15e
+ 663 0209 0C       		.uleb128 0xc
+ 664 020a 0C000000 		.4byte	.LVL5
+ 665 020e 0D010000 		.4byte	0x10d
+ 666 0212 00       		.byte	0
+ 667 0213 07       		.uleb128 0x7
+ 668 0214 F1020000 		.4byte	.LASF34
+ 669 0218 01       		.byte	0x1
+ 670 0219 25       		.byte	0x25
+ 671 021a 00000000 		.4byte	.LFB0
+ 672 021e 40000000 		.4byte	.LFE0-.LFB0
+ 673 0222 01       		.uleb128 0x1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 23
+
+
+ 674 0223 9C       		.byte	0x9c
+ 675 0224 AB020000 		.4byte	0x2ab
+ 676 0228 0D       		.uleb128 0xd
+ 677 0229 1E020000 		.4byte	.LASF41
+ 678 022d 01       		.byte	0x1
+ 679 022e 2D       		.byte	0x2d
+ 680 022f 6B000000 		.4byte	0x6b
+ 681 0233 00000000 		.4byte	.LLST0
+ 682 0237 0C       		.uleb128 0xc
+ 683 0238 06000000 		.4byte	.LVL6
+ 684 023c EA010000 		.4byte	0x1ea
+ 685 0240 0E       		.uleb128 0xe
+ 686 0241 0E000000 		.4byte	.LVL7
+ 687 0245 74010000 		.4byte	0x174
+ 688 0249 54020000 		.4byte	0x254
+ 689 024d 0F       		.uleb128 0xf
+ 690 024e 01       		.uleb128 0x1
+ 691 024f 50       		.byte	0x50
+ 692 0250 02       		.uleb128 0x2
+ 693 0251 09       		.byte	0x9
+ 694 0252 FE       		.byte	0xfe
+ 695 0253 00       		.byte	0
+ 696 0254 0E       		.uleb128 0xe
+ 697 0255 14000000 		.4byte	.LVL8
+ 698 0259 23010000 		.4byte	0x123
+ 699 025d 67020000 		.4byte	0x267
+ 700 0261 0F       		.uleb128 0xf
+ 701 0262 01       		.uleb128 0x1
+ 702 0263 50       		.byte	0x50
+ 703 0264 01       		.uleb128 0x1
+ 704 0265 30       		.byte	0x30
+ 705 0266 00       		.byte	0
+ 706 0267 0E       		.uleb128 0xe
+ 707 0268 1A000000 		.4byte	.LVL9
+ 708 026c EA000000 		.4byte	0xea
+ 709 0270 7A020000 		.4byte	0x27a
+ 710 0274 0F       		.uleb128 0xf
+ 711 0275 01       		.uleb128 0x1
+ 712 0276 50       		.byte	0x50
+ 713 0277 01       		.uleb128 0x1
+ 714 0278 30       		.byte	0x30
+ 715 0279 00       		.byte	0
+ 716 027a 0C       		.uleb128 0xc
+ 717 027b 1E000000 		.4byte	.LVL10
+ 718 027f 0D010000 		.4byte	0x10d
+ 719 0283 0E       		.uleb128 0xe
+ 720 0284 26000000 		.4byte	.LVL11
+ 721 0288 AF010000 		.4byte	0x1af
+ 722 028c 98020000 		.4byte	0x298
+ 723 0290 0F       		.uleb128 0xf
+ 724 0291 01       		.uleb128 0x1
+ 725 0292 50       		.byte	0x50
+ 726 0293 03       		.uleb128 0x3
+ 727 0294 0A       		.byte	0xa
+ 728 0295 007D     		.2byte	0x7d00
+ 729 0297 00       		.byte	0
+ 730 0298 0C       		.uleb128 0xc
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 24
+
+
+ 731 0299 2A000000 		.4byte	.LVL12
+ 732 029d DB020000 		.4byte	0x2db
+ 733 02a1 0C       		.uleb128 0xc
+ 734 02a2 38000000 		.4byte	.LVL13
+ 735 02a6 E6020000 		.4byte	0x2e6
+ 736 02aa 00       		.byte	0
+ 737 02ab 07       		.uleb128 0x7
+ 738 02ac 74030000 		.4byte	.LASF35
+ 739 02b0 01       		.byte	0x1
+ 740 02b1 B2       		.byte	0xb2
+ 741 02b2 00000000 		.4byte	.LFB2
+ 742 02b6 18000000 		.4byte	.LFE2-.LFB2
+ 743 02ba 01       		.uleb128 0x1
+ 744 02bb 9C       		.byte	0x9c
+ 745 02bc CA020000 		.4byte	0x2ca
+ 746 02c0 0C       		.uleb128 0xc
+ 747 02c1 0C000000 		.4byte	.LVL14
+ 748 02c5 13020000 		.4byte	0x213
+ 749 02c9 00       		.byte	0
+ 750 02ca 10       		.uleb128 0x10
+ 751 02cb 0C030000 		.4byte	.LASF42
+ 752 02cf 01       		.byte	0x1
+ 753 02d0 15       		.byte	0x15
+ 754 02d1 6B000000 		.4byte	0x6b
+ 755 02d5 05       		.uleb128 0x5
+ 756 02d6 03       		.byte	0x3
+ 757 02d7 00000000 		.4byte	Counter_pulse_counter_initVar
+ 758 02db 11       		.uleb128 0x11
+ 759 02dc 97020000 		.4byte	.LASF36
+ 760 02e0 97020000 		.4byte	.LASF36
+ 761 02e4 03       		.byte	0x3
+ 762 02e5 7D       		.byte	0x7d
+ 763 02e6 11       		.uleb128 0x11
+ 764 02e7 DB020000 		.4byte	.LASF37
+ 765 02eb DB020000 		.4byte	.LASF37
+ 766 02ef 03       		.byte	0x3
+ 767 02f0 7E       		.byte	0x7e
+ 768 02f1 00       		.byte	0
+ 769              		.section	.debug_abbrev,"",%progbits
+ 770              	.Ldebug_abbrev0:
+ 771 0000 01       		.uleb128 0x1
+ 772 0001 11       		.uleb128 0x11
+ 773 0002 01       		.byte	0x1
+ 774 0003 25       		.uleb128 0x25
+ 775 0004 0E       		.uleb128 0xe
+ 776 0005 13       		.uleb128 0x13
+ 777 0006 0B       		.uleb128 0xb
+ 778 0007 03       		.uleb128 0x3
+ 779 0008 0E       		.uleb128 0xe
+ 780 0009 1B       		.uleb128 0x1b
+ 781 000a 0E       		.uleb128 0xe
+ 782 000b 55       		.uleb128 0x55
+ 783 000c 17       		.uleb128 0x17
+ 784 000d 11       		.uleb128 0x11
+ 785 000e 01       		.uleb128 0x1
+ 786 000f 10       		.uleb128 0x10
+ 787 0010 17       		.uleb128 0x17
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 25
+
+
+ 788 0011 00       		.byte	0
+ 789 0012 00       		.byte	0
+ 790 0013 02       		.uleb128 0x2
+ 791 0014 24       		.uleb128 0x24
+ 792 0015 00       		.byte	0
+ 793 0016 0B       		.uleb128 0xb
+ 794 0017 0B       		.uleb128 0xb
+ 795 0018 3E       		.uleb128 0x3e
+ 796 0019 0B       		.uleb128 0xb
+ 797 001a 03       		.uleb128 0x3
+ 798 001b 0E       		.uleb128 0xe
+ 799 001c 00       		.byte	0
+ 800 001d 00       		.byte	0
+ 801 001e 03       		.uleb128 0x3
+ 802 001f 24       		.uleb128 0x24
+ 803 0020 00       		.byte	0
+ 804 0021 0B       		.uleb128 0xb
+ 805 0022 0B       		.uleb128 0xb
+ 806 0023 3E       		.uleb128 0x3e
+ 807 0024 0B       		.uleb128 0xb
+ 808 0025 03       		.uleb128 0x3
+ 809 0026 08       		.uleb128 0x8
+ 810 0027 00       		.byte	0
+ 811 0028 00       		.byte	0
+ 812 0029 04       		.uleb128 0x4
+ 813 002a 16       		.uleb128 0x16
+ 814 002b 00       		.byte	0
+ 815 002c 03       		.uleb128 0x3
+ 816 002d 0E       		.uleb128 0xe
+ 817 002e 3A       		.uleb128 0x3a
+ 818 002f 0B       		.uleb128 0xb
+ 819 0030 3B       		.uleb128 0x3b
+ 820 0031 05       		.uleb128 0x5
+ 821 0032 49       		.uleb128 0x49
+ 822 0033 13       		.uleb128 0x13
+ 823 0034 00       		.byte	0
+ 824 0035 00       		.byte	0
+ 825 0036 05       		.uleb128 0x5
+ 826 0037 35       		.uleb128 0x35
+ 827 0038 00       		.byte	0
+ 828 0039 49       		.uleb128 0x49
+ 829 003a 13       		.uleb128 0x13
+ 830 003b 00       		.byte	0
+ 831 003c 00       		.byte	0
+ 832 003d 06       		.uleb128 0x6
+ 833 003e 2E       		.uleb128 0x2e
+ 834 003f 00       		.byte	0
+ 835 0040 3F       		.uleb128 0x3f
+ 836 0041 19       		.uleb128 0x19
+ 837 0042 03       		.uleb128 0x3
+ 838 0043 0E       		.uleb128 0xe
+ 839 0044 3A       		.uleb128 0x3a
+ 840 0045 0B       		.uleb128 0xb
+ 841 0046 3B       		.uleb128 0x3b
+ 842 0047 0B       		.uleb128 0xb
+ 843 0048 27       		.uleb128 0x27
+ 844 0049 19       		.uleb128 0x19
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 26
+
+
+ 845 004a 11       		.uleb128 0x11
+ 846 004b 01       		.uleb128 0x1
+ 847 004c 12       		.uleb128 0x12
+ 848 004d 06       		.uleb128 0x6
+ 849 004e 40       		.uleb128 0x40
+ 850 004f 18       		.uleb128 0x18
+ 851 0050 9742     		.uleb128 0x2117
+ 852 0052 19       		.uleb128 0x19
+ 853 0053 00       		.byte	0
+ 854 0054 00       		.byte	0
+ 855 0055 07       		.uleb128 0x7
+ 856 0056 2E       		.uleb128 0x2e
+ 857 0057 01       		.byte	0x1
+ 858 0058 3F       		.uleb128 0x3f
+ 859 0059 19       		.uleb128 0x19
+ 860 005a 03       		.uleb128 0x3
+ 861 005b 0E       		.uleb128 0xe
+ 862 005c 3A       		.uleb128 0x3a
+ 863 005d 0B       		.uleb128 0xb
+ 864 005e 3B       		.uleb128 0x3b
+ 865 005f 0B       		.uleb128 0xb
+ 866 0060 27       		.uleb128 0x27
+ 867 0061 19       		.uleb128 0x19
+ 868 0062 11       		.uleb128 0x11
+ 869 0063 01       		.uleb128 0x1
+ 870 0064 12       		.uleb128 0x12
+ 871 0065 06       		.uleb128 0x6
+ 872 0066 40       		.uleb128 0x40
+ 873 0067 18       		.uleb128 0x18
+ 874 0068 9742     		.uleb128 0x2117
+ 875 006a 19       		.uleb128 0x19
+ 876 006b 01       		.uleb128 0x1
+ 877 006c 13       		.uleb128 0x13
+ 878 006d 00       		.byte	0
+ 879 006e 00       		.byte	0
+ 880 006f 08       		.uleb128 0x8
+ 881 0070 05       		.uleb128 0x5
+ 882 0071 00       		.byte	0
+ 883 0072 03       		.uleb128 0x3
+ 884 0073 0E       		.uleb128 0xe
+ 885 0074 3A       		.uleb128 0x3a
+ 886 0075 0B       		.uleb128 0xb
+ 887 0076 3B       		.uleb128 0x3b
+ 888 0077 0B       		.uleb128 0xb
+ 889 0078 49       		.uleb128 0x49
+ 890 0079 13       		.uleb128 0x13
+ 891 007a 02       		.uleb128 0x2
+ 892 007b 18       		.uleb128 0x18
+ 893 007c 00       		.byte	0
+ 894 007d 00       		.byte	0
+ 895 007e 09       		.uleb128 0x9
+ 896 007f 2E       		.uleb128 0x2e
+ 897 0080 00       		.byte	0
+ 898 0081 3F       		.uleb128 0x3f
+ 899 0082 19       		.uleb128 0x19
+ 900 0083 03       		.uleb128 0x3
+ 901 0084 0E       		.uleb128 0xe
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 27
+
+
+ 902 0085 3A       		.uleb128 0x3a
+ 903 0086 0B       		.uleb128 0xb
+ 904 0087 3B       		.uleb128 0x3b
+ 905 0088 05       		.uleb128 0x5
+ 906 0089 27       		.uleb128 0x27
+ 907 008a 19       		.uleb128 0x19
+ 908 008b 49       		.uleb128 0x49
+ 909 008c 13       		.uleb128 0x13
+ 910 008d 11       		.uleb128 0x11
+ 911 008e 01       		.uleb128 0x1
+ 912 008f 12       		.uleb128 0x12
+ 913 0090 06       		.uleb128 0x6
+ 914 0091 40       		.uleb128 0x40
+ 915 0092 18       		.uleb128 0x18
+ 916 0093 9742     		.uleb128 0x2117
+ 917 0095 19       		.uleb128 0x19
+ 918 0096 00       		.byte	0
+ 919 0097 00       		.byte	0
+ 920 0098 0A       		.uleb128 0xa
+ 921 0099 2E       		.uleb128 0x2e
+ 922 009a 01       		.byte	0x1
+ 923 009b 3F       		.uleb128 0x3f
+ 924 009c 19       		.uleb128 0x19
+ 925 009d 03       		.uleb128 0x3
+ 926 009e 0E       		.uleb128 0xe
+ 927 009f 3A       		.uleb128 0x3a
+ 928 00a0 0B       		.uleb128 0xb
+ 929 00a1 3B       		.uleb128 0x3b
+ 930 00a2 05       		.uleb128 0x5
+ 931 00a3 27       		.uleb128 0x27
+ 932 00a4 19       		.uleb128 0x19
+ 933 00a5 11       		.uleb128 0x11
+ 934 00a6 01       		.uleb128 0x1
+ 935 00a7 12       		.uleb128 0x12
+ 936 00a8 06       		.uleb128 0x6
+ 937 00a9 40       		.uleb128 0x40
+ 938 00aa 18       		.uleb128 0x18
+ 939 00ab 9742     		.uleb128 0x2117
+ 940 00ad 19       		.uleb128 0x19
+ 941 00ae 01       		.uleb128 0x1
+ 942 00af 13       		.uleb128 0x13
+ 943 00b0 00       		.byte	0
+ 944 00b1 00       		.byte	0
+ 945 00b2 0B       		.uleb128 0xb
+ 946 00b3 05       		.uleb128 0x5
+ 947 00b4 00       		.byte	0
+ 948 00b5 03       		.uleb128 0x3
+ 949 00b6 0E       		.uleb128 0xe
+ 950 00b7 3A       		.uleb128 0x3a
+ 951 00b8 0B       		.uleb128 0xb
+ 952 00b9 3B       		.uleb128 0x3b
+ 953 00ba 05       		.uleb128 0x5
+ 954 00bb 49       		.uleb128 0x49
+ 955 00bc 13       		.uleb128 0x13
+ 956 00bd 02       		.uleb128 0x2
+ 957 00be 18       		.uleb128 0x18
+ 958 00bf 00       		.byte	0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 28
+
+
+ 959 00c0 00       		.byte	0
+ 960 00c1 0C       		.uleb128 0xc
+ 961 00c2 898201   		.uleb128 0x4109
+ 962 00c5 00       		.byte	0
+ 963 00c6 11       		.uleb128 0x11
+ 964 00c7 01       		.uleb128 0x1
+ 965 00c8 31       		.uleb128 0x31
+ 966 00c9 13       		.uleb128 0x13
+ 967 00ca 00       		.byte	0
+ 968 00cb 00       		.byte	0
+ 969 00cc 0D       		.uleb128 0xd
+ 970 00cd 34       		.uleb128 0x34
+ 971 00ce 00       		.byte	0
+ 972 00cf 03       		.uleb128 0x3
+ 973 00d0 0E       		.uleb128 0xe
+ 974 00d1 3A       		.uleb128 0x3a
+ 975 00d2 0B       		.uleb128 0xb
+ 976 00d3 3B       		.uleb128 0x3b
+ 977 00d4 0B       		.uleb128 0xb
+ 978 00d5 49       		.uleb128 0x49
+ 979 00d6 13       		.uleb128 0x13
+ 980 00d7 02       		.uleb128 0x2
+ 981 00d8 17       		.uleb128 0x17
+ 982 00d9 00       		.byte	0
+ 983 00da 00       		.byte	0
+ 984 00db 0E       		.uleb128 0xe
+ 985 00dc 898201   		.uleb128 0x4109
+ 986 00df 01       		.byte	0x1
+ 987 00e0 11       		.uleb128 0x11
+ 988 00e1 01       		.uleb128 0x1
+ 989 00e2 31       		.uleb128 0x31
+ 990 00e3 13       		.uleb128 0x13
+ 991 00e4 01       		.uleb128 0x1
+ 992 00e5 13       		.uleb128 0x13
+ 993 00e6 00       		.byte	0
+ 994 00e7 00       		.byte	0
+ 995 00e8 0F       		.uleb128 0xf
+ 996 00e9 8A8201   		.uleb128 0x410a
+ 997 00ec 00       		.byte	0
+ 998 00ed 02       		.uleb128 0x2
+ 999 00ee 18       		.uleb128 0x18
+ 1000 00ef 9142     		.uleb128 0x2111
+ 1001 00f1 18       		.uleb128 0x18
+ 1002 00f2 00       		.byte	0
+ 1003 00f3 00       		.byte	0
+ 1004 00f4 10       		.uleb128 0x10
+ 1005 00f5 34       		.uleb128 0x34
+ 1006 00f6 00       		.byte	0
+ 1007 00f7 03       		.uleb128 0x3
+ 1008 00f8 0E       		.uleb128 0xe
+ 1009 00f9 3A       		.uleb128 0x3a
+ 1010 00fa 0B       		.uleb128 0xb
+ 1011 00fb 3B       		.uleb128 0x3b
+ 1012 00fc 0B       		.uleb128 0xb
+ 1013 00fd 49       		.uleb128 0x49
+ 1014 00fe 13       		.uleb128 0x13
+ 1015 00ff 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 29
+
+
+ 1016 0100 19       		.uleb128 0x19
+ 1017 0101 02       		.uleb128 0x2
+ 1018 0102 18       		.uleb128 0x18
+ 1019 0103 00       		.byte	0
+ 1020 0104 00       		.byte	0
+ 1021 0105 11       		.uleb128 0x11
+ 1022 0106 2E       		.uleb128 0x2e
+ 1023 0107 00       		.byte	0
+ 1024 0108 3F       		.uleb128 0x3f
+ 1025 0109 19       		.uleb128 0x19
+ 1026 010a 3C       		.uleb128 0x3c
+ 1027 010b 19       		.uleb128 0x19
+ 1028 010c 6E       		.uleb128 0x6e
+ 1029 010d 0E       		.uleb128 0xe
+ 1030 010e 03       		.uleb128 0x3
+ 1031 010f 0E       		.uleb128 0xe
+ 1032 0110 3A       		.uleb128 0x3a
+ 1033 0111 0B       		.uleb128 0xb
+ 1034 0112 3B       		.uleb128 0x3b
+ 1035 0113 0B       		.uleb128 0xb
+ 1036 0114 00       		.byte	0
+ 1037 0115 00       		.byte	0
+ 1038 0116 00       		.byte	0
+ 1039              		.section	.debug_loc,"",%progbits
+ 1040              	.Ldebug_loc0:
+ 1041              	.LLST0:
+ 1042 0000 2A000000 		.4byte	.LVL12
+ 1043 0004 37000000 		.4byte	.LVL13-1
+ 1044 0008 0100     		.2byte	0x1
+ 1045 000a 50       		.byte	0x50
+ 1046 000b 00000000 		.4byte	0
+ 1047 000f 00000000 		.4byte	0
+ 1048              		.section	.debug_aranges,"",%progbits
+ 1049 0000 84000000 		.4byte	0x84
+ 1050 0004 0200     		.2byte	0x2
+ 1051 0006 00000000 		.4byte	.Ldebug_info0
+ 1052 000a 04       		.byte	0x4
+ 1053 000b 00       		.byte	0
+ 1054 000c 0000     		.2byte	0
+ 1055 000e 0000     		.2byte	0
+ 1056 0010 00000000 		.4byte	.LFB1
+ 1057 0014 02000000 		.4byte	.LFE1-.LFB1
+ 1058 0018 00000000 		.4byte	.LFB3
+ 1059 001c 02000000 		.4byte	.LFE3-.LFB3
+ 1060 0020 00000000 		.4byte	.LFB4
+ 1061 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1062 0028 00000000 		.4byte	.LFB5
+ 1063 002c 0C000000 		.4byte	.LFE5-.LFB5
+ 1064 0030 00000000 		.4byte	.LFB6
+ 1065 0034 0C000000 		.4byte	.LFE6-.LFB6
+ 1066 0038 00000000 		.4byte	.LFB7
+ 1067 003c 14000000 		.4byte	.LFE7-.LFB7
+ 1068 0040 00000000 		.4byte	.LFB8
+ 1069 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1070 0048 00000000 		.4byte	.LFB9
+ 1071 004c 0C000000 		.4byte	.LFE9-.LFB9
+ 1072 0050 00000000 		.4byte	.LFB10
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 30
+
+
+ 1073 0054 0C000000 		.4byte	.LFE10-.LFB10
+ 1074 0058 00000000 		.4byte	.LFB11
+ 1075 005c 0C000000 		.4byte	.LFE11-.LFB11
+ 1076 0060 00000000 		.4byte	.LFB12
+ 1077 0064 0C000000 		.4byte	.LFE12-.LFB12
+ 1078 0068 00000000 		.4byte	.LFB13
+ 1079 006c 14000000 		.4byte	.LFE13-.LFB13
+ 1080 0070 00000000 		.4byte	.LFB0
+ 1081 0074 40000000 		.4byte	.LFE0-.LFB0
+ 1082 0078 00000000 		.4byte	.LFB2
+ 1083 007c 18000000 		.4byte	.LFE2-.LFB2
+ 1084 0080 00000000 		.4byte	0
+ 1085 0084 00000000 		.4byte	0
+ 1086              		.section	.debug_ranges,"",%progbits
+ 1087              	.Ldebug_ranges0:
+ 1088 0000 00000000 		.4byte	.LFB1
+ 1089 0004 02000000 		.4byte	.LFE1
+ 1090 0008 00000000 		.4byte	.LFB3
+ 1091 000c 02000000 		.4byte	.LFE3
+ 1092 0010 00000000 		.4byte	.LFB4
+ 1093 0014 0C000000 		.4byte	.LFE4
+ 1094 0018 00000000 		.4byte	.LFB5
+ 1095 001c 0C000000 		.4byte	.LFE5
+ 1096 0020 00000000 		.4byte	.LFB6
+ 1097 0024 0C000000 		.4byte	.LFE6
+ 1098 0028 00000000 		.4byte	.LFB7
+ 1099 002c 14000000 		.4byte	.LFE7
+ 1100 0030 00000000 		.4byte	.LFB8
+ 1101 0034 0C000000 		.4byte	.LFE8
+ 1102 0038 00000000 		.4byte	.LFB9
+ 1103 003c 0C000000 		.4byte	.LFE9
+ 1104 0040 00000000 		.4byte	.LFB10
+ 1105 0044 0C000000 		.4byte	.LFE10
+ 1106 0048 00000000 		.4byte	.LFB11
+ 1107 004c 0C000000 		.4byte	.LFE11
+ 1108 0050 00000000 		.4byte	.LFB12
+ 1109 0054 0C000000 		.4byte	.LFE12
+ 1110 0058 00000000 		.4byte	.LFB13
+ 1111 005c 14000000 		.4byte	.LFE13
+ 1112 0060 00000000 		.4byte	.LFB0
+ 1113 0064 40000000 		.4byte	.LFE0
+ 1114 0068 00000000 		.4byte	.LFB2
+ 1115 006c 18000000 		.4byte	.LFE2
+ 1116 0070 00000000 		.4byte	0
+ 1117 0074 00000000 		.4byte	0
+ 1118              		.section	.debug_line,"",%progbits
+ 1119              	.Ldebug_line0:
+ 1120 0000 65010000 		.section	.debug_str,"MS",%progbits,1
+ 1120      02005D00 
+ 1120      00000201 
+ 1120      FB0E0D00 
+ 1120      01010101 
+ 1121              	.LASF15:
+ 1122 0000 72656731 		.ascii	"reg16\000"
+ 1122      3600
+ 1123              	.LASF30:
+ 1124 0006 436F756E 		.ascii	"Counter_pulse_counter_WriteCompare\000"
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 31
+
+
+ 1124      7465725F 
+ 1124      70756C73 
+ 1124      655F636F 
+ 1124      756E7465 
+ 1125              	.LASF26:
+ 1126 0029 436F756E 		.ascii	"Counter_pulse_counter_ReadCapture\000"
+ 1126      7465725F 
+ 1126      70756C73 
+ 1126      655F636F 
+ 1126      756E7465 
+ 1127              	.LASF27:
+ 1128 004b 436F756E 		.ascii	"Counter_pulse_counter_WritePeriod\000"
+ 1128      7465725F 
+ 1128      70756C73 
+ 1128      655F636F 
+ 1128      756E7465 
+ 1129              	.LASF40:
+ 1130 006d 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
+ 1130      6F6E6173 
+ 1130      68202D20 
+ 1130      4C656769 
+ 1130      6F6E5C59 
+ 1131 009b 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
+ 1131      6D706F6E 
+ 1131      656E7473 
+ 1131      5C436F6C 
+ 1131      6F75725F 
+ 1132              	.LASF28:
+ 1133 00c4 70657269 		.ascii	"period\000"
+ 1133      6F6400
+ 1134              	.LASF3:
+ 1135 00cb 73686F72 		.ascii	"short unsigned int\000"
+ 1135      7420756E 
+ 1135      7369676E 
+ 1135      65642069 
+ 1135      6E7400
+ 1136              	.LASF11:
+ 1137 00de 666C6F61 		.ascii	"float\000"
+ 1137      7400
+ 1138              	.LASF23:
+ 1139 00e4 636F756E 		.ascii	"counter\000"
+ 1139      74657200 
+ 1140              	.LASF7:
+ 1141 00ec 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1141      206C6F6E 
+ 1141      6720756E 
+ 1141      7369676E 
+ 1141      65642069 
+ 1142              	.LASF1:
+ 1143 0103 756E7369 		.ascii	"unsigned char\000"
+ 1143      676E6564 
+ 1143      20636861 
+ 1143      7200
+ 1144              	.LASF38:
+ 1145 0111 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1145      43313120 
+ 1145      352E342E 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 32
+
+
+ 1145      31203230 
+ 1145      31363036 
+ 1146 0144 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1146      20726576 
+ 1146      6973696F 
+ 1146      6E203233 
+ 1146      37373135 
+ 1147 0177 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1147      66756E63 
+ 1147      74696F6E 
+ 1147      2D736563 
+ 1147      74696F6E 
+ 1148              	.LASF14:
+ 1149 019f 72656738 		.ascii	"reg8\000"
+ 1149      00
+ 1150              	.LASF24:
+ 1151 01a4 436F756E 		.ascii	"Counter_pulse_counter_ReadStatusRegister\000"
+ 1151      7465725F 
+ 1151      70756C73 
+ 1151      655F636F 
+ 1151      756E7465 
+ 1152              	.LASF5:
+ 1153 01cd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1153      20756E73 
+ 1153      69676E65 
+ 1153      6420696E 
+ 1153      7400
+ 1154              	.LASF9:
+ 1155 01df 75696E74 		.ascii	"uint8\000"
+ 1155      3800
+ 1156              	.LASF22:
+ 1157 01e5 696E7465 		.ascii	"interruptsMask\000"
+ 1157      72727570 
+ 1157      74734D61 
+ 1157      736B00
+ 1158              	.LASF21:
+ 1159 01f4 436F756E 		.ascii	"Counter_pulse_counter_WriteCounter\000"
+ 1159      7465725F 
+ 1159      70756C73 
+ 1159      655F636F 
+ 1159      756E7465 
+ 1160              	.LASF12:
+ 1161 0217 646F7562 		.ascii	"double\000"
+ 1161      6C6500
+ 1162              	.LASF41:
+ 1163 021e 436F756E 		.ascii	"Counter_pulse_counter_interruptState\000"
+ 1163      7465725F 
+ 1163      70756C73 
+ 1163      655F636F 
+ 1163      756E7465 
+ 1164              	.LASF29:
+ 1165 0243 436F756E 		.ascii	"Counter_pulse_counter_ReadPeriod\000"
+ 1165      7465725F 
+ 1165      70756C73 
+ 1165      655F636F 
+ 1165      756E7465 
+ 1166              	.LASF2:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 33
+
+
+ 1167 0264 73686F72 		.ascii	"short int\000"
+ 1167      7420696E 
+ 1167      7400
+ 1168              	.LASF10:
+ 1169 026e 75696E74 		.ascii	"uint16\000"
+ 1169      313600
+ 1170              	.LASF32:
+ 1171 0275 436F756E 		.ascii	"Counter_pulse_counter_ReadCompare\000"
+ 1171      7465725F 
+ 1171      70756C73 
+ 1171      655F636F 
+ 1171      756E7465 
+ 1172              	.LASF36:
+ 1173 0297 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1173      74657243 
+ 1173      72697469 
+ 1173      63616C53 
+ 1173      65637469 
+ 1174              	.LASF8:
+ 1175 02ae 756E7369 		.ascii	"unsigned int\000"
+ 1175      676E6564 
+ 1175      20696E74 
+ 1175      00
+ 1176              	.LASF33:
+ 1177 02bb 436F756E 		.ascii	"Counter_pulse_counter_ClearFIFO\000"
+ 1177      7465725F 
+ 1177      70756C73 
+ 1177      655F636F 
+ 1177      756E7465 
+ 1178              	.LASF37:
+ 1179 02db 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1179      69744372 
+ 1179      69746963 
+ 1179      616C5365 
+ 1179      6374696F 
+ 1180              	.LASF34:
+ 1181 02f1 436F756E 		.ascii	"Counter_pulse_counter_Init\000"
+ 1181      7465725F 
+ 1181      70756C73 
+ 1181      655F636F 
+ 1181      756E7465 
+ 1182              	.LASF42:
+ 1183 030c 436F756E 		.ascii	"Counter_pulse_counter_initVar\000"
+ 1183      7465725F 
+ 1183      70756C73 
+ 1183      655F636F 
+ 1183      756E7465 
+ 1184              	.LASF16:
+ 1185 032a 6C6F6E67 		.ascii	"long double\000"
+ 1185      20646F75 
+ 1185      626C6500 
+ 1186              	.LASF17:
+ 1187 0336 73697A65 		.ascii	"sizetype\000"
+ 1187      74797065 
+ 1187      00
+ 1188              	.LASF6:
+ 1189 033f 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccL5qegM.s 			page 34
+
+
+ 1189      206C6F6E 
+ 1189      6720696E 
+ 1189      7400
+ 1190              	.LASF20:
+ 1191 034d 436F756E 		.ascii	"Counter_pulse_counter_SetInterruptMode\000"
+ 1191      7465725F 
+ 1191      70756C73 
+ 1191      655F636F 
+ 1191      756E7465 
+ 1192              	.LASF35:
+ 1193 0374 436F756E 		.ascii	"Counter_pulse_counter_Start\000"
+ 1193      7465725F 
+ 1193      70756C73 
+ 1193      655F636F 
+ 1193      756E7465 
+ 1194              	.LASF18:
+ 1195 0390 436F756E 		.ascii	"Counter_pulse_counter_Enable\000"
+ 1195      7465725F 
+ 1195      70756C73 
+ 1195      655F636F 
+ 1195      756E7465 
+ 1196              	.LASF19:
+ 1197 03ad 436F756E 		.ascii	"Counter_pulse_counter_Stop\000"
+ 1197      7465725F 
+ 1197      70756C73 
+ 1197      655F636F 
+ 1197      756E7465 
+ 1198              	.LASF4:
+ 1199 03c8 6C6F6E67 		.ascii	"long int\000"
+ 1199      20696E74 
+ 1199      00
+ 1200              	.LASF13:
+ 1201 03d1 63686172 		.ascii	"char\000"
+ 1201      00
+ 1202              	.LASF25:
+ 1203 03d6 436F756E 		.ascii	"Counter_pulse_counter_ReadCounter\000"
+ 1203      7465725F 
+ 1203      70756C73 
+ 1203      655F636F 
+ 1203      756E7465 
+ 1204              	.LASF0:
+ 1205 03f8 7369676E 		.ascii	"signed char\000"
+ 1205      65642063 
+ 1205      68617200 
+ 1206              	.LASF31:
+ 1207 0404 636F6D70 		.ascii	"compare\000"
+ 1207      61726500 
+ 1208              	.LASF39:
+ 1209 040c 47656E65 		.ascii	"Generated_Source\\PSoC5\\Counter_pulse_counter.c\000"
+ 1209      72617465 
+ 1209      645F536F 
+ 1209      75726365 
+ 1209      5C50536F 
+ 1210              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

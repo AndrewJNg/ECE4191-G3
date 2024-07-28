@@ -1,0 +1,899 @@
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Count7_1ms_PM.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Count7_1ms_SaveConfig,"ax",%progbits
+  20              		.align	2
+  21              		.global	Count7_1ms_SaveConfig
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Count7_1ms_SaveConfig, %function
+  25              	Count7_1ms_SaveConfig:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\Count7_1ms_PM.c"
+   1:Generated_Source\PSoC5/Count7_1ms_PM.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Count7_1ms_PM.c **** * File Name: Count7_1ms_PM.c
+   3:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Version 1.0
+   4:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+   5:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Description:
+   6:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  This file provides Low power mode APIs for Count7 component.
+   7:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+   8:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Note:
+   9:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  10:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  11:Generated_Source\PSoC5/Count7_1ms_PM.c **** ********************************************************************************
+  12:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/Count7_1ms_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:Generated_Source\PSoC5/Count7_1ms_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:Generated_Source\PSoC5/Count7_1ms_PM.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/Count7_1ms_PM.c **** *******************************************************************************/
+  17:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  18:Generated_Source\PSoC5/Count7_1ms_PM.c **** #include "Count7_1ms.h"
+  19:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  20:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  21:Generated_Source\PSoC5/Count7_1ms_PM.c **** Count7_1ms_BACKUP_STRUCT Count7_1ms_backup;
+  22:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  23:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  24:Generated_Source\PSoC5/Count7_1ms_PM.c **** /*******************************************************************************
+  25:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Function Name: Count7_1ms_SaveConfig
+  26:Generated_Source\PSoC5/Count7_1ms_PM.c **** ********************************************************************************
+  27:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  28:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Summary:
+  29:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  This function saves the component configuration and non-retention registers.
+  30:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  This function is called by the Count7_Sleep() function.
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  32:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Parameters:
+  33:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  34:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  35:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Return:
+  36:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  37:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  38:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Global Variables:
+  39:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  Count7_1ms_backup - used to save component configuration and non-
+  40:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  retention registers before enter sleep mode.
+  41:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  42:Generated_Source\PSoC5/Count7_1ms_PM.c **** *******************************************************************************/
+  43:Generated_Source\PSoC5/Count7_1ms_PM.c **** void Count7_1ms_SaveConfig(void) 
+  44:Generated_Source\PSoC5/Count7_1ms_PM.c **** {
+  28              		.loc 1 44 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  45:Generated_Source\PSoC5/Count7_1ms_PM.c ****     Count7_1ms_backup.count = Count7_1ms_COUNT_REG;
+  33              		.loc 1 45 0
+  34 0000 024B     		ldr	r3, .L2
+  35 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  36 0004 024B     		ldr	r3, .L2+4
+  37 0006 5A70     		strb	r2, [r3, #1]
+  38 0008 7047     		bx	lr
+  39              	.L3:
+  40 000a 00BF     		.align	2
+  41              	.L2:
+  42 000c 70640040 		.word	1073767536
+  43 0010 00000000 		.word	Count7_1ms_backup
+  44              		.cfi_endproc
+  45              	.LFE0:
+  46              		.size	Count7_1ms_SaveConfig, .-Count7_1ms_SaveConfig
+  47              		.section	.text.Count7_1ms_Sleep,"ax",%progbits
+  48              		.align	2
+  49              		.global	Count7_1ms_Sleep
+  50              		.thumb
+  51              		.thumb_func
+  52              		.type	Count7_1ms_Sleep, %function
+  53              	Count7_1ms_Sleep:
+  54              	.LFB1:
+  46:Generated_Source\PSoC5/Count7_1ms_PM.c **** }
+  47:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  48:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  49:Generated_Source\PSoC5/Count7_1ms_PM.c **** /*******************************************************************************
+  50:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Function Name: Count7_1ms_Sleep
+  51:Generated_Source\PSoC5/Count7_1ms_PM.c **** ********************************************************************************
+  52:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  53:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Summary:
+  54:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  This is the preferred API to prepare the component for low power mode
+  55:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  operation. The Count7_Sleep() API saves the current component state using
+  56:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  Count7_SaveConfig() and disables the counter.
+  57:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  58:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Parameters:
+  59:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  60:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 3
+
+
+  61:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Return:
+  62:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  63:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  64:Generated_Source\PSoC5/Count7_1ms_PM.c **** *******************************************************************************/
+  65:Generated_Source\PSoC5/Count7_1ms_PM.c **** void Count7_1ms_Sleep(void) 
+  66:Generated_Source\PSoC5/Count7_1ms_PM.c **** {
+  55              		.loc 1 66 0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 0000 08B5     		push	{r3, lr}
+  60              		.cfi_def_cfa_offset 8
+  61              		.cfi_offset 3, -8
+  62              		.cfi_offset 14, -4
+  67:Generated_Source\PSoC5/Count7_1ms_PM.c ****     if(0u != (Count7_1ms_AUX_CONTROL_REG & Count7_1ms_COUNTER_START))
+  63              		.loc 1 67 0
+  64 0002 084B     		ldr	r3, .L8
+  65 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  66 0006 13F0200F 		tst	r3, #32
+  67 000a 05D0     		beq	.L5
+  68:Generated_Source\PSoC5/Count7_1ms_PM.c ****     {
+  69:Generated_Source\PSoC5/Count7_1ms_PM.c ****         Count7_1ms_backup.enableState = 1u;
+  68              		.loc 1 69 0
+  69 000c 0122     		movs	r2, #1
+  70 000e 064B     		ldr	r3, .L8+4
+  71 0010 1A70     		strb	r2, [r3]
+  70:Generated_Source\PSoC5/Count7_1ms_PM.c ****         Count7_1ms_Stop();
+  72              		.loc 1 70 0
+  73 0012 FFF7FEFF 		bl	Count7_1ms_Stop
+  74              	.LVL0:
+  75 0016 02E0     		b	.L6
+  76              	.L5:
+  71:Generated_Source\PSoC5/Count7_1ms_PM.c ****     }
+  72:Generated_Source\PSoC5/Count7_1ms_PM.c ****     else
+  73:Generated_Source\PSoC5/Count7_1ms_PM.c ****     {
+  74:Generated_Source\PSoC5/Count7_1ms_PM.c ****         Count7_1ms_backup.enableState = 0u;
+  77              		.loc 1 74 0
+  78 0018 0022     		movs	r2, #0
+  79 001a 034B     		ldr	r3, .L8+4
+  80 001c 1A70     		strb	r2, [r3]
+  81              	.L6:
+  75:Generated_Source\PSoC5/Count7_1ms_PM.c ****     }
+  76:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  77:Generated_Source\PSoC5/Count7_1ms_PM.c ****     Count7_1ms_SaveConfig();
+  82              		.loc 1 77 0
+  83 001e FFF7FEFF 		bl	Count7_1ms_SaveConfig
+  84              	.LVL1:
+  85 0022 08BD     		pop	{r3, pc}
+  86              	.L9:
+  87              		.align	2
+  88              	.L8:
+  89 0024 90640040 		.word	1073767568
+  90 0028 00000000 		.word	Count7_1ms_backup
+  91              		.cfi_endproc
+  92              	.LFE1:
+  93              		.size	Count7_1ms_Sleep, .-Count7_1ms_Sleep
+  94              		.section	.text.Count7_1ms_RestoreConfig,"ax",%progbits
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 4
+
+
+  95              		.align	2
+  96              		.global	Count7_1ms_RestoreConfig
+  97              		.thumb
+  98              		.thumb_func
+  99              		.type	Count7_1ms_RestoreConfig, %function
+ 100              	Count7_1ms_RestoreConfig:
+ 101              	.LFB2:
+  78:Generated_Source\PSoC5/Count7_1ms_PM.c **** }
+  79:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  80:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+  81:Generated_Source\PSoC5/Count7_1ms_PM.c **** /*******************************************************************************
+  82:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Function Name: Count7_1ms_RestoreConfig
+  83:Generated_Source\PSoC5/Count7_1ms_PM.c **** ********************************************************************************
+  84:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  85:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Summary:
+  86:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  This function restores the component configuration and non-retention
+  87:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  registers. This function is called by the Count7_Wakeup() function.
+  88:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  89:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Parameters:
+  90:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  91:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  92:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Return:
+  93:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+  94:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  95:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Global Variables:
+  96:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  Count7_1ms_backup - used to save component configuration and
+  97:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  non-retention registers before exit sleep mode.
+  98:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+  99:Generated_Source\PSoC5/Count7_1ms_PM.c **** *******************************************************************************/
+ 100:Generated_Source\PSoC5/Count7_1ms_PM.c **** void Count7_1ms_RestoreConfig(void) 
+ 101:Generated_Source\PSoC5/Count7_1ms_PM.c **** {
+ 102              		.loc 1 101 0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              		@ link register save eliminated.
+ 102:Generated_Source\PSoC5/Count7_1ms_PM.c ****     Count7_1ms_COUNT_REG = Count7_1ms_backup.count;
+ 107              		.loc 1 102 0
+ 108 0000 024B     		ldr	r3, .L11
+ 109 0002 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 110 0004 024B     		ldr	r3, .L11+4
+ 111 0006 1A70     		strb	r2, [r3]
+ 112 0008 7047     		bx	lr
+ 113              	.L12:
+ 114 000a 00BF     		.align	2
+ 115              	.L11:
+ 116 000c 00000000 		.word	Count7_1ms_backup
+ 117 0010 70640040 		.word	1073767536
+ 118              		.cfi_endproc
+ 119              	.LFE2:
+ 120              		.size	Count7_1ms_RestoreConfig, .-Count7_1ms_RestoreConfig
+ 121              		.section	.text.Count7_1ms_Wakeup,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	Count7_1ms_Wakeup
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	Count7_1ms_Wakeup, %function
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 5
+
+
+ 127              	Count7_1ms_Wakeup:
+ 128              	.LFB3:
+ 103:Generated_Source\PSoC5/Count7_1ms_PM.c **** }
+ 104:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+ 105:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+ 106:Generated_Source\PSoC5/Count7_1ms_PM.c **** /*******************************************************************************
+ 107:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Function Name: Count7_1ms_Wakeup
+ 108:Generated_Source\PSoC5/Count7_1ms_PM.c **** ********************************************************************************
+ 109:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+ 110:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Summary:
+ 111:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  This is the preferred API to restore the component to the state when
+ 112:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  Count7_Sleep() was called. The Count7_Wakeup() function calls the
+ 113:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  Count7_RestoreConfig() function to restore the configuration.
+ 114:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+ 115:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Parameters:
+ 116:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+ 117:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+ 118:Generated_Source\PSoC5/Count7_1ms_PM.c **** * Return:
+ 119:Generated_Source\PSoC5/Count7_1ms_PM.c **** *  None
+ 120:Generated_Source\PSoC5/Count7_1ms_PM.c **** *
+ 121:Generated_Source\PSoC5/Count7_1ms_PM.c **** *******************************************************************************/
+ 122:Generated_Source\PSoC5/Count7_1ms_PM.c **** void Count7_1ms_Wakeup(void) 
+ 123:Generated_Source\PSoC5/Count7_1ms_PM.c **** {
+ 129              		.loc 1 123 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133 0000 08B5     		push	{r3, lr}
+ 134              		.cfi_def_cfa_offset 8
+ 135              		.cfi_offset 3, -8
+ 136              		.cfi_offset 14, -4
+ 124:Generated_Source\PSoC5/Count7_1ms_PM.c ****     Count7_1ms_RestoreConfig();
+ 137              		.loc 1 124 0
+ 138 0002 FFF7FEFF 		bl	Count7_1ms_RestoreConfig
+ 139              	.LVL2:
+ 125:Generated_Source\PSoC5/Count7_1ms_PM.c **** 
+ 126:Generated_Source\PSoC5/Count7_1ms_PM.c ****     /* Restore enable state */
+ 127:Generated_Source\PSoC5/Count7_1ms_PM.c ****     if (Count7_1ms_backup.enableState != 0u)
+ 140              		.loc 1 127 0
+ 141 0006 034B     		ldr	r3, .L16
+ 142 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 143 000a 0BB1     		cbz	r3, .L13
+ 128:Generated_Source\PSoC5/Count7_1ms_PM.c ****     {
+ 129:Generated_Source\PSoC5/Count7_1ms_PM.c ****         Count7_1ms_Enable();
+ 144              		.loc 1 129 0
+ 145 000c FFF7FEFF 		bl	Count7_1ms_Enable
+ 146              	.LVL3:
+ 147              	.L13:
+ 148 0010 08BD     		pop	{r3, pc}
+ 149              	.L17:
+ 150 0012 00BF     		.align	2
+ 151              	.L16:
+ 152 0014 00000000 		.word	Count7_1ms_backup
+ 153              		.cfi_endproc
+ 154              	.LFE3:
+ 155              		.size	Count7_1ms_Wakeup, .-Count7_1ms_Wakeup
+ 156              		.comm	Count7_1ms_backup,2,4
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 6
+
+
+ 157              		.text
+ 158              	.Letext0:
+ 159              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 160              		.file 3 "Generated_Source\\PSoC5\\Count7_1ms.h"
+ 161              		.section	.debug_info,"",%progbits
+ 162              	.Ldebug_info0:
+ 163 0000 6D010000 		.4byte	0x16d
+ 164 0004 0400     		.2byte	0x4
+ 165 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 166 000a 04       		.byte	0x4
+ 167 000b 01       		.uleb128 0x1
+ 168 000c 8F000000 		.4byte	.LASF25
+ 169 0010 0C       		.byte	0xc
+ 170 0011 0E000000 		.4byte	.LASF26
+ 171 0015 71010000 		.4byte	.LASF27
+ 172 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 173 001d 00000000 		.4byte	0
+ 174 0021 00000000 		.4byte	.Ldebug_line0
+ 175 0025 02       		.uleb128 0x2
+ 176 0026 01       		.byte	0x1
+ 177 0027 06       		.byte	0x6
+ 178 0028 06020000 		.4byte	.LASF0
+ 179 002c 02       		.uleb128 0x2
+ 180 002d 01       		.byte	0x1
+ 181 002e 08       		.byte	0x8
+ 182 002f 63010000 		.4byte	.LASF1
+ 183 0033 02       		.uleb128 0x2
+ 184 0034 02       		.byte	0x2
+ 185 0035 05       		.byte	0x5
+ 186 0036 42020000 		.4byte	.LASF2
+ 187 003a 02       		.uleb128 0x2
+ 188 003b 02       		.byte	0x2
+ 189 003c 07       		.byte	0x7
+ 190 003d F3010000 		.4byte	.LASF3
+ 191 0041 02       		.uleb128 0x2
+ 192 0042 04       		.byte	0x4
+ 193 0043 05       		.byte	0x5
+ 194 0044 EA010000 		.4byte	.LASF4
+ 195 0048 02       		.uleb128 0x2
+ 196 0049 04       		.byte	0x4
+ 197 004a 07       		.byte	0x7
+ 198 004b 23010000 		.4byte	.LASF5
+ 199 004f 02       		.uleb128 0x2
+ 200 0050 08       		.byte	0x8
+ 201 0051 05       		.byte	0x5
+ 202 0052 00000000 		.4byte	.LASF6
+ 203 0056 02       		.uleb128 0x2
+ 204 0057 08       		.byte	0x8
+ 205 0058 07       		.byte	0x7
+ 206 0059 35010000 		.4byte	.LASF7
+ 207 005d 03       		.uleb128 0x3
+ 208 005e 04       		.byte	0x4
+ 209 005f 05       		.byte	0x5
+ 210 0060 696E7400 		.ascii	"int\000"
+ 211 0064 02       		.uleb128 0x2
+ 212 0065 04       		.byte	0x4
+ 213 0066 07       		.byte	0x7
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 7
+
+
+ 214 0067 41000000 		.4byte	.LASF8
+ 215 006b 04       		.uleb128 0x4
+ 216 006c 1D010000 		.4byte	.LASF12
+ 217 0070 02       		.byte	0x2
+ 218 0071 E801     		.2byte	0x1e8
+ 219 0073 2C000000 		.4byte	0x2c
+ 220 0077 02       		.uleb128 0x2
+ 221 0078 04       		.byte	0x4
+ 222 0079 04       		.byte	0x4
+ 223 007a 4C010000 		.4byte	.LASF9
+ 224 007e 02       		.uleb128 0x2
+ 225 007f 08       		.byte	0x8
+ 226 0080 04       		.byte	0x4
+ 227 0081 E3010000 		.4byte	.LASF10
+ 228 0085 02       		.uleb128 0x2
+ 229 0086 01       		.byte	0x1
+ 230 0087 08       		.byte	0x8
+ 231 0088 C8010000 		.4byte	.LASF11
+ 232 008c 04       		.uleb128 0x4
+ 233 008d 4C020000 		.4byte	.LASF13
+ 234 0091 02       		.byte	0x2
+ 235 0092 9202     		.2byte	0x292
+ 236 0094 98000000 		.4byte	0x98
+ 237 0098 05       		.uleb128 0x5
+ 238 0099 6B000000 		.4byte	0x6b
+ 239 009d 02       		.uleb128 0x2
+ 240 009e 08       		.byte	0x8
+ 241 009f 04       		.byte	0x4
+ 242 00a0 36020000 		.4byte	.LASF14
+ 243 00a4 02       		.uleb128 0x2
+ 244 00a5 04       		.byte	0x4
+ 245 00a6 07       		.byte	0x7
+ 246 00a7 51020000 		.4byte	.LASF15
+ 247 00ab 06       		.uleb128 0x6
+ 248 00ac 02       		.byte	0x2
+ 249 00ad 03       		.byte	0x3
+ 250 00ae 36       		.byte	0x36
+ 251 00af CC000000 		.4byte	0xcc
+ 252 00b3 07       		.uleb128 0x7
+ 253 00b4 35000000 		.4byte	.LASF16
+ 254 00b8 03       		.byte	0x3
+ 255 00b9 38       		.byte	0x38
+ 256 00ba 6B000000 		.4byte	0x6b
+ 257 00be 00       		.byte	0
+ 258 00bf 07       		.uleb128 0x7
+ 259 00c0 CD010000 		.4byte	.LASF17
+ 260 00c4 03       		.byte	0x3
+ 261 00c5 39       		.byte	0x39
+ 262 00c6 6B000000 		.4byte	0x6b
+ 263 00ca 01       		.byte	0x1
+ 264 00cb 00       		.byte	0
+ 265 00cc 08       		.uleb128 0x8
+ 266 00cd 64000000 		.4byte	.LASF18
+ 267 00d1 03       		.byte	0x3
+ 268 00d2 3A       		.byte	0x3a
+ 269 00d3 AB000000 		.4byte	0xab
+ 270 00d7 09       		.uleb128 0x9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 8
+
+
+ 271 00d8 4E000000 		.4byte	.LASF19
+ 272 00dc 01       		.byte	0x1
+ 273 00dd 2B       		.byte	0x2b
+ 274 00de 00000000 		.4byte	.LFB0
+ 275 00e2 14000000 		.4byte	.LFE0-.LFB0
+ 276 00e6 01       		.uleb128 0x1
+ 277 00e7 9C       		.byte	0x9c
+ 278 00e8 0A       		.uleb128 0xa
+ 279 00e9 52010000 		.4byte	.LASF21
+ 280 00ed 01       		.byte	0x1
+ 281 00ee 41       		.byte	0x41
+ 282 00ef 00000000 		.4byte	.LFB1
+ 283 00f3 2C000000 		.4byte	.LFE1-.LFB1
+ 284 00f7 01       		.uleb128 0x1
+ 285 00f8 9C       		.byte	0x9c
+ 286 00f9 10010000 		.4byte	0x110
+ 287 00fd 0B       		.uleb128 0xb
+ 288 00fe 16000000 		.4byte	.LVL0
+ 289 0102 5A010000 		.4byte	0x15a
+ 290 0106 0B       		.uleb128 0xb
+ 291 0107 22000000 		.4byte	.LVL1
+ 292 010b D7000000 		.4byte	0xd7
+ 293 010f 00       		.byte	0
+ 294 0110 09       		.uleb128 0x9
+ 295 0111 5A020000 		.4byte	.LASF20
+ 296 0115 01       		.byte	0x1
+ 297 0116 64       		.byte	0x64
+ 298 0117 00000000 		.4byte	.LFB2
+ 299 011b 14000000 		.4byte	.LFE2-.LFB2
+ 300 011f 01       		.uleb128 0x1
+ 301 0120 9C       		.byte	0x9c
+ 302 0121 0A       		.uleb128 0xa
+ 303 0122 12020000 		.4byte	.LASF22
+ 304 0126 01       		.byte	0x1
+ 305 0127 7A       		.byte	0x7a
+ 306 0128 00000000 		.4byte	.LFB3
+ 307 012c 18000000 		.4byte	.LFE3-.LFB3
+ 308 0130 01       		.uleb128 0x1
+ 309 0131 9C       		.byte	0x9c
+ 310 0132 49010000 		.4byte	0x149
+ 311 0136 0B       		.uleb128 0xb
+ 312 0137 06000000 		.4byte	.LVL2
+ 313 013b 10010000 		.4byte	0x110
+ 314 013f 0B       		.uleb128 0xb
+ 315 0140 10000000 		.4byte	.LVL3
+ 316 0144 65010000 		.4byte	0x165
+ 317 0148 00       		.byte	0
+ 318 0149 0C       		.uleb128 0xc
+ 319 014a 24020000 		.4byte	.LASF28
+ 320 014e 01       		.byte	0x1
+ 321 014f 15       		.byte	0x15
+ 322 0150 CC000000 		.4byte	0xcc
+ 323 0154 05       		.uleb128 0x5
+ 324 0155 03       		.byte	0x3
+ 325 0156 00000000 		.4byte	Count7_1ms_backup
+ 326 015a 0D       		.uleb128 0xd
+ 327 015b D3010000 		.4byte	.LASF23
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 9
+
+
+ 328 015f D3010000 		.4byte	.LASF23
+ 329 0163 03       		.byte	0x3
+ 330 0164 27       		.byte	0x27
+ 331 0165 0D       		.uleb128 0xd
+ 332 0166 7D000000 		.4byte	.LASF24
+ 333 016a 7D000000 		.4byte	.LASF24
+ 334 016e 03       		.byte	0x3
+ 335 016f 25       		.byte	0x25
+ 336 0170 00       		.byte	0
+ 337              		.section	.debug_abbrev,"",%progbits
+ 338              	.Ldebug_abbrev0:
+ 339 0000 01       		.uleb128 0x1
+ 340 0001 11       		.uleb128 0x11
+ 341 0002 01       		.byte	0x1
+ 342 0003 25       		.uleb128 0x25
+ 343 0004 0E       		.uleb128 0xe
+ 344 0005 13       		.uleb128 0x13
+ 345 0006 0B       		.uleb128 0xb
+ 346 0007 03       		.uleb128 0x3
+ 347 0008 0E       		.uleb128 0xe
+ 348 0009 1B       		.uleb128 0x1b
+ 349 000a 0E       		.uleb128 0xe
+ 350 000b 55       		.uleb128 0x55
+ 351 000c 17       		.uleb128 0x17
+ 352 000d 11       		.uleb128 0x11
+ 353 000e 01       		.uleb128 0x1
+ 354 000f 10       		.uleb128 0x10
+ 355 0010 17       		.uleb128 0x17
+ 356 0011 00       		.byte	0
+ 357 0012 00       		.byte	0
+ 358 0013 02       		.uleb128 0x2
+ 359 0014 24       		.uleb128 0x24
+ 360 0015 00       		.byte	0
+ 361 0016 0B       		.uleb128 0xb
+ 362 0017 0B       		.uleb128 0xb
+ 363 0018 3E       		.uleb128 0x3e
+ 364 0019 0B       		.uleb128 0xb
+ 365 001a 03       		.uleb128 0x3
+ 366 001b 0E       		.uleb128 0xe
+ 367 001c 00       		.byte	0
+ 368 001d 00       		.byte	0
+ 369 001e 03       		.uleb128 0x3
+ 370 001f 24       		.uleb128 0x24
+ 371 0020 00       		.byte	0
+ 372 0021 0B       		.uleb128 0xb
+ 373 0022 0B       		.uleb128 0xb
+ 374 0023 3E       		.uleb128 0x3e
+ 375 0024 0B       		.uleb128 0xb
+ 376 0025 03       		.uleb128 0x3
+ 377 0026 08       		.uleb128 0x8
+ 378 0027 00       		.byte	0
+ 379 0028 00       		.byte	0
+ 380 0029 04       		.uleb128 0x4
+ 381 002a 16       		.uleb128 0x16
+ 382 002b 00       		.byte	0
+ 383 002c 03       		.uleb128 0x3
+ 384 002d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 10
+
+
+ 385 002e 3A       		.uleb128 0x3a
+ 386 002f 0B       		.uleb128 0xb
+ 387 0030 3B       		.uleb128 0x3b
+ 388 0031 05       		.uleb128 0x5
+ 389 0032 49       		.uleb128 0x49
+ 390 0033 13       		.uleb128 0x13
+ 391 0034 00       		.byte	0
+ 392 0035 00       		.byte	0
+ 393 0036 05       		.uleb128 0x5
+ 394 0037 35       		.uleb128 0x35
+ 395 0038 00       		.byte	0
+ 396 0039 49       		.uleb128 0x49
+ 397 003a 13       		.uleb128 0x13
+ 398 003b 00       		.byte	0
+ 399 003c 00       		.byte	0
+ 400 003d 06       		.uleb128 0x6
+ 401 003e 13       		.uleb128 0x13
+ 402 003f 01       		.byte	0x1
+ 403 0040 0B       		.uleb128 0xb
+ 404 0041 0B       		.uleb128 0xb
+ 405 0042 3A       		.uleb128 0x3a
+ 406 0043 0B       		.uleb128 0xb
+ 407 0044 3B       		.uleb128 0x3b
+ 408 0045 0B       		.uleb128 0xb
+ 409 0046 01       		.uleb128 0x1
+ 410 0047 13       		.uleb128 0x13
+ 411 0048 00       		.byte	0
+ 412 0049 00       		.byte	0
+ 413 004a 07       		.uleb128 0x7
+ 414 004b 0D       		.uleb128 0xd
+ 415 004c 00       		.byte	0
+ 416 004d 03       		.uleb128 0x3
+ 417 004e 0E       		.uleb128 0xe
+ 418 004f 3A       		.uleb128 0x3a
+ 419 0050 0B       		.uleb128 0xb
+ 420 0051 3B       		.uleb128 0x3b
+ 421 0052 0B       		.uleb128 0xb
+ 422 0053 49       		.uleb128 0x49
+ 423 0054 13       		.uleb128 0x13
+ 424 0055 38       		.uleb128 0x38
+ 425 0056 0B       		.uleb128 0xb
+ 426 0057 00       		.byte	0
+ 427 0058 00       		.byte	0
+ 428 0059 08       		.uleb128 0x8
+ 429 005a 16       		.uleb128 0x16
+ 430 005b 00       		.byte	0
+ 431 005c 03       		.uleb128 0x3
+ 432 005d 0E       		.uleb128 0xe
+ 433 005e 3A       		.uleb128 0x3a
+ 434 005f 0B       		.uleb128 0xb
+ 435 0060 3B       		.uleb128 0x3b
+ 436 0061 0B       		.uleb128 0xb
+ 437 0062 49       		.uleb128 0x49
+ 438 0063 13       		.uleb128 0x13
+ 439 0064 00       		.byte	0
+ 440 0065 00       		.byte	0
+ 441 0066 09       		.uleb128 0x9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 11
+
+
+ 442 0067 2E       		.uleb128 0x2e
+ 443 0068 00       		.byte	0
+ 444 0069 3F       		.uleb128 0x3f
+ 445 006a 19       		.uleb128 0x19
+ 446 006b 03       		.uleb128 0x3
+ 447 006c 0E       		.uleb128 0xe
+ 448 006d 3A       		.uleb128 0x3a
+ 449 006e 0B       		.uleb128 0xb
+ 450 006f 3B       		.uleb128 0x3b
+ 451 0070 0B       		.uleb128 0xb
+ 452 0071 27       		.uleb128 0x27
+ 453 0072 19       		.uleb128 0x19
+ 454 0073 11       		.uleb128 0x11
+ 455 0074 01       		.uleb128 0x1
+ 456 0075 12       		.uleb128 0x12
+ 457 0076 06       		.uleb128 0x6
+ 458 0077 40       		.uleb128 0x40
+ 459 0078 18       		.uleb128 0x18
+ 460 0079 9742     		.uleb128 0x2117
+ 461 007b 19       		.uleb128 0x19
+ 462 007c 00       		.byte	0
+ 463 007d 00       		.byte	0
+ 464 007e 0A       		.uleb128 0xa
+ 465 007f 2E       		.uleb128 0x2e
+ 466 0080 01       		.byte	0x1
+ 467 0081 3F       		.uleb128 0x3f
+ 468 0082 19       		.uleb128 0x19
+ 469 0083 03       		.uleb128 0x3
+ 470 0084 0E       		.uleb128 0xe
+ 471 0085 3A       		.uleb128 0x3a
+ 472 0086 0B       		.uleb128 0xb
+ 473 0087 3B       		.uleb128 0x3b
+ 474 0088 0B       		.uleb128 0xb
+ 475 0089 27       		.uleb128 0x27
+ 476 008a 19       		.uleb128 0x19
+ 477 008b 11       		.uleb128 0x11
+ 478 008c 01       		.uleb128 0x1
+ 479 008d 12       		.uleb128 0x12
+ 480 008e 06       		.uleb128 0x6
+ 481 008f 40       		.uleb128 0x40
+ 482 0090 18       		.uleb128 0x18
+ 483 0091 9742     		.uleb128 0x2117
+ 484 0093 19       		.uleb128 0x19
+ 485 0094 01       		.uleb128 0x1
+ 486 0095 13       		.uleb128 0x13
+ 487 0096 00       		.byte	0
+ 488 0097 00       		.byte	0
+ 489 0098 0B       		.uleb128 0xb
+ 490 0099 898201   		.uleb128 0x4109
+ 491 009c 00       		.byte	0
+ 492 009d 11       		.uleb128 0x11
+ 493 009e 01       		.uleb128 0x1
+ 494 009f 31       		.uleb128 0x31
+ 495 00a0 13       		.uleb128 0x13
+ 496 00a1 00       		.byte	0
+ 497 00a2 00       		.byte	0
+ 498 00a3 0C       		.uleb128 0xc
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 12
+
+
+ 499 00a4 34       		.uleb128 0x34
+ 500 00a5 00       		.byte	0
+ 501 00a6 03       		.uleb128 0x3
+ 502 00a7 0E       		.uleb128 0xe
+ 503 00a8 3A       		.uleb128 0x3a
+ 504 00a9 0B       		.uleb128 0xb
+ 505 00aa 3B       		.uleb128 0x3b
+ 506 00ab 0B       		.uleb128 0xb
+ 507 00ac 49       		.uleb128 0x49
+ 508 00ad 13       		.uleb128 0x13
+ 509 00ae 3F       		.uleb128 0x3f
+ 510 00af 19       		.uleb128 0x19
+ 511 00b0 02       		.uleb128 0x2
+ 512 00b1 18       		.uleb128 0x18
+ 513 00b2 00       		.byte	0
+ 514 00b3 00       		.byte	0
+ 515 00b4 0D       		.uleb128 0xd
+ 516 00b5 2E       		.uleb128 0x2e
+ 517 00b6 00       		.byte	0
+ 518 00b7 3F       		.uleb128 0x3f
+ 519 00b8 19       		.uleb128 0x19
+ 520 00b9 3C       		.uleb128 0x3c
+ 521 00ba 19       		.uleb128 0x19
+ 522 00bb 6E       		.uleb128 0x6e
+ 523 00bc 0E       		.uleb128 0xe
+ 524 00bd 03       		.uleb128 0x3
+ 525 00be 0E       		.uleb128 0xe
+ 526 00bf 3A       		.uleb128 0x3a
+ 527 00c0 0B       		.uleb128 0xb
+ 528 00c1 3B       		.uleb128 0x3b
+ 529 00c2 0B       		.uleb128 0xb
+ 530 00c3 00       		.byte	0
+ 531 00c4 00       		.byte	0
+ 532 00c5 00       		.byte	0
+ 533              		.section	.debug_aranges,"",%progbits
+ 534 0000 34000000 		.4byte	0x34
+ 535 0004 0200     		.2byte	0x2
+ 536 0006 00000000 		.4byte	.Ldebug_info0
+ 537 000a 04       		.byte	0x4
+ 538 000b 00       		.byte	0
+ 539 000c 0000     		.2byte	0
+ 540 000e 0000     		.2byte	0
+ 541 0010 00000000 		.4byte	.LFB0
+ 542 0014 14000000 		.4byte	.LFE0-.LFB0
+ 543 0018 00000000 		.4byte	.LFB1
+ 544 001c 2C000000 		.4byte	.LFE1-.LFB1
+ 545 0020 00000000 		.4byte	.LFB2
+ 546 0024 14000000 		.4byte	.LFE2-.LFB2
+ 547 0028 00000000 		.4byte	.LFB3
+ 548 002c 18000000 		.4byte	.LFE3-.LFB3
+ 549 0030 00000000 		.4byte	0
+ 550 0034 00000000 		.4byte	0
+ 551              		.section	.debug_ranges,"",%progbits
+ 552              	.Ldebug_ranges0:
+ 553 0000 00000000 		.4byte	.LFB0
+ 554 0004 14000000 		.4byte	.LFE0
+ 555 0008 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 13
+
+
+ 556 000c 2C000000 		.4byte	.LFE1
+ 557 0010 00000000 		.4byte	.LFB2
+ 558 0014 14000000 		.4byte	.LFE2
+ 559 0018 00000000 		.4byte	.LFB3
+ 560 001c 18000000 		.4byte	.LFE3
+ 561 0020 00000000 		.4byte	0
+ 562 0024 00000000 		.4byte	0
+ 563              		.section	.debug_line,"",%progbits
+ 564              	.Ldebug_line0:
+ 565 0000 A9000000 		.section	.debug_str,"MS",%progbits,1
+ 565      02005A00 
+ 565      00000201 
+ 565      FB0E0D00 
+ 565      01010101 
+ 566              	.LASF6:
+ 567 0000 6C6F6E67 		.ascii	"long long int\000"
+ 567      206C6F6E 
+ 567      6720696E 
+ 567      7400
+ 568              	.LASF26:
+ 569 000e 47656E65 		.ascii	"Generated_Source\\PSoC5\\Count7_1ms_PM.c\000"
+ 569      72617465 
+ 569      645F536F 
+ 569      75726365 
+ 569      5C50536F 
+ 570              	.LASF16:
+ 571 0035 656E6162 		.ascii	"enableState\000"
+ 571      6C655374 
+ 571      61746500 
+ 572              	.LASF8:
+ 573 0041 756E7369 		.ascii	"unsigned int\000"
+ 573      676E6564 
+ 573      20696E74 
+ 573      00
+ 574              	.LASF19:
+ 575 004e 436F756E 		.ascii	"Count7_1ms_SaveConfig\000"
+ 575      74375F31 
+ 575      6D735F53 
+ 575      61766543 
+ 575      6F6E6669 
+ 576              	.LASF18:
+ 577 0064 436F756E 		.ascii	"Count7_1ms_BACKUP_STRUCT\000"
+ 577      74375F31 
+ 577      6D735F42 
+ 577      41434B55 
+ 577      505F5354 
+ 578              	.LASF24:
+ 579 007d 436F756E 		.ascii	"Count7_1ms_Enable\000"
+ 579      74375F31 
+ 579      6D735F45 
+ 579      6E61626C 
+ 579      6500
+ 580              	.LASF25:
+ 581 008f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 581      43313120 
+ 581      352E342E 
+ 581      31203230 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 14
+
+
+ 581      31363036 
+ 582 00c2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 582      20726576 
+ 582      6973696F 
+ 582      6E203233 
+ 582      37373135 
+ 583 00f5 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 583      66756E63 
+ 583      74696F6E 
+ 583      2D736563 
+ 583      74696F6E 
+ 584              	.LASF12:
+ 585 011d 75696E74 		.ascii	"uint8\000"
+ 585      3800
+ 586              	.LASF5:
+ 587 0123 6C6F6E67 		.ascii	"long unsigned int\000"
+ 587      20756E73 
+ 587      69676E65 
+ 587      6420696E 
+ 587      7400
+ 588              	.LASF7:
+ 589 0135 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 589      206C6F6E 
+ 589      6720756E 
+ 589      7369676E 
+ 589      65642069 
+ 590              	.LASF9:
+ 591 014c 666C6F61 		.ascii	"float\000"
+ 591      7400
+ 592              	.LASF21:
+ 593 0152 436F756E 		.ascii	"Count7_1ms_Sleep\000"
+ 593      74375F31 
+ 593      6D735F53 
+ 593      6C656570 
+ 593      00
+ 594              	.LASF1:
+ 595 0163 756E7369 		.ascii	"unsigned char\000"
+ 595      676E6564 
+ 595      20636861 
+ 595      7200
+ 596              	.LASF27:
+ 597 0171 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
+ 597      6F6E6173 
+ 597      68202D20 
+ 597      4C656769 
+ 597      6F6E5C59 
+ 598 019f 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
+ 598      6D706F6E 
+ 598      656E7473 
+ 598      5C436F6C 
+ 598      6F75725F 
+ 599              	.LASF11:
+ 600 01c8 63686172 		.ascii	"char\000"
+ 600      00
+ 601              	.LASF17:
+ 602 01cd 636F756E 		.ascii	"count\000"
+ 602      7400
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKfInWc.s 			page 15
+
+
+ 603              	.LASF23:
+ 604 01d3 436F756E 		.ascii	"Count7_1ms_Stop\000"
+ 604      74375F31 
+ 604      6D735F53 
+ 604      746F7000 
+ 605              	.LASF10:
+ 606 01e3 646F7562 		.ascii	"double\000"
+ 606      6C6500
+ 607              	.LASF4:
+ 608 01ea 6C6F6E67 		.ascii	"long int\000"
+ 608      20696E74 
+ 608      00
+ 609              	.LASF3:
+ 610 01f3 73686F72 		.ascii	"short unsigned int\000"
+ 610      7420756E 
+ 610      7369676E 
+ 610      65642069 
+ 610      6E7400
+ 611              	.LASF0:
+ 612 0206 7369676E 		.ascii	"signed char\000"
+ 612      65642063 
+ 612      68617200 
+ 613              	.LASF22:
+ 614 0212 436F756E 		.ascii	"Count7_1ms_Wakeup\000"
+ 614      74375F31 
+ 614      6D735F57 
+ 614      616B6575 
+ 614      7000
+ 615              	.LASF28:
+ 616 0224 436F756E 		.ascii	"Count7_1ms_backup\000"
+ 616      74375F31 
+ 616      6D735F62 
+ 616      61636B75 
+ 616      7000
+ 617              	.LASF14:
+ 618 0236 6C6F6E67 		.ascii	"long double\000"
+ 618      20646F75 
+ 618      626C6500 
+ 619              	.LASF2:
+ 620 0242 73686F72 		.ascii	"short int\000"
+ 620      7420696E 
+ 620      7400
+ 621              	.LASF13:
+ 622 024c 72656738 		.ascii	"reg8\000"
+ 622      00
+ 623              	.LASF15:
+ 624 0251 73697A65 		.ascii	"sizetype\000"
+ 624      74797065 
+ 624      00
+ 625              	.LASF20:
+ 626 025a 436F756E 		.ascii	"Count7_1ms_RestoreConfig\000"
+ 626      74375F31 
+ 626      6D735F52 
+ 626      6573746F 
+ 626      7265436F 
+ 627              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

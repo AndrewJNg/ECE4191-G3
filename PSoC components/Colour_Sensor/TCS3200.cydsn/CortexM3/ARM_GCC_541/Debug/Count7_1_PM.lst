@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
   28:Generated_Source\PSoC5/Count7_1_PM.c **** * Summary:
   29:Generated_Source\PSoC5/Count7_1_PM.c **** *  This function saves the component configuration and non-retention registers.
   30:Generated_Source\PSoC5/Count7_1_PM.c **** *  This function is called by the Count7_Sleep() function.
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 2
 
 
   31:Generated_Source\PSoC5/Count7_1_PM.c **** *
@@ -90,7 +90,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
   39              	.L3:
   40 000a 00BF     		.align	2
   41              	.L2:
-  42 000c 7D640040 		.word	1073767549
+  42 000c 7C640040 		.word	1073767548
   43 0010 00000000 		.word	Count7_1_backup
   44              		.cfi_endproc
   45              	.LFE0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
   58:Generated_Source\PSoC5/Count7_1_PM.c **** * Parameters:
   59:Generated_Source\PSoC5/Count7_1_PM.c **** *  None
   60:Generated_Source\PSoC5/Count7_1_PM.c **** *
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 3
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 3
 
 
   61:Generated_Source\PSoC5/Count7_1_PM.c **** * Return:
@@ -172,13 +172,13 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
   86              	.L9:
   87              		.align	2
   88              	.L8:
-  89 0024 9D640040 		.word	1073767581
+  89 0024 9C640040 		.word	1073767580
   90 0028 00000000 		.word	Count7_1_backup
   91              		.cfi_endproc
   92              	.LFE1:
   93              		.size	Count7_1_Sleep, .-Count7_1_Sleep
   94              		.section	.text.Count7_1_RestoreConfig,"ax",%progbits
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 4
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 4
 
 
   95              		.align	2
@@ -228,7 +228,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  114 000a 00BF     		.align	2
  115              	.L11:
  116 000c 00000000 		.word	Count7_1_backup
- 117 0010 7D640040 		.word	1073767549
+ 117 0010 7C640040 		.word	1073767548
  118              		.cfi_endproc
  119              	.LFE2:
  120              		.size	Count7_1_RestoreConfig, .-Count7_1_RestoreConfig
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  124              		.thumb
  125              		.thumb_func
  126              		.type	Count7_1_Wakeup, %function
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 5
 
 
  127              	Count7_1_Wakeup:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  154              	.LFE3:
  155              		.size	Count7_1_Wakeup, .-Count7_1_Wakeup
  156              		.comm	Count7_1_backup,2,4
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 6
 
 
  157              		.text
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  211 0064 02       		.uleb128 0x2
  212 0065 04       		.byte	0x4
  213 0066 07       		.byte	0x7
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 7
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 7
 
 
  214 0067 1A000000 		.4byte	.LASF8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  268 00d2 3A       		.byte	0x3a
  269 00d3 AB000000 		.4byte	0xab
  270 00d7 09       		.uleb128 0x9
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 8
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 8
 
 
  271 00d8 37000000 		.4byte	.LASF19
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  325 0156 00000000 		.4byte	Count7_1_backup
  326 015a 0D       		.uleb128 0xd
  327 015b 2A010000 		.4byte	.LASF23
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 9
 
 
  328 015f 2A010000 		.4byte	.LASF23
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  382 002b 00       		.byte	0
  383 002c 03       		.uleb128 0x3
  384 002d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 10
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 10
 
 
  385 002e 3A       		.uleb128 0x3a
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  439 0064 00       		.byte	0
  440 0065 00       		.byte	0
  441 0066 09       		.uleb128 0x9
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 11
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 11
 
 
  442 0067 2E       		.uleb128 0x2e
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  496 00a1 00       		.byte	0
  497 00a2 00       		.byte	0
  498 00a3 0C       		.uleb128 0xc
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 12
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 12
 
 
  499 00a4 34       		.uleb128 0x34
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  553 0000 00000000 		.4byte	.LFB0
  554 0004 14000000 		.4byte	.LFE0
  555 0008 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 13
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 13
 
 
  556 000c 2C000000 		.4byte	.LFE1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  580      6E203233 
  580      37373135 
  581 00c8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 14
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 14
 
 
  581      66756E63 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 1
  603              	.LASF26:
  604 01b7 47656E65 		.ascii	"Generated_Source\\PSoC5\\Count7_1_PM.c\000"
  604      72617465 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccmkbYzX.s 			page 15
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccKouMwj.s 			page 15
 
 
  604      645F536F 

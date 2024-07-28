@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Count7_1.h
+* File Name: Count7_1sec.h
 * Version 1.0
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_COUNT7_Count7_1_H)
-#define CY_COUNT7_Count7_1_H
+#if !defined(CY_COUNT7_Count7_1sec_H)
+#define CY_COUNT7_Count7_1sec_H
 
 #include "cyfitter.h"
 
@@ -33,18 +33,18 @@
 /***************************************
 * Function Prototypes
 ***************************************/
-void  Count7_1_Init(void) ;
-void  Count7_1_Enable(void) ;
-void  Count7_1_Start(void) ;
-void  Count7_1_Stop(void) ;
-void  Count7_1_WriteCounter(uint8 count) ;
-uint8 Count7_1_ReadCounter(void) ;
-void  Count7_1_WritePeriod(uint8 period) ;
-uint8 Count7_1_ReadPeriod(void) ;
-void  Count7_1_SaveConfig(void) ;
-void  Count7_1_RestoreConfig(void) ;
-void  Count7_1_Sleep(void) ;
-void  Count7_1_Wakeup(void) ;
+void  Count7_1sec_Init(void) ;
+void  Count7_1sec_Enable(void) ;
+void  Count7_1sec_Start(void) ;
+void  Count7_1sec_Stop(void) ;
+void  Count7_1sec_WriteCounter(uint8 count) ;
+uint8 Count7_1sec_ReadCounter(void) ;
+void  Count7_1sec_WritePeriod(uint8 period) ;
+uint8 Count7_1sec_ReadPeriod(void) ;
+void  Count7_1sec_SaveConfig(void) ;
+void  Count7_1sec_RestoreConfig(void) ;
+void  Count7_1sec_Sleep(void) ;
+void  Count7_1sec_Wakeup(void) ;
 
 
 /***************************************
@@ -55,43 +55,43 @@ typedef struct
 {
     uint8 enableState;
     uint8 count;
-} Count7_1_BACKUP_STRUCT;
+} Count7_1sec_BACKUP_STRUCT;
 
 
 /***************************************
 *           Global Variables
 ***************************************/
-extern Count7_1_BACKUP_STRUCT Count7_1_backup;
-extern uint8 Count7_1_initVar;
+extern Count7_1sec_BACKUP_STRUCT Count7_1sec_backup;
+extern uint8 Count7_1sec_initVar;
 
 
 /***************************************
 * Initial Parameter
 ***************************************/
-#define Count7_1_INITIAL_PERIOD               (99u)
+#define Count7_1sec_INITIAL_PERIOD               (99u)
 
 
 /***************************************
 * Registers
 ***************************************/
-#define Count7_1_COUNT_REG                    (*(reg8 *) Count7_1_Counter7__COUNT_REG)
-#define Count7_1_COUNT_PTR                    ( (reg8 *) Count7_1_Counter7__COUNT_REG)
-#define Count7_1_PERIOD_REG                   (*(reg8 *) Count7_1_Counter7__PERIOD_REG)
-#define Count7_1_PERIOD_PTR                   ( (reg8 *) Count7_1_Counter7__PERIOD_REG)
-#define Count7_1_AUX_CONTROL_REG              (*(reg8 *) Count7_1_Counter7__CONTROL_AUX_CTL_REG)
-#define Count7_1_AUX_CONTROL_PTR              ( (reg8 *) Count7_1_Counter7__CONTROL_AUX_CTL_REG)
+#define Count7_1sec_COUNT_REG                    (*(reg8 *) Count7_1sec_Counter7__COUNT_REG)
+#define Count7_1sec_COUNT_PTR                    ( (reg8 *) Count7_1sec_Counter7__COUNT_REG)
+#define Count7_1sec_PERIOD_REG                   (*(reg8 *) Count7_1sec_Counter7__PERIOD_REG)
+#define Count7_1sec_PERIOD_PTR                   ( (reg8 *) Count7_1sec_Counter7__PERIOD_REG)
+#define Count7_1sec_AUX_CONTROL_REG              (*(reg8 *) Count7_1sec_Counter7__CONTROL_AUX_CTL_REG)
+#define Count7_1sec_AUX_CONTROL_PTR              ( (reg8 *) Count7_1sec_Counter7__CONTROL_AUX_CTL_REG)
 
 
 /***************************************
 * Register Constants
 ***************************************/
-#define Count7_1_COUNTER_START                (0x20u)
+#define Count7_1sec_COUNTER_START                (0x20u)
 
 /* This constant is used to mask the TC bit (bit#7) in the Count register */
-#define Count7_1_COUNT_7BIT_MASK              (0x7Fu)
+#define Count7_1sec_COUNT_7BIT_MASK              (0x7Fu)
 
 
-#endif /* CY_COUNT7_Count7_1_H */
+#endif /* CY_COUNT7_Count7_1sec_H */
 
 
 /* [] END OF FILE */

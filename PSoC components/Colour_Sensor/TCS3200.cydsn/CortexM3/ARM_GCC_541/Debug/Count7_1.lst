@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
   28:Generated_Source\PSoC5/Count7_1.c **** *  settings.
   29:Generated_Source\PSoC5/Count7_1.c **** *
   30:Generated_Source\PSoC5/Count7_1.c **** * Parameters:
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 2
 
 
   31:Generated_Source\PSoC5/Count7_1.c **** *  None
@@ -89,7 +89,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
   38              	.L3:
   39              		.align	2
   40              	.L2:
-  41 0008 8D640040 		.word	1073767565
+  41 0008 8C640040 		.word	1073767564
   42              		.cfi_endproc
   43              	.LFE0:
   44              		.size	Count7_1_Init, .-Count7_1_Init
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
   60:Generated_Source\PSoC5/Count7_1.c **** *  None
   61:Generated_Source\PSoC5/Count7_1.c **** *
   62:Generated_Source\PSoC5/Count7_1.c **** * Theory:
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 3
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 3
 
 
   63:Generated_Source\PSoC5/Count7_1.c **** *  It is not necessary to call Count7_Enable() because the Count7_Start() API
@@ -163,7 +163,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
   73              	.L7:
   74 0016 00BF     		.align	2
   75              	.L6:
-  76 0018 9D640040 		.word	1073767581
+  76 0018 9C640040 		.word	1073767580
   77              		.cfi_endproc
   78              	.LFE1:
   79              		.size	Count7_1_Enable, .-Count7_1_Enable
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
   82:Generated_Source\PSoC5/Count7_1.c **** }
   83:Generated_Source\PSoC5/Count7_1.c **** 
   84:Generated_Source\PSoC5/Count7_1.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 4
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 4
 
 
   85:Generated_Source\PSoC5/Count7_1.c **** /*******************************************************************************
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  111 0016 08BD     		pop	{r3, pc}
  112              	.L12:
  113              		.align	2
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 5
 
 
  114              	.L11:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  141:Generated_Source\PSoC5/Count7_1.c ****     CyExitCriticalSection(interruptState);
  143              		.loc 1 141 0
  144 0010 FFF7FEFF 		bl	CyExitCriticalSection
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 6
 
 
  145              	.LVL5:
@@ -306,7 +306,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  147              	.L16:
  148 0016 00BF     		.align	2
  149              	.L15:
- 150 0018 9D640040 		.word	1073767581
+ 150 0018 9C640040 		.word	1073767580
  151              		.cfi_endproc
  152              	.LFE3:
  153              		.size	Count7_1_Stop, .-Count7_1_Stop
@@ -354,11 +354,11 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  174              	.L19:
  175 000a 00BF     		.align	2
  176              	.L18:
- 177 000c 7D640040 		.word	1073767549
+ 177 000c 7C640040 		.word	1073767548
  178              		.cfi_endproc
  179              	.LFE4:
  180              		.size	Count7_1_WriteCounter, .-Count7_1_WriteCounter
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 7
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 7
 
 
  181              		.section	.text.Count7_1_ReadCounter,"ax",%progbits
@@ -404,7 +404,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  200              	.L22:
  201 000a 00BF     		.align	2
  202              	.L21:
- 203 000c 7D640040 		.word	1073767549
+ 203 000c 7C640040 		.word	1073767548
  204              		.cfi_endproc
  205              	.LFE5:
  206              		.size	Count7_1_ReadCounter, .-Count7_1_ReadCounter
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  214              	.LFB6:
  184:Generated_Source\PSoC5/Count7_1.c **** 
  185:Generated_Source\PSoC5/Count7_1.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 8
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 8
 
 
  186:Generated_Source\PSoC5/Count7_1.c **** /*******************************************************************************
@@ -455,7 +455,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  225              	.L25:
  226 0006 00BF     		.align	2
  227              	.L24:
- 228 0008 8D640040 		.word	1073767565
+ 228 0008 8C640040 		.word	1073767564
  229              		.cfi_endproc
  230              	.LFE6:
  231              		.size	Count7_1_WritePeriod, .-Count7_1_WritePeriod
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  215:Generated_Source\PSoC5/Count7_1.c **** *  This function reads the period register.
  216:Generated_Source\PSoC5/Count7_1.c **** *
  217:Generated_Source\PSoC5/Count7_1.c **** * Parameters:
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 9
 
 
  218:Generated_Source\PSoC5/Count7_1.c **** *  None
@@ -504,7 +504,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  250              	.L28:
  251 0006 00BF     		.align	2
  252              	.L27:
- 253 0008 8D640040 		.word	1073767565
+ 253 0008 8C640040 		.word	1073767564
  254              		.cfi_endproc
  255              	.LFE7:
  256              		.size	Count7_1_ReadPeriod, .-Count7_1_ReadPeriod
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  284 0027 06       		.byte	0x6
  285 0028 8B020000 		.4byte	.LASF0
  286 002c 02       		.uleb128 0x2
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 10
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 10
 
 
  287 002d 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  341 0091 02       		.byte	0x2
  342 0092 9202     		.2byte	0x292
  343 0094 98000000 		.4byte	0x98
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 11
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 11
 
 
  344 0098 05       		.uleb128 0x5
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  398 0116 BC000000 		.4byte	0xbc
  399 011a 00       		.byte	0
  400 011b 07       		.uleb128 0x7
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 12
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 12
 
 
  401 011c 3D020000 		.4byte	.LASF18
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  455 019d AF010000 		.4byte	0x1af
  456 01a1 0C       		.uleb128 0xc
  457 01a2 93000000 		.4byte	.LASF23
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 13
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 13
 
 
  458 01a6 01       		.byte	0x1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  512 0012 00       		.byte	0
  513 0013 02       		.uleb128 0x2
  514 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 14
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 14
 
 
  515 0015 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  569 004b 01       		.uleb128 0x1
  570 004c 12       		.uleb128 0x12
  571 004d 06       		.uleb128 0x6
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 15
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 15
 
 
  572 004e 40       		.uleb128 0x40
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  626 0088 00       		.byte	0
  627 0089 0A       		.uleb128 0xa
  628 008a 05       		.uleb128 0x5
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 16
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 16
 
 
  629 008b 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  683 00c2 34       		.uleb128 0x34
  684 00c3 00       		.byte	0
  685 00c4 03       		.uleb128 0x3
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 17
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 17
 
 
  686 00c5 0E       		.uleb128 0xe
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  740 0039 0400     		.2byte	0x4
  741 003b F3       		.byte	0xf3
  742 003c 01       		.uleb128 0x1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 18
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 18
 
 
  743 003d 50       		.byte	0x50
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  795      00000201 
  795      FB0E0D00 
  795      01010101 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 19
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 19
 
 
  796              	.LASF32:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  816      65642069 
  817              	.LASF1:
  818 00e0 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 20
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 20
 
 
  818      676E6564 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  838 01e1 47656E65 		.ascii	"Generated_Source\\PSoC5\\Count7_1.c\000"
  838      72617465 
  838      645F536F 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 21
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 21
 
 
  838      75726365 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 1
  862      68617200 
  863              	.LASF17:
  864 0297 436F756E 		.ascii	"Count7_1_Start\000"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQtUxJT.s 			page 22
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccINDB4b.s 			page 22
 
 
  864      74375F31 

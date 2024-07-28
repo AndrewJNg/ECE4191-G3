@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Count7_1_PM.c
+* File Name: Count7_1ms_PM.c
 * Version 1.0
 *
 * Description:
@@ -15,14 +15,14 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "Count7_1.h"
+#include "Count7_1ms.h"
 
 
-Count7_1_BACKUP_STRUCT Count7_1_backup;
+Count7_1ms_BACKUP_STRUCT Count7_1ms_backup;
 
 
 /*******************************************************************************
-* Function Name: Count7_1_SaveConfig
+* Function Name: Count7_1ms_SaveConfig
 ********************************************************************************
 *
 * Summary:
@@ -36,18 +36,18 @@ Count7_1_BACKUP_STRUCT Count7_1_backup;
 *  None
 *
 * Global Variables:
-*  Count7_1_backup - used to save component configuration and non-
+*  Count7_1ms_backup - used to save component configuration and non-
 *  retention registers before enter sleep mode.
 *
 *******************************************************************************/
-void Count7_1_SaveConfig(void) 
+void Count7_1ms_SaveConfig(void) 
 {
-    Count7_1_backup.count = Count7_1_COUNT_REG;
+    Count7_1ms_backup.count = Count7_1ms_COUNT_REG;
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1_Sleep
+* Function Name: Count7_1ms_Sleep
 ********************************************************************************
 *
 * Summary:
@@ -62,24 +62,24 @@ void Count7_1_SaveConfig(void)
 *  None
 *
 *******************************************************************************/
-void Count7_1_Sleep(void) 
+void Count7_1ms_Sleep(void) 
 {
-    if(0u != (Count7_1_AUX_CONTROL_REG & Count7_1_COUNTER_START))
+    if(0u != (Count7_1ms_AUX_CONTROL_REG & Count7_1ms_COUNTER_START))
     {
-        Count7_1_backup.enableState = 1u;
-        Count7_1_Stop();
+        Count7_1ms_backup.enableState = 1u;
+        Count7_1ms_Stop();
     }
     else
     {
-        Count7_1_backup.enableState = 0u;
+        Count7_1ms_backup.enableState = 0u;
     }
 
-    Count7_1_SaveConfig();
+    Count7_1ms_SaveConfig();
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1_RestoreConfig
+* Function Name: Count7_1ms_RestoreConfig
 ********************************************************************************
 *
 * Summary:
@@ -93,18 +93,18 @@ void Count7_1_Sleep(void)
 *  None
 *
 * Global Variables:
-*  Count7_1_backup - used to save component configuration and
+*  Count7_1ms_backup - used to save component configuration and
 *  non-retention registers before exit sleep mode.
 *
 *******************************************************************************/
-void Count7_1_RestoreConfig(void) 
+void Count7_1ms_RestoreConfig(void) 
 {
-    Count7_1_COUNT_REG = Count7_1_backup.count;
+    Count7_1ms_COUNT_REG = Count7_1ms_backup.count;
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1_Wakeup
+* Function Name: Count7_1ms_Wakeup
 ********************************************************************************
 *
 * Summary:
@@ -119,14 +119,14 @@ void Count7_1_RestoreConfig(void)
 *  None
 *
 *******************************************************************************/
-void Count7_1_Wakeup(void) 
+void Count7_1ms_Wakeup(void) 
 {
-    Count7_1_RestoreConfig();
+    Count7_1ms_RestoreConfig();
 
     /* Restore enable state */
-    if (Count7_1_backup.enableState != 0u)
+    if (Count7_1ms_backup.enableState != 0u)
     {
-        Count7_1_Enable();
+        Count7_1ms_Enable();
     }
 }
 
