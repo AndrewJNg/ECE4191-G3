@@ -114,9 +114,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_4.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_4.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_5.c</File>

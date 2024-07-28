@@ -71,7 +71,6 @@
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\freq_isr</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\LED</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\LED_1</v>
-<v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\LED_2</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\Pin_1</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\Pulse_counter</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\PWM_Test_Signal</v>
@@ -148,7 +147,6 @@
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\freq_isr.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_1.lst</v>
-<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_2.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Pulse_counter.lst</v>
@@ -170,6 +168,52 @@
 <VisibleNodeIds>
 <v>Colour_Sensor</v>
 <v>Colour_Sensor\TCS3200</v>
+<v>Colour_Sensor\TCS3200\CortexM3</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_3.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_4.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_5.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_OUT.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_S0.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_S1.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_S2.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_S3.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_1.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_1_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_1ms.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_1ms_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\freq_isr.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_1.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Pulse_counter.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Pulse_counter_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Test_Signal.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Test_Signal_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\TCS3200.elf</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\TCS3200.hex</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\TCS3200.map</v>
+<v>Colour_Sensor\TCS3200\TCS3200.gpdsc</v>
 <v>Colour_Sensor\TCS3200\TCS3200.rpt</v>
 <v>Colour_Sensor\TCS3200\TCS3200_timing.html</v>
 </VisibleNodeIds>
@@ -237,7 +281,6 @@
 <name v=".\TCS3200.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\TCS3200.cydsn\main.c" />
 <name v=".\TCS3200.cydsn\TCS3200.cydwr" />
-<name v=".\TCS3200.cydsn\Generated_Source\PSoC5\CyBootAsmGnu.s" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -245,7 +288,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2283, 962" SelectedTabbedMdiWindow="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2"><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TopDesign\TopDesign.cysch" Guid="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\main.c" Guid="ecc53777-6d8e-4cd6-96e5-2328465b152a" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TCS3200.cydwr" Guid="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\Generated_Source\PSoC5\CyBootAsmGnu.s" Guid="f584fefc-f4dd-434f-852b-8d4d5571dc4b" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4c5062ca-7c5c-4036-9339-a2d340a00f95" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2018, 962" SelectedTabbedMdiWindow="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2"><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TopDesign\TopDesign.cysch" Guid="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\main.c" Guid="ecc53777-6d8e-4cd6-96e5-2328465b152a" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TCS3200.cydwr" Guid="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4c5062ca-7c5c-4036-9339-a2d340a00f95" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

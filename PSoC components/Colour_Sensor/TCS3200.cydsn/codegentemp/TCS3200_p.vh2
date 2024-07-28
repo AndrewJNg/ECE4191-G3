@@ -1,10 +1,9 @@
 -- Project:   TCS3200
--- Generated: 07/28/2024 11:28:59
+-- Generated: 07/28/2024 11:55:05
 -- PSoC Creator  4.4
 
 ENTITY TCS3200 IS
     PORT(
-        LED_2(0)_PAD : OUT std_ulogic;
         Rx_1(0)_PAD : IN std_ulogic;
         Tx_1(0)_PAD : OUT std_ulogic;
         LED(0)_PAD : OUT std_ulogic;
@@ -45,7 +44,6 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     SIGNAL ColourSensor_S3(0)__PA : bit;
     SIGNAL LED(0)__PA : bit;
     SIGNAL LED_1(0)__PA : bit;
-    SIGNAL LED_2(0)__PA : bit;
     SIGNAL Net_14 : bit;
     ATTRIBUTE udbclken_assigned OF Net_14 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_14 : SIGNAL IS true;
@@ -73,8 +71,7 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     SIGNAL Net_489_5 : bit;
     SIGNAL Net_489_6 : bit;
     SIGNAL Net_494 : bit;
-    SIGNAL Net_517 : bit;
-    SIGNAL Net_527 : bit;
+    SIGNAL Net_497 : bit;
     SIGNAL Net_581 : bit;
     SIGNAL Pin_1(0)__PA : bit;
     SIGNAL Rx_1(0)__PA : bit;
@@ -158,8 +155,8 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
-    SIGNAL tmpOE__LED_2_net_0 : bit;
-    ATTRIBUTE POWER OF tmpOE__LED_2_net_0 : SIGNAL IS true;
+    SIGNAL one : bit;
+    ATTRIBUTE POWER OF one : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
@@ -279,7 +276,6 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_0\ : LABEL IS "macrocell32";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell33";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell34";
-    ATTRIBUTE lib_model OF Net_527 : LABEL IS "macrocell35";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -627,102 +623,10 @@ BEGIN
             dclk_1 => Net_170_local,
             dclk_glb_2 => \UART_1:Net_9\,
             dclk_2 => \UART_1:Net_9_local\,
-            dclk_glb_3 => Net_458,
-            dclk_3 => Net_458_local,
-            dclk_glb_4 => Net_487,
-            dclk_4 => Net_487_local);
-
-    LED_2:logicalport
-        GENERIC MAP(
-            drive_mode => "110",
-            ibuf_enabled => "1",
-            id => "d52c479a-6e2b-42a3-8a33-9da9223cd0ac",
-            init_dr_st => "0",
-            input_buffer_sel => "00",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "1",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            ovt_hyst_trim => "0",
-            ovt_needed => "0",
-            ovt_slew_control => "00",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "O",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "00000000",
-            sio_hyst => "1",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vohsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open);
-
-    LED_2(0):iocell
-        GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "LED_2",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
-        PORT MAP(
-            pa_out => LED_2(0)__PA,
-            oe => open,
-            pin_input => Net_517,
-            pad_out => LED_2(0)_PAD,
-            pad_in => LED_2(0)_PAD,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
+            dclk_glb_3 => Net_487,
+            dclk_3 => Net_487_local,
+            dclk_glb_4 => Net_458,
+            dclk_4 => Net_458_local);
 
     Rx_1:logicalport
         GENERIC MAP(
@@ -1178,7 +1082,7 @@ BEGIN
             oe_sync_mode => 0,
             logicalport => "Pin_1",
             logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
         PORT MAP(
             pa_out => Pin_1(0)__PA,
             oe => open,
@@ -1365,8 +1269,6 @@ BEGIN
         PORT MAP(
             pa_out => ColourSensor_S1(0)__PA,
             oe => open,
-            pin_input => __ONE__,
-            pad_out => ColourSensor_S1(0)_PAD,
             pad_in => ColourSensor_S1(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -1648,13 +1550,13 @@ BEGIN
 
     \Pulse_counter:CounterUDB:reload\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1)",
+            eqn_main => "(!main_0 * !main_1)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
             q => \Pulse_counter:CounterUDB:reload\,
-            main_0 => \Pulse_counter:CounterUDB:per_equal\,
-            main_1 => Net_527);
+            main_0 => Net_497,
+            main_1 => \Pulse_counter:CounterUDB:per_equal\);
 
     \Pulse_counter:CounterUDB:status_0\:macrocell
         GENERIC MAP(
@@ -1904,9 +1806,9 @@ BEGIN
             cy_md_select => "0011111",
             clk_inv => '0',
             clken_mode => 1,
-            reset_inv => '1')
+            reset_inv => '0')
         PORT MAP(
-            reset => Net_527,
+            reset => Net_497,
             clock => Net_14,
             status_6 => \Pulse_counter:CounterUDB:status_6\,
             status_5 => \Pulse_counter:CounterUDB:status_5\,
@@ -2314,6 +2216,30 @@ BEGIN
             status_1 => open,
             status_0 => open);
 
+    \Count7_1ms:Counter7\:count7cell
+        GENERIC MAP(
+            cy_alt_mode => 0,
+            cy_init_value => "0000000",
+            cy_period => "1111111",
+            cy_route_en => 1,
+            cy_route_ld => 0,
+            clk_inv => '0',
+            clken_mode => 1,
+            reset_inv => '0')
+        PORT MAP(
+            clock => Net_487,
+            reset => Net_497,
+            load => open,
+            enable => Net_485,
+            count_6 => Net_489_6,
+            count_5 => Net_489_5,
+            count_4 => Net_489_4,
+            count_3 => Net_489_3,
+            count_2 => Net_489_2,
+            count_1 => Net_489_1,
+            count_0 => Net_489_0,
+            tc => Net_494);
+
     \Control_Reg_1:Sync:ctrl_reg\:controlcell
         GENERIC MAP(
             cy_ctrl_mode_0 => "00000000",
@@ -2330,32 +2256,8 @@ BEGIN
             control_3 => \Control_Reg_1:control_3\,
             control_2 => \Control_Reg_1:control_2\,
             control_1 => \Control_Reg_1:control_1\,
-            control_0 => Net_517,
+            control_0 => Net_497,
             busclk => ClockBlock_BUS_CLK);
-
-    \Count7_1ms:Counter7\:count7cell
-        GENERIC MAP(
-            cy_alt_mode => 0,
-            cy_init_value => "0000000",
-            cy_period => "1111111",
-            cy_route_en => 1,
-            cy_route_ld => 0,
-            clk_inv => '0',
-            clken_mode => 1,
-            reset_inv => '1')
-        PORT MAP(
-            clock => Net_487,
-            reset => Net_527,
-            load => open,
-            enable => Net_485,
-            count_6 => Net_489_6,
-            count_5 => Net_489_5,
-            count_4 => Net_489_4,
-            count_3 => Net_489_3,
-            count_2 => Net_489_2,
-            count_1 => Net_489_1,
-            count_0 => Net_489_0,
-            tc => Net_494);
 
     \PWM_Test_Signal:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(
@@ -2651,16 +2553,5 @@ BEGIN
             q => \UART_1:BUART:rx_last\,
             clock_0 => \UART_1:Net_9\,
             main_0 => Net_313);
-
-    Net_527:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => Net_527,
-            clock_0 => Net_458,
-            main_0 => Net_457);
 
 END __DEFAULT__;

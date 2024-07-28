@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 1
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
   22:main.c        ****     value= Pulse_counter_ReadCounter();
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 2
 
 
   36              		.loc 1 22 0
@@ -78,1286 +78,1625 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 1
   49              		.cfi_endproc
   50              	.LFE64:
   51              		.size	colour_sensor_isr, .-colour_sensor_isr
-  52              		.section	.text.main,"ax",%progbits
+  52              		.section	.text.colourSensor_Scan_freq,"ax",%progbits
   53              		.align	2
-  54              		.global	main
+  54              		.global	colourSensor_Scan_freq
   55              		.thumb
   56              		.thumb_func
-  57              		.type	main, %function
-  58              	main:
-  59              	.LFB65:
+  57              		.type	colourSensor_Scan_freq, %function
+  58              	colourSensor_Scan_freq:
+  59              	.LFB66:
   24:main.c        ****     
   25:main.c        **** }
   26:main.c        **** 
   27:main.c        **** int main(void)
   28:main.c        **** {
-  60              		.loc 1 28 0
-  61              		.cfi_startproc
-  62              		@ args = 0, pretend = 0, frame = 56
-  63              		@ frame_needed = 0, uses_anonymous_args = 0
-  64 0000 00B5     		push	{lr}
-  65              		.cfi_def_cfa_offset 4
-  66              		.cfi_offset 14, -4
-  67 0002 91B0     		sub	sp, sp, #68
-  68              		.cfi_def_cfa_offset 72
   29:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  69              		.loc 1 29 0
-  70              		.syntax unified
-  71              	@ 29 "main.c" 1
-  72 0004 62B6     		CPSIE   i
-  73              	@ 0 "" 2
   30:main.c        ****     UART_1_Start();
-  74              		.loc 1 30 0
-  75              		.thumb
-  76              		.syntax unified
-  77 0006 FFF7FEFF 		bl	UART_1_Start
-  78              	.LVL1:
   31:main.c        ****     
   32:main.c        ****     // Test Signal setup
   33:main.c        ****     PWM_Test_Signal_Start();
-  79              		.loc 1 33 0
-  80 000a FFF7FEFF 		bl	PWM_Test_Signal_Start
-  81              	.LVL2:
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 3
-
-
   34:main.c        ****     
   35:main.c        ****     // Colour sensor setup
   36:main.c        ****     Pulse_counter_Start();
-  82              		.loc 1 36 0
-  83 000e FFF7FEFF 		bl	Pulse_counter_Start
-  84              	.LVL3:
   37:main.c        ****     Count7_1ms_Start();
-  85              		.loc 1 37 0
-  86 0012 FFF7FEFF 		bl	Count7_1ms_Start
-  87              	.LVL4:
   38:main.c        ****     freq_isr_ClearPending(); 
-  88              		.loc 1 38 0
-  89 0016 FFF7FEFF 		bl	freq_isr_ClearPending
-  90              	.LVL5:
   39:main.c        ****     freq_isr_StartEx(colour_sensor_isr);
-  91              		.loc 1 39 0
-  92 001a 0E48     		ldr	r0, .L8
-  93 001c FFF7FEFF 		bl	freq_isr_StartEx
-  94              	.LVL6:
-  95              	.L6:
-  96              	.LBB2:
   40:main.c        ****     
   41:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
   42:main.c        ****     
   43:main.c        ****     for(;;)
   44:main.c        ****     {
   45:main.c        ****         
-  46:main.c        ****     ColourSensor_S2_Write(1);
-  97              		.loc 1 46 0 discriminator 1
-  98 0020 0120     		movs	r0, #1
-  99 0022 FFF7FEFF 		bl	ColourSensor_S2_Write
- 100              	.LVL7:
-  47:main.c        ****     ColourSensor_S3_Write(1);
- 101              		.loc 1 47 0 discriminator 1
- 102 0026 0120     		movs	r0, #1
- 103 0028 FFF7FEFF 		bl	ColourSensor_S3_Write
- 104              	.LVL8:
-  48:main.c        ****     uint32 red = Pulse_counter_ReadCounter(); 
- 105              		.loc 1 48 0 discriminator 1
- 106 002c FFF7FEFF 		bl	Pulse_counter_ReadCounter
- 107              	.LVL9:
-  49:main.c        ****     uint32 blue = value;
- 108              		.loc 1 49 0 discriminator 1
- 109 0030 094B     		ldr	r3, .L8+4
- 110 0032 1A68     		ldr	r2, [r3]
- 111              	.LVL10:
-  50:main.c        ****     uint32 clear = 0;
-  51:main.c        ****     uint32 green = 0;
+  46:main.c        ****     //ColourSensor_S2_Write(1);
+  47:main.c        ****     //ColourSensor_S3_Write(1);
+  48:main.c        ****     //uint32 red = Pulse_counter_ReadCounter(); 
+  49:main.c        ****     //uint32 blue = value;
+  50:main.c        ****     //uint32 clear = 0;
+  51:main.c        ****     //uint32 green = 0;
   52:main.c        ****     
-  53:main.c        ****     //uint32 red   = colourSensor_Scan_freq(0,0);
-  54:main.c        ****     //uint32 blue  = colourSensor_Scan_freq(0,1);
-  55:main.c        ****     //uint32 clear = colourSensor_Scan_freq(1,0);
-  56:main.c        ****     //uint32 green = colourSensor_Scan_freq(1,1);
+  53:main.c        ****     uint32 red   = colourSensor_Scan_freq(0,0);
+  54:main.c        ****     uint32 blue  = colourSensor_Scan_freq(0,1);
+  55:main.c        ****     uint32 clear = colourSensor_Scan_freq(1,0);
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 3
+
+
+  56:main.c        ****     uint32 green = colourSensor_Scan_freq(1,1);
   57:main.c        ****     
-  58:main.c        ****     char str[50];
-  59:main.c        ****     sprintf(str, "red: %lu\tgreen: %lu\tblue: %lu\tclear: %lu\t \n", red, green, blue, clear);
- 112              		.loc 1 59 0 discriminator 1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 4
+  58:main.c        ****     
+  59:main.c        ****     char str[50];
+  60:main.c        ****     sprintf(str, "red: %lu\tgreen: %lu\tblue: %lu\tclear: %lu\t", red, green, blue, clear);
+  61:main.c        ****     UART_1_PutString(str);
+  62:main.c        ****     
+  63:main.c        ****     if((red > blue) && (red>green))
+  64:main.c        ****         sprintf(str, "red \n");
+  65:main.c        ****     else if((blue > red) && (blue>green))
+  66:main.c        ****         sprintf(str, "blue \n");
+  67:main.c        ****     else if((green> red) && (green>blue))
+  68:main.c        ****         sprintf(str, "green \n");
+  69:main.c        ****     else
+  70:main.c        ****         sprintf(str, "no answer \n");
+  71:main.c        ****     
+  72:main.c        ****     
+  73:main.c        ****     UART_1_PutString(str);
+  74:main.c        ****     
+  75:main.c        ****         
+  76:main.c        ****     //CyDelay(1000);
+  77:main.c        ****     
+  78:main.c        ****         
+  79:main.c        ****     }
+  80:main.c        **** }
+  81:main.c        **** 
+  82:main.c        **** uint32 colourSensor_Scan_freq(int S2,int S3)
+  83:main.c        **** {
+  60              		.loc 1 83 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              	.LVL1:
+  65 0000 38B5     		push	{r3, r4, r5, lr}
+  66              		.cfi_def_cfa_offset 16
+  67              		.cfi_offset 3, -16
+  68              		.cfi_offset 4, -12
+  69              		.cfi_offset 5, -8
+  70              		.cfi_offset 14, -4
+  71 0002 0546     		mov	r5, r0
+  72 0004 0C46     		mov	r4, r1
+  84:main.c        ****     Control_Reg_1_Write(1);
+  73              		.loc 1 84 0
+  74 0006 0120     		movs	r0, #1
+  75              	.LVL2:
+  76 0008 FFF7FEFF 		bl	Control_Reg_1_Write
+  77              	.LVL3:
+  85:main.c        ****     
+  86:main.c        ****     ColourSensor_S2_Write(S2);
+  78              		.loc 1 86 0
+  79 000c E8B2     		uxtb	r0, r5
+  80 000e FFF7FEFF 		bl	ColourSensor_S2_Write
+  81              	.LVL4:
+  87:main.c        ****     ColourSensor_S3_Write(S3);
+  82              		.loc 1 87 0
+  83 0012 E0B2     		uxtb	r0, r4
+  84 0014 FFF7FEFF 		bl	ColourSensor_S3_Write
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 4
 
 
- 113 0034 0023     		movs	r3, #0
- 114 0036 0193     		str	r3, [sp, #4]
- 115 0038 0092     		str	r2, [sp]
- 116 003a 0246     		mov	r2, r0
- 117              	.LVL11:
- 118 003c 0749     		ldr	r1, .L8+8
- 119 003e 03A8     		add	r0, sp, #12
- 120              	.LVL12:
- 121 0040 FFF7FEFF 		bl	sprintf
- 122              	.LVL13:
+  85              	.LVL5:
+  88:main.c        ****     colour_sensor_ready =0;
+  86              		.loc 1 88 0
+  87 0018 0024     		movs	r4, #0
+  88              	.LVL6:
+  89 001a 094B     		ldr	r3, .L8
+  90 001c 1C71     		strb	r4, [r3, #4]
+  89:main.c        ****     
+  90:main.c        ****     CyDelay(5);
+  91              		.loc 1 90 0
+  92 001e 0520     		movs	r0, #5
+  93 0020 FFF7FEFF 		bl	CyDelay
+  94              	.LVL7:
+  91:main.c        ****     Control_Reg_1_Write(0);
+  95              		.loc 1 91 0
+  96 0024 2046     		mov	r0, r4
+  97 0026 FFF7FEFF 		bl	Control_Reg_1_Write
+  98              	.LVL8:
+  99              	.L6:
+  92:main.c        ****     
+  93:main.c        ****     while(colour_sensor_ready==0)
+ 100              		.loc 1 93 0 discriminator 1
+ 101 002a 054B     		ldr	r3, .L8
+ 102 002c 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 103 002e 002B     		cmp	r3, #0
+ 104 0030 FBD0     		beq	.L6
+  94:main.c        ****     {
+  95:main.c        ****         
+  96:main.c        ****     }
+  97:main.c        ****     CyDelay(10);
+ 105              		.loc 1 97 0
+ 106 0032 0A20     		movs	r0, #10
+ 107 0034 FFF7FEFF 		bl	CyDelay
+ 108              	.LVL9:
+  98:main.c        ****     
+  99:main.c        ****     
+ 100:main.c        ****     return value;
+ 101:main.c        **** }
+ 109              		.loc 1 101 0
+ 110 0038 014B     		ldr	r3, .L8
+ 111 003a 1868     		ldr	r0, [r3]
+ 112 003c 38BD     		pop	{r3, r4, r5, pc}
+ 113              	.LVL10:
+ 114              	.L9:
+ 115 003e 00BF     		.align	2
+ 116              	.L8:
+ 117 0040 00000000 		.word	.LANCHOR0
+ 118              		.cfi_endproc
+ 119              	.LFE66:
+ 120              		.size	colourSensor_Scan_freq, .-colourSensor_Scan_freq
+ 121              		.section	.text.main,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	main
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	main, %function
+ 127              	main:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 5
+
+
+ 128              	.LFB65:
+  28:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 129              		.loc 1 28 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 56
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 134              		.cfi_def_cfa_offset 20
+ 135              		.cfi_offset 4, -20
+ 136              		.cfi_offset 5, -16
+ 137              		.cfi_offset 6, -12
+ 138              		.cfi_offset 7, -8
+ 139              		.cfi_offset 14, -4
+ 140 0002 91B0     		sub	sp, sp, #68
+ 141              		.cfi_def_cfa_offset 88
+  29:main.c        ****     UART_1_Start();
+ 142              		.loc 1 29 0
+ 143              		.syntax unified
+ 144              	@ 29 "main.c" 1
+ 145 0004 62B6     		CPSIE   i
+ 146              	@ 0 "" 2
+  30:main.c        ****     
+ 147              		.loc 1 30 0
+ 148              		.thumb
+ 149              		.syntax unified
+ 150 0006 FFF7FEFF 		bl	UART_1_Start
+ 151              	.LVL11:
+  33:main.c        ****     
+ 152              		.loc 1 33 0
+ 153 000a FFF7FEFF 		bl	PWM_Test_Signal_Start
+ 154              	.LVL12:
+  36:main.c        ****     Count7_1ms_Start();
+ 155              		.loc 1 36 0
+ 156 000e FFF7FEFF 		bl	Pulse_counter_Start
+ 157              	.LVL13:
+  37:main.c        ****     freq_isr_ClearPending(); 
+ 158              		.loc 1 37 0
+ 159 0012 FFF7FEFF 		bl	Count7_1ms_Start
+ 160              	.LVL14:
+  38:main.c        ****     freq_isr_StartEx(colour_sensor_isr);
+ 161              		.loc 1 38 0
+ 162 0016 FFF7FEFF 		bl	freq_isr_ClearPending
+ 163              	.LVL15:
+  39:main.c        ****     
+ 164              		.loc 1 39 0
+ 165 001a 2748     		ldr	r0, .L17
+ 166 001c FFF7FEFF 		bl	freq_isr_StartEx
+ 167              	.LVL16:
+ 168              	.L15:
+ 169              	.LBB2:
+  53:main.c        ****     uint32 blue  = colourSensor_Scan_freq(0,1);
+ 170              		.loc 1 53 0
+ 171 0020 0021     		movs	r1, #0
+ 172 0022 0846     		mov	r0, r1
+ 173 0024 FFF7FEFF 		bl	colourSensor_Scan_freq
+ 174              	.LVL17:
+ 175 0028 0446     		mov	r4, r0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 6
+
+
+ 176              	.LVL18:
+  54:main.c        ****     uint32 clear = colourSensor_Scan_freq(1,0);
+ 177              		.loc 1 54 0
+ 178 002a 0121     		movs	r1, #1
+ 179 002c 0020     		movs	r0, #0
+ 180              	.LVL19:
+ 181 002e FFF7FEFF 		bl	colourSensor_Scan_freq
+ 182              	.LVL20:
+ 183 0032 0546     		mov	r5, r0
+ 184              	.LVL21:
+  55:main.c        ****     uint32 green = colourSensor_Scan_freq(1,1);
+ 185              		.loc 1 55 0
+ 186 0034 0021     		movs	r1, #0
+ 187 0036 0120     		movs	r0, #1
+ 188              	.LVL22:
+ 189 0038 FFF7FEFF 		bl	colourSensor_Scan_freq
+ 190              	.LVL23:
+ 191 003c 0746     		mov	r7, r0
+ 192              	.LVL24:
+  56:main.c        ****     
+ 193              		.loc 1 56 0
+ 194 003e 0121     		movs	r1, #1
+ 195 0040 0846     		mov	r0, r1
+ 196              	.LVL25:
+ 197 0042 FFF7FEFF 		bl	colourSensor_Scan_freq
+ 198              	.LVL26:
+ 199 0046 0646     		mov	r6, r0
+ 200              	.LVL27:
   60:main.c        ****     UART_1_PutString(str);
- 123              		.loc 1 60 0 discriminator 1
- 124 0044 03A8     		add	r0, sp, #12
- 125 0046 FFF7FEFF 		bl	UART_1_PutString
- 126              	.LVL14:
-  61:main.c        ****         
-  62:main.c        ****     CyDelay(1000);
- 127              		.loc 1 62 0 discriminator 1
- 128 004a 4FF47A70 		mov	r0, #1000
- 129 004e FFF7FEFF 		bl	CyDelay
- 130              	.LVL15:
- 131 0052 E5E7     		b	.L6
- 132              	.L9:
- 133              		.align	2
- 134              	.L8:
- 135 0054 00000000 		.word	colour_sensor_isr
- 136 0058 00000000 		.word	.LANCHOR0
- 137 005c 00000000 		.word	.LC0
- 138              	.LBE2:
- 139              		.cfi_endproc
- 140              	.LFE65:
- 141              		.size	main, .-main
- 142              		.section	.text.colourSensor_Scan_freq,"ax",%progbits
- 143              		.align	2
- 144              		.global	colourSensor_Scan_freq
- 145              		.thumb
- 146              		.thumb_func
- 147              		.type	colourSensor_Scan_freq, %function
- 148              	colourSensor_Scan_freq:
- 149              	.LFB66:
-  63:main.c        ****     
-  64:main.c        ****         
-  65:main.c        ****     }
-  66:main.c        **** }
-  67:main.c        **** 
-  68:main.c        **** uint32 colourSensor_Scan_freq(int S2,int S3)
-  69:main.c        **** {
- 150              		.loc 1 69 0
- 151              		.cfi_startproc
- 152              		@ Volatile: function does not return.
- 153              		@ args = 0, pretend = 0, frame = 0
- 154              		@ frame_needed = 0, uses_anonymous_args = 0
- 155              	.LVL16:
- 156 0000 08B5     		push	{r3, lr}
- 157              		.cfi_def_cfa_offset 8
- 158              		.cfi_offset 3, -8
- 159              		.cfi_offset 14, -4
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 5
+ 201              		.loc 1 60 0
+ 202 0048 0197     		str	r7, [sp, #4]
+ 203 004a 0095     		str	r5, [sp]
+ 204 004c 0346     		mov	r3, r0
+ 205 004e 2246     		mov	r2, r4
+ 206 0050 1A49     		ldr	r1, .L17+4
+ 207 0052 03A8     		add	r0, sp, #12
+ 208              	.LVL28:
+ 209 0054 FFF7FEFF 		bl	sprintf
+ 210              	.LVL29:
+  61:main.c        ****     
+ 211              		.loc 1 61 0
+ 212 0058 03A8     		add	r0, sp, #12
+ 213 005a FFF7FEFF 		bl	UART_1_PutString
+ 214              	.LVL30:
+  63:main.c        ****         sprintf(str, "red \n");
+ 215              		.loc 1 63 0
+ 216 005e AC42     		cmp	r4, r5
+ 217 0060 08D9     		bls	.L11
+  63:main.c        ****         sprintf(str, "red \n");
+ 218              		.loc 1 63 0 is_stmt 0 discriminator 1
+ 219 0062 B442     		cmp	r4, r6
+ 220 0064 06D9     		bls	.L11
+  64:main.c        ****     else if((blue > red) && (blue>green))
+ 221              		.loc 1 64 0 is_stmt 1
+ 222 0066 164B     		ldr	r3, .L17+8
+ 223 0068 93E80300 		ldmia	r3, {r0, r1}
+ 224 006c 0390     		str	r0, [sp, #12]
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 7
 
 
- 160 0002 0C46     		mov	r4, r1
-  70:main.c        ****     ColourSensor_S2_Write(S2);
- 161              		.loc 1 70 0
- 162 0004 C0B2     		uxtb	r0, r0
- 163              	.LVL17:
- 164 0006 FFF7FEFF 		bl	ColourSensor_S2_Write
- 165              	.LVL18:
-  71:main.c        ****     ColourSensor_S3_Write(S3);
- 166              		.loc 1 71 0
- 167 000a E0B2     		uxtb	r0, r4
- 168 000c FFF7FEFF 		bl	ColourSensor_S3_Write
- 169              	.LVL19:
-  72:main.c        ****     colour_sensor_ready =0;
- 170              		.loc 1 72 0
- 171 0010 0022     		movs	r2, #0
- 172 0012 014B     		ldr	r3, .L13
- 173 0014 1A71     		strb	r2, [r3, #4]
- 174              	.L11:
- 175 0016 FEE7     		b	.L11
- 176              	.L14:
- 177              		.align	2
- 178              	.L13:
- 179 0018 00000000 		.word	.LANCHOR0
- 180              		.cfi_endproc
- 181              	.LFE66:
- 182              		.size	colourSensor_Scan_freq, .-colourSensor_Scan_freq
- 183              		.global	colour_sensor_ready
- 184              		.global	value
- 185              		.section	.rodata.str1.4,"aMS",%progbits,1
- 186              		.align	2
- 187              	.LC0:
- 188 0000 7265643A 		.ascii	"red: %lu\011green: %lu\011blue: %lu\011clear: %lu\011"
- 188      20256C75 
- 188      09677265 
- 188      656E3A20 
- 188      256C7509 
- 189 0029 200A00   		.ascii	" \012\000"
- 190              		.bss
- 191              		.align	2
- 192              		.set	.LANCHOR0,. + 0
- 193              		.type	value, %object
- 194              		.size	value, 4
- 195              	value:
- 196 0000 00000000 		.space	4
- 197              		.type	colour_sensor_ready, %object
- 198              		.size	colour_sensor_ready, 1
- 199              	colour_sensor_ready:
- 200 0004 00       		.space	1
- 201              		.text
- 202              	.Letext0:
- 203              		.file 2 "d:\\monash_apps\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\
- 204              		.file 3 "d:\\monash_apps\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\
- 205              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 206              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 207              		.file 6 "Generated_Source\\PSoC5/Pulse_counter.h"
- 208              		.file 7 "Generated_Source\\PSoC5/ColourSensor_S2.h"
- 209              		.file 8 "Generated_Source\\PSoC5/ColourSensor_S3.h"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 6
+ 225 006e ADF81010 		strh	r1, [sp, #16]	@ movhi
+ 226 0072 1DE0     		b	.L12
+ 227              	.L11:
+  65:main.c        ****         sprintf(str, "blue \n");
+ 228              		.loc 1 65 0
+ 229 0074 AC42     		cmp	r4, r5
+ 230 0076 0BD2     		bcs	.L13
+  65:main.c        ****         sprintf(str, "blue \n");
+ 231              		.loc 1 65 0 is_stmt 0 discriminator 1
+ 232 0078 B542     		cmp	r5, r6
+ 233 007a 09D9     		bls	.L13
+  66:main.c        ****     else if((green> red) && (green>blue))
+ 234              		.loc 1 66 0 is_stmt 1
+ 235 007c 114B     		ldr	r3, .L17+12
+ 236 007e 93E80300 		ldmia	r3, {r0, r1}
+ 237 0082 0390     		str	r0, [sp, #12]
+ 238 0084 ADF81010 		strh	r1, [sp, #16]	@ movhi
+ 239 0088 090C     		lsrs	r1, r1, #16
+ 240 008a 8DF81210 		strb	r1, [sp, #18]
+ 241 008e 0FE0     		b	.L12
+ 242              	.L13:
+  67:main.c        ****         sprintf(str, "green \n");
+ 243              		.loc 1 67 0
+ 244 0090 B442     		cmp	r4, r6
+ 245 0092 08D2     		bcs	.L14
+  67:main.c        ****         sprintf(str, "green \n");
+ 246              		.loc 1 67 0 is_stmt 0 discriminator 1
+ 247 0094 B542     		cmp	r5, r6
+ 248 0096 06D2     		bcs	.L14
+  68:main.c        ****     else
+ 249              		.loc 1 68 0 is_stmt 1
+ 250 0098 03AB     		add	r3, sp, #12
+ 251 009a 0B4A     		ldr	r2, .L17+16
+ 252 009c 92E80300 		ldmia	r2, {r0, r1}
+ 253 00a0 83E80300 		stmia	r3, {r0, r1}
+ 254 00a4 04E0     		b	.L12
+ 255              	.L14:
+  70:main.c        ****     
+ 256              		.loc 1 70 0
+ 257 00a6 03AB     		add	r3, sp, #12
+ 258 00a8 084A     		ldr	r2, .L17+20
+ 259 00aa 07CA     		ldmia	r2, {r0, r1, r2}
+ 260 00ac 83E80700 		stmia	r3, {r0, r1, r2}
+ 261              	.L12:
+  73:main.c        ****     
+ 262              		.loc 1 73 0
+ 263 00b0 03A8     		add	r0, sp, #12
+ 264 00b2 FFF7FEFF 		bl	UART_1_PutString
+ 265              	.LVL31:
+ 266              	.LBE2:
+  79:main.c        **** }
+ 267              		.loc 1 79 0
+ 268 00b6 B3E7     		b	.L15
+ 269              	.L18:
+ 270              		.align	2
+ 271              	.L17:
+ 272 00b8 00000000 		.word	colour_sensor_isr
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 8
 
 
- 210              		.file 9 "d:\\monash_apps\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\
- 211              		.file 10 "Generated_Source\\PSoC5/UART_1.h"
- 212              		.file 11 "Generated_Source\\PSoC5/CyLib.h"
- 213              		.file 12 "Generated_Source\\PSoC5/PWM_Test_Signal.h"
- 214              		.file 13 "Generated_Source\\PSoC5/Count7_1ms.h"
- 215              		.file 14 "Generated_Source\\PSoC5/freq_isr.h"
- 216              		.section	.debug_info,"",%progbits
- 217              	.Ldebug_info0:
- 218 0000 1D030000 		.4byte	0x31d
- 219 0004 0400     		.2byte	0x4
- 220 0006 00000000 		.4byte	.Ldebug_abbrev0
- 221 000a 04       		.byte	0x4
- 222 000b 01       		.uleb128 0x1
- 223 000c C7000000 		.4byte	.LASF38
- 224 0010 0C       		.byte	0xc
- 225 0011 57020000 		.4byte	.LASF39
- 226 0015 4B000000 		.4byte	.LASF40
- 227 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 228 001d 00000000 		.4byte	0
- 229 0021 00000000 		.4byte	.Ldebug_line0
- 230 0025 02       		.uleb128 0x2
- 231 0026 01       		.byte	0x1
- 232 0027 06       		.byte	0x6
- 233 0028 AD000000 		.4byte	.LASF0
- 234 002c 02       		.uleb128 0x2
- 235 002d 01       		.byte	0x1
- 236 002e 08       		.byte	0x8
- 237 002f B9000000 		.4byte	.LASF1
- 238 0033 02       		.uleb128 0x2
- 239 0034 02       		.byte	0x2
- 240 0035 05       		.byte	0x5
- 241 0036 AB010000 		.4byte	.LASF2
- 242 003a 02       		.uleb128 0x2
- 243 003b 02       		.byte	0x2
- 244 003c 07       		.byte	0x7
- 245 003d 67010000 		.4byte	.LASF3
- 246 0041 03       		.uleb128 0x3
- 247 0042 41000000 		.4byte	.LASF9
- 248 0046 02       		.byte	0x2
- 249 0047 3F       		.byte	0x3f
- 250 0048 4C000000 		.4byte	0x4c
- 251 004c 02       		.uleb128 0x2
- 252 004d 04       		.byte	0x4
- 253 004e 05       		.byte	0x5
- 254 004f 8F020000 		.4byte	.LASF4
- 255 0053 02       		.uleb128 0x2
- 256 0054 04       		.byte	0x4
- 257 0055 07       		.byte	0x7
- 258 0056 55010000 		.4byte	.LASF5
- 259 005a 02       		.uleb128 0x2
- 260 005b 08       		.byte	0x8
- 261 005c 05       		.byte	0x5
- 262 005d 49020000 		.4byte	.LASF6
- 263 0061 02       		.uleb128 0x2
- 264 0062 08       		.byte	0x8
- 265 0063 07       		.byte	0x7
- 266 0064 EC010000 		.4byte	.LASF7
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 7
+ 273 00bc 00000000 		.word	.LC0
+ 274 00c0 2C000000 		.word	.LC1
+ 275 00c4 34000000 		.word	.LC2
+ 276 00c8 3C000000 		.word	.LC3
+ 277 00cc 44000000 		.word	.LC4
+ 278              		.cfi_endproc
+ 279              	.LFE65:
+ 280              		.size	main, .-main
+ 281              		.global	colour_sensor_ready
+ 282              		.global	value
+ 283              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 284              		.align	2
+ 285              	.LC0:
+ 286 0000 7265643A 		.ascii	"red: %lu\011green: %lu\011blue: %lu\011clear: %lu\011"
+ 286      20256C75 
+ 286      09677265 
+ 286      656E3A20 
+ 286      256C7509 
+ 287 0029 00       		.ascii	"\000"
+ 288 002a 0000     		.space	2
+ 289              	.LC1:
+ 290 002c 72656420 		.ascii	"red \012\000"
+ 290      0A00
+ 291 0032 0000     		.space	2
+ 292              	.LC2:
+ 293 0034 626C7565 		.ascii	"blue \012\000"
+ 293      200A00
+ 294 003b 00       		.space	1
+ 295              	.LC3:
+ 296 003c 67726565 		.ascii	"green \012\000"
+ 296      6E200A00 
+ 297              	.LC4:
+ 298 0044 6E6F2061 		.ascii	"no answer \012\000"
+ 298      6E737765 
+ 298      72200A00 
+ 299              		.bss
+ 300              		.align	2
+ 301              		.set	.LANCHOR0,. + 0
+ 302              		.type	value, %object
+ 303              		.size	value, 4
+ 304              	value:
+ 305 0000 00000000 		.space	4
+ 306              		.type	colour_sensor_ready, %object
+ 307              		.size	colour_sensor_ready, 1
+ 308              	colour_sensor_ready:
+ 309 0004 00       		.space	1
+ 310              		.text
+ 311              	.Letext0:
+ 312              		.file 2 "d:\\monash_apps\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\
+ 313              		.file 3 "d:\\monash_apps\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\
+ 314              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 315              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 316              		.file 6 "Generated_Source\\PSoC5/Pulse_counter.h"
+ 317              		.file 7 "Generated_Source\\PSoC5/Control_Reg_1.h"
+ 318              		.file 8 "Generated_Source\\PSoC5/ColourSensor_S2.h"
+ 319              		.file 9 "Generated_Source\\PSoC5/ColourSensor_S3.h"
+ 320              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 9
 
 
- 267 0068 04       		.uleb128 0x4
- 268 0069 04       		.byte	0x4
- 269 006a 05       		.byte	0x5
- 270 006b 696E7400 		.ascii	"int\000"
- 271 006f 02       		.uleb128 0x2
- 272 0070 04       		.byte	0x4
- 273 0071 07       		.byte	0x7
- 274 0072 CE010000 		.4byte	.LASF8
- 275 0076 03       		.uleb128 0x3
- 276 0077 22020000 		.4byte	.LASF10
- 277 007b 03       		.byte	0x3
- 278 007c 2C       		.byte	0x2c
- 279 007d 41000000 		.4byte	0x41
- 280 0081 05       		.uleb128 0x5
- 281 0082 B5010000 		.4byte	.LASF11
- 282 0086 04       		.byte	0x4
- 283 0087 EA01     		.2byte	0x1ea
- 284 0089 53000000 		.4byte	0x53
- 285 008d 02       		.uleb128 0x2
- 286 008e 04       		.byte	0x4
- 287 008f 04       		.byte	0x4
- 288 0090 A7000000 		.4byte	.LASF12
- 289 0094 02       		.uleb128 0x2
- 290 0095 08       		.byte	0x8
- 291 0096 04       		.byte	0x4
- 292 0097 A4010000 		.4byte	.LASF13
- 293 009b 02       		.uleb128 0x2
- 294 009c 01       		.byte	0x1
- 295 009d 08       		.byte	0x8
- 296 009e 5E020000 		.4byte	.LASF14
- 297 00a2 02       		.uleb128 0x2
- 298 00a3 08       		.byte	0x8
- 299 00a4 04       		.byte	0x4
- 300 00a5 A9020000 		.4byte	.LASF15
- 301 00a9 02       		.uleb128 0x2
- 302 00aa 04       		.byte	0x4
- 303 00ab 07       		.byte	0x7
- 304 00ac 40020000 		.4byte	.LASF16
- 305 00b0 06       		.uleb128 0x6
- 306 00b1 BC010000 		.4byte	.LASF41
- 307 00b5 01       		.byte	0x1
- 308 00b6 15       		.byte	0x15
- 309 00b7 00000000 		.4byte	.LFB64
- 310 00bb 14000000 		.4byte	.LFE64-.LFB64
- 311 00bf 01       		.uleb128 0x1
- 312 00c0 9C       		.byte	0x9c
- 313 00c1 CF000000 		.4byte	0xcf
- 314 00c5 07       		.uleb128 0x7
- 315 00c6 06000000 		.4byte	.LVL0
- 316 00ca 9C020000 		.4byte	0x29c
- 317 00ce 00       		.byte	0
- 318 00cf 08       		.uleb128 0x8
- 319 00d0 1D020000 		.4byte	.LASF20
- 320 00d4 01       		.byte	0x1
- 321 00d5 1B       		.byte	0x1b
- 322 00d6 68000000 		.4byte	0x68
- 323 00da 00000000 		.4byte	.LFB65
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 8
+ 321              		.file 11 "d:\\monash_apps\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi
+ 322              		.file 12 "Generated_Source\\PSoC5/UART_1.h"
+ 323              		.file 13 "Generated_Source\\PSoC5/PWM_Test_Signal.h"
+ 324              		.file 14 "Generated_Source\\PSoC5/Count7_1ms.h"
+ 325              		.file 15 "Generated_Source\\PSoC5/freq_isr.h"
+ 326              		.section	.debug_info,"",%progbits
+ 327              	.Ldebug_info0:
+ 328 0000 BD030000 		.4byte	0x3bd
+ 329 0004 0400     		.2byte	0x4
+ 330 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 331 000a 04       		.byte	0x4
+ 332 000b 01       		.uleb128 0x1
+ 333 000c E1000000 		.4byte	.LASF37
+ 334 0010 0C       		.byte	0xc
+ 335 0011 6B020000 		.4byte	.LASF38
+ 336 0015 65000000 		.4byte	.LASF39
+ 337 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 338 001d 00000000 		.4byte	0
+ 339 0021 00000000 		.4byte	.Ldebug_line0
+ 340 0025 02       		.uleb128 0x2
+ 341 0026 01       		.byte	0x1
+ 342 0027 06       		.byte	0x6
+ 343 0028 C7000000 		.4byte	.LASF0
+ 344 002c 02       		.uleb128 0x2
+ 345 002d 01       		.byte	0x1
+ 346 002e 08       		.byte	0x8
+ 347 002f D3000000 		.4byte	.LASF1
+ 348 0033 02       		.uleb128 0x2
+ 349 0034 02       		.byte	0x2
+ 350 0035 05       		.byte	0x5
+ 351 0036 C5010000 		.4byte	.LASF2
+ 352 003a 02       		.uleb128 0x2
+ 353 003b 02       		.byte	0x2
+ 354 003c 07       		.byte	0x7
+ 355 003d 81010000 		.4byte	.LASF3
+ 356 0041 03       		.uleb128 0x3
+ 357 0042 5B000000 		.4byte	.LASF9
+ 358 0046 02       		.byte	0x2
+ 359 0047 3F       		.byte	0x3f
+ 360 0048 4C000000 		.4byte	0x4c
+ 361 004c 02       		.uleb128 0x2
+ 362 004d 04       		.byte	0x4
+ 363 004e 05       		.byte	0x5
+ 364 004f A3020000 		.4byte	.LASF4
+ 365 0053 02       		.uleb128 0x2
+ 366 0054 04       		.byte	0x4
+ 367 0055 07       		.byte	0x7
+ 368 0056 6F010000 		.4byte	.LASF5
+ 369 005a 02       		.uleb128 0x2
+ 370 005b 08       		.byte	0x8
+ 371 005c 05       		.byte	0x5
+ 372 005d 5D020000 		.4byte	.LASF6
+ 373 0061 02       		.uleb128 0x2
+ 374 0062 08       		.byte	0x8
+ 375 0063 07       		.byte	0x7
+ 376 0064 06020000 		.4byte	.LASF7
+ 377 0068 04       		.uleb128 0x4
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 10
 
 
- 324 00de 60000000 		.4byte	.LFE65-.LFB65
- 325 00e2 01       		.uleb128 0x1
- 326 00e3 9C       		.byte	0x9c
- 327 00e4 F7010000 		.4byte	0x1f7
- 328 00e8 09       		.uleb128 0x9
- 329 00e9 20000000 		.4byte	.LBB2
- 330 00ed 40000000 		.4byte	.LBE2-.LBB2
- 331 00f1 B6010000 		.4byte	0x1b6
- 332 00f5 0A       		.uleb128 0xa
- 333 00f6 72656400 		.ascii	"red\000"
- 334 00fa 01       		.byte	0x1
- 335 00fb 30       		.byte	0x30
- 336 00fc 81000000 		.4byte	0x81
- 337 0100 00000000 		.4byte	.LLST0
- 338 0104 0B       		.uleb128 0xb
- 339 0105 A2000000 		.4byte	.LASF17
- 340 0109 01       		.byte	0x1
- 341 010a 31       		.byte	0x31
- 342 010b 81000000 		.4byte	0x81
- 343 010f 1E000000 		.4byte	.LLST1
- 344 0113 0C       		.uleb128 0xc
- 345 0114 35000000 		.4byte	.LASF18
- 346 0118 01       		.byte	0x1
- 347 0119 32       		.byte	0x32
- 348 011a 81000000 		.4byte	0x81
- 349 011e 00       		.byte	0
- 350 011f 0C       		.uleb128 0xc
- 351 0120 7A010000 		.4byte	.LASF19
- 352 0124 01       		.byte	0x1
- 353 0125 33       		.byte	0x33
- 354 0126 81000000 		.4byte	0x81
- 355 012a 00       		.byte	0
- 356 012b 0D       		.uleb128 0xd
- 357 012c 73747200 		.ascii	"str\000"
- 358 0130 01       		.byte	0x1
- 359 0131 3A       		.byte	0x3a
- 360 0132 F7010000 		.4byte	0x1f7
- 361 0136 02       		.uleb128 0x2
- 362 0137 91       		.byte	0x91
- 363 0138 44       		.sleb128 -60
- 364 0139 0E       		.uleb128 0xe
- 365 013a 26000000 		.4byte	.LVL7
- 366 013e A7020000 		.4byte	0x2a7
- 367 0142 4C010000 		.4byte	0x14c
- 368 0146 0F       		.uleb128 0xf
- 369 0147 01       		.uleb128 0x1
- 370 0148 50       		.byte	0x50
- 371 0149 01       		.uleb128 0x1
- 372 014a 31       		.byte	0x31
- 373 014b 00       		.byte	0
- 374 014c 0E       		.uleb128 0xe
- 375 014d 2C000000 		.4byte	.LVL8
- 376 0151 B2020000 		.4byte	0x2b2
- 377 0155 5F010000 		.4byte	0x15f
- 378 0159 0F       		.uleb128 0xf
- 379 015a 01       		.uleb128 0x1
- 380 015b 50       		.byte	0x50
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 9
+ 378 0069 04       		.byte	0x4
+ 379 006a 05       		.byte	0x5
+ 380 006b 696E7400 		.ascii	"int\000"
+ 381 006f 02       		.uleb128 0x2
+ 382 0070 04       		.byte	0x4
+ 383 0071 07       		.byte	0x7
+ 384 0072 E8010000 		.4byte	.LASF8
+ 385 0076 03       		.uleb128 0x3
+ 386 0077 36020000 		.4byte	.LASF10
+ 387 007b 03       		.byte	0x3
+ 388 007c 2C       		.byte	0x2c
+ 389 007d 41000000 		.4byte	0x41
+ 390 0081 05       		.uleb128 0x5
+ 391 0082 CF010000 		.4byte	.LASF11
+ 392 0086 04       		.byte	0x4
+ 393 0087 EA01     		.2byte	0x1ea
+ 394 0089 53000000 		.4byte	0x53
+ 395 008d 02       		.uleb128 0x2
+ 396 008e 04       		.byte	0x4
+ 397 008f 04       		.byte	0x4
+ 398 0090 C1000000 		.4byte	.LASF12
+ 399 0094 02       		.uleb128 0x2
+ 400 0095 08       		.byte	0x8
+ 401 0096 04       		.byte	0x4
+ 402 0097 BE010000 		.4byte	.LASF13
+ 403 009b 02       		.uleb128 0x2
+ 404 009c 01       		.byte	0x1
+ 405 009d 08       		.byte	0x8
+ 406 009e 72020000 		.4byte	.LASF14
+ 407 00a2 02       		.uleb128 0x2
+ 408 00a3 08       		.byte	0x8
+ 409 00a4 04       		.byte	0x4
+ 410 00a5 BD020000 		.4byte	.LASF15
+ 411 00a9 02       		.uleb128 0x2
+ 412 00aa 04       		.byte	0x4
+ 413 00ab 07       		.byte	0x7
+ 414 00ac 54020000 		.4byte	.LASF16
+ 415 00b0 06       		.uleb128 0x6
+ 416 00b1 D6010000 		.4byte	.LASF40
+ 417 00b5 01       		.byte	0x1
+ 418 00b6 15       		.byte	0x15
+ 419 00b7 00000000 		.4byte	.LFB64
+ 420 00bb 14000000 		.4byte	.LFE64-.LFB64
+ 421 00bf 01       		.uleb128 0x1
+ 422 00c0 9C       		.byte	0x9c
+ 423 00c1 CF000000 		.4byte	0xcf
+ 424 00c5 07       		.uleb128 0x7
+ 425 00c6 06000000 		.4byte	.LVL0
+ 426 00ca 31030000 		.4byte	0x331
+ 427 00ce 00       		.byte	0
+ 428 00cf 08       		.uleb128 0x8
+ 429 00d0 A7010000 		.4byte	.LASF41
+ 430 00d4 01       		.byte	0x1
+ 431 00d5 52       		.byte	0x52
+ 432 00d6 81000000 		.4byte	0x81
+ 433 00da 00000000 		.4byte	.LFB66
+ 434 00de 44000000 		.4byte	.LFE66-.LFB66
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 11
 
 
- 381 015c 01       		.uleb128 0x1
- 382 015d 31       		.byte	0x31
- 383 015e 00       		.byte	0
- 384 015f 07       		.uleb128 0x7
- 385 0160 30000000 		.4byte	.LVL9
- 386 0164 9C020000 		.4byte	0x29c
- 387 0168 0E       		.uleb128 0xe
- 388 0169 44000000 		.4byte	.LVL13
- 389 016d BD020000 		.4byte	0x2bd
- 390 0171 90010000 		.4byte	0x190
- 391 0175 0F       		.uleb128 0xf
- 392 0176 01       		.uleb128 0x1
- 393 0177 50       		.byte	0x50
- 394 0178 02       		.uleb128 0x2
- 395 0179 91       		.byte	0x91
- 396 017a 44       		.sleb128 -60
- 397 017b 0F       		.uleb128 0xf
- 398 017c 01       		.uleb128 0x1
- 399 017d 51       		.byte	0x51
- 400 017e 05       		.uleb128 0x5
- 401 017f 03       		.byte	0x3
- 402 0180 00000000 		.4byte	.LC0
- 403 0184 0F       		.uleb128 0xf
- 404 0185 01       		.uleb128 0x1
- 405 0186 53       		.byte	0x53
- 406 0187 01       		.uleb128 0x1
- 407 0188 30       		.byte	0x30
- 408 0189 0F       		.uleb128 0xf
- 409 018a 02       		.uleb128 0x2
- 410 018b 7D       		.byte	0x7d
- 411 018c 04       		.sleb128 4
- 412 018d 01       		.uleb128 0x1
- 413 018e 30       		.byte	0x30
- 414 018f 00       		.byte	0
- 415 0190 0E       		.uleb128 0xe
- 416 0191 4A000000 		.4byte	.LVL14
- 417 0195 C8020000 		.4byte	0x2c8
- 418 0199 A4010000 		.4byte	0x1a4
- 419 019d 0F       		.uleb128 0xf
- 420 019e 01       		.uleb128 0x1
- 421 019f 50       		.byte	0x50
- 422 01a0 02       		.uleb128 0x2
- 423 01a1 91       		.byte	0x91
- 424 01a2 44       		.sleb128 -60
- 425 01a3 00       		.byte	0
- 426 01a4 10       		.uleb128 0x10
- 427 01a5 52000000 		.4byte	.LVL15
- 428 01a9 D3020000 		.4byte	0x2d3
- 429 01ad 0F       		.uleb128 0xf
- 430 01ae 01       		.uleb128 0x1
- 431 01af 50       		.byte	0x50
- 432 01b0 03       		.uleb128 0x3
- 433 01b1 0A       		.byte	0xa
- 434 01b2 E803     		.2byte	0x3e8
- 435 01b4 00       		.byte	0
- 436 01b5 00       		.byte	0
- 437 01b6 07       		.uleb128 0x7
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 10
+ 435 00e2 01       		.uleb128 0x1
+ 436 00e3 9C       		.byte	0x9c
+ 437 00e4 76010000 		.4byte	0x176
+ 438 00e8 09       		.uleb128 0x9
+ 439 00e9 533200   		.ascii	"S2\000"
+ 440 00ec 01       		.byte	0x1
+ 441 00ed 52       		.byte	0x52
+ 442 00ee 68000000 		.4byte	0x68
+ 443 00f2 00000000 		.4byte	.LLST0
+ 444 00f6 09       		.uleb128 0x9
+ 445 00f7 533300   		.ascii	"S3\000"
+ 446 00fa 01       		.byte	0x1
+ 447 00fb 52       		.byte	0x52
+ 448 00fc 68000000 		.4byte	0x68
+ 449 0100 2C000000 		.4byte	.LLST1
+ 450 0104 0A       		.uleb128 0xa
+ 451 0105 0C000000 		.4byte	.LVL3
+ 452 0109 3C030000 		.4byte	0x33c
+ 453 010d 17010000 		.4byte	0x117
+ 454 0111 0B       		.uleb128 0xb
+ 455 0112 01       		.uleb128 0x1
+ 456 0113 50       		.byte	0x50
+ 457 0114 01       		.uleb128 0x1
+ 458 0115 31       		.byte	0x31
+ 459 0116 00       		.byte	0
+ 460 0117 0A       		.uleb128 0xa
+ 461 0118 12000000 		.4byte	.LVL4
+ 462 011c 47030000 		.4byte	0x347
+ 463 0120 2B010000 		.4byte	0x12b
+ 464 0124 0B       		.uleb128 0xb
+ 465 0125 01       		.uleb128 0x1
+ 466 0126 50       		.byte	0x50
+ 467 0127 02       		.uleb128 0x2
+ 468 0128 75       		.byte	0x75
+ 469 0129 00       		.sleb128 0
+ 470 012a 00       		.byte	0
+ 471 012b 0A       		.uleb128 0xa
+ 472 012c 18000000 		.4byte	.LVL5
+ 473 0130 52030000 		.4byte	0x352
+ 474 0134 3F010000 		.4byte	0x13f
+ 475 0138 0B       		.uleb128 0xb
+ 476 0139 01       		.uleb128 0x1
+ 477 013a 50       		.byte	0x50
+ 478 013b 02       		.uleb128 0x2
+ 479 013c 74       		.byte	0x74
+ 480 013d 00       		.sleb128 0
+ 481 013e 00       		.byte	0
+ 482 013f 0A       		.uleb128 0xa
+ 483 0140 24000000 		.4byte	.LVL7
+ 484 0144 5D030000 		.4byte	0x35d
+ 485 0148 52010000 		.4byte	0x152
+ 486 014c 0B       		.uleb128 0xb
+ 487 014d 01       		.uleb128 0x1
+ 488 014e 50       		.byte	0x50
+ 489 014f 01       		.uleb128 0x1
+ 490 0150 35       		.byte	0x35
+ 491 0151 00       		.byte	0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 12
 
 
- 438 01b7 0A000000 		.4byte	.LVL1
- 439 01bb DE020000 		.4byte	0x2de
- 440 01bf 07       		.uleb128 0x7
- 441 01c0 0E000000 		.4byte	.LVL2
- 442 01c4 E9020000 		.4byte	0x2e9
- 443 01c8 07       		.uleb128 0x7
- 444 01c9 12000000 		.4byte	.LVL3
- 445 01cd F4020000 		.4byte	0x2f4
- 446 01d1 07       		.uleb128 0x7
- 447 01d2 16000000 		.4byte	.LVL4
- 448 01d6 FF020000 		.4byte	0x2ff
- 449 01da 07       		.uleb128 0x7
- 450 01db 1A000000 		.4byte	.LVL5
- 451 01df 0A030000 		.4byte	0x30a
- 452 01e3 10       		.uleb128 0x10
- 453 01e4 20000000 		.4byte	.LVL6
- 454 01e8 15030000 		.4byte	0x315
- 455 01ec 0F       		.uleb128 0xf
- 456 01ed 01       		.uleb128 0x1
- 457 01ee 50       		.byte	0x50
- 458 01ef 05       		.uleb128 0x5
- 459 01f0 03       		.byte	0x3
- 460 01f1 00000000 		.4byte	colour_sensor_isr
- 461 01f5 00       		.byte	0
- 462 01f6 00       		.byte	0
- 463 01f7 11       		.uleb128 0x11
- 464 01f8 9B000000 		.4byte	0x9b
- 465 01fc 07020000 		.4byte	0x207
- 466 0200 12       		.uleb128 0x12
- 467 0201 A9000000 		.4byte	0xa9
- 468 0205 31       		.byte	0x31
- 469 0206 00       		.byte	0
- 470 0207 08       		.uleb128 0x8
- 471 0208 8D010000 		.4byte	.LASF21
- 472 020c 01       		.byte	0x1
- 473 020d 44       		.byte	0x44
- 474 020e 81000000 		.4byte	0x81
- 475 0212 00000000 		.4byte	.LFB66
- 476 0216 1C000000 		.4byte	.LFE66-.LFB66
- 477 021a 01       		.uleb128 0x1
- 478 021b 9C       		.byte	0x9c
- 479 021c 62020000 		.4byte	0x262
- 480 0220 13       		.uleb128 0x13
- 481 0221 533200   		.ascii	"S2\000"
- 482 0224 01       		.byte	0x1
- 483 0225 44       		.byte	0x44
- 484 0226 68000000 		.4byte	0x68
- 485 022a 3D000000 		.4byte	.LLST2
- 486 022e 13       		.uleb128 0x13
- 487 022f 533300   		.ascii	"S3\000"
- 488 0232 01       		.byte	0x1
- 489 0233 44       		.byte	0x44
- 490 0234 68000000 		.4byte	0x68
- 491 0238 5E000000 		.4byte	.LLST3
- 492 023c 0E       		.uleb128 0xe
- 493 023d 0A000000 		.4byte	.LVL18
- 494 0241 A7020000 		.4byte	0x2a7
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 11
+ 492 0152 0A       		.uleb128 0xa
+ 493 0153 2A000000 		.4byte	.LVL8
+ 494 0157 3C030000 		.4byte	0x33c
+ 495 015b 66010000 		.4byte	0x166
+ 496 015f 0B       		.uleb128 0xb
+ 497 0160 01       		.uleb128 0x1
+ 498 0161 50       		.byte	0x50
+ 499 0162 02       		.uleb128 0x2
+ 500 0163 74       		.byte	0x74
+ 501 0164 00       		.sleb128 0
+ 502 0165 00       		.byte	0
+ 503 0166 0C       		.uleb128 0xc
+ 504 0167 38000000 		.4byte	.LVL9
+ 505 016b 5D030000 		.4byte	0x35d
+ 506 016f 0B       		.uleb128 0xb
+ 507 0170 01       		.uleb128 0x1
+ 508 0171 50       		.byte	0x50
+ 509 0172 01       		.uleb128 0x1
+ 510 0173 3A       		.byte	0x3a
+ 511 0174 00       		.byte	0
+ 512 0175 00       		.byte	0
+ 513 0176 0D       		.uleb128 0xd
+ 514 0177 31020000 		.4byte	.LASF42
+ 515 017b 01       		.byte	0x1
+ 516 017c 1B       		.byte	0x1b
+ 517 017d 68000000 		.4byte	0x68
+ 518 0181 00000000 		.4byte	.LFB65
+ 519 0185 D0000000 		.4byte	.LFE65-.LFB65
+ 520 0189 01       		.uleb128 0x1
+ 521 018a 9C       		.byte	0x9c
+ 522 018b E7020000 		.4byte	0x2e7
+ 523 018f 0E       		.uleb128 0xe
+ 524 0190 20000000 		.4byte	.LBB2
+ 525 0194 96000000 		.4byte	.LBE2-.LBB2
+ 526 0198 A6020000 		.4byte	0x2a6
+ 527 019c 0F       		.uleb128 0xf
+ 528 019d 72656400 		.ascii	"red\000"
+ 529 01a1 01       		.byte	0x1
+ 530 01a2 35       		.byte	0x35
+ 531 01a3 81000000 		.4byte	0x81
+ 532 01a7 58000000 		.4byte	.LLST2
+ 533 01ab 10       		.uleb128 0x10
+ 534 01ac BC000000 		.4byte	.LASF17
+ 535 01b0 01       		.byte	0x1
+ 536 01b1 36       		.byte	0x36
+ 537 01b2 81000000 		.4byte	0x81
+ 538 01b6 76000000 		.4byte	.LLST3
+ 539 01ba 10       		.uleb128 0x10
+ 540 01bb 4F000000 		.4byte	.LASF18
+ 541 01bf 01       		.byte	0x1
+ 542 01c0 37       		.byte	0x37
+ 543 01c1 81000000 		.4byte	0x81
+ 544 01c5 94000000 		.4byte	.LLST4
+ 545 01c9 10       		.uleb128 0x10
+ 546 01ca 94010000 		.4byte	.LASF19
+ 547 01ce 01       		.byte	0x1
+ 548 01cf 38       		.byte	0x38
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 13
 
 
- 495 0245 51020000 		.4byte	0x251
- 496 0249 0F       		.uleb128 0xf
- 497 024a 01       		.uleb128 0x1
- 498 024b 50       		.byte	0x50
- 499 024c 03       		.uleb128 0x3
- 500 024d F3       		.byte	0xf3
- 501 024e 01       		.uleb128 0x1
- 502 024f 50       		.byte	0x50
- 503 0250 00       		.byte	0
- 504 0251 10       		.uleb128 0x10
- 505 0252 10000000 		.4byte	.LVL19
- 506 0256 B2020000 		.4byte	0x2b2
- 507 025a 0F       		.uleb128 0xf
- 508 025b 01       		.uleb128 0x1
- 509 025c 50       		.byte	0x50
- 510 025d 02       		.uleb128 0x2
- 511 025e 74       		.byte	0x74
- 512 025f 00       		.sleb128 0
- 513 0260 00       		.byte	0
- 514 0261 00       		.byte	0
- 515 0262 14       		.uleb128 0x14
- 516 0263 80010000 		.4byte	.LASF22
- 517 0267 05       		.byte	0x5
- 518 0268 1207     		.2byte	0x712
- 519 026a 6E020000 		.4byte	0x26e
- 520 026e 15       		.uleb128 0x15
- 521 026f 76000000 		.4byte	0x76
- 522 0273 16       		.uleb128 0x16
- 523 0274 3B000000 		.4byte	.LASF23
- 524 0278 01       		.byte	0x1
- 525 0279 10       		.byte	0x10
- 526 027a 81000000 		.4byte	0x81
- 527 027e 05       		.uleb128 0x5
- 528 027f 03       		.byte	0x3
- 529 0280 00000000 		.4byte	value
- 530 0284 16       		.uleb128 0x16
- 531 0285 00000000 		.4byte	.LASF24
- 532 0289 01       		.byte	0x1
- 533 028a 14       		.byte	0x14
- 534 028b 95020000 		.4byte	0x295
- 535 028f 05       		.uleb128 0x5
- 536 0290 03       		.byte	0x3
- 537 0291 00000000 		.4byte	colour_sensor_ready
- 538 0295 02       		.uleb128 0x2
- 539 0296 01       		.byte	0x1
- 540 0297 02       		.byte	0x2
- 541 0298 DC020000 		.4byte	.LASF25
- 542 029c 17       		.uleb128 0x17
- 543 029d 03020000 		.4byte	.LASF26
- 544 02a1 03020000 		.4byte	.LASF26
- 545 02a5 06       		.byte	0x6
- 546 02a6 5D       		.byte	0x5d
- 547 02a7 17       		.uleb128 0x17
- 548 02a8 2A020000 		.4byte	.LASF27
- 549 02ac 2A020000 		.4byte	.LASF27
- 550 02b0 07       		.byte	0x7
- 551 02b1 26       		.byte	0x26
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 12
+ 549 01d0 81000000 		.4byte	0x81
+ 550 01d4 B2000000 		.4byte	.LLST5
+ 551 01d8 11       		.uleb128 0x11
+ 552 01d9 73747200 		.ascii	"str\000"
+ 553 01dd 01       		.byte	0x1
+ 554 01de 3B       		.byte	0x3b
+ 555 01df E7020000 		.4byte	0x2e7
+ 556 01e3 03       		.uleb128 0x3
+ 557 01e4 91       		.byte	0x91
+ 558 01e5 B47F     		.sleb128 -76
+ 559 01e7 0A       		.uleb128 0xa
+ 560 01e8 28000000 		.4byte	.LVL17
+ 561 01ec CF000000 		.4byte	0xcf
+ 562 01f0 FF010000 		.4byte	0x1ff
+ 563 01f4 0B       		.uleb128 0xb
+ 564 01f5 01       		.uleb128 0x1
+ 565 01f6 50       		.byte	0x50
+ 566 01f7 01       		.uleb128 0x1
+ 567 01f8 30       		.byte	0x30
+ 568 01f9 0B       		.uleb128 0xb
+ 569 01fa 01       		.uleb128 0x1
+ 570 01fb 51       		.byte	0x51
+ 571 01fc 01       		.uleb128 0x1
+ 572 01fd 30       		.byte	0x30
+ 573 01fe 00       		.byte	0
+ 574 01ff 0A       		.uleb128 0xa
+ 575 0200 32000000 		.4byte	.LVL20
+ 576 0204 CF000000 		.4byte	0xcf
+ 577 0208 17020000 		.4byte	0x217
+ 578 020c 0B       		.uleb128 0xb
+ 579 020d 01       		.uleb128 0x1
+ 580 020e 50       		.byte	0x50
+ 581 020f 01       		.uleb128 0x1
+ 582 0210 30       		.byte	0x30
+ 583 0211 0B       		.uleb128 0xb
+ 584 0212 01       		.uleb128 0x1
+ 585 0213 51       		.byte	0x51
+ 586 0214 01       		.uleb128 0x1
+ 587 0215 31       		.byte	0x31
+ 588 0216 00       		.byte	0
+ 589 0217 0A       		.uleb128 0xa
+ 590 0218 3C000000 		.4byte	.LVL23
+ 591 021c CF000000 		.4byte	0xcf
+ 592 0220 2F020000 		.4byte	0x22f
+ 593 0224 0B       		.uleb128 0xb
+ 594 0225 01       		.uleb128 0x1
+ 595 0226 50       		.byte	0x50
+ 596 0227 01       		.uleb128 0x1
+ 597 0228 31       		.byte	0x31
+ 598 0229 0B       		.uleb128 0xb
+ 599 022a 01       		.uleb128 0x1
+ 600 022b 51       		.byte	0x51
+ 601 022c 01       		.uleb128 0x1
+ 602 022d 30       		.byte	0x30
+ 603 022e 00       		.byte	0
+ 604 022f 0A       		.uleb128 0xa
+ 605 0230 46000000 		.4byte	.LVL26
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 14
 
 
- 552 02b2 17       		.uleb128 0x17
- 553 02b3 63020000 		.4byte	.LASF28
- 554 02b7 63020000 		.4byte	.LASF28
- 555 02bb 08       		.byte	0x8
- 556 02bc 26       		.byte	0x26
- 557 02bd 17       		.uleb128 0x17
- 558 02be E2020000 		.4byte	.LASF29
- 559 02c2 E2020000 		.4byte	.LASF29
- 560 02c6 09       		.byte	0x9
- 561 02c7 E7       		.byte	0xe7
- 562 02c8 17       		.uleb128 0x17
- 563 02c9 CB020000 		.4byte	.LASF30
- 564 02cd CB020000 		.4byte	.LASF30
- 565 02d1 0A       		.byte	0xa
- 566 02d2 8B       		.byte	0x8b
- 567 02d3 17       		.uleb128 0x17
- 568 02d4 EA020000 		.4byte	.LASF31
- 569 02d8 EA020000 		.4byte	.LASF31
- 570 02dc 0B       		.byte	0xb
- 571 02dd 76       		.byte	0x76
- 572 02de 17       		.uleb128 0x17
- 573 02df 14000000 		.4byte	.LASF32
- 574 02e3 14000000 		.4byte	.LASF32
- 575 02e7 0A       		.byte	0xa
- 576 02e8 54       		.byte	0x54
- 577 02e9 17       		.uleb128 0x17
- 578 02ea 79020000 		.4byte	.LASF33
- 579 02ee 79020000 		.4byte	.LASF33
- 580 02f2 0C       		.byte	0xc
- 581 02f3 92       		.byte	0x92
- 582 02f4 17       		.uleb128 0x17
- 583 02f5 21000000 		.4byte	.LASF34
- 584 02f9 21000000 		.4byte	.LASF34
- 585 02fd 06       		.byte	0x6
- 586 02fe 4F       		.byte	0x4f
- 587 02ff 17       		.uleb128 0x17
- 588 0300 98020000 		.4byte	.LASF35
- 589 0304 98020000 		.4byte	.LASF35
- 590 0308 0D       		.byte	0xd
- 591 0309 26       		.byte	0x26
- 592 030a 17       		.uleb128 0x17
- 593 030b B5020000 		.4byte	.LASF36
- 594 030f B5020000 		.4byte	.LASF36
- 595 0313 0E       		.byte	0xe
- 596 0314 28       		.byte	0x28
- 597 0315 17       		.uleb128 0x17
- 598 0316 DB010000 		.4byte	.LASF37
- 599 031a DB010000 		.4byte	.LASF37
- 600 031e 0E       		.byte	0xe
- 601 031f 18       		.byte	0x18
- 602 0320 00       		.byte	0
- 603              		.section	.debug_abbrev,"",%progbits
- 604              	.Ldebug_abbrev0:
- 605 0000 01       		.uleb128 0x1
- 606 0001 11       		.uleb128 0x11
- 607 0002 01       		.byte	0x1
- 608 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 13
+ 606 0234 CF000000 		.4byte	0xcf
+ 607 0238 47020000 		.4byte	0x247
+ 608 023c 0B       		.uleb128 0xb
+ 609 023d 01       		.uleb128 0x1
+ 610 023e 50       		.byte	0x50
+ 611 023f 01       		.uleb128 0x1
+ 612 0240 31       		.byte	0x31
+ 613 0241 0B       		.uleb128 0xb
+ 614 0242 01       		.uleb128 0x1
+ 615 0243 51       		.byte	0x51
+ 616 0244 01       		.uleb128 0x1
+ 617 0245 31       		.byte	0x31
+ 618 0246 00       		.byte	0
+ 619 0247 0A       		.uleb128 0xa
+ 620 0248 58000000 		.4byte	.LVL29
+ 621 024c 68030000 		.4byte	0x368
+ 622 0250 7F020000 		.4byte	0x27f
+ 623 0254 0B       		.uleb128 0xb
+ 624 0255 01       		.uleb128 0x1
+ 625 0256 50       		.byte	0x50
+ 626 0257 03       		.uleb128 0x3
+ 627 0258 91       		.byte	0x91
+ 628 0259 B47F     		.sleb128 -76
+ 629 025b 0B       		.uleb128 0xb
+ 630 025c 01       		.uleb128 0x1
+ 631 025d 51       		.byte	0x51
+ 632 025e 05       		.uleb128 0x5
+ 633 025f 03       		.byte	0x3
+ 634 0260 00000000 		.4byte	.LC0
+ 635 0264 0B       		.uleb128 0xb
+ 636 0265 01       		.uleb128 0x1
+ 637 0266 52       		.byte	0x52
+ 638 0267 02       		.uleb128 0x2
+ 639 0268 74       		.byte	0x74
+ 640 0269 00       		.sleb128 0
+ 641 026a 0B       		.uleb128 0xb
+ 642 026b 01       		.uleb128 0x1
+ 643 026c 53       		.byte	0x53
+ 644 026d 02       		.uleb128 0x2
+ 645 026e 76       		.byte	0x76
+ 646 026f 00       		.sleb128 0
+ 647 0270 0B       		.uleb128 0xb
+ 648 0271 02       		.uleb128 0x2
+ 649 0272 7D       		.byte	0x7d
+ 650 0273 00       		.sleb128 0
+ 651 0274 02       		.uleb128 0x2
+ 652 0275 75       		.byte	0x75
+ 653 0276 00       		.sleb128 0
+ 654 0277 0B       		.uleb128 0xb
+ 655 0278 02       		.uleb128 0x2
+ 656 0279 7D       		.byte	0x7d
+ 657 027a 04       		.sleb128 4
+ 658 027b 02       		.uleb128 0x2
+ 659 027c 77       		.byte	0x77
+ 660 027d 00       		.sleb128 0
+ 661 027e 00       		.byte	0
+ 662 027f 0A       		.uleb128 0xa
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 15
 
 
- 609 0004 0E       		.uleb128 0xe
- 610 0005 13       		.uleb128 0x13
- 611 0006 0B       		.uleb128 0xb
- 612 0007 03       		.uleb128 0x3
- 613 0008 0E       		.uleb128 0xe
- 614 0009 1B       		.uleb128 0x1b
- 615 000a 0E       		.uleb128 0xe
- 616 000b 55       		.uleb128 0x55
- 617 000c 17       		.uleb128 0x17
- 618 000d 11       		.uleb128 0x11
- 619 000e 01       		.uleb128 0x1
- 620 000f 10       		.uleb128 0x10
- 621 0010 17       		.uleb128 0x17
- 622 0011 00       		.byte	0
- 623 0012 00       		.byte	0
- 624 0013 02       		.uleb128 0x2
- 625 0014 24       		.uleb128 0x24
- 626 0015 00       		.byte	0
- 627 0016 0B       		.uleb128 0xb
- 628 0017 0B       		.uleb128 0xb
- 629 0018 3E       		.uleb128 0x3e
- 630 0019 0B       		.uleb128 0xb
- 631 001a 03       		.uleb128 0x3
- 632 001b 0E       		.uleb128 0xe
- 633 001c 00       		.byte	0
- 634 001d 00       		.byte	0
- 635 001e 03       		.uleb128 0x3
- 636 001f 16       		.uleb128 0x16
- 637 0020 00       		.byte	0
- 638 0021 03       		.uleb128 0x3
- 639 0022 0E       		.uleb128 0xe
- 640 0023 3A       		.uleb128 0x3a
- 641 0024 0B       		.uleb128 0xb
- 642 0025 3B       		.uleb128 0x3b
- 643 0026 0B       		.uleb128 0xb
- 644 0027 49       		.uleb128 0x49
- 645 0028 13       		.uleb128 0x13
- 646 0029 00       		.byte	0
- 647 002a 00       		.byte	0
- 648 002b 04       		.uleb128 0x4
- 649 002c 24       		.uleb128 0x24
- 650 002d 00       		.byte	0
- 651 002e 0B       		.uleb128 0xb
- 652 002f 0B       		.uleb128 0xb
- 653 0030 3E       		.uleb128 0x3e
- 654 0031 0B       		.uleb128 0xb
- 655 0032 03       		.uleb128 0x3
- 656 0033 08       		.uleb128 0x8
- 657 0034 00       		.byte	0
- 658 0035 00       		.byte	0
- 659 0036 05       		.uleb128 0x5
- 660 0037 16       		.uleb128 0x16
- 661 0038 00       		.byte	0
- 662 0039 03       		.uleb128 0x3
- 663 003a 0E       		.uleb128 0xe
- 664 003b 3A       		.uleb128 0x3a
- 665 003c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 14
+ 663 0280 5E000000 		.4byte	.LVL30
+ 664 0284 73030000 		.4byte	0x373
+ 665 0288 94020000 		.4byte	0x294
+ 666 028c 0B       		.uleb128 0xb
+ 667 028d 01       		.uleb128 0x1
+ 668 028e 50       		.byte	0x50
+ 669 028f 03       		.uleb128 0x3
+ 670 0290 91       		.byte	0x91
+ 671 0291 B47F     		.sleb128 -76
+ 672 0293 00       		.byte	0
+ 673 0294 0C       		.uleb128 0xc
+ 674 0295 B6000000 		.4byte	.LVL31
+ 675 0299 73030000 		.4byte	0x373
+ 676 029d 0B       		.uleb128 0xb
+ 677 029e 01       		.uleb128 0x1
+ 678 029f 50       		.byte	0x50
+ 679 02a0 03       		.uleb128 0x3
+ 680 02a1 91       		.byte	0x91
+ 681 02a2 B47F     		.sleb128 -76
+ 682 02a4 00       		.byte	0
+ 683 02a5 00       		.byte	0
+ 684 02a6 07       		.uleb128 0x7
+ 685 02a7 0A000000 		.4byte	.LVL11
+ 686 02ab 7E030000 		.4byte	0x37e
+ 687 02af 07       		.uleb128 0x7
+ 688 02b0 0E000000 		.4byte	.LVL12
+ 689 02b4 89030000 		.4byte	0x389
+ 690 02b8 07       		.uleb128 0x7
+ 691 02b9 12000000 		.4byte	.LVL13
+ 692 02bd 94030000 		.4byte	0x394
+ 693 02c1 07       		.uleb128 0x7
+ 694 02c2 16000000 		.4byte	.LVL14
+ 695 02c6 9F030000 		.4byte	0x39f
+ 696 02ca 07       		.uleb128 0x7
+ 697 02cb 1A000000 		.4byte	.LVL15
+ 698 02cf AA030000 		.4byte	0x3aa
+ 699 02d3 0C       		.uleb128 0xc
+ 700 02d4 20000000 		.4byte	.LVL16
+ 701 02d8 B5030000 		.4byte	0x3b5
+ 702 02dc 0B       		.uleb128 0xb
+ 703 02dd 01       		.uleb128 0x1
+ 704 02de 50       		.byte	0x50
+ 705 02df 05       		.uleb128 0x5
+ 706 02e0 03       		.byte	0x3
+ 707 02e1 00000000 		.4byte	colour_sensor_isr
+ 708 02e5 00       		.byte	0
+ 709 02e6 00       		.byte	0
+ 710 02e7 12       		.uleb128 0x12
+ 711 02e8 9B000000 		.4byte	0x9b
+ 712 02ec F7020000 		.4byte	0x2f7
+ 713 02f0 13       		.uleb128 0x13
+ 714 02f1 A9000000 		.4byte	0xa9
+ 715 02f5 31       		.byte	0x31
+ 716 02f6 00       		.byte	0
+ 717 02f7 14       		.uleb128 0x14
+ 718 02f8 9A010000 		.4byte	.LASF20
+ 719 02fc 05       		.byte	0x5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 16
 
 
- 666 003d 3B       		.uleb128 0x3b
- 667 003e 05       		.uleb128 0x5
- 668 003f 49       		.uleb128 0x49
- 669 0040 13       		.uleb128 0x13
- 670 0041 00       		.byte	0
- 671 0042 00       		.byte	0
- 672 0043 06       		.uleb128 0x6
- 673 0044 2E       		.uleb128 0x2e
- 674 0045 01       		.byte	0x1
- 675 0046 3F       		.uleb128 0x3f
- 676 0047 19       		.uleb128 0x19
- 677 0048 03       		.uleb128 0x3
- 678 0049 0E       		.uleb128 0xe
- 679 004a 3A       		.uleb128 0x3a
- 680 004b 0B       		.uleb128 0xb
- 681 004c 3B       		.uleb128 0x3b
- 682 004d 0B       		.uleb128 0xb
- 683 004e 27       		.uleb128 0x27
- 684 004f 19       		.uleb128 0x19
- 685 0050 11       		.uleb128 0x11
- 686 0051 01       		.uleb128 0x1
- 687 0052 12       		.uleb128 0x12
- 688 0053 06       		.uleb128 0x6
- 689 0054 40       		.uleb128 0x40
- 690 0055 18       		.uleb128 0x18
- 691 0056 9742     		.uleb128 0x2117
- 692 0058 19       		.uleb128 0x19
- 693 0059 01       		.uleb128 0x1
- 694 005a 13       		.uleb128 0x13
- 695 005b 00       		.byte	0
- 696 005c 00       		.byte	0
- 697 005d 07       		.uleb128 0x7
- 698 005e 898201   		.uleb128 0x4109
- 699 0061 00       		.byte	0
- 700 0062 11       		.uleb128 0x11
- 701 0063 01       		.uleb128 0x1
- 702 0064 31       		.uleb128 0x31
- 703 0065 13       		.uleb128 0x13
- 704 0066 00       		.byte	0
- 705 0067 00       		.byte	0
- 706 0068 08       		.uleb128 0x8
- 707 0069 2E       		.uleb128 0x2e
- 708 006a 01       		.byte	0x1
- 709 006b 3F       		.uleb128 0x3f
- 710 006c 19       		.uleb128 0x19
- 711 006d 03       		.uleb128 0x3
- 712 006e 0E       		.uleb128 0xe
- 713 006f 3A       		.uleb128 0x3a
- 714 0070 0B       		.uleb128 0xb
- 715 0071 3B       		.uleb128 0x3b
- 716 0072 0B       		.uleb128 0xb
- 717 0073 27       		.uleb128 0x27
- 718 0074 19       		.uleb128 0x19
- 719 0075 49       		.uleb128 0x49
- 720 0076 13       		.uleb128 0x13
- 721 0077 8701     		.uleb128 0x87
- 722 0079 19       		.uleb128 0x19
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 15
+ 720 02fd 1207     		.2byte	0x712
+ 721 02ff 03030000 		.4byte	0x303
+ 722 0303 15       		.uleb128 0x15
+ 723 0304 76000000 		.4byte	0x76
+ 724 0308 16       		.uleb128 0x16
+ 725 0309 55000000 		.4byte	.LASF21
+ 726 030d 01       		.byte	0x1
+ 727 030e 10       		.byte	0x10
+ 728 030f 81000000 		.4byte	0x81
+ 729 0313 05       		.uleb128 0x5
+ 730 0314 03       		.byte	0x3
+ 731 0315 00000000 		.4byte	value
+ 732 0319 16       		.uleb128 0x16
+ 733 031a 00000000 		.4byte	.LASF22
+ 734 031e 01       		.byte	0x1
+ 735 031f 14       		.byte	0x14
+ 736 0320 2A030000 		.4byte	0x32a
+ 737 0324 05       		.uleb128 0x5
+ 738 0325 03       		.byte	0x3
+ 739 0326 00000000 		.4byte	colour_sensor_ready
+ 740 032a 02       		.uleb128 0x2
+ 741 032b 01       		.byte	0x1
+ 742 032c 02       		.byte	0x2
+ 743 032d F0020000 		.4byte	.LASF23
+ 744 0331 17       		.uleb128 0x17
+ 745 0332 21000000 		.4byte	.LASF24
+ 746 0336 21000000 		.4byte	.LASF24
+ 747 033a 06       		.byte	0x6
+ 748 033b 5D       		.byte	0x5d
+ 749 033c 17       		.uleb128 0x17
+ 750 033d 1D020000 		.4byte	.LASF25
+ 751 0341 1D020000 		.4byte	.LASF25
+ 752 0345 07       		.byte	0x7
+ 753 0346 2F       		.byte	0x2f
+ 754 0347 17       		.uleb128 0x17
+ 755 0348 3E020000 		.4byte	.LASF26
+ 756 034c 3E020000 		.4byte	.LASF26
+ 757 0350 08       		.byte	0x8
+ 758 0351 26       		.byte	0x26
+ 759 0352 17       		.uleb128 0x17
+ 760 0353 77020000 		.4byte	.LASF27
+ 761 0357 77020000 		.4byte	.LASF27
+ 762 035b 09       		.byte	0x9
+ 763 035c 26       		.byte	0x26
+ 764 035d 17       		.uleb128 0x17
+ 765 035e FE020000 		.4byte	.LASF28
+ 766 0362 FE020000 		.4byte	.LASF28
+ 767 0366 0A       		.byte	0xa
+ 768 0367 76       		.byte	0x76
+ 769 0368 17       		.uleb128 0x17
+ 770 0369 F6020000 		.4byte	.LASF29
+ 771 036d F6020000 		.4byte	.LASF29
+ 772 0371 0B       		.byte	0xb
+ 773 0372 E7       		.byte	0xe7
+ 774 0373 17       		.uleb128 0x17
+ 775 0374 DF020000 		.4byte	.LASF30
+ 776 0378 DF020000 		.4byte	.LASF30
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 17
 
 
- 723 007a 11       		.uleb128 0x11
- 724 007b 01       		.uleb128 0x1
- 725 007c 12       		.uleb128 0x12
- 726 007d 06       		.uleb128 0x6
- 727 007e 40       		.uleb128 0x40
- 728 007f 18       		.uleb128 0x18
- 729 0080 9742     		.uleb128 0x2117
- 730 0082 19       		.uleb128 0x19
- 731 0083 01       		.uleb128 0x1
- 732 0084 13       		.uleb128 0x13
- 733 0085 00       		.byte	0
- 734 0086 00       		.byte	0
- 735 0087 09       		.uleb128 0x9
- 736 0088 0B       		.uleb128 0xb
- 737 0089 01       		.byte	0x1
- 738 008a 11       		.uleb128 0x11
- 739 008b 01       		.uleb128 0x1
- 740 008c 12       		.uleb128 0x12
- 741 008d 06       		.uleb128 0x6
- 742 008e 01       		.uleb128 0x1
- 743 008f 13       		.uleb128 0x13
- 744 0090 00       		.byte	0
- 745 0091 00       		.byte	0
- 746 0092 0A       		.uleb128 0xa
- 747 0093 34       		.uleb128 0x34
- 748 0094 00       		.byte	0
- 749 0095 03       		.uleb128 0x3
- 750 0096 08       		.uleb128 0x8
- 751 0097 3A       		.uleb128 0x3a
- 752 0098 0B       		.uleb128 0xb
- 753 0099 3B       		.uleb128 0x3b
- 754 009a 0B       		.uleb128 0xb
- 755 009b 49       		.uleb128 0x49
- 756 009c 13       		.uleb128 0x13
- 757 009d 02       		.uleb128 0x2
- 758 009e 17       		.uleb128 0x17
- 759 009f 00       		.byte	0
- 760 00a0 00       		.byte	0
- 761 00a1 0B       		.uleb128 0xb
- 762 00a2 34       		.uleb128 0x34
- 763 00a3 00       		.byte	0
- 764 00a4 03       		.uleb128 0x3
- 765 00a5 0E       		.uleb128 0xe
- 766 00a6 3A       		.uleb128 0x3a
- 767 00a7 0B       		.uleb128 0xb
- 768 00a8 3B       		.uleb128 0x3b
- 769 00a9 0B       		.uleb128 0xb
- 770 00aa 49       		.uleb128 0x49
- 771 00ab 13       		.uleb128 0x13
- 772 00ac 02       		.uleb128 0x2
- 773 00ad 17       		.uleb128 0x17
- 774 00ae 00       		.byte	0
- 775 00af 00       		.byte	0
- 776 00b0 0C       		.uleb128 0xc
- 777 00b1 34       		.uleb128 0x34
- 778 00b2 00       		.byte	0
- 779 00b3 03       		.uleb128 0x3
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 16
+ 777 037c 0C       		.byte	0xc
+ 778 037d 8B       		.byte	0x8b
+ 779 037e 17       		.uleb128 0x17
+ 780 037f 14000000 		.4byte	.LASF31
+ 781 0383 14000000 		.4byte	.LASF31
+ 782 0387 0C       		.byte	0xc
+ 783 0388 54       		.byte	0x54
+ 784 0389 17       		.uleb128 0x17
+ 785 038a 8D020000 		.4byte	.LASF32
+ 786 038e 8D020000 		.4byte	.LASF32
+ 787 0392 0D       		.byte	0xd
+ 788 0393 92       		.byte	0x92
+ 789 0394 17       		.uleb128 0x17
+ 790 0395 3B000000 		.4byte	.LASF33
+ 791 0399 3B000000 		.4byte	.LASF33
+ 792 039d 06       		.byte	0x6
+ 793 039e 4F       		.byte	0x4f
+ 794 039f 17       		.uleb128 0x17
+ 795 03a0 AC020000 		.4byte	.LASF34
+ 796 03a4 AC020000 		.4byte	.LASF34
+ 797 03a8 0E       		.byte	0xe
+ 798 03a9 26       		.byte	0x26
+ 799 03aa 17       		.uleb128 0x17
+ 800 03ab C9020000 		.4byte	.LASF35
+ 801 03af C9020000 		.4byte	.LASF35
+ 802 03b3 0F       		.byte	0xf
+ 803 03b4 28       		.byte	0x28
+ 804 03b5 17       		.uleb128 0x17
+ 805 03b6 F5010000 		.4byte	.LASF36
+ 806 03ba F5010000 		.4byte	.LASF36
+ 807 03be 0F       		.byte	0xf
+ 808 03bf 18       		.byte	0x18
+ 809 03c0 00       		.byte	0
+ 810              		.section	.debug_abbrev,"",%progbits
+ 811              	.Ldebug_abbrev0:
+ 812 0000 01       		.uleb128 0x1
+ 813 0001 11       		.uleb128 0x11
+ 814 0002 01       		.byte	0x1
+ 815 0003 25       		.uleb128 0x25
+ 816 0004 0E       		.uleb128 0xe
+ 817 0005 13       		.uleb128 0x13
+ 818 0006 0B       		.uleb128 0xb
+ 819 0007 03       		.uleb128 0x3
+ 820 0008 0E       		.uleb128 0xe
+ 821 0009 1B       		.uleb128 0x1b
+ 822 000a 0E       		.uleb128 0xe
+ 823 000b 55       		.uleb128 0x55
+ 824 000c 17       		.uleb128 0x17
+ 825 000d 11       		.uleb128 0x11
+ 826 000e 01       		.uleb128 0x1
+ 827 000f 10       		.uleb128 0x10
+ 828 0010 17       		.uleb128 0x17
+ 829 0011 00       		.byte	0
+ 830 0012 00       		.byte	0
+ 831 0013 02       		.uleb128 0x2
+ 832 0014 24       		.uleb128 0x24
+ 833 0015 00       		.byte	0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 18
 
 
- 780 00b4 0E       		.uleb128 0xe
- 781 00b5 3A       		.uleb128 0x3a
- 782 00b6 0B       		.uleb128 0xb
- 783 00b7 3B       		.uleb128 0x3b
- 784 00b8 0B       		.uleb128 0xb
- 785 00b9 49       		.uleb128 0x49
- 786 00ba 13       		.uleb128 0x13
- 787 00bb 1C       		.uleb128 0x1c
- 788 00bc 0B       		.uleb128 0xb
- 789 00bd 00       		.byte	0
- 790 00be 00       		.byte	0
- 791 00bf 0D       		.uleb128 0xd
- 792 00c0 34       		.uleb128 0x34
- 793 00c1 00       		.byte	0
- 794 00c2 03       		.uleb128 0x3
- 795 00c3 08       		.uleb128 0x8
- 796 00c4 3A       		.uleb128 0x3a
- 797 00c5 0B       		.uleb128 0xb
- 798 00c6 3B       		.uleb128 0x3b
- 799 00c7 0B       		.uleb128 0xb
- 800 00c8 49       		.uleb128 0x49
- 801 00c9 13       		.uleb128 0x13
- 802 00ca 02       		.uleb128 0x2
- 803 00cb 18       		.uleb128 0x18
- 804 00cc 00       		.byte	0
- 805 00cd 00       		.byte	0
- 806 00ce 0E       		.uleb128 0xe
- 807 00cf 898201   		.uleb128 0x4109
- 808 00d2 01       		.byte	0x1
- 809 00d3 11       		.uleb128 0x11
- 810 00d4 01       		.uleb128 0x1
- 811 00d5 31       		.uleb128 0x31
- 812 00d6 13       		.uleb128 0x13
- 813 00d7 01       		.uleb128 0x1
- 814 00d8 13       		.uleb128 0x13
- 815 00d9 00       		.byte	0
- 816 00da 00       		.byte	0
- 817 00db 0F       		.uleb128 0xf
- 818 00dc 8A8201   		.uleb128 0x410a
- 819 00df 00       		.byte	0
- 820 00e0 02       		.uleb128 0x2
- 821 00e1 18       		.uleb128 0x18
- 822 00e2 9142     		.uleb128 0x2111
- 823 00e4 18       		.uleb128 0x18
- 824 00e5 00       		.byte	0
- 825 00e6 00       		.byte	0
- 826 00e7 10       		.uleb128 0x10
- 827 00e8 898201   		.uleb128 0x4109
- 828 00eb 01       		.byte	0x1
- 829 00ec 11       		.uleb128 0x11
- 830 00ed 01       		.uleb128 0x1
- 831 00ee 31       		.uleb128 0x31
- 832 00ef 13       		.uleb128 0x13
- 833 00f0 00       		.byte	0
- 834 00f1 00       		.byte	0
- 835 00f2 11       		.uleb128 0x11
- 836 00f3 01       		.uleb128 0x1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 17
+ 834 0016 0B       		.uleb128 0xb
+ 835 0017 0B       		.uleb128 0xb
+ 836 0018 3E       		.uleb128 0x3e
+ 837 0019 0B       		.uleb128 0xb
+ 838 001a 03       		.uleb128 0x3
+ 839 001b 0E       		.uleb128 0xe
+ 840 001c 00       		.byte	0
+ 841 001d 00       		.byte	0
+ 842 001e 03       		.uleb128 0x3
+ 843 001f 16       		.uleb128 0x16
+ 844 0020 00       		.byte	0
+ 845 0021 03       		.uleb128 0x3
+ 846 0022 0E       		.uleb128 0xe
+ 847 0023 3A       		.uleb128 0x3a
+ 848 0024 0B       		.uleb128 0xb
+ 849 0025 3B       		.uleb128 0x3b
+ 850 0026 0B       		.uleb128 0xb
+ 851 0027 49       		.uleb128 0x49
+ 852 0028 13       		.uleb128 0x13
+ 853 0029 00       		.byte	0
+ 854 002a 00       		.byte	0
+ 855 002b 04       		.uleb128 0x4
+ 856 002c 24       		.uleb128 0x24
+ 857 002d 00       		.byte	0
+ 858 002e 0B       		.uleb128 0xb
+ 859 002f 0B       		.uleb128 0xb
+ 860 0030 3E       		.uleb128 0x3e
+ 861 0031 0B       		.uleb128 0xb
+ 862 0032 03       		.uleb128 0x3
+ 863 0033 08       		.uleb128 0x8
+ 864 0034 00       		.byte	0
+ 865 0035 00       		.byte	0
+ 866 0036 05       		.uleb128 0x5
+ 867 0037 16       		.uleb128 0x16
+ 868 0038 00       		.byte	0
+ 869 0039 03       		.uleb128 0x3
+ 870 003a 0E       		.uleb128 0xe
+ 871 003b 3A       		.uleb128 0x3a
+ 872 003c 0B       		.uleb128 0xb
+ 873 003d 3B       		.uleb128 0x3b
+ 874 003e 05       		.uleb128 0x5
+ 875 003f 49       		.uleb128 0x49
+ 876 0040 13       		.uleb128 0x13
+ 877 0041 00       		.byte	0
+ 878 0042 00       		.byte	0
+ 879 0043 06       		.uleb128 0x6
+ 880 0044 2E       		.uleb128 0x2e
+ 881 0045 01       		.byte	0x1
+ 882 0046 3F       		.uleb128 0x3f
+ 883 0047 19       		.uleb128 0x19
+ 884 0048 03       		.uleb128 0x3
+ 885 0049 0E       		.uleb128 0xe
+ 886 004a 3A       		.uleb128 0x3a
+ 887 004b 0B       		.uleb128 0xb
+ 888 004c 3B       		.uleb128 0x3b
+ 889 004d 0B       		.uleb128 0xb
+ 890 004e 27       		.uleb128 0x27
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 19
 
 
- 837 00f4 01       		.byte	0x1
- 838 00f5 49       		.uleb128 0x49
- 839 00f6 13       		.uleb128 0x13
- 840 00f7 01       		.uleb128 0x1
- 841 00f8 13       		.uleb128 0x13
- 842 00f9 00       		.byte	0
- 843 00fa 00       		.byte	0
- 844 00fb 12       		.uleb128 0x12
- 845 00fc 21       		.uleb128 0x21
- 846 00fd 00       		.byte	0
- 847 00fe 49       		.uleb128 0x49
- 848 00ff 13       		.uleb128 0x13
- 849 0100 2F       		.uleb128 0x2f
- 850 0101 0B       		.uleb128 0xb
- 851 0102 00       		.byte	0
- 852 0103 00       		.byte	0
- 853 0104 13       		.uleb128 0x13
- 854 0105 05       		.uleb128 0x5
- 855 0106 00       		.byte	0
- 856 0107 03       		.uleb128 0x3
- 857 0108 08       		.uleb128 0x8
- 858 0109 3A       		.uleb128 0x3a
- 859 010a 0B       		.uleb128 0xb
- 860 010b 3B       		.uleb128 0x3b
- 861 010c 0B       		.uleb128 0xb
- 862 010d 49       		.uleb128 0x49
- 863 010e 13       		.uleb128 0x13
- 864 010f 02       		.uleb128 0x2
- 865 0110 17       		.uleb128 0x17
- 866 0111 00       		.byte	0
- 867 0112 00       		.byte	0
- 868 0113 14       		.uleb128 0x14
- 869 0114 34       		.uleb128 0x34
- 870 0115 00       		.byte	0
- 871 0116 03       		.uleb128 0x3
- 872 0117 0E       		.uleb128 0xe
- 873 0118 3A       		.uleb128 0x3a
- 874 0119 0B       		.uleb128 0xb
- 875 011a 3B       		.uleb128 0x3b
- 876 011b 05       		.uleb128 0x5
- 877 011c 49       		.uleb128 0x49
- 878 011d 13       		.uleb128 0x13
- 879 011e 3F       		.uleb128 0x3f
- 880 011f 19       		.uleb128 0x19
- 881 0120 3C       		.uleb128 0x3c
- 882 0121 19       		.uleb128 0x19
- 883 0122 00       		.byte	0
- 884 0123 00       		.byte	0
- 885 0124 15       		.uleb128 0x15
- 886 0125 35       		.uleb128 0x35
- 887 0126 00       		.byte	0
- 888 0127 49       		.uleb128 0x49
- 889 0128 13       		.uleb128 0x13
- 890 0129 00       		.byte	0
- 891 012a 00       		.byte	0
- 892 012b 16       		.uleb128 0x16
- 893 012c 34       		.uleb128 0x34
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 18
+ 891 004f 19       		.uleb128 0x19
+ 892 0050 11       		.uleb128 0x11
+ 893 0051 01       		.uleb128 0x1
+ 894 0052 12       		.uleb128 0x12
+ 895 0053 06       		.uleb128 0x6
+ 896 0054 40       		.uleb128 0x40
+ 897 0055 18       		.uleb128 0x18
+ 898 0056 9742     		.uleb128 0x2117
+ 899 0058 19       		.uleb128 0x19
+ 900 0059 01       		.uleb128 0x1
+ 901 005a 13       		.uleb128 0x13
+ 902 005b 00       		.byte	0
+ 903 005c 00       		.byte	0
+ 904 005d 07       		.uleb128 0x7
+ 905 005e 898201   		.uleb128 0x4109
+ 906 0061 00       		.byte	0
+ 907 0062 11       		.uleb128 0x11
+ 908 0063 01       		.uleb128 0x1
+ 909 0064 31       		.uleb128 0x31
+ 910 0065 13       		.uleb128 0x13
+ 911 0066 00       		.byte	0
+ 912 0067 00       		.byte	0
+ 913 0068 08       		.uleb128 0x8
+ 914 0069 2E       		.uleb128 0x2e
+ 915 006a 01       		.byte	0x1
+ 916 006b 3F       		.uleb128 0x3f
+ 917 006c 19       		.uleb128 0x19
+ 918 006d 03       		.uleb128 0x3
+ 919 006e 0E       		.uleb128 0xe
+ 920 006f 3A       		.uleb128 0x3a
+ 921 0070 0B       		.uleb128 0xb
+ 922 0071 3B       		.uleb128 0x3b
+ 923 0072 0B       		.uleb128 0xb
+ 924 0073 27       		.uleb128 0x27
+ 925 0074 19       		.uleb128 0x19
+ 926 0075 49       		.uleb128 0x49
+ 927 0076 13       		.uleb128 0x13
+ 928 0077 11       		.uleb128 0x11
+ 929 0078 01       		.uleb128 0x1
+ 930 0079 12       		.uleb128 0x12
+ 931 007a 06       		.uleb128 0x6
+ 932 007b 40       		.uleb128 0x40
+ 933 007c 18       		.uleb128 0x18
+ 934 007d 9742     		.uleb128 0x2117
+ 935 007f 19       		.uleb128 0x19
+ 936 0080 01       		.uleb128 0x1
+ 937 0081 13       		.uleb128 0x13
+ 938 0082 00       		.byte	0
+ 939 0083 00       		.byte	0
+ 940 0084 09       		.uleb128 0x9
+ 941 0085 05       		.uleb128 0x5
+ 942 0086 00       		.byte	0
+ 943 0087 03       		.uleb128 0x3
+ 944 0088 08       		.uleb128 0x8
+ 945 0089 3A       		.uleb128 0x3a
+ 946 008a 0B       		.uleb128 0xb
+ 947 008b 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 20
 
 
- 894 012d 00       		.byte	0
- 895 012e 03       		.uleb128 0x3
- 896 012f 0E       		.uleb128 0xe
- 897 0130 3A       		.uleb128 0x3a
- 898 0131 0B       		.uleb128 0xb
- 899 0132 3B       		.uleb128 0x3b
- 900 0133 0B       		.uleb128 0xb
- 901 0134 49       		.uleb128 0x49
- 902 0135 13       		.uleb128 0x13
- 903 0136 3F       		.uleb128 0x3f
- 904 0137 19       		.uleb128 0x19
- 905 0138 02       		.uleb128 0x2
- 906 0139 18       		.uleb128 0x18
- 907 013a 00       		.byte	0
- 908 013b 00       		.byte	0
- 909 013c 17       		.uleb128 0x17
- 910 013d 2E       		.uleb128 0x2e
- 911 013e 00       		.byte	0
- 912 013f 3F       		.uleb128 0x3f
- 913 0140 19       		.uleb128 0x19
- 914 0141 3C       		.uleb128 0x3c
- 915 0142 19       		.uleb128 0x19
- 916 0143 6E       		.uleb128 0x6e
- 917 0144 0E       		.uleb128 0xe
- 918 0145 03       		.uleb128 0x3
- 919 0146 0E       		.uleb128 0xe
- 920 0147 3A       		.uleb128 0x3a
- 921 0148 0B       		.uleb128 0xb
- 922 0149 3B       		.uleb128 0x3b
- 923 014a 0B       		.uleb128 0xb
- 924 014b 00       		.byte	0
- 925 014c 00       		.byte	0
- 926 014d 00       		.byte	0
- 927              		.section	.debug_loc,"",%progbits
- 928              	.Ldebug_loc0:
- 929              	.LLST0:
- 930 0000 30000000 		.4byte	.LVL9
- 931 0004 40000000 		.4byte	.LVL12
- 932 0008 0100     		.2byte	0x1
- 933 000a 50       		.byte	0x50
- 934 000b 40000000 		.4byte	.LVL12
- 935 000f 43000000 		.4byte	.LVL13-1
- 936 0013 0100     		.2byte	0x1
- 937 0015 52       		.byte	0x52
- 938 0016 00000000 		.4byte	0
- 939 001a 00000000 		.4byte	0
- 940              	.LLST1:
- 941 001e 34000000 		.4byte	.LVL10
- 942 0022 3C000000 		.4byte	.LVL11
- 943 0026 0100     		.2byte	0x1
- 944 0028 52       		.byte	0x52
- 945 0029 3C000000 		.4byte	.LVL11
- 946 002d 43000000 		.4byte	.LVL13-1
- 947 0031 0200     		.2byte	0x2
- 948 0033 7D       		.byte	0x7d
- 949 0034 00       		.sleb128 0
- 950 0035 00000000 		.4byte	0
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 19
+ 948 008c 0B       		.uleb128 0xb
+ 949 008d 49       		.uleb128 0x49
+ 950 008e 13       		.uleb128 0x13
+ 951 008f 02       		.uleb128 0x2
+ 952 0090 17       		.uleb128 0x17
+ 953 0091 00       		.byte	0
+ 954 0092 00       		.byte	0
+ 955 0093 0A       		.uleb128 0xa
+ 956 0094 898201   		.uleb128 0x4109
+ 957 0097 01       		.byte	0x1
+ 958 0098 11       		.uleb128 0x11
+ 959 0099 01       		.uleb128 0x1
+ 960 009a 31       		.uleb128 0x31
+ 961 009b 13       		.uleb128 0x13
+ 962 009c 01       		.uleb128 0x1
+ 963 009d 13       		.uleb128 0x13
+ 964 009e 00       		.byte	0
+ 965 009f 00       		.byte	0
+ 966 00a0 0B       		.uleb128 0xb
+ 967 00a1 8A8201   		.uleb128 0x410a
+ 968 00a4 00       		.byte	0
+ 969 00a5 02       		.uleb128 0x2
+ 970 00a6 18       		.uleb128 0x18
+ 971 00a7 9142     		.uleb128 0x2111
+ 972 00a9 18       		.uleb128 0x18
+ 973 00aa 00       		.byte	0
+ 974 00ab 00       		.byte	0
+ 975 00ac 0C       		.uleb128 0xc
+ 976 00ad 898201   		.uleb128 0x4109
+ 977 00b0 01       		.byte	0x1
+ 978 00b1 11       		.uleb128 0x11
+ 979 00b2 01       		.uleb128 0x1
+ 980 00b3 31       		.uleb128 0x31
+ 981 00b4 13       		.uleb128 0x13
+ 982 00b5 00       		.byte	0
+ 983 00b6 00       		.byte	0
+ 984 00b7 0D       		.uleb128 0xd
+ 985 00b8 2E       		.uleb128 0x2e
+ 986 00b9 01       		.byte	0x1
+ 987 00ba 3F       		.uleb128 0x3f
+ 988 00bb 19       		.uleb128 0x19
+ 989 00bc 03       		.uleb128 0x3
+ 990 00bd 0E       		.uleb128 0xe
+ 991 00be 3A       		.uleb128 0x3a
+ 992 00bf 0B       		.uleb128 0xb
+ 993 00c0 3B       		.uleb128 0x3b
+ 994 00c1 0B       		.uleb128 0xb
+ 995 00c2 27       		.uleb128 0x27
+ 996 00c3 19       		.uleb128 0x19
+ 997 00c4 49       		.uleb128 0x49
+ 998 00c5 13       		.uleb128 0x13
+ 999 00c6 8701     		.uleb128 0x87
+ 1000 00c8 19       		.uleb128 0x19
+ 1001 00c9 11       		.uleb128 0x11
+ 1002 00ca 01       		.uleb128 0x1
+ 1003 00cb 12       		.uleb128 0x12
+ 1004 00cc 06       		.uleb128 0x6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 21
 
 
- 951 0039 00000000 		.4byte	0
- 952              	.LLST2:
- 953 003d 00000000 		.4byte	.LVL16
- 954 0041 06000000 		.4byte	.LVL17
- 955 0045 0100     		.2byte	0x1
- 956 0047 50       		.byte	0x50
- 957 0048 06000000 		.4byte	.LVL17
- 958 004c 1C000000 		.4byte	.LFE66
- 959 0050 0400     		.2byte	0x4
- 960 0052 F3       		.byte	0xf3
- 961 0053 01       		.uleb128 0x1
- 962 0054 50       		.byte	0x50
- 963 0055 9F       		.byte	0x9f
- 964 0056 00000000 		.4byte	0
- 965 005a 00000000 		.4byte	0
- 966              	.LLST3:
- 967 005e 00000000 		.4byte	.LVL16
- 968 0062 09000000 		.4byte	.LVL18-1
- 969 0066 0100     		.2byte	0x1
- 970 0068 51       		.byte	0x51
- 971 0069 09000000 		.4byte	.LVL18-1
- 972 006d 1C000000 		.4byte	.LFE66
- 973 0071 0100     		.2byte	0x1
- 974 0073 54       		.byte	0x54
- 975 0074 00000000 		.4byte	0
- 976 0078 00000000 		.4byte	0
- 977              		.section	.debug_aranges,"",%progbits
- 978 0000 2C000000 		.4byte	0x2c
- 979 0004 0200     		.2byte	0x2
- 980 0006 00000000 		.4byte	.Ldebug_info0
- 981 000a 04       		.byte	0x4
- 982 000b 00       		.byte	0
- 983 000c 0000     		.2byte	0
- 984 000e 0000     		.2byte	0
- 985 0010 00000000 		.4byte	.LFB64
- 986 0014 14000000 		.4byte	.LFE64-.LFB64
- 987 0018 00000000 		.4byte	.LFB65
- 988 001c 60000000 		.4byte	.LFE65-.LFB65
- 989 0020 00000000 		.4byte	.LFB66
- 990 0024 1C000000 		.4byte	.LFE66-.LFB66
- 991 0028 00000000 		.4byte	0
- 992 002c 00000000 		.4byte	0
- 993              		.section	.debug_ranges,"",%progbits
- 994              	.Ldebug_ranges0:
- 995 0000 00000000 		.4byte	.LFB64
- 996 0004 14000000 		.4byte	.LFE64
- 997 0008 00000000 		.4byte	.LFB65
- 998 000c 60000000 		.4byte	.LFE65
- 999 0010 00000000 		.4byte	.LFB66
- 1000 0014 1C000000 		.4byte	.LFE66
- 1001 0018 00000000 		.4byte	0
- 1002 001c 00000000 		.4byte	0
- 1003              		.section	.debug_line,"",%progbits
- 1004              	.Ldebug_line0:
- 1005 0000 7B020000 		.section	.debug_str,"MS",%progbits,1
- 1005      02001602 
- 1005      00000201 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 20
+ 1005 00cd 40       		.uleb128 0x40
+ 1006 00ce 18       		.uleb128 0x18
+ 1007 00cf 9742     		.uleb128 0x2117
+ 1008 00d1 19       		.uleb128 0x19
+ 1009 00d2 01       		.uleb128 0x1
+ 1010 00d3 13       		.uleb128 0x13
+ 1011 00d4 00       		.byte	0
+ 1012 00d5 00       		.byte	0
+ 1013 00d6 0E       		.uleb128 0xe
+ 1014 00d7 0B       		.uleb128 0xb
+ 1015 00d8 01       		.byte	0x1
+ 1016 00d9 11       		.uleb128 0x11
+ 1017 00da 01       		.uleb128 0x1
+ 1018 00db 12       		.uleb128 0x12
+ 1019 00dc 06       		.uleb128 0x6
+ 1020 00dd 01       		.uleb128 0x1
+ 1021 00de 13       		.uleb128 0x13
+ 1022 00df 00       		.byte	0
+ 1023 00e0 00       		.byte	0
+ 1024 00e1 0F       		.uleb128 0xf
+ 1025 00e2 34       		.uleb128 0x34
+ 1026 00e3 00       		.byte	0
+ 1027 00e4 03       		.uleb128 0x3
+ 1028 00e5 08       		.uleb128 0x8
+ 1029 00e6 3A       		.uleb128 0x3a
+ 1030 00e7 0B       		.uleb128 0xb
+ 1031 00e8 3B       		.uleb128 0x3b
+ 1032 00e9 0B       		.uleb128 0xb
+ 1033 00ea 49       		.uleb128 0x49
+ 1034 00eb 13       		.uleb128 0x13
+ 1035 00ec 02       		.uleb128 0x2
+ 1036 00ed 17       		.uleb128 0x17
+ 1037 00ee 00       		.byte	0
+ 1038 00ef 00       		.byte	0
+ 1039 00f0 10       		.uleb128 0x10
+ 1040 00f1 34       		.uleb128 0x34
+ 1041 00f2 00       		.byte	0
+ 1042 00f3 03       		.uleb128 0x3
+ 1043 00f4 0E       		.uleb128 0xe
+ 1044 00f5 3A       		.uleb128 0x3a
+ 1045 00f6 0B       		.uleb128 0xb
+ 1046 00f7 3B       		.uleb128 0x3b
+ 1047 00f8 0B       		.uleb128 0xb
+ 1048 00f9 49       		.uleb128 0x49
+ 1049 00fa 13       		.uleb128 0x13
+ 1050 00fb 02       		.uleb128 0x2
+ 1051 00fc 17       		.uleb128 0x17
+ 1052 00fd 00       		.byte	0
+ 1053 00fe 00       		.byte	0
+ 1054 00ff 11       		.uleb128 0x11
+ 1055 0100 34       		.uleb128 0x34
+ 1056 0101 00       		.byte	0
+ 1057 0102 03       		.uleb128 0x3
+ 1058 0103 08       		.uleb128 0x8
+ 1059 0104 3A       		.uleb128 0x3a
+ 1060 0105 0B       		.uleb128 0xb
+ 1061 0106 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 22
 
 
- 1005      FB0E0D00 
- 1005      01010101 
- 1006              	.LASF24:
- 1007 0000 636F6C6F 		.ascii	"colour_sensor_ready\000"
- 1007      75725F73 
- 1007      656E736F 
- 1007      725F7265 
- 1007      61647900 
- 1008              	.LASF32:
- 1009 0014 55415254 		.ascii	"UART_1_Start\000"
- 1009      5F315F53 
- 1009      74617274 
- 1009      00
- 1010              	.LASF34:
- 1011 0021 50756C73 		.ascii	"Pulse_counter_Start\000"
- 1011      655F636F 
- 1011      756E7465 
- 1011      725F5374 
- 1011      61727400 
- 1012              	.LASF18:
- 1013 0035 636C6561 		.ascii	"clear\000"
- 1013      7200
- 1014              	.LASF23:
- 1015 003b 76616C75 		.ascii	"value\000"
- 1015      6500
- 1016              	.LASF9:
- 1017 0041 5F5F696E 		.ascii	"__int32_t\000"
- 1017      7433325F 
- 1017      7400
- 1018              	.LASF40:
- 1019 004b 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
- 1019      6F6E6173 
- 1019      68202D20 
- 1019      4C656769 
- 1019      6F6E5C59 
- 1020 0079 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
- 1020      6D706F6E 
- 1020      656E7473 
- 1020      5C436F6C 
- 1020      6F75725F 
- 1021              	.LASF17:
- 1022 00a2 626C7565 		.ascii	"blue\000"
- 1022      00
- 1023              	.LASF12:
- 1024 00a7 666C6F61 		.ascii	"float\000"
- 1024      7400
- 1025              	.LASF0:
- 1026 00ad 7369676E 		.ascii	"signed char\000"
- 1026      65642063 
- 1026      68617200 
- 1027              	.LASF1:
- 1028 00b9 756E7369 		.ascii	"unsigned char\000"
- 1028      676E6564 
- 1028      20636861 
- 1028      7200
- 1029              	.LASF38:
- 1030 00c7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 21
+ 1062 0107 0B       		.uleb128 0xb
+ 1063 0108 49       		.uleb128 0x49
+ 1064 0109 13       		.uleb128 0x13
+ 1065 010a 02       		.uleb128 0x2
+ 1066 010b 18       		.uleb128 0x18
+ 1067 010c 00       		.byte	0
+ 1068 010d 00       		.byte	0
+ 1069 010e 12       		.uleb128 0x12
+ 1070 010f 01       		.uleb128 0x1
+ 1071 0110 01       		.byte	0x1
+ 1072 0111 49       		.uleb128 0x49
+ 1073 0112 13       		.uleb128 0x13
+ 1074 0113 01       		.uleb128 0x1
+ 1075 0114 13       		.uleb128 0x13
+ 1076 0115 00       		.byte	0
+ 1077 0116 00       		.byte	0
+ 1078 0117 13       		.uleb128 0x13
+ 1079 0118 21       		.uleb128 0x21
+ 1080 0119 00       		.byte	0
+ 1081 011a 49       		.uleb128 0x49
+ 1082 011b 13       		.uleb128 0x13
+ 1083 011c 2F       		.uleb128 0x2f
+ 1084 011d 0B       		.uleb128 0xb
+ 1085 011e 00       		.byte	0
+ 1086 011f 00       		.byte	0
+ 1087 0120 14       		.uleb128 0x14
+ 1088 0121 34       		.uleb128 0x34
+ 1089 0122 00       		.byte	0
+ 1090 0123 03       		.uleb128 0x3
+ 1091 0124 0E       		.uleb128 0xe
+ 1092 0125 3A       		.uleb128 0x3a
+ 1093 0126 0B       		.uleb128 0xb
+ 1094 0127 3B       		.uleb128 0x3b
+ 1095 0128 05       		.uleb128 0x5
+ 1096 0129 49       		.uleb128 0x49
+ 1097 012a 13       		.uleb128 0x13
+ 1098 012b 3F       		.uleb128 0x3f
+ 1099 012c 19       		.uleb128 0x19
+ 1100 012d 3C       		.uleb128 0x3c
+ 1101 012e 19       		.uleb128 0x19
+ 1102 012f 00       		.byte	0
+ 1103 0130 00       		.byte	0
+ 1104 0131 15       		.uleb128 0x15
+ 1105 0132 35       		.uleb128 0x35
+ 1106 0133 00       		.byte	0
+ 1107 0134 49       		.uleb128 0x49
+ 1108 0135 13       		.uleb128 0x13
+ 1109 0136 00       		.byte	0
+ 1110 0137 00       		.byte	0
+ 1111 0138 16       		.uleb128 0x16
+ 1112 0139 34       		.uleb128 0x34
+ 1113 013a 00       		.byte	0
+ 1114 013b 03       		.uleb128 0x3
+ 1115 013c 0E       		.uleb128 0xe
+ 1116 013d 3A       		.uleb128 0x3a
+ 1117 013e 0B       		.uleb128 0xb
+ 1118 013f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 23
 
 
- 1030      43313120 
- 1030      352E342E 
- 1030      31203230 
- 1030      31363036 
- 1031 00fa 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1031      20726576 
- 1031      6973696F 
- 1031      6E203233 
- 1031      37373135 
- 1032 012d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1032      66756E63 
- 1032      74696F6E 
- 1032      2D736563 
- 1032      74696F6E 
- 1033              	.LASF5:
- 1034 0155 6C6F6E67 		.ascii	"long unsigned int\000"
- 1034      20756E73 
- 1034      69676E65 
- 1034      6420696E 
- 1034      7400
- 1035              	.LASF3:
- 1036 0167 73686F72 		.ascii	"short unsigned int\000"
- 1036      7420756E 
- 1036      7369676E 
- 1036      65642069 
- 1036      6E7400
- 1037              	.LASF19:
- 1038 017a 67726565 		.ascii	"green\000"
- 1038      6E00
- 1039              	.LASF22:
- 1040 0180 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1040      52784275 
- 1040      66666572 
- 1040      00
- 1041              	.LASF21:
- 1042 018d 636F6C6F 		.ascii	"colourSensor_Scan_freq\000"
- 1042      75725365 
- 1042      6E736F72 
- 1042      5F536361 
- 1042      6E5F6672 
- 1043              	.LASF13:
- 1044 01a4 646F7562 		.ascii	"double\000"
- 1044      6C6500
- 1045              	.LASF2:
- 1046 01ab 73686F72 		.ascii	"short int\000"
- 1046      7420696E 
- 1046      7400
- 1047              	.LASF11:
- 1048 01b5 75696E74 		.ascii	"uint32\000"
- 1048      333200
- 1049              	.LASF41:
- 1050 01bc 636F6C6F 		.ascii	"colour_sensor_isr\000"
- 1050      75725F73 
- 1050      656E736F 
- 1050      725F6973 
- 1050      7200
- 1051              	.LASF8:
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 22
+ 1119 0140 0B       		.uleb128 0xb
+ 1120 0141 49       		.uleb128 0x49
+ 1121 0142 13       		.uleb128 0x13
+ 1122 0143 3F       		.uleb128 0x3f
+ 1123 0144 19       		.uleb128 0x19
+ 1124 0145 02       		.uleb128 0x2
+ 1125 0146 18       		.uleb128 0x18
+ 1126 0147 00       		.byte	0
+ 1127 0148 00       		.byte	0
+ 1128 0149 17       		.uleb128 0x17
+ 1129 014a 2E       		.uleb128 0x2e
+ 1130 014b 00       		.byte	0
+ 1131 014c 3F       		.uleb128 0x3f
+ 1132 014d 19       		.uleb128 0x19
+ 1133 014e 3C       		.uleb128 0x3c
+ 1134 014f 19       		.uleb128 0x19
+ 1135 0150 6E       		.uleb128 0x6e
+ 1136 0151 0E       		.uleb128 0xe
+ 1137 0152 03       		.uleb128 0x3
+ 1138 0153 0E       		.uleb128 0xe
+ 1139 0154 3A       		.uleb128 0x3a
+ 1140 0155 0B       		.uleb128 0xb
+ 1141 0156 3B       		.uleb128 0x3b
+ 1142 0157 0B       		.uleb128 0xb
+ 1143 0158 00       		.byte	0
+ 1144 0159 00       		.byte	0
+ 1145 015a 00       		.byte	0
+ 1146              		.section	.debug_loc,"",%progbits
+ 1147              	.Ldebug_loc0:
+ 1148              	.LLST0:
+ 1149 0000 00000000 		.4byte	.LVL1
+ 1150 0004 08000000 		.4byte	.LVL2
+ 1151 0008 0100     		.2byte	0x1
+ 1152 000a 50       		.byte	0x50
+ 1153 000b 08000000 		.4byte	.LVL2
+ 1154 000f 3E000000 		.4byte	.LVL10
+ 1155 0013 0100     		.2byte	0x1
+ 1156 0015 55       		.byte	0x55
+ 1157 0016 3E000000 		.4byte	.LVL10
+ 1158 001a 44000000 		.4byte	.LFE66
+ 1159 001e 0400     		.2byte	0x4
+ 1160 0020 F3       		.byte	0xf3
+ 1161 0021 01       		.uleb128 0x1
+ 1162 0022 50       		.byte	0x50
+ 1163 0023 9F       		.byte	0x9f
+ 1164 0024 00000000 		.4byte	0
+ 1165 0028 00000000 		.4byte	0
+ 1166              	.LLST1:
+ 1167 002c 00000000 		.4byte	.LVL1
+ 1168 0030 0B000000 		.4byte	.LVL3-1
+ 1169 0034 0100     		.2byte	0x1
+ 1170 0036 51       		.byte	0x51
+ 1171 0037 0B000000 		.4byte	.LVL3-1
+ 1172 003b 1A000000 		.4byte	.LVL6
+ 1173 003f 0100     		.2byte	0x1
+ 1174 0041 54       		.byte	0x54
+ 1175 0042 1A000000 		.4byte	.LVL6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 24
 
 
- 1052 01ce 756E7369 		.ascii	"unsigned int\000"
- 1052      676E6564 
- 1052      20696E74 
- 1052      00
- 1053              	.LASF37:
- 1054 01db 66726571 		.ascii	"freq_isr_StartEx\000"
- 1054      5F697372 
- 1054      5F537461 
- 1054      72744578 
- 1054      00
- 1055              	.LASF7:
- 1056 01ec 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1056      206C6F6E 
- 1056      6720756E 
- 1056      7369676E 
- 1056      65642069 
- 1057              	.LASF26:
- 1058 0203 50756C73 		.ascii	"Pulse_counter_ReadCounter\000"
- 1058      655F636F 
- 1058      756E7465 
- 1058      725F5265 
- 1058      6164436F 
- 1059              	.LASF20:
- 1060 021d 6D61696E 		.ascii	"main\000"
- 1060      00
- 1061              	.LASF10:
- 1062 0222 696E7433 		.ascii	"int32_t\000"
- 1062      325F7400 
- 1063              	.LASF27:
- 1064 022a 436F6C6F 		.ascii	"ColourSensor_S2_Write\000"
- 1064      75725365 
- 1064      6E736F72 
- 1064      5F53325F 
- 1064      57726974 
- 1065              	.LASF16:
- 1066 0240 73697A65 		.ascii	"sizetype\000"
- 1066      74797065 
- 1066      00
- 1067              	.LASF6:
- 1068 0249 6C6F6E67 		.ascii	"long long int\000"
- 1068      206C6F6E 
- 1068      6720696E 
- 1068      7400
- 1069              	.LASF39:
- 1070 0257 6D61696E 		.ascii	"main.c\000"
- 1070      2E6300
- 1071              	.LASF14:
- 1072 025e 63686172 		.ascii	"char\000"
- 1072      00
- 1073              	.LASF28:
- 1074 0263 436F6C6F 		.ascii	"ColourSensor_S3_Write\000"
- 1074      75725365 
- 1074      6E736F72 
- 1074      5F53335F 
- 1074      57726974 
- 1075              	.LASF33:
- 1076 0279 50574D5F 		.ascii	"PWM_Test_Signal_Start\000"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwhCRZK.s 			page 23
+ 1176 0046 44000000 		.4byte	.LFE66
+ 1177 004a 0400     		.2byte	0x4
+ 1178 004c F3       		.byte	0xf3
+ 1179 004d 01       		.uleb128 0x1
+ 1180 004e 51       		.byte	0x51
+ 1181 004f 9F       		.byte	0x9f
+ 1182 0050 00000000 		.4byte	0
+ 1183 0054 00000000 		.4byte	0
+ 1184              	.LLST2:
+ 1185 0058 2A000000 		.4byte	.LVL18
+ 1186 005c 2E000000 		.4byte	.LVL19
+ 1187 0060 0100     		.2byte	0x1
+ 1188 0062 50       		.byte	0x50
+ 1189 0063 2E000000 		.4byte	.LVL19
+ 1190 0067 D0000000 		.4byte	.LFE65
+ 1191 006b 0100     		.2byte	0x1
+ 1192 006d 54       		.byte	0x54
+ 1193 006e 00000000 		.4byte	0
+ 1194 0072 00000000 		.4byte	0
+ 1195              	.LLST3:
+ 1196 0076 34000000 		.4byte	.LVL21
+ 1197 007a 38000000 		.4byte	.LVL22
+ 1198 007e 0100     		.2byte	0x1
+ 1199 0080 50       		.byte	0x50
+ 1200 0081 38000000 		.4byte	.LVL22
+ 1201 0085 D0000000 		.4byte	.LFE65
+ 1202 0089 0100     		.2byte	0x1
+ 1203 008b 55       		.byte	0x55
+ 1204 008c 00000000 		.4byte	0
+ 1205 0090 00000000 		.4byte	0
+ 1206              	.LLST4:
+ 1207 0094 3E000000 		.4byte	.LVL24
+ 1208 0098 42000000 		.4byte	.LVL25
+ 1209 009c 0100     		.2byte	0x1
+ 1210 009e 50       		.byte	0x50
+ 1211 009f 42000000 		.4byte	.LVL25
+ 1212 00a3 D0000000 		.4byte	.LFE65
+ 1213 00a7 0100     		.2byte	0x1
+ 1214 00a9 57       		.byte	0x57
+ 1215 00aa 00000000 		.4byte	0
+ 1216 00ae 00000000 		.4byte	0
+ 1217              	.LLST5:
+ 1218 00b2 48000000 		.4byte	.LVL27
+ 1219 00b6 54000000 		.4byte	.LVL28
+ 1220 00ba 0100     		.2byte	0x1
+ 1221 00bc 50       		.byte	0x50
+ 1222 00bd 54000000 		.4byte	.LVL28
+ 1223 00c1 57000000 		.4byte	.LVL29-1
+ 1224 00c5 0100     		.2byte	0x1
+ 1225 00c7 53       		.byte	0x53
+ 1226 00c8 57000000 		.4byte	.LVL29-1
+ 1227 00cc D0000000 		.4byte	.LFE65
+ 1228 00d0 0100     		.2byte	0x1
+ 1229 00d2 56       		.byte	0x56
+ 1230 00d3 00000000 		.4byte	0
+ 1231 00d7 00000000 		.4byte	0
+ 1232              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 25
 
 
- 1076      54657374 
- 1076      5F536967 
- 1076      6E616C5F 
- 1076      53746172 
- 1077              	.LASF4:
- 1078 028f 6C6F6E67 		.ascii	"long int\000"
- 1078      20696E74 
- 1078      00
- 1079              	.LASF35:
- 1080 0298 436F756E 		.ascii	"Count7_1ms_Start\000"
- 1080      74375F31 
- 1080      6D735F53 
- 1080      74617274 
- 1080      00
- 1081              	.LASF15:
- 1082 02a9 6C6F6E67 		.ascii	"long double\000"
- 1082      20646F75 
- 1082      626C6500 
- 1083              	.LASF36:
- 1084 02b5 66726571 		.ascii	"freq_isr_ClearPending\000"
- 1084      5F697372 
- 1084      5F436C65 
- 1084      61725065 
- 1084      6E64696E 
- 1085              	.LASF30:
- 1086 02cb 55415254 		.ascii	"UART_1_PutString\000"
- 1086      5F315F50 
- 1086      75745374 
- 1086      72696E67 
- 1086      00
- 1087              	.LASF25:
- 1088 02dc 5F426F6F 		.ascii	"_Bool\000"
- 1088      6C00
- 1089              	.LASF29:
- 1090 02e2 73707269 		.ascii	"sprintf\000"
- 1090      6E746600 
- 1091              	.LASF31:
- 1092 02ea 43794465 		.ascii	"CyDelay\000"
- 1092      6C617900 
- 1093              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1233 0000 2C000000 		.4byte	0x2c
+ 1234 0004 0200     		.2byte	0x2
+ 1235 0006 00000000 		.4byte	.Ldebug_info0
+ 1236 000a 04       		.byte	0x4
+ 1237 000b 00       		.byte	0
+ 1238 000c 0000     		.2byte	0
+ 1239 000e 0000     		.2byte	0
+ 1240 0010 00000000 		.4byte	.LFB64
+ 1241 0014 14000000 		.4byte	.LFE64-.LFB64
+ 1242 0018 00000000 		.4byte	.LFB66
+ 1243 001c 44000000 		.4byte	.LFE66-.LFB66
+ 1244 0020 00000000 		.4byte	.LFB65
+ 1245 0024 D0000000 		.4byte	.LFE65-.LFB65
+ 1246 0028 00000000 		.4byte	0
+ 1247 002c 00000000 		.4byte	0
+ 1248              		.section	.debug_ranges,"",%progbits
+ 1249              	.Ldebug_ranges0:
+ 1250 0000 00000000 		.4byte	.LFB64
+ 1251 0004 14000000 		.4byte	.LFE64
+ 1252 0008 00000000 		.4byte	.LFB66
+ 1253 000c 44000000 		.4byte	.LFE66
+ 1254 0010 00000000 		.4byte	.LFB65
+ 1255 0014 D0000000 		.4byte	.LFE65
+ 1256 0018 00000000 		.4byte	0
+ 1257 001c 00000000 		.4byte	0
+ 1258              		.section	.debug_line,"",%progbits
+ 1259              	.Ldebug_line0:
+ 1260 0000 99020000 		.section	.debug_str,"MS",%progbits,1
+ 1260      02002902 
+ 1260      00000201 
+ 1260      FB0E0D00 
+ 1260      01010101 
+ 1261              	.LASF22:
+ 1262 0000 636F6C6F 		.ascii	"colour_sensor_ready\000"
+ 1262      75725F73 
+ 1262      656E736F 
+ 1262      725F7265 
+ 1262      61647900 
+ 1263              	.LASF31:
+ 1264 0014 55415254 		.ascii	"UART_1_Start\000"
+ 1264      5F315F53 
+ 1264      74617274 
+ 1264      00
+ 1265              	.LASF24:
+ 1266 0021 50756C73 		.ascii	"Pulse_counter_ReadCounter\000"
+ 1266      655F636F 
+ 1266      756E7465 
+ 1266      725F5265 
+ 1266      6164436F 
+ 1267              	.LASF33:
+ 1268 003b 50756C73 		.ascii	"Pulse_counter_Start\000"
+ 1268      655F636F 
+ 1268      756E7465 
+ 1268      725F5374 
+ 1268      61727400 
+ 1269              	.LASF18:
+ 1270 004f 636C6561 		.ascii	"clear\000"
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 26
+
+
+ 1270      7200
+ 1271              	.LASF21:
+ 1272 0055 76616C75 		.ascii	"value\000"
+ 1272      6500
+ 1273              	.LASF9:
+ 1274 005b 5F5F696E 		.ascii	"__int32_t\000"
+ 1274      7433325F 
+ 1274      7400
+ 1275              	.LASF39:
+ 1276 0065 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
+ 1276      6F6E6173 
+ 1276      68202D20 
+ 1276      4C656769 
+ 1276      6F6E5C59 
+ 1277 0093 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
+ 1277      6D706F6E 
+ 1277      656E7473 
+ 1277      5C436F6C 
+ 1277      6F75725F 
+ 1278              	.LASF17:
+ 1279 00bc 626C7565 		.ascii	"blue\000"
+ 1279      00
+ 1280              	.LASF12:
+ 1281 00c1 666C6F61 		.ascii	"float\000"
+ 1281      7400
+ 1282              	.LASF0:
+ 1283 00c7 7369676E 		.ascii	"signed char\000"
+ 1283      65642063 
+ 1283      68617200 
+ 1284              	.LASF1:
+ 1285 00d3 756E7369 		.ascii	"unsigned char\000"
+ 1285      676E6564 
+ 1285      20636861 
+ 1285      7200
+ 1286              	.LASF37:
+ 1287 00e1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1287      43313120 
+ 1287      352E342E 
+ 1287      31203230 
+ 1287      31363036 
+ 1288 0114 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1288      20726576 
+ 1288      6973696F 
+ 1288      6E203233 
+ 1288      37373135 
+ 1289 0147 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1289      66756E63 
+ 1289      74696F6E 
+ 1289      2D736563 
+ 1289      74696F6E 
+ 1290              	.LASF5:
+ 1291 016f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1291      20756E73 
+ 1291      69676E65 
+ 1291      6420696E 
+ 1291      7400
+ 1292              	.LASF3:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 27
+
+
+ 1293 0181 73686F72 		.ascii	"short unsigned int\000"
+ 1293      7420756E 
+ 1293      7369676E 
+ 1293      65642069 
+ 1293      6E7400
+ 1294              	.LASF19:
+ 1295 0194 67726565 		.ascii	"green\000"
+ 1295      6E00
+ 1296              	.LASF20:
+ 1297 019a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1297      52784275 
+ 1297      66666572 
+ 1297      00
+ 1298              	.LASF41:
+ 1299 01a7 636F6C6F 		.ascii	"colourSensor_Scan_freq\000"
+ 1299      75725365 
+ 1299      6E736F72 
+ 1299      5F536361 
+ 1299      6E5F6672 
+ 1300              	.LASF13:
+ 1301 01be 646F7562 		.ascii	"double\000"
+ 1301      6C6500
+ 1302              	.LASF2:
+ 1303 01c5 73686F72 		.ascii	"short int\000"
+ 1303      7420696E 
+ 1303      7400
+ 1304              	.LASF11:
+ 1305 01cf 75696E74 		.ascii	"uint32\000"
+ 1305      333200
+ 1306              	.LASF40:
+ 1307 01d6 636F6C6F 		.ascii	"colour_sensor_isr\000"
+ 1307      75725F73 
+ 1307      656E736F 
+ 1307      725F6973 
+ 1307      7200
+ 1308              	.LASF8:
+ 1309 01e8 756E7369 		.ascii	"unsigned int\000"
+ 1309      676E6564 
+ 1309      20696E74 
+ 1309      00
+ 1310              	.LASF36:
+ 1311 01f5 66726571 		.ascii	"freq_isr_StartEx\000"
+ 1311      5F697372 
+ 1311      5F537461 
+ 1311      72744578 
+ 1311      00
+ 1312              	.LASF7:
+ 1313 0206 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1313      206C6F6E 
+ 1313      6720756E 
+ 1313      7369676E 
+ 1313      65642069 
+ 1314              	.LASF25:
+ 1315 021d 436F6E74 		.ascii	"Control_Reg_1_Write\000"
+ 1315      726F6C5F 
+ 1315      5265675F 
+ 1315      315F5772 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 28
+
+
+ 1315      69746500 
+ 1316              	.LASF42:
+ 1317 0231 6D61696E 		.ascii	"main\000"
+ 1317      00
+ 1318              	.LASF10:
+ 1319 0236 696E7433 		.ascii	"int32_t\000"
+ 1319      325F7400 
+ 1320              	.LASF26:
+ 1321 023e 436F6C6F 		.ascii	"ColourSensor_S2_Write\000"
+ 1321      75725365 
+ 1321      6E736F72 
+ 1321      5F53325F 
+ 1321      57726974 
+ 1322              	.LASF16:
+ 1323 0254 73697A65 		.ascii	"sizetype\000"
+ 1323      74797065 
+ 1323      00
+ 1324              	.LASF6:
+ 1325 025d 6C6F6E67 		.ascii	"long long int\000"
+ 1325      206C6F6E 
+ 1325      6720696E 
+ 1325      7400
+ 1326              	.LASF38:
+ 1327 026b 6D61696E 		.ascii	"main.c\000"
+ 1327      2E6300
+ 1328              	.LASF14:
+ 1329 0272 63686172 		.ascii	"char\000"
+ 1329      00
+ 1330              	.LASF27:
+ 1331 0277 436F6C6F 		.ascii	"ColourSensor_S3_Write\000"
+ 1331      75725365 
+ 1331      6E736F72 
+ 1331      5F53335F 
+ 1331      57726974 
+ 1332              	.LASF32:
+ 1333 028d 50574D5F 		.ascii	"PWM_Test_Signal_Start\000"
+ 1333      54657374 
+ 1333      5F536967 
+ 1333      6E616C5F 
+ 1333      53746172 
+ 1334              	.LASF4:
+ 1335 02a3 6C6F6E67 		.ascii	"long int\000"
+ 1335      20696E74 
+ 1335      00
+ 1336              	.LASF34:
+ 1337 02ac 436F756E 		.ascii	"Count7_1ms_Start\000"
+ 1337      74375F31 
+ 1337      6D735F53 
+ 1337      74617274 
+ 1337      00
+ 1338              	.LASF15:
+ 1339 02bd 6C6F6E67 		.ascii	"long double\000"
+ 1339      20646F75 
+ 1339      626C6500 
+ 1340              	.LASF35:
+ 1341 02c9 66726571 		.ascii	"freq_isr_ClearPending\000"
+ 1341      5F697372 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccwvfDMZ.s 			page 29
+
+
+ 1341      5F436C65 
+ 1341      61725065 
+ 1341      6E64696E 
+ 1342              	.LASF30:
+ 1343 02df 55415254 		.ascii	"UART_1_PutString\000"
+ 1343      5F315F50 
+ 1343      75745374 
+ 1343      72696E67 
+ 1343      00
+ 1344              	.LASF23:
+ 1345 02f0 5F426F6F 		.ascii	"_Bool\000"
+ 1345      6C00
+ 1346              	.LASF29:
+ 1347 02f6 73707269 		.ascii	"sprintf\000"
+ 1347      6E746600 
+ 1348              	.LASF28:
+ 1349 02fe 43794465 		.ascii	"CyDelay\000"
+ 1349      6C617900 
+ 1350              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
