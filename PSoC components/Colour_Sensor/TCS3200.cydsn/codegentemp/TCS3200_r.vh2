@@ -1,5 +1,5 @@
 -- Project:   TCS3200
--- Generated: 07/28/2024 11:55:06
+-- Generated: 07/30/2024 09:32:31
 -- PSoC Creator  4.4
 
 ENTITY TCS3200 IS
@@ -54,14 +54,14 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     SIGNAL Net_170_local : bit;
     SIGNAL Net_313 : bit;
     SIGNAL Net_317 : bit;
-    ATTRIBUTE placement_force OF Net_317 : SIGNAL IS "U(0,1,A)1";
+    ATTRIBUTE placement_force OF Net_317 : SIGNAL IS "U(0,0,A)0";
     SIGNAL Net_457 : bit;
     SIGNAL Net_458 : bit;
     ATTRIBUTE udbclken_assigned OF Net_458 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_458 : SIGNAL IS true;
     SIGNAL Net_458_local : bit;
     SIGNAL Net_485 : bit;
-    ATTRIBUTE placement_force OF Net_485 : SIGNAL IS "U(3,4,B)1";
+    ATTRIBUTE placement_force OF Net_485 : SIGNAL IS "U(3,4,B)0";
     SIGNAL Net_487 : bit;
     ATTRIBUTE global_signal OF Net_487 : SIGNAL IS true;
     SIGNAL Net_487_local : bit;
@@ -95,38 +95,38 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     SIGNAL \PWM_Test_Signal:PWMUDB:control_6\ : bit;
     SIGNAL \PWM_Test_Signal:PWMUDB:control_7\ : bit;
     SIGNAL \PWM_Test_Signal:PWMUDB:runmode_enable\ : bit;
-    ATTRIBUTE placement_force OF \PWM_Test_Signal:PWMUDB:runmode_enable\ : SIGNAL IS "U(3,0,A)0";
+    ATTRIBUTE placement_force OF \PWM_Test_Signal:PWMUDB:runmode_enable\ : SIGNAL IS "U(2,3,A)0";
     SIGNAL \Pulse_counter:CounterUDB:sC32:counterdp:u0.ce0__sig\ : bit;
     SIGNAL \PWM_Test_Signal:PWMUDB:tc_i\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:cmp_out_i\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:count_enable\ : bit;
-    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:count_enable\ : SIGNAL IS "U(3,4,A)3";
+    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:count_enable\ : SIGNAL IS "U(3,4,B)3";
     SIGNAL \Pulse_counter:CounterUDB:count_stored_i\ : bit;
-    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:count_stored_i\ : SIGNAL IS "U(3,4,B)0";
+    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:count_stored_i\ : SIGNAL IS "U(3,4,A)0";
     SIGNAL \Pulse_counter:CounterUDB:overflow_reg_i\ : bit;
-    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:overflow_reg_i\ : SIGNAL IS "U(3,3,A)1";
+    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:overflow_reg_i\ : SIGNAL IS "U(3,3,B)3";
     SIGNAL \Pulse_counter:CounterUDB:per_equal\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:prevCompare\ : bit;
-    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:prevCompare\ : SIGNAL IS "U(3,3,B)1";
+    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:prevCompare\ : SIGNAL IS "U(3,3,A)1";
     SIGNAL \Pulse_counter:CounterUDB:reload\ : bit;
-    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:reload\ : SIGNAL IS "U(3,3,A)3";
+    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:reload\ : SIGNAL IS "U(3,3,B)2";
     SIGNAL \Pulse_counter:CounterUDB:sC32:counterdp:u1.ce0__sig\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:sC32:counterdp:u2.ce0__sig\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:status_0\ : bit;
     ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:status_0\ : SIGNAL IS "U(3,3,A)0";
     SIGNAL \Pulse_counter:CounterUDB:status_1\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:status_2\ : bit;
-    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:status_2\ : SIGNAL IS "U(3,3,B)3";
+    ATTRIBUTE placement_force OF \Pulse_counter:CounterUDB:status_2\ : SIGNAL IS "U(3,3,B)0";
     SIGNAL \Pulse_counter:CounterUDB:status_5\ : bit;
     SIGNAL \Pulse_counter:CounterUDB:status_6\ : bit;
     SIGNAL \UART_1:BUART:counter_load_not\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:counter_load_not\ : SIGNAL IS "U(1,2,B)3";
+    ATTRIBUTE placement_force OF \UART_1:BUART:counter_load_not\ : SIGNAL IS "U(0,1,B)1";
     SIGNAL \UART_1:BUART:pollcount_0\ : bit;
     ATTRIBUTE placement_force OF \UART_1:BUART:pollcount_0\ : SIGNAL IS "U(1,1,B)0";
     SIGNAL \UART_1:BUART:pollcount_1\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:pollcount_1\ : SIGNAL IS "U(1,1,B)2";
+    ATTRIBUTE placement_force OF \UART_1:BUART:pollcount_1\ : SIGNAL IS "U(1,1,B)3";
     SIGNAL \UART_1:BUART:rx_bitclk_enable\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_bitclk_enable\ : SIGNAL IS "U(1,1,B)3";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_bitclk_enable\ : SIGNAL IS "U(1,1,B)2";
     SIGNAL \UART_1:BUART:rx_count7_tc\ : bit;
     SIGNAL \UART_1:BUART:rx_count_0\ : bit;
     SIGNAL \UART_1:BUART:rx_count_1\ : bit;
@@ -140,11 +140,11 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     SIGNAL \UART_1:BUART:rx_fifofull\ : bit;
     SIGNAL \UART_1:BUART:rx_fifonotempty\ : bit;
     SIGNAL \UART_1:BUART:rx_last\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_last\ : SIGNAL IS "U(1,0,A)3";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_last\ : SIGNAL IS "U(0,0,B)1";
     SIGNAL \UART_1:BUART:rx_load_fifo\ : bit;
     ATTRIBUTE placement_force OF \UART_1:BUART:rx_load_fifo\ : SIGNAL IS "U(1,0,B)1";
     SIGNAL \UART_1:BUART:rx_postpoll\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_postpoll\ : SIGNAL IS "U(1,0,B)2";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_postpoll\ : SIGNAL IS "U(1,1,B)1";
     SIGNAL \UART_1:BUART:rx_state_0\ : bit;
     ATTRIBUTE placement_force OF \UART_1:BUART:rx_state_0\ : SIGNAL IS "U(1,0,A)0";
     SIGNAL \UART_1:BUART:rx_state_2\ : bit;
@@ -152,40 +152,40 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     SIGNAL \UART_1:BUART:rx_state_3\ : bit;
     ATTRIBUTE placement_force OF \UART_1:BUART:rx_state_3\ : SIGNAL IS "U(1,0,A)2";
     SIGNAL \UART_1:BUART:rx_state_stop1_reg\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_state_stop1_reg\ : SIGNAL IS "U(1,1,A)0";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_state_stop1_reg\ : SIGNAL IS "U(1,0,A)3";
     SIGNAL \UART_1:BUART:rx_status_3\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_status_3\ : SIGNAL IS "U(1,1,B)1";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_status_3\ : SIGNAL IS "U(1,0,B)2";
     SIGNAL \UART_1:BUART:rx_status_4\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_status_4\ : SIGNAL IS "U(1,1,A)2";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_status_4\ : SIGNAL IS "U(1,1,A)0";
     SIGNAL \UART_1:BUART:rx_status_5\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:rx_status_5\ : SIGNAL IS "U(1,1,A)1";
+    ATTRIBUTE placement_force OF \UART_1:BUART:rx_status_5\ : SIGNAL IS "U(1,1,A)3";
     SIGNAL \UART_1:BUART:tx_bitclk\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_bitclk\ : SIGNAL IS "U(0,1,A)2";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_bitclk\ : SIGNAL IS "U(0,2,A)1";
     SIGNAL \UART_1:BUART:tx_bitclk_enable_pre\ : bit;
     SIGNAL \UART_1:BUART:tx_counter_dp\ : bit;
     SIGNAL \UART_1:BUART:tx_ctrl_mark_last\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_ctrl_mark_last\ : SIGNAL IS "U(1,1,A)3";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_ctrl_mark_last\ : SIGNAL IS "U(1,0,B)3";
     SIGNAL \UART_1:BUART:tx_fifo_empty\ : bit;
     SIGNAL \UART_1:BUART:tx_fifo_notfull\ : bit;
     SIGNAL \UART_1:BUART:tx_shift_out\ : bit;
     SIGNAL \UART_1:BUART:tx_state_0\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_state_0\ : SIGNAL IS "U(0,1,B)1";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_state_0\ : SIGNAL IS "U(0,2,A)0";
     SIGNAL \UART_1:BUART:tx_state_1\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_state_1\ : SIGNAL IS "U(0,2,B)1";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_state_1\ : SIGNAL IS "U(0,2,A)2";
     SIGNAL \UART_1:BUART:tx_state_2\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_state_2\ : SIGNAL IS "U(0,2,A)0";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_state_2\ : SIGNAL IS "U(0,2,B)0";
     SIGNAL \UART_1:BUART:tx_status_0\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_status_0\ : SIGNAL IS "U(1,2,A)1";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_status_0\ : SIGNAL IS "U(0,2,B)1";
     SIGNAL \UART_1:BUART:tx_status_2\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:tx_status_2\ : SIGNAL IS "U(1,2,B)0";
+    ATTRIBUTE placement_force OF \UART_1:BUART:tx_status_2\ : SIGNAL IS "U(0,2,B)3";
     SIGNAL \UART_1:BUART:txn\ : bit;
-    ATTRIBUTE placement_force OF \UART_1:BUART:txn\ : SIGNAL IS "U(0,2,B)0";
+    ATTRIBUTE placement_force OF \UART_1:BUART:txn\ : SIGNAL IS "U(0,1,A)1";
     SIGNAL \UART_1:Net_9\ : bit;
     ATTRIBUTE udbclken_assigned OF \UART_1:Net_9\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \UART_1:Net_9\ : SIGNAL IS true;
     SIGNAL \UART_1:Net_9_local\ : bit;
     SIGNAL __ONE__ : bit;
-    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(2,1,B)1";
+    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(1,5,A)2";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
@@ -252,7 +252,7 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE lib_model OF LED_1(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF LED_1(0) : LABEL IS "P0[2]";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P2[2]";
     ATTRIBUTE lib_model OF ColourSensor_S0(0) : LABEL IS "iocell6";
@@ -274,17 +274,17 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE lib_model OF \Pulse_counter:CounterUDB:count_enable\ : LABEL IS "macrocell5";
     ATTRIBUTE Location OF \Pulse_counter:CounterUDB:count_enable\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF Net_317 : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF Net_317 : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF Net_317 : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \UART_1:BUART:counter_load_not\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:counter_load_not\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \UART_1:BUART:tx_status_0\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:tx_status_0\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_2\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \UART_1:BUART:tx_status_2\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:tx_status_2\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_counter_load\ : LABEL IS "macrocell10";
     ATTRIBUTE Location OF \UART_1:BUART:rx_counter_load\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_postpoll\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \UART_1:BUART:rx_postpoll\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \UART_1:BUART:rx_postpoll\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_4\ : LABEL IS "macrocell12";
     ATTRIBUTE Location OF \UART_1:BUART:rx_status_4\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_5\ : LABEL IS "macrocell13";
@@ -292,11 +292,11 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE lib_model OF Net_485 : LABEL IS "macrocell14";
     ATTRIBUTE Location OF Net_485 : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \PWM_Test_Signal:PWMUDB:genblk1:ctrlreg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:genblk1:ctrlreg\ : LABEL IS "U(3,0)";
+    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:genblk1:ctrlreg\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(2,0)";
+    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(3,0)";
+    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \Pulse_counter:CounterUDB:sSTSReg:stsreg\ : LABEL IS "statusicell1";
     ATTRIBUTE Location OF \Pulse_counter:CounterUDB:sSTSReg:stsreg\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \Pulse_counter:CounterUDB:sC32:counterdp:u0\ : LABEL IS "datapathcell3";
@@ -309,21 +309,21 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE Location OF \Pulse_counter:CounterUDB:sC32:counterdp:u3\ : LABEL IS "U(3,3)";
     ATTRIBUTE Location OF freq_isr : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell7";
-    ATTRIBUTE Location OF \UART_1:BUART:sTX:TxShifter:u0\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:sTX:TxShifter:u0\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell8";
-    ATTRIBUTE Location OF \UART_1:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell9";
-    ATTRIBUTE Location OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "U(1,1)";
     ATTRIBUTE Location OF \UART_1:BUART:sRX:RxBitCounter\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxSts\ : LABEL IS "statusicell3";
     ATTRIBUTE Location OF \UART_1:BUART:sRX:RxSts\ : LABEL IS "U(1,1)";
-    ATTRIBUTE Location OF \Count7_1ms:Counter7\ : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF \Count7_10ms:Counter7\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \Control_Reg_1:Sync:ctrl_reg\ : LABEL IS "controlcell2";
     ATTRIBUTE Location OF \Control_Reg_1:Sync:ctrl_reg\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \PWM_Test_Signal:PWMUDB:runmode_enable\ : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:runmode_enable\ : LABEL IS "U(3,0)";
+    ATTRIBUTE Location OF \PWM_Test_Signal:PWMUDB:runmode_enable\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \Pulse_counter:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell16";
     ATTRIBUTE Location OF \Pulse_counter:CounterUDB:overflow_reg_i\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \Pulse_counter:CounterUDB:prevCompare\ : LABEL IS "macrocell17";
@@ -331,17 +331,17 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE lib_model OF \Pulse_counter:CounterUDB:count_stored_i\ : LABEL IS "macrocell18";
     ATTRIBUTE Location OF \Pulse_counter:CounterUDB:count_stored_i\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \UART_1:BUART:txn\ : LABEL IS "macrocell19";
-    ATTRIBUTE Location OF \UART_1:BUART:txn\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \UART_1:BUART:txn\ : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_1\ : LABEL IS "macrocell20";
     ATTRIBUTE Location OF \UART_1:BUART:tx_state_1\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_0\ : LABEL IS "macrocell21";
-    ATTRIBUTE Location OF \UART_1:BUART:tx_state_0\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \UART_1:BUART:tx_state_0\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_2\ : LABEL IS "macrocell22";
     ATTRIBUTE Location OF \UART_1:BUART:tx_state_2\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk\ : LABEL IS "macrocell23";
-    ATTRIBUTE Location OF \UART_1:BUART:tx_bitclk\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \UART_1:BUART:tx_bitclk\ : LABEL IS "U(0,2)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_ctrl_mark_last\ : LABEL IS "macrocell24";
-    ATTRIBUTE Location OF \UART_1:BUART:tx_ctrl_mark_last\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \UART_1:BUART:tx_ctrl_mark_last\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_0\ : LABEL IS "macrocell25";
     ATTRIBUTE Location OF \UART_1:BUART:rx_state_0\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_load_fifo\ : LABEL IS "macrocell26";
@@ -353,15 +353,15 @@ ARCHITECTURE __DEFAULT__ OF TCS3200 IS
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_bitclk_enable\ : LABEL IS "macrocell29";
     ATTRIBUTE Location OF \UART_1:BUART:rx_bitclk_enable\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell30";
-    ATTRIBUTE Location OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_1\ : LABEL IS "macrocell31";
     ATTRIBUTE Location OF \UART_1:BUART:pollcount_1\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_0\ : LABEL IS "macrocell32";
     ATTRIBUTE Location OF \UART_1:BUART:pollcount_0\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell33";
-    ATTRIBUTE Location OF \UART_1:BUART:rx_status_3\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \UART_1:BUART:rx_status_3\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell34";
-    ATTRIBUTE Location OF \UART_1:BUART:rx_last\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \UART_1:BUART:rx_last\ : LABEL IS "U(0,0)";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -1333,6 +1333,8 @@ BEGIN
         PORT MAP(
             pa_out => ColourSensor_S1(0)__PA,
             oe => open,
+            pin_input => __ONE__,
+            pad_out => ColourSensor_S1(0)_PAD,
             pad_in => ColourSensor_S1(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -2280,7 +2282,7 @@ BEGIN
             status_1 => open,
             status_0 => open);
 
-    \Count7_1ms:Counter7\:count7cell
+    \Count7_10ms:Counter7\:count7cell
         GENERIC MAP(
             cy_alt_mode => 0,
             cy_init_value => "0000000",

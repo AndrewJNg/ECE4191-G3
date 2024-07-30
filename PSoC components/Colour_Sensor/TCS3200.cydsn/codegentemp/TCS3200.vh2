@@ -2,7 +2,7 @@
 --	Conversion of TCS3200.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Jul 28 11:55:05 2024
+--	Tue Jul 30 09:32:30 2024
 --
 
 USE cypress.cypress.all;
@@ -1106,7 +1106,7 @@ SIGNAL tmpIO_0__LED_net_0 : bit;
 TERMINAL tmpSIOVREF__LED_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__LED_net_0 : bit;
 SIGNAL tmpOE__LED_1_net_0 : bit;
-SIGNAL Net_574 : bit;
+SIGNAL Net_550 : bit;
 SIGNAL tmpFB_0__LED_1_net_0 : bit;
 SIGNAL tmpIO_0__LED_1_net_0 : bit;
 TERMINAL tmpSIOVREF__LED_1_net_0 : bit;
@@ -1134,13 +1134,11 @@ SIGNAL Net_489_2 : bit;
 SIGNAL Net_489_1 : bit;
 SIGNAL Net_489_0 : bit;
 SIGNAL tmpOE__ColourSensor_S0_net_0 : bit;
-SIGNAL Net_550 : bit;
 SIGNAL tmpFB_0__ColourSensor_S0_net_0 : bit;
 SIGNAL tmpIO_0__ColourSensor_S0_net_0 : bit;
 TERMINAL tmpSIOVREF__ColourSensor_S0_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__ColourSensor_S0_net_0 : bit;
 SIGNAL tmpOE__ColourSensor_S1_net_0 : bit;
-SIGNAL Net_551 : bit;
 SIGNAL tmpFB_0__ColourSensor_S1_net_0 : bit;
 SIGNAL tmpIO_0__ColourSensor_S1_net_0 : bit;
 TERMINAL tmpSIOVREF__ColourSensor_S1_net_0 : bit;
@@ -1951,7 +1949,7 @@ Clock_3:cy_clock_v1_0
 		id=>"60867b86-3a3f-41d6-a5e5-5f752779cc28",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"10000000",
+		period=>"41666666.6666667",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_14,
@@ -1965,7 +1963,7 @@ freq_isr:cy_isr_v1_0
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"1085069444.44444",
+		period=>"2170138888.88889",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\UART_1:Net_9\,
@@ -2640,7 +2638,7 @@ Clock_5:cy_clock_v1_0
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_487,
 		dig_domain_out=>open);
-\Count7_1ms:Counter7\:cy_psoc3_count7
+\Count7_10ms:Counter7\:cy_psoc3_count7
 	GENERIC MAP(cy_period=>"1111111",
 		cy_init_value=>"0000000",
 		cy_route_ld=>'0',
@@ -2780,7 +2778,7 @@ ColourSensor_S1:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
-		y=>zero,
+		y=>one,
 		fb=>(tmpFB_0__ColourSensor_S1_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__ColourSensor_S1_net_0),

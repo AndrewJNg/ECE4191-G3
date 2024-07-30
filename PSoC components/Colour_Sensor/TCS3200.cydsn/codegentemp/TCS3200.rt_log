@@ -14,12 +14,11 @@ I1204: Reading architecture from file D:\Monash_Apps\PSoC Creator\4.4\PSoC Creat
 I1206: Completed Reading of file D:\Monash_Apps\PSoC Creator\4.4\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata
 I1209: Started routing
 I1223: Total Nets : 115 
-I1212: Iteration  1 :    45 unrouted : 0 seconds
-I1212: Iteration  2 :    15 unrouted : 0 seconds
-I1212: Iteration  3 :     8 unrouted : 0 seconds
+I1212: Iteration  1 :    43 unrouted : 0 seconds
+I1212: Iteration  2 :    10 unrouted : 0 seconds
+I1212: Iteration  3 :     2 unrouted : 0 seconds
 I1212: Iteration  4 :     2 unrouted : 0 seconds
-I1212: Iteration  5 :     2 unrouted : 0 seconds
-I1212: Iteration  6 :     0 unrouted : 0 seconds
+I1212: Iteration  5 :     0 unrouted : 0 seconds
 I1215: Routing is successful
 I1207: Completed routing
 I1210: Writing routes

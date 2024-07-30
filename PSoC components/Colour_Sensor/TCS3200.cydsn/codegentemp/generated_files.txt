@@ -48,9 +48,9 @@
   <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Clock_4.h" value="HEADER;;;;;Clock_4" />
   <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Clock_5.c" value="SOURCE_C;CortexM3;;;;Clock_5" />
   <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Clock_5.h" value="HEADER;;;;;Clock_5" />
-  <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Count7_1ms.c" value="SOURCE_C;CortexM3;;;;Count7_1ms" />
-  <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Count7_1ms.h" value="HEADER;;;;;Count7_1ms" />
-  <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Count7_1ms_PM.c" value="SOURCE_C;CortexM3;;;;Count7_1ms" />
+  <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Count7_10ms.c" value="SOURCE_C;CortexM3;;;;Count7_10ms" />
+  <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Count7_10ms.h" value="HEADER;;;;;Count7_10ms" />
+  <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\Count7_10ms_PM.c" value="SOURCE_C;CortexM3;;;;Count7_10ms" />
   <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\ColourSensor_S0_aliases.h" value="HEADER;;;;;ColourSensor_S0" />
   <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\ColourSensor_S0.c" value="SOURCE_C;CortexM3;;;;ColourSensor_S0" />
   <file name="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\codegentemp\ColourSensor_S0.h" value="HEADER;;;;;ColourSensor_S0" />

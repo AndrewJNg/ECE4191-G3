@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Count7_1ms.c
+* File Name: Count7_10ms.c
 * Version 1.0
 *
 * Description:
@@ -14,13 +14,13 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "Count7_1ms.h"
+#include "Count7_10ms.h"
 
-uint8 Count7_1ms_initVar = 0u;
+uint8 Count7_10ms_initVar = 0u;
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_Init
+* Function Name: Count7_10ms_Init
 ********************************************************************************
 *
 * Summary:
@@ -39,15 +39,15 @@ uint8 Count7_1ms_initVar = 0u;
 *  operation.
 *
 *******************************************************************************/
-void Count7_1ms_Init(void) 
+void Count7_10ms_Init(void) 
 {
     /* Set the initial period value from parameter editor */
-    Count7_1ms_PERIOD_REG = Count7_1ms_INITIAL_PERIOD;
+    Count7_10ms_PERIOD_REG = Count7_10ms_INITIAL_PERIOD;
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_Enable
+* Function Name: Count7_10ms_Enable
 ********************************************************************************
 *
 * Summary:
@@ -68,7 +68,7 @@ void Count7_1ms_Init(void)
 *  modification will complete.
 *
 *******************************************************************************/
-void Count7_1ms_Enable(void) 
+void Count7_10ms_Enable(void) 
 {
     uint8 interruptState;
 
@@ -76,14 +76,14 @@ void Count7_1ms_Enable(void)
     /* Set the counter start bit in auxiliary control. If routed enable
     * isn't used then this will immediately star the Count7 operation.
     */
-    Count7_1ms_AUX_CONTROL_REG |= Count7_1ms_COUNTER_START;
+    Count7_10ms_AUX_CONTROL_REG |= Count7_10ms_COUNTER_START;
 
     CyExitCriticalSection(interruptState);
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_Start
+* Function Name: Count7_10ms_Start
 ********************************************************************************
 *
 * Summary:
@@ -96,28 +96,28 @@ void Count7_1ms_Enable(void)
 *  None.
 *
 * Global Variables:
-*  Count7_1ms_initVar - global variable.
+*  Count7_10ms_initVar - global variable.
 *
 * Return:
 *  None.
 *
 *******************************************************************************/
-void Count7_1ms_Start(void) 
+void Count7_10ms_Start(void) 
 {
     /* If not initialized then perform initialization */
-    if(Count7_1ms_initVar == 0u)
+    if(Count7_10ms_initVar == 0u)
     {
-        Count7_1ms_Init();
-        Count7_1ms_initVar = 1u;
+        Count7_10ms_Init();
+        Count7_10ms_initVar = 1u;
     }
 
     /* Enable Count7 */
-    Count7_1ms_Enable();
+    Count7_10ms_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_Stop
+* Function Name: Count7_10ms_Stop
 ********************************************************************************
 *
 * Summary:
@@ -130,20 +130,20 @@ void Count7_1ms_Start(void)
 *  None
 *
 *******************************************************************************/
-void Count7_1ms_Stop(void) 
+void Count7_10ms_Stop(void) 
 {
     uint8 interruptState;
 
     interruptState = CyEnterCriticalSection();
     /* Clear the counter start bit in auxiliary control. */
-    Count7_1ms_AUX_CONTROL_REG &= (uint8) ~((uint8) Count7_1ms_COUNTER_START);
+    Count7_10ms_AUX_CONTROL_REG &= (uint8) ~((uint8) Count7_10ms_COUNTER_START);
 
     CyExitCriticalSection(interruptState);
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_WriteCounter
+* Function Name: Count7_10ms_WriteCounter
 ********************************************************************************
 *
 * Summary:
@@ -157,14 +157,14 @@ void Count7_1ms_Stop(void)
 *  None
 *
 *******************************************************************************/
-void Count7_1ms_WriteCounter(uint8 count) 
+void Count7_10ms_WriteCounter(uint8 count) 
 {
-    Count7_1ms_COUNT_REG = (count & Count7_1ms_COUNT_7BIT_MASK);
+    Count7_10ms_COUNT_REG = (count & Count7_10ms_COUNT_7BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_ReadCounter
+* Function Name: Count7_10ms_ReadCounter
 ********************************************************************************
 *
 * Summary:
@@ -177,14 +177,14 @@ void Count7_1ms_WriteCounter(uint8 count)
 *  None
 *
 *******************************************************************************/
-uint8 Count7_1ms_ReadCounter(void) 
+uint8 Count7_10ms_ReadCounter(void) 
 {
-    return(Count7_1ms_COUNT_REG & Count7_1ms_COUNT_7BIT_MASK);
+    return(Count7_10ms_COUNT_REG & Count7_10ms_COUNT_7BIT_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_WritePeriod
+* Function Name: Count7_10ms_WritePeriod
 ********************************************************************************
 *
 * Summary:
@@ -201,14 +201,14 @@ uint8 Count7_1ms_ReadCounter(void)
 *  None
 *
 *******************************************************************************/
-void Count7_1ms_WritePeriod(uint8 period) 
+void Count7_10ms_WritePeriod(uint8 period) 
 {
-    Count7_1ms_PERIOD_REG = period;
+    Count7_10ms_PERIOD_REG = period;
 }
 
 
 /*******************************************************************************
-* Function Name: Count7_1ms_ReadPeriod
+* Function Name: Count7_10ms_ReadPeriod
 ********************************************************************************
 *
 * Summary:
@@ -221,9 +221,9 @@ void Count7_1ms_WritePeriod(uint8 period)
 *  uint8 - Current period value.
 *
 *******************************************************************************/
-uint8 Count7_1ms_ReadPeriod(void) 
+uint8 Count7_10ms_ReadPeriod(void) 
 {
-    return(Count7_1ms_PERIOD_REG);
+    return(Count7_10ms_PERIOD_REG);
 }
 
 

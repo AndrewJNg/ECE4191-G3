@@ -1,5 +1,5 @@
 -- Project:   TCS3200
--- Generated: 07/28/2024 11:55:05
+-- Generated: 07/30/2024 09:32:30
 -- PSoC Creator  4.4
 
 ENTITY TCS3200 IS
@@ -1269,6 +1269,8 @@ BEGIN
         PORT MAP(
             pa_out => ColourSensor_S1(0)__PA,
             oe => open,
+            pin_input => __ONE__,
+            pad_out => ColourSensor_S1(0)_PAD,
             pad_in => ColourSensor_S1(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -2216,7 +2218,7 @@ BEGIN
             status_1 => open,
             status_0 => open);
 
-    \Count7_1ms:Counter7\:count7cell
+    \Count7_10ms:Counter7\:count7cell
         GENERIC MAP(
             cy_alt_mode => 0,
             cy_init_value => "0000000",

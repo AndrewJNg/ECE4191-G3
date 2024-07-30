@@ -1,6 +1,6 @@
 // ======================================================================
 // TCS3200.v generated from TopDesign.cysch
-// 07/28/2024 at 11:55
+// 07/30/2024 at 09:32
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -428,7 +428,7 @@ endmodule
 `include "D:\Monash_Apps\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v"
 `endif
 
-// UART_v2_50(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockToleranceMinus=3.93736842105263, InternalClockTolerancePlus=3.93736842105263, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=UART_v2_50, CY_CONFIG_TITLE=UART_1, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=UART_1, CY_INSTANCE_SHORT_NAME=UART_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=UART_1, )
+// UART_v2_50(Address1=0, Address2=0, BaudRate=57600, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockToleranceMinus=3.93736842105263, InternalClockTolerancePlus=3.93736842105263, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=460800, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=UART_v2_50, CY_CONFIG_TITLE=UART_1, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=UART_1, CY_INSTANCE_SHORT_NAME=UART_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=UART_1, )
 module UART_v2_50_2 (
     clock,
     cts_n,
@@ -479,7 +479,7 @@ module UART_v2_50_2 (
 		#(.id("b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("1085069444.44444"),
+		  .period("2170138888.88889"),
 		  .is_direct(0),
 		  .is_digital(1))
 		IntClock
@@ -592,8 +592,6 @@ module top ;
           wire  Net_584;
           wire  Net_583;
           wire  Net_582;
-          wire  Net_551;
-          wire  Net_550;
           wire  Net_486;
           wire [6:0] Net_489;
           wire  Net_549;
@@ -604,7 +602,6 @@ module top ;
           wire  Net_531;
           wire  Net_458;
           wire  Net_591;
-          wire  Net_574;
           wire  Net_321;
           wire  Net_320;
           wire  Net_319;
@@ -640,6 +637,7 @@ module top ;
           wire  Net_400;
           wire  Net_399;
           wire  Net_398;
+          wire  Net_550;
           wire  Net_581;
           wire  Net_14;
           wire  Net_457;
@@ -708,7 +706,7 @@ module top ;
 		#(.id("60867b86-3a3f-41d6-a5e5-5f752779cc28"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("10000000"),
+		  .period("41666666.6666667"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_3
@@ -1038,7 +1036,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		LED_1
 		 (.oe(tmpOE__LED_1_net),
-		  .y({Net_574}),
+		  .y({Net_550}),
 		  .fb({tmpFB_0__LED_1_net[0:0]}),
 		  .io({tmpIO_0__LED_1_net[0:0]}),
 		  .siovref(tmpSIOVREF__LED_1_net),
@@ -1165,15 +1163,15 @@ module top ;
 		 (.clock_out(Net_487));
 
 
-    Count7_v1_0 Count7_1ms (
+    Count7_v1_0 Count7_10ms (
         .clock(Net_487),
         .cnt(Net_489[6:0]),
         .en(Net_485),
         .load(1'b0),
         .reset(Net_497),
         .tc(Net_494));
-    defparam Count7_1ms.EnableSignal = 1;
-    defparam Count7_1ms.LoadSignal = 0;
+    defparam Count7_10ms.EnableSignal = 1;
+    defparam Count7_10ms.LoadSignal = 0;
 
 
     assign Net_485 = ~Net_494;
@@ -1314,7 +1312,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		ColourSensor_S1
 		 (.oe(tmpOE__ColourSensor_S1_net),
-		  .y({Net_551}),
+		  .y({Net_550}),
 		  .fb({tmpFB_0__ColourSensor_S1_net[0:0]}),
 		  .io({tmpIO_0__ColourSensor_S1_net[0:0]}),
 		  .siovref(tmpSIOVREF__ColourSensor_S1_net),
@@ -1552,10 +1550,6 @@ module top ;
 
 	assign tmpOE__ColourSensor_OUT_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    assign Net_550 = 1'h1;
-
-    assign Net_551 = 1'h0;
-
     CyControlReg_v1_80 Control_Reg_1 (
         .clock(1'b0),
         .control_0(Net_497),
@@ -1580,7 +1574,7 @@ module top ;
     defparam Control_Reg_1.ExtrReset = 0;
     defparam Control_Reg_1.NumOutputs = 1;
 
-    assign Net_574 = 1'h1;
+    assign Net_550 = 1'h1;
 
 
 

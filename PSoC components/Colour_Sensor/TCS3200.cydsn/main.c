@@ -2,7 +2,7 @@
  *
  * Copyright YOUR COMPANY, THE YEAR
  * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARECount7_1ms
+ * UNPUBLISHED, LICENSED SOFTWARE
  *
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
  * WHICH IS THE PROPERTY OF your company.
@@ -15,8 +15,9 @@
 
 uint32 value = 0;
 
-uint32 colourSensor_Scan_freq(int S2,int S3);
+uint32 colourSensor_Single_Scan(int S2,int S3);
 CY_ISR(colour_sensor_isr);
+uint32 map(uint32 x, uint32 in_min, uint32 in_max, uint32 out_min, uint32 out_max);
 
 
 int main(void)
@@ -29,7 +30,7 @@ int main(void)
     
     // Colour sensor setup
     Pulse_counter_Start();
-    Count7_1ms_Start();
+    Count7_10ms_Start();
     freq_isr_ClearPending(); 
     freq_isr_StartEx(colour_sensor_isr);
     
@@ -45,16 +46,24 @@ int main(void)
     //uint32 clear = 0;
     //uint32 green = 0;
     
-    uint32 red   = colourSensor_Scan_freq(0,0);
-    uint32 blue  = colourSensor_Scan_freq(0,1);
-    uint32 clear = colourSensor_Scan_freq(1,0);
-    uint32 green = colourSensor_Scan_freq(1,1);
+        
+    //uint32 red   = colourSensor_Single_Scan(0,0);  // min=120 max=260
+    //uint32 blue  = colourSensor_Single_Scan(0,1);  // min=100 max=275
+    //uint32 clear = colourSensor_Single_Scan(1,0);  
+    //uint32 green = colourSensor_Single_Scan(1,1);  // min=80 max=170
+    
+    uint32 red   = map(colourSensor_Single_Scan(0,0)  ,120,200  ,0,100);  // min=120 max=260
+    uint32 blue  = map(colourSensor_Single_Scan(0,1)  ,120,200  ,0,100);  // min=100 max=275
+    uint32 clear =  map(colourSensor_Single_Scan(1,0)  ,100,1500  ,0,100);  // min=100 max=275
+    uint32 green = map(colourSensor_Single_Scan(1,1)  ,80,180  ,0,100);  // min=80 max=170
     
     
+    ////////////////////////////////////////////
     char str[50];
-    sprintf(str, "red: %lu\tgreen: %lu\tblue: %lu\tclear: %lu\t", red, green, blue, clear);
+    sprintf(str, "red: %lu     \t green: %lu\t blue: %lu  \t clear: %lu \t", red, green, blue, clear);
     UART_1_PutString(str);
     
+    ////////////////////////////////////////////
     if((red > blue) && (red>green))
         sprintf(str, "red \n");
     else if((blue > red) && (blue>green))
@@ -64,17 +73,21 @@ int main(void)
     else
         sprintf(str, "no answer \n");
     
-    
     UART_1_PutString(str);
     
-        
-    //CyDelay(1000);
     
         
     }
 }
 
 
+uint32 map(uint32 x, uint32 in_min, uint32 in_max, uint32 out_min, uint32 out_max) {
+    // limit output to 0 or 255 when it is out of desired range
+    if (x <=in_min) return out_min;
+    else if (x >=in_max) return out_max;
+    
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 bool colour_sensor_ready = 0;
 CY_ISR(colour_sensor_isr){
@@ -83,7 +96,7 @@ CY_ISR(colour_sensor_isr){
     
 }
 
-uint32 colourSensor_Scan_freq(int S2,int S3)
+uint32 colourSensor_Single_Scan(int S2,int S3)
 {
     Control_Reg_1_Write(1);
     
@@ -96,7 +109,7 @@ uint32 colourSensor_Scan_freq(int S2,int S3)
     
     while(colour_sensor_ready==0)
     {
-        
+        // there is a 10ms dead zone here
     }
     CyDelay(10);
     

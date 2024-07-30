@@ -126,9 +126,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pulse_counter_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\freq_isr.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\freq_isr.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_1ms.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_1ms.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_1ms_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ColourSensor_S0_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ColourSensor_S0.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ColourSensor_S0.h</File>
@@ -144,6 +141,9 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ColourSensor_OUT_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ColourSensor_OUT.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ColourSensor_OUT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_10ms.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_10ms.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_10ms_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\Export\ARM_GCC_Generic">

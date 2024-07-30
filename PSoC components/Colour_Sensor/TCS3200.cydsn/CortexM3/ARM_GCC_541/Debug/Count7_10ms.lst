@@ -1,0 +1,1271 @@
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Count7_10ms.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Count7_10ms_Init,"ax",%progbits
+  20              		.align	2
+  21              		.global	Count7_10ms_Init
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Count7_10ms_Init, %function
+  25              	Count7_10ms_Init:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\Count7_10ms.c"
+   1:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Count7_10ms.c **** * File Name: Count7_10ms.c
+   3:Generated_Source\PSoC5/Count7_10ms.c **** * Version 1.0
+   4:Generated_Source\PSoC5/Count7_10ms.c **** *
+   5:Generated_Source\PSoC5/Count7_10ms.c **** * Description:
+   6:Generated_Source\PSoC5/Count7_10ms.c **** *  This file provides source code for the Count7 component's API.
+   7:Generated_Source\PSoC5/Count7_10ms.c **** *
+   8:Generated_Source\PSoC5/Count7_10ms.c **** * Note:
+   9:Generated_Source\PSoC5/Count7_10ms.c **** *
+  10:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+  11:Generated_Source\PSoC5/Count7_10ms.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC5/Count7_10ms.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:Generated_Source\PSoC5/Count7_10ms.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:Generated_Source\PSoC5/Count7_10ms.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+  16:Generated_Source\PSoC5/Count7_10ms.c **** 
+  17:Generated_Source\PSoC5/Count7_10ms.c **** #include "Count7_10ms.h"
+  18:Generated_Source\PSoC5/Count7_10ms.c **** 
+  19:Generated_Source\PSoC5/Count7_10ms.c **** uint8 Count7_10ms_initVar = 0u;
+  20:Generated_Source\PSoC5/Count7_10ms.c **** 
+  21:Generated_Source\PSoC5/Count7_10ms.c **** 
+  22:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+  23:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_Init
+  24:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+  25:Generated_Source\PSoC5/Count7_10ms.c **** *
+  26:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+  27:Generated_Source\PSoC5/Count7_10ms.c **** *  Initializes or restores the component according to the parameter editor
+  28:Generated_Source\PSoC5/Count7_10ms.c **** *  settings.
+  29:Generated_Source\PSoC5/Count7_10ms.c **** *
+  30:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+  32:Generated_Source\PSoC5/Count7_10ms.c **** *
+  33:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+  34:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+  35:Generated_Source\PSoC5/Count7_10ms.c **** *
+  36:Generated_Source\PSoC5/Count7_10ms.c **** * Theory:
+  37:Generated_Source\PSoC5/Count7_10ms.c **** *  It is not necessary to call Count7_Init() because the Count7_Start() API
+  38:Generated_Source\PSoC5/Count7_10ms.c **** *  calls this function and is the preferred method to begin component
+  39:Generated_Source\PSoC5/Count7_10ms.c **** *  operation.
+  40:Generated_Source\PSoC5/Count7_10ms.c **** *
+  41:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+  42:Generated_Source\PSoC5/Count7_10ms.c **** void Count7_10ms_Init(void) 
+  43:Generated_Source\PSoC5/Count7_10ms.c **** {
+  28              		.loc 1 43 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  44:Generated_Source\PSoC5/Count7_10ms.c ****     /* Set the initial period value from parameter editor */
+  45:Generated_Source\PSoC5/Count7_10ms.c ****     Count7_10ms_PERIOD_REG = Count7_10ms_INITIAL_PERIOD;
+  33              		.loc 1 45 0
+  34 0000 6322     		movs	r2, #99
+  35 0002 014B     		ldr	r3, .L2
+  36 0004 1A70     		strb	r2, [r3]
+  37 0006 7047     		bx	lr
+  38              	.L3:
+  39              		.align	2
+  40              	.L2:
+  41 0008 82640040 		.word	1073767554
+  42              		.cfi_endproc
+  43              	.LFE0:
+  44              		.size	Count7_10ms_Init, .-Count7_10ms_Init
+  45              		.section	.text.Count7_10ms_Enable,"ax",%progbits
+  46              		.align	2
+  47              		.global	Count7_10ms_Enable
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	Count7_10ms_Enable, %function
+  51              	Count7_10ms_Enable:
+  52              	.LFB1:
+  46:Generated_Source\PSoC5/Count7_10ms.c **** }
+  47:Generated_Source\PSoC5/Count7_10ms.c **** 
+  48:Generated_Source\PSoC5/Count7_10ms.c **** 
+  49:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+  50:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_Enable
+  51:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+  52:Generated_Source\PSoC5/Count7_10ms.c **** *
+  53:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+  54:Generated_Source\PSoC5/Count7_10ms.c **** *  Enables the software enable of the counter.
+  55:Generated_Source\PSoC5/Count7_10ms.c **** *
+  56:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+  57:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+  58:Generated_Source\PSoC5/Count7_10ms.c **** *
+  59:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+  60:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+  61:Generated_Source\PSoC5/Count7_10ms.c **** *
+  62:Generated_Source\PSoC5/Count7_10ms.c **** * Theory:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 3
+
+
+  63:Generated_Source\PSoC5/Count7_10ms.c **** *  It is not necessary to call Count7_Enable() because the Count7_Start() API
+  64:Generated_Source\PSoC5/Count7_10ms.c **** *  calls this function, which is the preferred method to begin component
+  65:Generated_Source\PSoC5/Count7_10ms.c **** *  operation.
+  66:Generated_Source\PSoC5/Count7_10ms.c **** *  This API performs modification of auxiliary control register which is a
+  67:Generated_Source\PSoC5/Count7_10ms.c **** *  shared resource so it is required to disable interrupts until the
+  68:Generated_Source\PSoC5/Count7_10ms.c **** *  modification will complete.
+  69:Generated_Source\PSoC5/Count7_10ms.c **** *
+  70:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+  71:Generated_Source\PSoC5/Count7_10ms.c **** void Count7_10ms_Enable(void) 
+  72:Generated_Source\PSoC5/Count7_10ms.c **** {
+  53              		.loc 1 72 0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 08B5     		push	{r3, lr}
+  58              		.cfi_def_cfa_offset 8
+  59              		.cfi_offset 3, -8
+  60              		.cfi_offset 14, -4
+  73:Generated_Source\PSoC5/Count7_10ms.c ****     uint8 interruptState;
+  74:Generated_Source\PSoC5/Count7_10ms.c **** 
+  75:Generated_Source\PSoC5/Count7_10ms.c ****     interruptState = CyEnterCriticalSection();
+  61              		.loc 1 75 0
+  62 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+  63              	.LVL0:
+  76:Generated_Source\PSoC5/Count7_10ms.c ****     /* Set the counter start bit in auxiliary control. If routed enable
+  77:Generated_Source\PSoC5/Count7_10ms.c ****     * isn't used then this will immediately star the Count7 operation.
+  78:Generated_Source\PSoC5/Count7_10ms.c ****     */
+  79:Generated_Source\PSoC5/Count7_10ms.c ****     Count7_10ms_AUX_CONTROL_REG |= Count7_10ms_COUNTER_START;
+  64              		.loc 1 79 0
+  65 0006 044A     		ldr	r2, .L6
+  66 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  67 000a 43F02003 		orr	r3, r3, #32
+  68 000e 1370     		strb	r3, [r2]
+  80:Generated_Source\PSoC5/Count7_10ms.c **** 
+  81:Generated_Source\PSoC5/Count7_10ms.c ****     CyExitCriticalSection(interruptState);
+  69              		.loc 1 81 0
+  70 0010 FFF7FEFF 		bl	CyExitCriticalSection
+  71              	.LVL1:
+  72 0014 08BD     		pop	{r3, pc}
+  73              	.L7:
+  74 0016 00BF     		.align	2
+  75              	.L6:
+  76 0018 92640040 		.word	1073767570
+  77              		.cfi_endproc
+  78              	.LFE1:
+  79              		.size	Count7_10ms_Enable, .-Count7_10ms_Enable
+  80              		.section	.text.Count7_10ms_Start,"ax",%progbits
+  81              		.align	2
+  82              		.global	Count7_10ms_Start
+  83              		.thumb
+  84              		.thumb_func
+  85              		.type	Count7_10ms_Start, %function
+  86              	Count7_10ms_Start:
+  87              	.LFB2:
+  82:Generated_Source\PSoC5/Count7_10ms.c **** }
+  83:Generated_Source\PSoC5/Count7_10ms.c **** 
+  84:Generated_Source\PSoC5/Count7_10ms.c **** 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 4
+
+
+  85:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+  86:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_Start
+  87:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+  88:Generated_Source\PSoC5/Count7_10ms.c **** *
+  89:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+  90:Generated_Source\PSoC5/Count7_10ms.c **** *  Performs all of the required initialization for the component and enables
+  91:Generated_Source\PSoC5/Count7_10ms.c **** *  the counter. The first time the routine is executed, the period is set as
+  92:Generated_Source\PSoC5/Count7_10ms.c **** *  configured in the customizer. When called to restart the counter following a
+  93:Generated_Source\PSoC5/Count7_10ms.c **** *  Count7_Stop() call, the current period value is retained.
+  94:Generated_Source\PSoC5/Count7_10ms.c **** *
+  95:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+  96:Generated_Source\PSoC5/Count7_10ms.c **** *  None.
+  97:Generated_Source\PSoC5/Count7_10ms.c **** *
+  98:Generated_Source\PSoC5/Count7_10ms.c **** * Global Variables:
+  99:Generated_Source\PSoC5/Count7_10ms.c **** *  Count7_10ms_initVar - global variable.
+ 100:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 101:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+ 102:Generated_Source\PSoC5/Count7_10ms.c **** *  None.
+ 103:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 104:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+ 105:Generated_Source\PSoC5/Count7_10ms.c **** void Count7_10ms_Start(void) 
+ 106:Generated_Source\PSoC5/Count7_10ms.c **** {
+  88              		.loc 1 106 0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 08B5     		push	{r3, lr}
+  93              		.cfi_def_cfa_offset 8
+  94              		.cfi_offset 3, -8
+  95              		.cfi_offset 14, -4
+ 107:Generated_Source\PSoC5/Count7_10ms.c ****     /* If not initialized then perform initialization */
+ 108:Generated_Source\PSoC5/Count7_10ms.c ****     if(Count7_10ms_initVar == 0u)
+  96              		.loc 1 108 0
+  97 0002 054B     		ldr	r3, .L11
+  98 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  99 0006 23B9     		cbnz	r3, .L9
+ 109:Generated_Source\PSoC5/Count7_10ms.c ****     {
+ 110:Generated_Source\PSoC5/Count7_10ms.c ****         Count7_10ms_Init();
+ 100              		.loc 1 110 0
+ 101 0008 FFF7FEFF 		bl	Count7_10ms_Init
+ 102              	.LVL2:
+ 111:Generated_Source\PSoC5/Count7_10ms.c ****         Count7_10ms_initVar = 1u;
+ 103              		.loc 1 111 0
+ 104 000c 0122     		movs	r2, #1
+ 105 000e 024B     		ldr	r3, .L11
+ 106 0010 1A70     		strb	r2, [r3]
+ 107              	.L9:
+ 112:Generated_Source\PSoC5/Count7_10ms.c ****     }
+ 113:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 114:Generated_Source\PSoC5/Count7_10ms.c ****     /* Enable Count7 */
+ 115:Generated_Source\PSoC5/Count7_10ms.c ****     Count7_10ms_Enable();
+ 108              		.loc 1 115 0
+ 109 0012 FFF7FEFF 		bl	Count7_10ms_Enable
+ 110              	.LVL3:
+ 111 0016 08BD     		pop	{r3, pc}
+ 112              	.L12:
+ 113              		.align	2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 5
+
+
+ 114              	.L11:
+ 115 0018 00000000 		.word	.LANCHOR0
+ 116              		.cfi_endproc
+ 117              	.LFE2:
+ 118              		.size	Count7_10ms_Start, .-Count7_10ms_Start
+ 119              		.section	.text.Count7_10ms_Stop,"ax",%progbits
+ 120              		.align	2
+ 121              		.global	Count7_10ms_Stop
+ 122              		.thumb
+ 123              		.thumb_func
+ 124              		.type	Count7_10ms_Stop, %function
+ 125              	Count7_10ms_Stop:
+ 126              	.LFB3:
+ 116:Generated_Source\PSoC5/Count7_10ms.c **** }
+ 117:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 118:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 119:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+ 120:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_Stop
+ 121:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+ 122:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 123:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+ 124:Generated_Source\PSoC5/Count7_10ms.c **** *  Disables the software enable of the counter.
+ 125:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 126:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+ 127:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 128:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 129:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+ 130:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 131:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 132:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+ 133:Generated_Source\PSoC5/Count7_10ms.c **** void Count7_10ms_Stop(void) 
+ 134:Generated_Source\PSoC5/Count7_10ms.c **** {
+ 127              		.loc 1 134 0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131 0000 08B5     		push	{r3, lr}
+ 132              		.cfi_def_cfa_offset 8
+ 133              		.cfi_offset 3, -8
+ 134              		.cfi_offset 14, -4
+ 135:Generated_Source\PSoC5/Count7_10ms.c ****     uint8 interruptState;
+ 136:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 137:Generated_Source\PSoC5/Count7_10ms.c ****     interruptState = CyEnterCriticalSection();
+ 135              		.loc 1 137 0
+ 136 0002 FFF7FEFF 		bl	CyEnterCriticalSection
+ 137              	.LVL4:
+ 138:Generated_Source\PSoC5/Count7_10ms.c ****     /* Clear the counter start bit in auxiliary control. */
+ 139:Generated_Source\PSoC5/Count7_10ms.c ****     Count7_10ms_AUX_CONTROL_REG &= (uint8) ~((uint8) Count7_10ms_COUNTER_START);
+ 138              		.loc 1 139 0
+ 139 0006 044A     		ldr	r2, .L15
+ 140 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 141 000a 03F0DF03 		and	r3, r3, #223
+ 142 000e 1370     		strb	r3, [r2]
+ 140:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 141:Generated_Source\PSoC5/Count7_10ms.c ****     CyExitCriticalSection(interruptState);
+ 143              		.loc 1 141 0
+ 144 0010 FFF7FEFF 		bl	CyExitCriticalSection
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 6
+
+
+ 145              	.LVL5:
+ 146 0014 08BD     		pop	{r3, pc}
+ 147              	.L16:
+ 148 0016 00BF     		.align	2
+ 149              	.L15:
+ 150 0018 92640040 		.word	1073767570
+ 151              		.cfi_endproc
+ 152              	.LFE3:
+ 153              		.size	Count7_10ms_Stop, .-Count7_10ms_Stop
+ 154              		.section	.text.Count7_10ms_WriteCounter,"ax",%progbits
+ 155              		.align	2
+ 156              		.global	Count7_10ms_WriteCounter
+ 157              		.thumb
+ 158              		.thumb_func
+ 159              		.type	Count7_10ms_WriteCounter, %function
+ 160              	Count7_10ms_WriteCounter:
+ 161              	.LFB4:
+ 142:Generated_Source\PSoC5/Count7_10ms.c **** }
+ 143:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 144:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 145:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+ 146:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_WriteCounter
+ 147:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+ 148:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 149:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+ 150:Generated_Source\PSoC5/Count7_10ms.c **** *  This function writes the counter directly. The counter should be disabled
+ 151:Generated_Source\PSoC5/Count7_10ms.c **** *  before calling this function.
+ 152:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 153:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+ 154:Generated_Source\PSoC5/Count7_10ms.c **** *  count - Value to be written to counter.
+ 155:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 156:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+ 157:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 158:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 159:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+ 160:Generated_Source\PSoC5/Count7_10ms.c **** void Count7_10ms_WriteCounter(uint8 count) 
+ 161:Generated_Source\PSoC5/Count7_10ms.c **** {
+ 162              		.loc 1 161 0
+ 163              		.cfi_startproc
+ 164              		@ args = 0, pretend = 0, frame = 0
+ 165              		@ frame_needed = 0, uses_anonymous_args = 0
+ 166              		@ link register save eliminated.
+ 167              	.LVL6:
+ 162:Generated_Source\PSoC5/Count7_10ms.c ****     Count7_10ms_COUNT_REG = (count & Count7_10ms_COUNT_7BIT_MASK);
+ 168              		.loc 1 162 0
+ 169 0000 00F07F00 		and	r0, r0, #127
+ 170              	.LVL7:
+ 171 0004 014B     		ldr	r3, .L18
+ 172 0006 1870     		strb	r0, [r3]
+ 173 0008 7047     		bx	lr
+ 174              	.L19:
+ 175 000a 00BF     		.align	2
+ 176              	.L18:
+ 177 000c 72640040 		.word	1073767538
+ 178              		.cfi_endproc
+ 179              	.LFE4:
+ 180              		.size	Count7_10ms_WriteCounter, .-Count7_10ms_WriteCounter
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 7
+
+
+ 181              		.section	.text.Count7_10ms_ReadCounter,"ax",%progbits
+ 182              		.align	2
+ 183              		.global	Count7_10ms_ReadCounter
+ 184              		.thumb
+ 185              		.thumb_func
+ 186              		.type	Count7_10ms_ReadCounter, %function
+ 187              	Count7_10ms_ReadCounter:
+ 188              	.LFB5:
+ 163:Generated_Source\PSoC5/Count7_10ms.c **** }
+ 164:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 165:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 166:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+ 167:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_ReadCounter
+ 168:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+ 169:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 170:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+ 171:Generated_Source\PSoC5/Count7_10ms.c **** *  This function reads the counter value.
+ 172:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 173:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+ 174:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 175:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 176:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+ 177:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 178:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 179:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+ 180:Generated_Source\PSoC5/Count7_10ms.c **** uint8 Count7_10ms_ReadCounter(void) 
+ 181:Generated_Source\PSoC5/Count7_10ms.c **** {
+ 189              		.loc 1 181 0
+ 190              		.cfi_startproc
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193              		@ link register save eliminated.
+ 182:Generated_Source\PSoC5/Count7_10ms.c ****     return(Count7_10ms_COUNT_REG & Count7_10ms_COUNT_7BIT_MASK);
+ 194              		.loc 1 182 0
+ 195 0000 024B     		ldr	r3, .L21
+ 196 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 183:Generated_Source\PSoC5/Count7_10ms.c **** }
+ 197              		.loc 1 183 0
+ 198 0004 00F07F00 		and	r0, r0, #127
+ 199 0008 7047     		bx	lr
+ 200              	.L22:
+ 201 000a 00BF     		.align	2
+ 202              	.L21:
+ 203 000c 72640040 		.word	1073767538
+ 204              		.cfi_endproc
+ 205              	.LFE5:
+ 206              		.size	Count7_10ms_ReadCounter, .-Count7_10ms_ReadCounter
+ 207              		.section	.text.Count7_10ms_WritePeriod,"ax",%progbits
+ 208              		.align	2
+ 209              		.global	Count7_10ms_WritePeriod
+ 210              		.thumb
+ 211              		.thumb_func
+ 212              		.type	Count7_10ms_WritePeriod, %function
+ 213              	Count7_10ms_WritePeriod:
+ 214              	.LFB6:
+ 184:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 185:Generated_Source\PSoC5/Count7_10ms.c **** 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 8
+
+
+ 186:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+ 187:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_WritePeriod
+ 188:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+ 189:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 190:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+ 191:Generated_Source\PSoC5/Count7_10ms.c **** *  This function writes the period register. The actual period is one greater
+ 192:Generated_Source\PSoC5/Count7_10ms.c **** *  than the value in the period register since the counting sequence starts
+ 193:Generated_Source\PSoC5/Count7_10ms.c **** *  with the period register and counts down to 0 inclusive. The period of the
+ 194:Generated_Source\PSoC5/Count7_10ms.c **** *  counter output does not change until the counter is reloaded following the
+ 195:Generated_Source\PSoC5/Count7_10ms.c **** *  terminal count value of 0 or due to a hardware load signal.
+ 196:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 197:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+ 198:Generated_Source\PSoC5/Count7_10ms.c **** *  period - Period value to be written.
+ 199:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 200:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+ 201:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 202:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 203:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+ 204:Generated_Source\PSoC5/Count7_10ms.c **** void Count7_10ms_WritePeriod(uint8 period) 
+ 205:Generated_Source\PSoC5/Count7_10ms.c **** {
+ 215              		.loc 1 205 0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219              		@ link register save eliminated.
+ 220              	.LVL8:
+ 206:Generated_Source\PSoC5/Count7_10ms.c ****     Count7_10ms_PERIOD_REG = period;
+ 221              		.loc 1 206 0
+ 222 0000 014B     		ldr	r3, .L24
+ 223 0002 1870     		strb	r0, [r3]
+ 224 0004 7047     		bx	lr
+ 225              	.L25:
+ 226 0006 00BF     		.align	2
+ 227              	.L24:
+ 228 0008 82640040 		.word	1073767554
+ 229              		.cfi_endproc
+ 230              	.LFE6:
+ 231              		.size	Count7_10ms_WritePeriod, .-Count7_10ms_WritePeriod
+ 232              		.section	.text.Count7_10ms_ReadPeriod,"ax",%progbits
+ 233              		.align	2
+ 234              		.global	Count7_10ms_ReadPeriod
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.type	Count7_10ms_ReadPeriod, %function
+ 238              	Count7_10ms_ReadPeriod:
+ 239              	.LFB7:
+ 207:Generated_Source\PSoC5/Count7_10ms.c **** }
+ 208:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 209:Generated_Source\PSoC5/Count7_10ms.c **** 
+ 210:Generated_Source\PSoC5/Count7_10ms.c **** /*******************************************************************************
+ 211:Generated_Source\PSoC5/Count7_10ms.c **** * Function Name: Count7_10ms_ReadPeriod
+ 212:Generated_Source\PSoC5/Count7_10ms.c **** ********************************************************************************
+ 213:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 214:Generated_Source\PSoC5/Count7_10ms.c **** * Summary:
+ 215:Generated_Source\PSoC5/Count7_10ms.c **** *  This function reads the period register.
+ 216:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 217:Generated_Source\PSoC5/Count7_10ms.c **** * Parameters:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 9
+
+
+ 218:Generated_Source\PSoC5/Count7_10ms.c **** *  None
+ 219:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 220:Generated_Source\PSoC5/Count7_10ms.c **** * Return:
+ 221:Generated_Source\PSoC5/Count7_10ms.c **** *  uint8 - Current period value.
+ 222:Generated_Source\PSoC5/Count7_10ms.c **** *
+ 223:Generated_Source\PSoC5/Count7_10ms.c **** *******************************************************************************/
+ 224:Generated_Source\PSoC5/Count7_10ms.c **** uint8 Count7_10ms_ReadPeriod(void) 
+ 225:Generated_Source\PSoC5/Count7_10ms.c **** {
+ 240              		.loc 1 225 0
+ 241              		.cfi_startproc
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 244              		@ link register save eliminated.
+ 226:Generated_Source\PSoC5/Count7_10ms.c ****     return(Count7_10ms_PERIOD_REG);
+ 245              		.loc 1 226 0
+ 246 0000 014B     		ldr	r3, .L27
+ 247 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 227:Generated_Source\PSoC5/Count7_10ms.c **** }
+ 248              		.loc 1 227 0
+ 249 0004 7047     		bx	lr
+ 250              	.L28:
+ 251 0006 00BF     		.align	2
+ 252              	.L27:
+ 253 0008 82640040 		.word	1073767554
+ 254              		.cfi_endproc
+ 255              	.LFE7:
+ 256              		.size	Count7_10ms_ReadPeriod, .-Count7_10ms_ReadPeriod
+ 257              		.global	Count7_10ms_initVar
+ 258              		.bss
+ 259              		.set	.LANCHOR0,. + 0
+ 260              		.type	Count7_10ms_initVar, %object
+ 261              		.size	Count7_10ms_initVar, 1
+ 262              	Count7_10ms_initVar:
+ 263 0000 00       		.space	1
+ 264              		.text
+ 265              	.Letext0:
+ 266              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 267              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
+ 268              		.section	.debug_info,"",%progbits
+ 269              	.Ldebug_info0:
+ 270 0000 E8010000 		.4byte	0x1e8
+ 271 0004 0400     		.2byte	0x4
+ 272 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 273 000a 04       		.byte	0x4
+ 274 000b 01       		.uleb128 0x1
+ 275 000c B3000000 		.4byte	.LASF28
+ 276 0010 0C       		.byte	0xc
+ 277 0011 EC010000 		.4byte	.LASF29
+ 278 0015 17000000 		.4byte	.LASF30
+ 279 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 280 001d 00000000 		.4byte	0
+ 281 0021 00000000 		.4byte	.Ldebug_line0
+ 282 0025 02       		.uleb128 0x2
+ 283 0026 01       		.byte	0x1
+ 284 0027 06       		.byte	0x6
+ 285 0028 9F020000 		.4byte	.LASF0
+ 286 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 10
+
+
+ 287 002d 01       		.byte	0x1
+ 288 002e 08       		.byte	0x8
+ 289 002f A5000000 		.4byte	.LASF1
+ 290 0033 02       		.uleb128 0x2
+ 291 0034 02       		.byte	0x2
+ 292 0035 05       		.byte	0x5
+ 293 0036 56020000 		.4byte	.LASF2
+ 294 003a 02       		.uleb128 0x2
+ 295 003b 02       		.byte	0x2
+ 296 003c 07       		.byte	0x7
+ 297 003d 75000000 		.4byte	.LASF3
+ 298 0041 02       		.uleb128 0x2
+ 299 0042 04       		.byte	0x4
+ 300 0043 05       		.byte	0x5
+ 301 0044 72020000 		.4byte	.LASF4
+ 302 0048 02       		.uleb128 0x2
+ 303 0049 04       		.byte	0x4
+ 304 004a 07       		.byte	0x7
+ 305 004b 55010000 		.4byte	.LASF5
+ 306 004f 02       		.uleb128 0x2
+ 307 0050 08       		.byte	0x8
+ 308 0051 05       		.byte	0x5
+ 309 0052 1A020000 		.4byte	.LASF6
+ 310 0056 02       		.uleb128 0x2
+ 311 0057 08       		.byte	0x8
+ 312 0058 07       		.byte	0x7
+ 313 0059 8E000000 		.4byte	.LASF7
+ 314 005d 03       		.uleb128 0x3
+ 315 005e 04       		.byte	0x4
+ 316 005f 05       		.byte	0x5
+ 317 0060 696E7400 		.ascii	"int\000"
+ 318 0064 02       		.uleb128 0x2
+ 319 0065 04       		.byte	0x4
+ 320 0066 07       		.byte	0x7
+ 321 0067 B6010000 		.4byte	.LASF8
+ 322 006b 04       		.uleb128 0x4
+ 323 006c 67010000 		.4byte	.LASF12
+ 324 0070 02       		.byte	0x2
+ 325 0071 E801     		.2byte	0x1e8
+ 326 0073 2C000000 		.4byte	0x2c
+ 327 0077 02       		.uleb128 0x2
+ 328 0078 04       		.byte	0x4
+ 329 0079 04       		.byte	0x4
+ 330 007a 88000000 		.4byte	.LASF9
+ 331 007e 02       		.uleb128 0x2
+ 332 007f 08       		.byte	0x8
+ 333 0080 04       		.byte	0x4
+ 334 0081 81010000 		.4byte	.LASF10
+ 335 0085 02       		.uleb128 0x2
+ 336 0086 01       		.byte	0x1
+ 337 0087 08       		.byte	0x8
+ 338 0088 28020000 		.4byte	.LASF11
+ 339 008c 04       		.uleb128 0x4
+ 340 008d 41010000 		.4byte	.LASF13
+ 341 0091 02       		.byte	0x2
+ 342 0092 9202     		.2byte	0x292
+ 343 0094 98000000 		.4byte	0x98
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 11
+
+
+ 344 0098 05       		.uleb128 0x5
+ 345 0099 6B000000 		.4byte	0x6b
+ 346 009d 02       		.uleb128 0x2
+ 347 009e 08       		.byte	0x8
+ 348 009f 04       		.byte	0x4
+ 349 00a0 93020000 		.4byte	.LASF14
+ 350 00a4 02       		.uleb128 0x2
+ 351 00a5 04       		.byte	0x4
+ 352 00a6 07       		.byte	0x7
+ 353 00a7 11020000 		.4byte	.LASF15
+ 354 00ab 06       		.uleb128 0x6
+ 355 00ac 2D020000 		.4byte	.LASF31
+ 356 00b0 01       		.byte	0x1
+ 357 00b1 2A       		.byte	0x2a
+ 358 00b2 00000000 		.4byte	.LFB0
+ 359 00b6 0C000000 		.4byte	.LFE0-.LFB0
+ 360 00ba 01       		.uleb128 0x1
+ 361 00bb 9C       		.byte	0x9c
+ 362 00bc 07       		.uleb128 0x7
+ 363 00bd D9010000 		.4byte	.LASF16
+ 364 00c1 01       		.byte	0x1
+ 365 00c2 47       		.byte	0x47
+ 366 00c3 00000000 		.4byte	.LFB1
+ 367 00c7 1C000000 		.4byte	.LFE1-.LFB1
+ 368 00cb 01       		.uleb128 0x1
+ 369 00cc 9C       		.byte	0x9c
+ 370 00cd F3000000 		.4byte	0xf3
+ 371 00d1 08       		.uleb128 0x8
+ 372 00d2 46010000 		.4byte	.LASF19
+ 373 00d6 01       		.byte	0x1
+ 374 00d7 49       		.byte	0x49
+ 375 00d8 6B000000 		.4byte	0x6b
+ 376 00dc 00000000 		.4byte	.LLST0
+ 377 00e0 09       		.uleb128 0x9
+ 378 00e1 06000000 		.4byte	.LVL0
+ 379 00e5 D5010000 		.4byte	0x1d5
+ 380 00e9 09       		.uleb128 0x9
+ 381 00ea 14000000 		.4byte	.LVL1
+ 382 00ee E0010000 		.4byte	0x1e0
+ 383 00f2 00       		.byte	0
+ 384 00f3 07       		.uleb128 0x7
+ 385 00f4 60020000 		.4byte	.LASF17
+ 386 00f8 01       		.byte	0x1
+ 387 00f9 69       		.byte	0x69
+ 388 00fa 00000000 		.4byte	.LFB2
+ 389 00fe 1C000000 		.4byte	.LFE2-.LFB2
+ 390 0102 01       		.uleb128 0x1
+ 391 0103 9C       		.byte	0x9c
+ 392 0104 1B010000 		.4byte	0x11b
+ 393 0108 09       		.uleb128 0x9
+ 394 0109 0C000000 		.4byte	.LVL2
+ 395 010d AB000000 		.4byte	0xab
+ 396 0111 09       		.uleb128 0x9
+ 397 0112 16000000 		.4byte	.LVL3
+ 398 0116 BC000000 		.4byte	0xbc
+ 399 011a 00       		.byte	0
+ 400 011b 07       		.uleb128 0x7
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 12
+
+
+ 401 011c 00000000 		.4byte	.LASF18
+ 402 0120 01       		.byte	0x1
+ 403 0121 85       		.byte	0x85
+ 404 0122 00000000 		.4byte	.LFB3
+ 405 0126 1C000000 		.4byte	.LFE3-.LFB3
+ 406 012a 01       		.uleb128 0x1
+ 407 012b 9C       		.byte	0x9c
+ 408 012c 52010000 		.4byte	0x152
+ 409 0130 08       		.uleb128 0x8
+ 410 0131 46010000 		.4byte	.LASF19
+ 411 0135 01       		.byte	0x1
+ 412 0136 87       		.byte	0x87
+ 413 0137 6B000000 		.4byte	0x6b
+ 414 013b 13000000 		.4byte	.LLST1
+ 415 013f 09       		.uleb128 0x9
+ 416 0140 06000000 		.4byte	.LVL4
+ 417 0144 D5010000 		.4byte	0x1d5
+ 418 0148 09       		.uleb128 0x9
+ 419 0149 14000000 		.4byte	.LVL5
+ 420 014d E0010000 		.4byte	0x1e0
+ 421 0151 00       		.byte	0
+ 422 0152 07       		.uleb128 0x7
+ 423 0153 AB020000 		.4byte	.LASF20
+ 424 0157 01       		.byte	0x1
+ 425 0158 A0       		.byte	0xa0
+ 426 0159 00000000 		.4byte	.LFB4
+ 427 015d 10000000 		.4byte	.LFE4-.LFB4
+ 428 0161 01       		.uleb128 0x1
+ 429 0162 9C       		.byte	0x9c
+ 430 0163 77010000 		.4byte	0x177
+ 431 0167 0A       		.uleb128 0xa
+ 432 0168 11000000 		.4byte	.LASF22
+ 433 016c 01       		.byte	0x1
+ 434 016d A0       		.byte	0xa0
+ 435 016e 6B000000 		.4byte	0x6b
+ 436 0172 26000000 		.4byte	.LLST2
+ 437 0176 00       		.byte	0
+ 438 0177 0B       		.uleb128 0xb
+ 439 0178 7B020000 		.4byte	.LASF24
+ 440 017c 01       		.byte	0x1
+ 441 017d B4       		.byte	0xb4
+ 442 017e 6B000000 		.4byte	0x6b
+ 443 0182 00000000 		.4byte	.LFB5
+ 444 0186 10000000 		.4byte	.LFE5-.LFB5
+ 445 018a 01       		.uleb128 0x1
+ 446 018b 9C       		.byte	0x9c
+ 447 018c 07       		.uleb128 0x7
+ 448 018d 3E020000 		.4byte	.LASF21
+ 449 0191 01       		.byte	0x1
+ 450 0192 CC       		.byte	0xcc
+ 451 0193 00000000 		.4byte	.LFB6
+ 452 0197 0C000000 		.4byte	.LFE6-.LFB6
+ 453 019b 01       		.uleb128 0x1
+ 454 019c 9C       		.byte	0x9c
+ 455 019d AF010000 		.4byte	0x1af
+ 456 01a1 0C       		.uleb128 0xc
+ 457 01a2 6E000000 		.4byte	.LASF23
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 13
+
+
+ 458 01a6 01       		.byte	0x1
+ 459 01a7 CC       		.byte	0xcc
+ 460 01a8 6B000000 		.4byte	0x6b
+ 461 01ac 01       		.uleb128 0x1
+ 462 01ad 50       		.byte	0x50
+ 463 01ae 00       		.byte	0
+ 464 01af 0B       		.uleb128 0xb
+ 465 01b0 88010000 		.4byte	.LASF25
+ 466 01b4 01       		.byte	0x1
+ 467 01b5 E0       		.byte	0xe0
+ 468 01b6 6B000000 		.4byte	0x6b
+ 469 01ba 00000000 		.4byte	.LFB7
+ 470 01be 0C000000 		.4byte	.LFE7-.LFB7
+ 471 01c2 01       		.uleb128 0x1
+ 472 01c3 9C       		.byte	0x9c
+ 473 01c4 0D       		.uleb128 0xd
+ 474 01c5 6D010000 		.4byte	.LASF32
+ 475 01c9 01       		.byte	0x1
+ 476 01ca 13       		.byte	0x13
+ 477 01cb 6B000000 		.4byte	0x6b
+ 478 01cf 05       		.uleb128 0x5
+ 479 01d0 03       		.byte	0x3
+ 480 01d1 00000000 		.4byte	Count7_10ms_initVar
+ 481 01d5 0E       		.uleb128 0xe
+ 482 01d6 9F010000 		.4byte	.LASF26
+ 483 01da 9F010000 		.4byte	.LASF26
+ 484 01de 03       		.byte	0x3
+ 485 01df 7D       		.byte	0x7d
+ 486 01e0 0E       		.uleb128 0xe
+ 487 01e1 C3010000 		.4byte	.LASF27
+ 488 01e5 C3010000 		.4byte	.LASF27
+ 489 01e9 03       		.byte	0x3
+ 490 01ea 7E       		.byte	0x7e
+ 491 01eb 00       		.byte	0
+ 492              		.section	.debug_abbrev,"",%progbits
+ 493              	.Ldebug_abbrev0:
+ 494 0000 01       		.uleb128 0x1
+ 495 0001 11       		.uleb128 0x11
+ 496 0002 01       		.byte	0x1
+ 497 0003 25       		.uleb128 0x25
+ 498 0004 0E       		.uleb128 0xe
+ 499 0005 13       		.uleb128 0x13
+ 500 0006 0B       		.uleb128 0xb
+ 501 0007 03       		.uleb128 0x3
+ 502 0008 0E       		.uleb128 0xe
+ 503 0009 1B       		.uleb128 0x1b
+ 504 000a 0E       		.uleb128 0xe
+ 505 000b 55       		.uleb128 0x55
+ 506 000c 17       		.uleb128 0x17
+ 507 000d 11       		.uleb128 0x11
+ 508 000e 01       		.uleb128 0x1
+ 509 000f 10       		.uleb128 0x10
+ 510 0010 17       		.uleb128 0x17
+ 511 0011 00       		.byte	0
+ 512 0012 00       		.byte	0
+ 513 0013 02       		.uleb128 0x2
+ 514 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 14
+
+
+ 515 0015 00       		.byte	0
+ 516 0016 0B       		.uleb128 0xb
+ 517 0017 0B       		.uleb128 0xb
+ 518 0018 3E       		.uleb128 0x3e
+ 519 0019 0B       		.uleb128 0xb
+ 520 001a 03       		.uleb128 0x3
+ 521 001b 0E       		.uleb128 0xe
+ 522 001c 00       		.byte	0
+ 523 001d 00       		.byte	0
+ 524 001e 03       		.uleb128 0x3
+ 525 001f 24       		.uleb128 0x24
+ 526 0020 00       		.byte	0
+ 527 0021 0B       		.uleb128 0xb
+ 528 0022 0B       		.uleb128 0xb
+ 529 0023 3E       		.uleb128 0x3e
+ 530 0024 0B       		.uleb128 0xb
+ 531 0025 03       		.uleb128 0x3
+ 532 0026 08       		.uleb128 0x8
+ 533 0027 00       		.byte	0
+ 534 0028 00       		.byte	0
+ 535 0029 04       		.uleb128 0x4
+ 536 002a 16       		.uleb128 0x16
+ 537 002b 00       		.byte	0
+ 538 002c 03       		.uleb128 0x3
+ 539 002d 0E       		.uleb128 0xe
+ 540 002e 3A       		.uleb128 0x3a
+ 541 002f 0B       		.uleb128 0xb
+ 542 0030 3B       		.uleb128 0x3b
+ 543 0031 05       		.uleb128 0x5
+ 544 0032 49       		.uleb128 0x49
+ 545 0033 13       		.uleb128 0x13
+ 546 0034 00       		.byte	0
+ 547 0035 00       		.byte	0
+ 548 0036 05       		.uleb128 0x5
+ 549 0037 35       		.uleb128 0x35
+ 550 0038 00       		.byte	0
+ 551 0039 49       		.uleb128 0x49
+ 552 003a 13       		.uleb128 0x13
+ 553 003b 00       		.byte	0
+ 554 003c 00       		.byte	0
+ 555 003d 06       		.uleb128 0x6
+ 556 003e 2E       		.uleb128 0x2e
+ 557 003f 00       		.byte	0
+ 558 0040 3F       		.uleb128 0x3f
+ 559 0041 19       		.uleb128 0x19
+ 560 0042 03       		.uleb128 0x3
+ 561 0043 0E       		.uleb128 0xe
+ 562 0044 3A       		.uleb128 0x3a
+ 563 0045 0B       		.uleb128 0xb
+ 564 0046 3B       		.uleb128 0x3b
+ 565 0047 0B       		.uleb128 0xb
+ 566 0048 27       		.uleb128 0x27
+ 567 0049 19       		.uleb128 0x19
+ 568 004a 11       		.uleb128 0x11
+ 569 004b 01       		.uleb128 0x1
+ 570 004c 12       		.uleb128 0x12
+ 571 004d 06       		.uleb128 0x6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 15
+
+
+ 572 004e 40       		.uleb128 0x40
+ 573 004f 18       		.uleb128 0x18
+ 574 0050 9742     		.uleb128 0x2117
+ 575 0052 19       		.uleb128 0x19
+ 576 0053 00       		.byte	0
+ 577 0054 00       		.byte	0
+ 578 0055 07       		.uleb128 0x7
+ 579 0056 2E       		.uleb128 0x2e
+ 580 0057 01       		.byte	0x1
+ 581 0058 3F       		.uleb128 0x3f
+ 582 0059 19       		.uleb128 0x19
+ 583 005a 03       		.uleb128 0x3
+ 584 005b 0E       		.uleb128 0xe
+ 585 005c 3A       		.uleb128 0x3a
+ 586 005d 0B       		.uleb128 0xb
+ 587 005e 3B       		.uleb128 0x3b
+ 588 005f 0B       		.uleb128 0xb
+ 589 0060 27       		.uleb128 0x27
+ 590 0061 19       		.uleb128 0x19
+ 591 0062 11       		.uleb128 0x11
+ 592 0063 01       		.uleb128 0x1
+ 593 0064 12       		.uleb128 0x12
+ 594 0065 06       		.uleb128 0x6
+ 595 0066 40       		.uleb128 0x40
+ 596 0067 18       		.uleb128 0x18
+ 597 0068 9742     		.uleb128 0x2117
+ 598 006a 19       		.uleb128 0x19
+ 599 006b 01       		.uleb128 0x1
+ 600 006c 13       		.uleb128 0x13
+ 601 006d 00       		.byte	0
+ 602 006e 00       		.byte	0
+ 603 006f 08       		.uleb128 0x8
+ 604 0070 34       		.uleb128 0x34
+ 605 0071 00       		.byte	0
+ 606 0072 03       		.uleb128 0x3
+ 607 0073 0E       		.uleb128 0xe
+ 608 0074 3A       		.uleb128 0x3a
+ 609 0075 0B       		.uleb128 0xb
+ 610 0076 3B       		.uleb128 0x3b
+ 611 0077 0B       		.uleb128 0xb
+ 612 0078 49       		.uleb128 0x49
+ 613 0079 13       		.uleb128 0x13
+ 614 007a 02       		.uleb128 0x2
+ 615 007b 17       		.uleb128 0x17
+ 616 007c 00       		.byte	0
+ 617 007d 00       		.byte	0
+ 618 007e 09       		.uleb128 0x9
+ 619 007f 898201   		.uleb128 0x4109
+ 620 0082 00       		.byte	0
+ 621 0083 11       		.uleb128 0x11
+ 622 0084 01       		.uleb128 0x1
+ 623 0085 31       		.uleb128 0x31
+ 624 0086 13       		.uleb128 0x13
+ 625 0087 00       		.byte	0
+ 626 0088 00       		.byte	0
+ 627 0089 0A       		.uleb128 0xa
+ 628 008a 05       		.uleb128 0x5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 16
+
+
+ 629 008b 00       		.byte	0
+ 630 008c 03       		.uleb128 0x3
+ 631 008d 0E       		.uleb128 0xe
+ 632 008e 3A       		.uleb128 0x3a
+ 633 008f 0B       		.uleb128 0xb
+ 634 0090 3B       		.uleb128 0x3b
+ 635 0091 0B       		.uleb128 0xb
+ 636 0092 49       		.uleb128 0x49
+ 637 0093 13       		.uleb128 0x13
+ 638 0094 02       		.uleb128 0x2
+ 639 0095 17       		.uleb128 0x17
+ 640 0096 00       		.byte	0
+ 641 0097 00       		.byte	0
+ 642 0098 0B       		.uleb128 0xb
+ 643 0099 2E       		.uleb128 0x2e
+ 644 009a 00       		.byte	0
+ 645 009b 3F       		.uleb128 0x3f
+ 646 009c 19       		.uleb128 0x19
+ 647 009d 03       		.uleb128 0x3
+ 648 009e 0E       		.uleb128 0xe
+ 649 009f 3A       		.uleb128 0x3a
+ 650 00a0 0B       		.uleb128 0xb
+ 651 00a1 3B       		.uleb128 0x3b
+ 652 00a2 0B       		.uleb128 0xb
+ 653 00a3 27       		.uleb128 0x27
+ 654 00a4 19       		.uleb128 0x19
+ 655 00a5 49       		.uleb128 0x49
+ 656 00a6 13       		.uleb128 0x13
+ 657 00a7 11       		.uleb128 0x11
+ 658 00a8 01       		.uleb128 0x1
+ 659 00a9 12       		.uleb128 0x12
+ 660 00aa 06       		.uleb128 0x6
+ 661 00ab 40       		.uleb128 0x40
+ 662 00ac 18       		.uleb128 0x18
+ 663 00ad 9742     		.uleb128 0x2117
+ 664 00af 19       		.uleb128 0x19
+ 665 00b0 00       		.byte	0
+ 666 00b1 00       		.byte	0
+ 667 00b2 0C       		.uleb128 0xc
+ 668 00b3 05       		.uleb128 0x5
+ 669 00b4 00       		.byte	0
+ 670 00b5 03       		.uleb128 0x3
+ 671 00b6 0E       		.uleb128 0xe
+ 672 00b7 3A       		.uleb128 0x3a
+ 673 00b8 0B       		.uleb128 0xb
+ 674 00b9 3B       		.uleb128 0x3b
+ 675 00ba 0B       		.uleb128 0xb
+ 676 00bb 49       		.uleb128 0x49
+ 677 00bc 13       		.uleb128 0x13
+ 678 00bd 02       		.uleb128 0x2
+ 679 00be 18       		.uleb128 0x18
+ 680 00bf 00       		.byte	0
+ 681 00c0 00       		.byte	0
+ 682 00c1 0D       		.uleb128 0xd
+ 683 00c2 34       		.uleb128 0x34
+ 684 00c3 00       		.byte	0
+ 685 00c4 03       		.uleb128 0x3
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 17
+
+
+ 686 00c5 0E       		.uleb128 0xe
+ 687 00c6 3A       		.uleb128 0x3a
+ 688 00c7 0B       		.uleb128 0xb
+ 689 00c8 3B       		.uleb128 0x3b
+ 690 00c9 0B       		.uleb128 0xb
+ 691 00ca 49       		.uleb128 0x49
+ 692 00cb 13       		.uleb128 0x13
+ 693 00cc 3F       		.uleb128 0x3f
+ 694 00cd 19       		.uleb128 0x19
+ 695 00ce 02       		.uleb128 0x2
+ 696 00cf 18       		.uleb128 0x18
+ 697 00d0 00       		.byte	0
+ 698 00d1 00       		.byte	0
+ 699 00d2 0E       		.uleb128 0xe
+ 700 00d3 2E       		.uleb128 0x2e
+ 701 00d4 00       		.byte	0
+ 702 00d5 3F       		.uleb128 0x3f
+ 703 00d6 19       		.uleb128 0x19
+ 704 00d7 3C       		.uleb128 0x3c
+ 705 00d8 19       		.uleb128 0x19
+ 706 00d9 6E       		.uleb128 0x6e
+ 707 00da 0E       		.uleb128 0xe
+ 708 00db 03       		.uleb128 0x3
+ 709 00dc 0E       		.uleb128 0xe
+ 710 00dd 3A       		.uleb128 0x3a
+ 711 00de 0B       		.uleb128 0xb
+ 712 00df 3B       		.uleb128 0x3b
+ 713 00e0 0B       		.uleb128 0xb
+ 714 00e1 00       		.byte	0
+ 715 00e2 00       		.byte	0
+ 716 00e3 00       		.byte	0
+ 717              		.section	.debug_loc,"",%progbits
+ 718              	.Ldebug_loc0:
+ 719              	.LLST0:
+ 720 0000 06000000 		.4byte	.LVL0
+ 721 0004 13000000 		.4byte	.LVL1-1
+ 722 0008 0100     		.2byte	0x1
+ 723 000a 50       		.byte	0x50
+ 724 000b 00000000 		.4byte	0
+ 725 000f 00000000 		.4byte	0
+ 726              	.LLST1:
+ 727 0013 06000000 		.4byte	.LVL4
+ 728 0017 13000000 		.4byte	.LVL5-1
+ 729 001b 0100     		.2byte	0x1
+ 730 001d 50       		.byte	0x50
+ 731 001e 00000000 		.4byte	0
+ 732 0022 00000000 		.4byte	0
+ 733              	.LLST2:
+ 734 0026 00000000 		.4byte	.LVL6
+ 735 002a 04000000 		.4byte	.LVL7
+ 736 002e 0100     		.2byte	0x1
+ 737 0030 50       		.byte	0x50
+ 738 0031 04000000 		.4byte	.LVL7
+ 739 0035 10000000 		.4byte	.LFE4
+ 740 0039 0400     		.2byte	0x4
+ 741 003b F3       		.byte	0xf3
+ 742 003c 01       		.uleb128 0x1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 18
+
+
+ 743 003d 50       		.byte	0x50
+ 744 003e 9F       		.byte	0x9f
+ 745 003f 00000000 		.4byte	0
+ 746 0043 00000000 		.4byte	0
+ 747              		.section	.debug_aranges,"",%progbits
+ 748 0000 54000000 		.4byte	0x54
+ 749 0004 0200     		.2byte	0x2
+ 750 0006 00000000 		.4byte	.Ldebug_info0
+ 751 000a 04       		.byte	0x4
+ 752 000b 00       		.byte	0
+ 753 000c 0000     		.2byte	0
+ 754 000e 0000     		.2byte	0
+ 755 0010 00000000 		.4byte	.LFB0
+ 756 0014 0C000000 		.4byte	.LFE0-.LFB0
+ 757 0018 00000000 		.4byte	.LFB1
+ 758 001c 1C000000 		.4byte	.LFE1-.LFB1
+ 759 0020 00000000 		.4byte	.LFB2
+ 760 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 761 0028 00000000 		.4byte	.LFB3
+ 762 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 763 0030 00000000 		.4byte	.LFB4
+ 764 0034 10000000 		.4byte	.LFE4-.LFB4
+ 765 0038 00000000 		.4byte	.LFB5
+ 766 003c 10000000 		.4byte	.LFE5-.LFB5
+ 767 0040 00000000 		.4byte	.LFB6
+ 768 0044 0C000000 		.4byte	.LFE6-.LFB6
+ 769 0048 00000000 		.4byte	.LFB7
+ 770 004c 0C000000 		.4byte	.LFE7-.LFB7
+ 771 0050 00000000 		.4byte	0
+ 772 0054 00000000 		.4byte	0
+ 773              		.section	.debug_ranges,"",%progbits
+ 774              	.Ldebug_ranges0:
+ 775 0000 00000000 		.4byte	.LFB0
+ 776 0004 0C000000 		.4byte	.LFE0
+ 777 0008 00000000 		.4byte	.LFB1
+ 778 000c 1C000000 		.4byte	.LFE1
+ 779 0010 00000000 		.4byte	.LFB2
+ 780 0014 1C000000 		.4byte	.LFE2
+ 781 0018 00000000 		.4byte	.LFB3
+ 782 001c 1C000000 		.4byte	.LFE3
+ 783 0020 00000000 		.4byte	.LFB4
+ 784 0024 10000000 		.4byte	.LFE4
+ 785 0028 00000000 		.4byte	.LFB5
+ 786 002c 10000000 		.4byte	.LFE5
+ 787 0030 00000000 		.4byte	.LFB6
+ 788 0034 0C000000 		.4byte	.LFE6
+ 789 0038 00000000 		.4byte	.LFB7
+ 790 003c 0C000000 		.4byte	.LFE7
+ 791 0040 00000000 		.4byte	0
+ 792 0044 00000000 		.4byte	0
+ 793              		.section	.debug_line,"",%progbits
+ 794              	.Ldebug_line0:
+ 795 0000 E9000000 		.section	.debug_str,"MS",%progbits,1
+ 795      02005300 
+ 795      00000201 
+ 795      FB0E0D00 
+ 795      01010101 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 19
+
+
+ 796              	.LASF18:
+ 797 0000 436F756E 		.ascii	"Count7_10ms_Stop\000"
+ 797      74375F31 
+ 797      306D735F 
+ 797      53746F70 
+ 797      00
+ 798              	.LASF22:
+ 799 0011 636F756E 		.ascii	"count\000"
+ 799      7400
+ 800              	.LASF30:
+ 801 0017 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
+ 801      6F6E6173 
+ 801      68202D20 
+ 801      4C656769 
+ 801      6F6E5C59 
+ 802 0045 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
+ 802      6D706F6E 
+ 802      656E7473 
+ 802      5C436F6C 
+ 802      6F75725F 
+ 803              	.LASF23:
+ 804 006e 70657269 		.ascii	"period\000"
+ 804      6F6400
+ 805              	.LASF3:
+ 806 0075 73686F72 		.ascii	"short unsigned int\000"
+ 806      7420756E 
+ 806      7369676E 
+ 806      65642069 
+ 806      6E7400
+ 807              	.LASF9:
+ 808 0088 666C6F61 		.ascii	"float\000"
+ 808      7400
+ 809              	.LASF7:
+ 810 008e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 810      206C6F6E 
+ 810      6720756E 
+ 810      7369676E 
+ 810      65642069 
+ 811              	.LASF1:
+ 812 00a5 756E7369 		.ascii	"unsigned char\000"
+ 812      676E6564 
+ 812      20636861 
+ 812      7200
+ 813              	.LASF28:
+ 814 00b3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 814      43313120 
+ 814      352E342E 
+ 814      31203230 
+ 814      31363036 
+ 815 00e6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 815      20726576 
+ 815      6973696F 
+ 815      6E203233 
+ 815      37373135 
+ 816 0119 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 816      66756E63 
+ 816      74696F6E 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 20
+
+
+ 816      2D736563 
+ 816      74696F6E 
+ 817              	.LASF13:
+ 818 0141 72656738 		.ascii	"reg8\000"
+ 818      00
+ 819              	.LASF19:
+ 820 0146 696E7465 		.ascii	"interruptState\000"
+ 820      72727570 
+ 820      74537461 
+ 820      746500
+ 821              	.LASF5:
+ 822 0155 6C6F6E67 		.ascii	"long unsigned int\000"
+ 822      20756E73 
+ 822      69676E65 
+ 822      6420696E 
+ 822      7400
+ 823              	.LASF12:
+ 824 0167 75696E74 		.ascii	"uint8\000"
+ 824      3800
+ 825              	.LASF32:
+ 826 016d 436F756E 		.ascii	"Count7_10ms_initVar\000"
+ 826      74375F31 
+ 826      306D735F 
+ 826      696E6974 
+ 826      56617200 
+ 827              	.LASF10:
+ 828 0181 646F7562 		.ascii	"double\000"
+ 828      6C6500
+ 829              	.LASF25:
+ 830 0188 436F756E 		.ascii	"Count7_10ms_ReadPeriod\000"
+ 830      74375F31 
+ 830      306D735F 
+ 830      52656164 
+ 830      50657269 
+ 831              	.LASF26:
+ 832 019f 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 832      74657243 
+ 832      72697469 
+ 832      63616C53 
+ 832      65637469 
+ 833              	.LASF8:
+ 834 01b6 756E7369 		.ascii	"unsigned int\000"
+ 834      676E6564 
+ 834      20696E74 
+ 834      00
+ 835              	.LASF27:
+ 836 01c3 43794578 		.ascii	"CyExitCriticalSection\000"
+ 836      69744372 
+ 836      69746963 
+ 836      616C5365 
+ 836      6374696F 
+ 837              	.LASF16:
+ 838 01d9 436F756E 		.ascii	"Count7_10ms_Enable\000"
+ 838      74375F31 
+ 838      306D735F 
+ 838      456E6162 
+ 838      6C6500
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 21
+
+
+ 839              	.LASF29:
+ 840 01ec 47656E65 		.ascii	"Generated_Source\\PSoC5\\Count7_10ms.c\000"
+ 840      72617465 
+ 840      645F536F 
+ 840      75726365 
+ 840      5C50536F 
+ 841              	.LASF15:
+ 842 0211 73697A65 		.ascii	"sizetype\000"
+ 842      74797065 
+ 842      00
+ 843              	.LASF6:
+ 844 021a 6C6F6E67 		.ascii	"long long int\000"
+ 844      206C6F6E 
+ 844      6720696E 
+ 844      7400
+ 845              	.LASF11:
+ 846 0228 63686172 		.ascii	"char\000"
+ 846      00
+ 847              	.LASF31:
+ 848 022d 436F756E 		.ascii	"Count7_10ms_Init\000"
+ 848      74375F31 
+ 848      306D735F 
+ 848      496E6974 
+ 848      00
+ 849              	.LASF21:
+ 850 023e 436F756E 		.ascii	"Count7_10ms_WritePeriod\000"
+ 850      74375F31 
+ 850      306D735F 
+ 850      57726974 
+ 850      65506572 
+ 851              	.LASF2:
+ 852 0256 73686F72 		.ascii	"short int\000"
+ 852      7420696E 
+ 852      7400
+ 853              	.LASF17:
+ 854 0260 436F756E 		.ascii	"Count7_10ms_Start\000"
+ 854      74375F31 
+ 854      306D735F 
+ 854      53746172 
+ 854      7400
+ 855              	.LASF4:
+ 856 0272 6C6F6E67 		.ascii	"long int\000"
+ 856      20696E74 
+ 856      00
+ 857              	.LASF24:
+ 858 027b 436F756E 		.ascii	"Count7_10ms_ReadCounter\000"
+ 858      74375F31 
+ 858      306D735F 
+ 858      52656164 
+ 858      436F756E 
+ 859              	.LASF14:
+ 860 0293 6C6F6E67 		.ascii	"long double\000"
+ 860      20646F75 
+ 860      626C6500 
+ 861              	.LASF0:
+ 862 029f 7369676E 		.ascii	"signed char\000"
+ 862      65642063 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccf5zQFv.s 			page 22
+
+
+ 862      68617200 
+ 863              	.LASF20:
+ 864 02ab 436F756E 		.ascii	"Count7_10ms_WriteCounter\000"
+ 864      74375F31 
+ 864      306D735F 
+ 864      57726974 
+ 864      65436F75 
+ 865              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -13,12 +13,11 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Colour_Sensor">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Colour_Sensor\TCS3200\TCS3200.cydwr">
 <ExpandedNodeIds>
 <v>Colour_Sensor</v>
 <v>Colour_Sensor\TCS3200</v>
 <v>Colour_Sensor\TCS3200\TopDesign</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr</v>
 <v>Colour_Sensor\TCS3200\TCS3200.cydwr\Pins</v>
 <v>Colour_Sensor\TCS3200\TCS3200.cydwr\Analog</v>
 <v>Colour_Sensor\TCS3200\TCS3200.cydwr\Clocks</v>
@@ -40,15 +39,6 @@
 <v>Colour_Sensor\TCS3200</v>
 <v>Colour_Sensor\TCS3200\TopDesign</v>
 <v>Colour_Sensor\TCS3200\TCS3200.cydwr</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\Pins</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\Analog</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\Clocks</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\Interrupts</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\DMA</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\System</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\Directives</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\Flash Security</v>
-<v>Colour_Sensor\TCS3200\TCS3200.cydwr\EEPROM</v>
 <v>Colour_Sensor\TCS3200\Header Files</v>
 <v>Colour_Sensor\TCS3200\Header Files\cyapicallbacks.h</v>
 <v>Colour_Sensor\TCS3200\Source Files</v>
@@ -65,7 +55,7 @@
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\ColourSensor_S2</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\ColourSensor_S3</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\Control_Reg_1</v>
-<v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\Count7_1ms</v>
+<v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\Count7_10ms</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\cy_boot</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
 <v>Colour_Sensor\TCS3200\Generated_Source\PSoC5\freq_isr</v>
@@ -132,8 +122,8 @@
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_S3.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_1.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_1_PM.lst</v>
-<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_1ms.lst</v>
-<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_1ms_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_10ms.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_10ms_PM.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
@@ -184,8 +174,8 @@
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\ColourSensor_S3.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_1.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Control_Reg_1_PM.lst</v>
-<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_1ms.lst</v>
-<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_1ms_PM.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_10ms.lst</v>
+<v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\Count7_10ms_PM.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>Colour_Sensor\TCS3200\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
@@ -288,7 +278,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2018, 962" SelectedTabbedMdiWindow="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2"><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TopDesign\TopDesign.cysch" Guid="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\main.c" Guid="ecc53777-6d8e-4cd6-96e5-2328465b152a" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TCS3200.cydwr" Guid="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4c5062ca-7c5c-4036-9339-a2d340a00f95" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2018, 962" SelectedTabbedMdiWindow="ecc53777-6d8e-4cd6-96e5-2328465b152a"><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TopDesign\TopDesign.cysch" Guid="e48c0ae4-2623-4ddf-990c-0a48e8bd9bb2" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\main.c" Guid="ecc53777-6d8e-4cd6-96e5-2328465b152a" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TCS3200.cydwr" Guid="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4c5062ca-7c5c-4036-9339-a2d340a00f95" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

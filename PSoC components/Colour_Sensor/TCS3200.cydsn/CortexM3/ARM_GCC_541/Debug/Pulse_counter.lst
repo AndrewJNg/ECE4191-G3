@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
   28:Generated_Source\PSoC5/Pulse_counter.c **** *     Initialize to the schematic state
   29:Generated_Source\PSoC5/Pulse_counter.c **** * 
   30:Generated_Source\PSoC5/Pulse_counter.c **** * Parameters:  
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 2
 
 
   31:Generated_Source\PSoC5/Pulse_counter.c **** *  void  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
   85:Generated_Source\PSoC5/Pulse_counter.c ****             #if( 0 != Pulse_counter_CAPTURE_MODE_CONF)
   86:Generated_Source\PSoC5/Pulse_counter.c ****                 Pulse_counter_CONTROL = ctrl | Pulse_counter_DEFAULT_CAPTURE_MODE;
   87:Generated_Source\PSoC5/Pulse_counter.c ****             #else
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 3
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 3
 
 
   88:Generated_Source\PSoC5/Pulse_counter.c ****                 Pulse_counter_CONTROL = ctrl;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  142:Generated_Source\PSoC5/Pulse_counter.c **** *******************************************************************************/
  143:Generated_Source\PSoC5/Pulse_counter.c **** void Pulse_counter_Enable(void) 
  144:Generated_Source\PSoC5/Pulse_counter.c **** {
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 4
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 4
 
 
   28              		.loc 1 144 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  182:Generated_Source\PSoC5/Pulse_counter.c ****         Pulse_counter_Init();
  183:Generated_Source\PSoC5/Pulse_counter.c ****         
  184:Generated_Source\PSoC5/Pulse_counter.c ****         Pulse_counter_initVar = 1u; /* Clear this bit for Initialization */        
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 5
 
 
  185:Generated_Source\PSoC5/Pulse_counter.c ****     }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  222:Generated_Source\PSoC5/Pulse_counter.c **** 
  223:Generated_Source\PSoC5/Pulse_counter.c **** /*******************************************************************************
  224:Generated_Source\PSoC5/Pulse_counter.c **** * Function Name: Pulse_counter_SetInterruptMode
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 6
 
 
  225:Generated_Source\PSoC5/Pulse_counter.c **** ********************************************************************************
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  254:Generated_Source\PSoC5/Pulse_counter.c **** * Return: 
  255:Generated_Source\PSoC5/Pulse_counter.c **** *  (uint8) The contents of the status register
  256:Generated_Source\PSoC5/Pulse_counter.c **** *
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 7
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 7
 
 
  257:Generated_Source\PSoC5/Pulse_counter.c **** * Side Effects:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  286:Generated_Source\PSoC5/Pulse_counter.c **** }
  287:Generated_Source\PSoC5/Pulse_counter.c **** 
  288:Generated_Source\PSoC5/Pulse_counter.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 8
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 8
 
 
  289:Generated_Source\PSoC5/Pulse_counter.c **** /*******************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  337:Generated_Source\PSoC5/Pulse_counter.c ****         CY_SET_REG32(Pulse_counter_COUNTER_LSB_PTR, counter);
  118              		.loc 1 337 0
  119 0000 014B     		ldr	r3, .L10
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 9
 
 
  120 0002 1860     		str	r0, [r3]	@ unaligned
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  367:Generated_Source\PSoC5/Pulse_counter.c ****     
  368:Generated_Source\PSoC5/Pulse_counter.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
  369:Generated_Source\PSoC5/Pulse_counter.c ****     #if(Pulse_counter_UsingFixedFunction)
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 10
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 10
 
 
  370:Generated_Source\PSoC5/Pulse_counter.c ****         return ((uint32)CY_GET_REG16(Pulse_counter_STATICCOUNT_LSB_PTR));
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  173 0002 1868     		ldr	r0, [r3]	@ unaligned
  396:Generated_Source\PSoC5/Pulse_counter.c ****     #endif /* (Pulse_counter_UsingFixedFunction) */
  397:Generated_Source\PSoC5/Pulse_counter.c **** }
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 11
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 11
 
 
  174              		.loc 1 397 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  205              		.cfi_endproc
  206              	.LFE9:
  207              		.size	Pulse_counter_WritePeriod, .-Pulse_counter_WritePeriod
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 12
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 12
 
 
  208              		.section	.text.Pulse_counter_ReadPeriod,"ax",%progbits
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  237              		.thumb_func
  238              		.type	Pulse_counter_WriteCompare, %function
  239              	Pulse_counter_WriteCompare:
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 13
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 13
 
 
  240              	.LFB11:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  474:Generated_Source\PSoC5/Pulse_counter.c **** 
  475:Generated_Source\PSoC5/Pulse_counter.c **** 
  476:Generated_Source\PSoC5/Pulse_counter.c **** /*******************************************************************************
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 14
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 14
 
 
  477:Generated_Source\PSoC5/Pulse_counter.c **** * Function Name: Pulse_counter_ReadCompare
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  506:Generated_Source\PSoC5/Pulse_counter.c **** *  void
  507:Generated_Source\PSoC5/Pulse_counter.c **** *
  508:Generated_Source\PSoC5/Pulse_counter.c **** *******************************************************************************/
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 15
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 15
 
 
  509:Generated_Source\PSoC5/Pulse_counter.c **** void Pulse_counter_SetCompareMode(uint8 compareMode) 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  294              		@ frame_needed = 0, uses_anonymous_args = 0
  295 0000 08B5     		push	{r3, lr}
  296              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 16
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 16
 
 
  297              		.cfi_offset 3, -8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  339              		.loc 1 102 0
  340 000e 0020     		movs	r0, #0
  341 0010 FFF7FEFF 		bl	Pulse_counter_WriteCounter
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 17
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 17
 
 
  342              	.LVL8:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  389              		.cfi_offset 14, -4
  180:Generated_Source\PSoC5/Pulse_counter.c ****     {
  390              		.loc 1 180 0
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 18
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 18
 
 
  391 0002 044B     		ldr	r3, .L41
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  443 0033 02       		.uleb128 0x2
  444 0034 02       		.byte	0x2
  445 0035 05       		.byte	0x5
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 19
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 19
 
 
  446 0036 65030000 		.4byte	.LASF2
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  500 009e 9202     		.2byte	0x292
  501 00a0 A4000000 		.4byte	0xa4
  502 00a4 05       		.uleb128 0x5
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 20
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 20
 
 
  503 00a5 6B000000 		.4byte	0x6b
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  557 0119 00000000 		.4byte	.LFB5
  558 011d 0C000000 		.4byte	.LFE5-.LFB5
  559 0121 01       		.uleb128 0x1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 21
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 21
 
 
  560 0122 9C       		.byte	0x9c
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  614 019a 67020000 		.4byte	.LASF29
  615 019e 01       		.byte	0x1
  616 019f B601     		.2byte	0x1b6
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 22
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 22
 
 
  617 01a1 77000000 		.4byte	0x77
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  671 0223 9C       		.byte	0x9c
  672 0224 AE020000 		.4byte	0x2ae
  673 0228 0D       		.uleb128 0xd
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 23
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 23
 
 
  674 0229 4C010000 		.4byte	.LASF41
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  727 029b 0C       		.uleb128 0xc
  728 029c 28000000 		.4byte	.LVL12
  729 02a0 DE020000 		.4byte	0x2de
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 24
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 24
 
 
  730 02a4 0C       		.uleb128 0xc
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  784 0010 17       		.uleb128 0x17
  785 0011 00       		.byte	0
  786 0012 00       		.byte	0
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 25
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 25
 
 
  787 0013 02       		.uleb128 0x2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  841 0049 19       		.uleb128 0x19
  842 004a 11       		.uleb128 0x11
  843 004b 01       		.uleb128 0x1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 26
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 26
 
 
  844 004c 12       		.uleb128 0x12
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  898 0084 0E       		.uleb128 0xe
  899 0085 3A       		.uleb128 0x3a
  900 0086 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 27
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 27
 
 
  901 0087 3B       		.uleb128 0x3b
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  955 00bf 00       		.byte	0
  956 00c0 00       		.byte	0
  957 00c1 0C       		.uleb128 0xc
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 28
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 28
 
 
  958 00c2 898201   		.uleb128 0x4109
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  1012 00ff 3F       		.uleb128 0x3f
  1013 0100 19       		.uleb128 0x19
  1014 0101 02       		.uleb128 0x2
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 29
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 29
 
 
  1015 0102 18       		.uleb128 0x18
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  1069 0050 00000000 		.4byte	.LFB10
  1070 0054 0C000000 		.4byte	.LFE10-.LFB10
  1071 0058 00000000 		.4byte	.LFB11
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 30
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 30
 
 
  1072 005c 0C000000 		.4byte	.LFE11-.LFB11
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  1121 0006 50756C73 		.ascii	"Pulse_counter_Start\000"
  1121      655F636F 
  1121      756E7465 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 31
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 31
 
 
  1121      725F5374 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  1140      7400
  1141              	.LASF23:
  1142 012d 636F756E 		.ascii	"counter\000"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 32
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 32
 
 
  1142      74657200 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  1162      655F636F 
  1162      756E7465 
  1162      725F456E 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 33
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 33
 
 
  1162      61626C65 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 1
  1184 0304 50756C73 		.ascii	"Pulse_counter_Init\000"
  1184      655F636F 
  1184      756E7465 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccXD8llz.s 			page 34
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccQElsx2.s 			page 34
 
 
  1184      725F496E 

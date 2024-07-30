@@ -33,7 +33,7 @@
 #include "Pin_1.h"
 #include "Clock_4.h"
 #include "Clock_5.h"
-#include "Count7_1ms.h"
+#include "Count7_10ms.h"
 #include "ColourSensor_S0_aliases.h"
 #include "ColourSensor_S0.h"
 #include "ColourSensor_S1_aliases.h"
