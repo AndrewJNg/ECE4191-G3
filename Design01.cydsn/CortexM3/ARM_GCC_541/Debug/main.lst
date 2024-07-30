@@ -1,0 +1,2239 @@
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_dmul
+  20              		.global	__aeabi_dadd
+  21              		.global	__aeabi_d2iz
+  22              		.section	.text.convertToPWM,"ax",%progbits
+  23              		.align	2
+  24              		.global	convertToPWM
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	convertToPWM, %function
+  28              	convertToPWM:
+  29              	.LFB64:
+  30              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <math.h>
+  14:main.c        **** #include <stdlib.h>
+  15:main.c        **** #include <stdio.h>
+  16:main.c        **** 
+  17:main.c        **** // These are constants of the motor.
+  18:main.c        **** double V_max = 25000; // The maximum voltage we use.
+  19:main.c        **** double v_max = 4010; //ticks per second
+  20:main.c        **** double a_max = 30000; // ticks per second^2
+  21:main.c        **** double min_interval = 0.01; //seconds
+  22:main.c        **** double K_offset = 2000; // 2000 pwm compare
+  23:main.c        **** double K_velocity = 6.23441;
+  24:main.c        **** double K_acceleration = 0.0037696;
+  25:main.c        **** /*
+  26:main.c        **** double K_velocity = V_max / v_max; // Vmax / velocity_max
+  27:main.c        **** double K_acceleration = V_max / a_max;
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 2
+
+
+  28:main.c        **** */
+  29:main.c        **** 
+  30:main.c        **** int data = 0;
+  31:main.c        **** char printstr[50];
+  32:main.c        **** 
+  33:main.c        **** void convertToPWM(double velocity, double acceleration)
+  34:main.c        **** {
+  31              		.loc 1 34 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              	.LVL0:
+  36 0000 2DE9D043 		push	{r4, r6, r7, r8, r9, lr}
+  37              		.cfi_def_cfa_offset 24
+  38              		.cfi_offset 4, -24
+  39              		.cfi_offset 6, -20
+  40              		.cfi_offset 7, -16
+  41              		.cfi_offset 8, -12
+  42              		.cfi_offset 9, -8
+  43              		.cfi_offset 14, -4
+  44 0004 9046     		mov	r8, r2
+  45 0006 9946     		mov	r9, r3
+  35:main.c        ****     // Uses the V = K_offs + K_v * velocity + K_a * acceleration to convert the velocity and accele
+  36:main.c        ****     // to a voltage requirement and transmit to the motor.
+  37:main.c        ****     //data = PWM_1_ReadPeriod();
+  38:main.c        ****     //sprintf(printstr, "%d\n", data);
+  39:main.c        ****     
+  40:main.c        **** 
+  41:main.c        ****     int pwm_value = (int) (K_offset + K_velocity * velocity + K_acceleration * acceleration);
+  46              		.loc 1 41 0
+  47 0008 154C     		ldr	r4, .L3
+  48 000a D4E90023 		ldrd	r2, [r4]
+  49              	.LVL1:
+  50 000e FFF7FEFF 		bl	__aeabi_dmul
+  51              	.LVL2:
+  52 0012 D4E90223 		ldrd	r2, [r4, #8]
+  53 0016 FFF7FEFF 		bl	__aeabi_dadd
+  54              	.LVL3:
+  55 001a 0646     		mov	r6, r0
+  56 001c 0F46     		mov	r7, r1
+  57 001e D4E90423 		ldrd	r2, [r4, #16]
+  58 0022 4046     		mov	r0, r8
+  59 0024 4946     		mov	r1, r9
+  60 0026 FFF7FEFF 		bl	__aeabi_dmul
+  61              	.LVL4:
+  62 002a 0246     		mov	r2, r0
+  63 002c 0B46     		mov	r3, r1
+  64 002e 3046     		mov	r0, r6
+  65 0030 3946     		mov	r1, r7
+  66 0032 FFF7FEFF 		bl	__aeabi_dadd
+  67              	.LVL5:
+  68 0036 FFF7FEFF 		bl	__aeabi_d2iz
+  69              	.LVL6:
+  42:main.c        ****     Motor_OUT1_Write((pwm_value > 0) ? 1 : 0);
+  70              		.loc 1 42 0
+  71 003a 0446     		mov	r4, r0
+  72 003c 0028     		cmp	r0, #0
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 3
+
+
+  73 003e D4BF     		ite	le
+  74 0040 0020     		movle	r0, #0
+  75              	.LVL7:
+  76 0042 0120     		movgt	r0, #1
+  77 0044 FFF7FEFF 		bl	Motor_OUT1_Write
+  78              	.LVL8:
+  43:main.c        ****     Motor_OUT1_Write((pwm_value < 0) ? 1 : 0);
+  79              		.loc 1 43 0
+  80 0048 E00F     		lsrs	r0, r4, #31
+  81 004a FFF7FEFF 		bl	Motor_OUT1_Write
+  82              	.LVL9:
+  44:main.c        ****     PWM_1_WriteCompare(abs(pwm_value));
+  83              		.loc 1 44 0
+  84 004e 84EAE470 		eor	r0, r4, r4, asr #31
+  85 0052 A0EBE470 		sub	r0, r0, r4, asr #31
+  86 0056 80B2     		uxth	r0, r0
+  87 0058 FFF7FEFF 		bl	PWM_1_WriteCompare
+  88              	.LVL10:
+  89 005c BDE8D083 		pop	{r4, r6, r7, r8, r9, pc}
+  90              	.LVL11:
+  91              	.L4:
+  92              		.align	2
+  93              	.L3:
+  94 0060 00000000 		.word	.LANCHOR0
+  95              		.cfi_endproc
+  96              	.LFE64:
+  97              		.size	convertToPWM, .-convertToPWM
+  98              		.global	__aeabi_dcmple
+  99              		.global	__aeabi_ddiv
+ 100              		.global	__aeabi_dsub
+ 101              		.global	__aeabi_i2d
+ 102              		.global	__aeabi_dcmpgt
+ 103              		.global	__aeabi_dcmpge
+ 104              		.global	__aeabi_dcmplt
+ 105              		.section	.text.feedForwardTrajectory,"ax",%progbits
+ 106              		.align	2
+ 107              		.global	feedForwardTrajectory
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.type	feedForwardTrajectory, %function
+ 111              	feedForwardTrajectory:
+ 112              	.LFB65:
+  45:main.c        **** }
+  46:main.c        **** 
+  47:main.c        **** void feedForwardTrajectory(double s_req)
+  48:main.c        **** {
+ 113              		.loc 1 48 0
+ 114              		.cfi_startproc
+ 115              		@ args = 0, pretend = 0, frame = 24
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117              	.LVL12:
+ 118 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 119              		.cfi_def_cfa_offset 36
+ 120              		.cfi_offset 4, -36
+ 121              		.cfi_offset 5, -32
+ 122              		.cfi_offset 6, -28
+ 123              		.cfi_offset 7, -24
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 4
+
+
+ 124              		.cfi_offset 8, -20
+ 125              		.cfi_offset 9, -16
+ 126              		.cfi_offset 10, -12
+ 127              		.cfi_offset 11, -8
+ 128              		.cfi_offset 14, -4
+ 129 0004 87B0     		sub	sp, sp, #28
+ 130              		.cfi_def_cfa_offset 64
+ 131 0006 8046     		mov	r8, r0
+ 132 0008 8946     		mov	r9, r1
+ 133              	.LVL13:
+  49:main.c        ****     double ta = 0;
+  50:main.c        ****     double T = 0;
+  51:main.c        ****     double tc = 0;
+  52:main.c        ****     double t_cf = 0;
+  53:main.c        ****     double Vm = sqrt(s_req * a_max); 
+ 134              		.loc 1 53 0
+ 135 000a 784C     		ldr	r4, .L30
+ 136 000c D4E90623 		ldrd	r2, [r4, #24]
+ 137 0010 FFF7FEFF 		bl	__aeabi_dmul
+ 138              	.LVL14:
+ 139 0014 FFF7FEFF 		bl	sqrt
+ 140              	.LVL15:
+ 141 0018 8246     		mov	r10, r0
+ 142 001a 8B46     		mov	fp, r1
+ 143 001c CDE902AB 		strd	r10, [sp, #8]
+ 144              	.LVL16:
+  54:main.c        ****     int milli_delay = (int) (min_interval * 1000);
+ 145              		.loc 1 54 0
+ 146 0020 0022     		movs	r2, #0
+ 147 0022 734B     		ldr	r3, .L30+4
+ 148 0024 D4E90801 		ldrd	r0, [r4, #32]
+ 149 0028 FFF7FEFF 		bl	__aeabi_dmul
+ 150              	.LVL17:
+ 151 002c FFF7FEFF 		bl	__aeabi_d2iz
+ 152              	.LVL18:
+ 153 0030 0546     		mov	r5, r0
+ 154              	.LVL19:
+  55:main.c        ****     if (Vm <= v_max){
+ 155              		.loc 1 55 0
+ 156 0032 D4E90A67 		ldrd	r6, [r4, #40]
+ 157 0036 3246     		mov	r2, r6
+ 158 0038 3B46     		mov	r3, r7
+ 159 003a 5046     		mov	r0, r10
+ 160              	.LVL20:
+ 161 003c 5946     		mov	r1, fp
+ 162 003e FFF7FEFF 		bl	__aeabi_dcmple
+ 163              	.LVL21:
+ 164 0042 90B1     		cbz	r0, .L26
+  56:main.c        ****         ta = Vm / a_max;
+ 165              		.loc 1 56 0
+ 166 0044 D4E90623 		ldrd	r2, [r4, #24]
+ 167 0048 5046     		mov	r0, r10
+ 168 004a 5946     		mov	r1, fp
+ 169 004c FFF7FEFF 		bl	__aeabi_ddiv
+ 170              	.LVL22:
+ 171 0050 8246     		mov	r10, r0
+ 172              	.LVL23:
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 5
+
+
+ 173 0052 8B46     		mov	fp, r1
+ 174              	.LVL24:
+  57:main.c        ****         T = 2 * ta;
+ 175              		.loc 1 57 0
+ 176 0054 0246     		mov	r2, r0
+ 177 0056 0B46     		mov	r3, r1
+ 178 0058 FFF7FEFF 		bl	__aeabi_dadd
+ 179              	.LVL25:
+ 180 005c CDE90001 		strd	r0, [sp]
+ 181              	.LVL26:
+  52:main.c        ****     double Vm = sqrt(s_req * a_max); 
+ 182              		.loc 1 52 0
+ 183 0060 0023     		movs	r3, #0
+ 184 0062 0024     		movs	r4, #0
+ 185 0064 CDE90434 		strd	r3, [sp, #16]
+ 186 0068 28E0     		b	.L8
+ 187              	.LVL27:
+ 188              	.L26:
+  58:main.c        ****     }else{
+  59:main.c        ****         ta = v_max / a_max;
+ 189              		.loc 1 59 0
+ 190 006a 604B     		ldr	r3, .L30
+ 191 006c D3E90623 		ldrd	r2, [r3, #24]
+ 192 0070 3046     		mov	r0, r6
+ 193 0072 3946     		mov	r1, r7
+ 194 0074 FFF7FEFF 		bl	__aeabi_ddiv
+ 195              	.LVL28:
+ 196 0078 8246     		mov	r10, r0
+ 197              	.LVL29:
+ 198 007a 8B46     		mov	fp, r1
+ 199              	.LVL30:
+  60:main.c        ****         tc = s_req / v_max - ta;
+ 200              		.loc 1 60 0
+ 201 007c 3246     		mov	r2, r6
+ 202 007e 3B46     		mov	r3, r7
+ 203 0080 4046     		mov	r0, r8
+ 204 0082 4946     		mov	r1, r9
+ 205 0084 FFF7FEFF 		bl	__aeabi_ddiv
+ 206              	.LVL31:
+ 207 0088 5246     		mov	r2, r10
+ 208 008a 5B46     		mov	r3, fp
+ 209 008c FFF7FEFF 		bl	__aeabi_dsub
+ 210              	.LVL32:
+ 211 0090 0646     		mov	r6, r0
+ 212 0092 0F46     		mov	r7, r1
+ 213              	.LVL33:
+  61:main.c        ****         T = 2 * ta + tc;
+ 214              		.loc 1 61 0
+ 215 0094 5246     		mov	r2, r10
+ 216 0096 5B46     		mov	r3, fp
+ 217 0098 5046     		mov	r0, r10
+ 218 009a 5946     		mov	r1, fp
+ 219 009c FFF7FEFF 		bl	__aeabi_dadd
+ 220              	.LVL34:
+ 221 00a0 0246     		mov	r2, r0
+ 222 00a2 0B46     		mov	r3, r1
+ 223 00a4 3046     		mov	r0, r6
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 6
+
+
+ 224 00a6 3946     		mov	r1, r7
+ 225 00a8 FFF7FEFF 		bl	__aeabi_dadd
+ 226              	.LVL35:
+ 227 00ac CDE90001 		strd	r0, [sp]
+ 228              	.LVL36:
+  62:main.c        ****         t_cf = T - ta;
+ 229              		.loc 1 62 0
+ 230 00b0 5246     		mov	r2, r10
+ 231 00b2 5B46     		mov	r3, fp
+ 232 00b4 FFF7FEFF 		bl	__aeabi_dsub
+ 233              	.LVL37:
+ 234 00b8 CDE90401 		strd	r0, [sp, #16]
+ 235              	.LVL38:
+ 236              	.L8:
+ 237              	.LBB2:
+  63:main.c        ****     }
+  64:main.c        ****     double t = 0;
+  65:main.c        ****     double i_double = 0.0; // I thinnk this would be better than casting to double each loop
+  66:main.c        ****     for ( int i = 0 ; i < (int) (T / min_interval) + 1; i++){
+ 238              		.loc 1 66 0
+ 239 00bc 0024     		movs	r4, #0
+ 240 00be 80E0     		b	.L9
+ 241              	.LVL39:
+ 242              	.L19:
+  67:main.c        ****         t = (double) (i * min_interval);
+ 243              		.loc 1 67 0
+ 244 00c0 2046     		mov	r0, r4
+ 245 00c2 FFF7FEFF 		bl	__aeabi_i2d
+ 246              	.LVL40:
+ 247 00c6 0246     		mov	r2, r0
+ 248 00c8 0B46     		mov	r3, r1
+ 249 00ca 3046     		mov	r0, r6
+ 250 00cc 3946     		mov	r1, r7
+ 251 00ce FFF7FEFF 		bl	__aeabi_dmul
+ 252              	.LVL41:
+ 253 00d2 0646     		mov	r6, r0
+ 254 00d4 0F46     		mov	r7, r1
+ 255              	.LVL42:
+  68:main.c        ****         data = QuadDec_1_GetCounter();
+ 256              		.loc 1 68 0
+ 257 00d6 FFF7FEFF 		bl	QuadDec_1_GetCounter
+ 258              	.LVL43:
+ 259 00da 464B     		ldr	r3, .L30+8
+ 260 00dc 1860     		str	r0, [r3]
+  69:main.c        ****         if ( t < ta ){
+ 261              		.loc 1 69 0
+ 262 00de 3246     		mov	r2, r6
+ 263 00e0 3B46     		mov	r3, r7
+ 264 00e2 5046     		mov	r0, r10
+ 265 00e4 5946     		mov	r1, fp
+ 266 00e6 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 267              	.LVL44:
+ 268 00ea 68B1     		cbz	r0, .L27
+  70:main.c        ****             convertToPWM(a_max * t, a_max);
+ 269              		.loc 1 70 0
+ 270 00ec 3F4B     		ldr	r3, .L30
+ 271 00ee D3E90689 		ldrd	r8, [r3, #24]
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 7
+
+
+ 272 00f2 4246     		mov	r2, r8
+ 273 00f4 4B46     		mov	r3, r9
+ 274 00f6 3046     		mov	r0, r6
+ 275 00f8 3946     		mov	r1, r7
+ 276 00fa FFF7FEFF 		bl	__aeabi_dmul
+ 277              	.LVL45:
+ 278 00fe 4246     		mov	r2, r8
+ 279 0100 4B46     		mov	r3, r9
+ 280 0102 FFF7FEFF 		bl	convertToPWM
+ 281              	.LVL46:
+ 282 0106 58E0     		b	.L12
+ 283              	.L27:
+  71:main.c        ****         }
+  72:main.c        ****         else if ( Vm <= v_max ){
+ 284              		.loc 1 72 0
+ 285 0108 384B     		ldr	r3, .L30
+ 286 010a D3E90A89 		ldrd	r8, [r3, #40]
+ 287 010e 4246     		mov	r2, r8
+ 288 0110 4B46     		mov	r3, r9
+ 289 0112 DDE90201 		ldrd	r0, [sp, #8]
+ 290 0116 FFF7FEFF 		bl	__aeabi_dcmple
+ 291              	.LVL47:
+ 292 011a C8B1     		cbz	r0, .L28
+  73:main.c        ****             // There is no constant speed region
+  74:main.c        ****             // So we start decelerating
+  75:main.c        ****             convertToPWM(Vm - a_max * (t - ta), -a_max);
+ 293              		.loc 1 75 0
+ 294 011c 5246     		mov	r2, r10
+ 295 011e 5B46     		mov	r3, fp
+ 296 0120 3046     		mov	r0, r6
+ 297 0122 3946     		mov	r1, r7
+ 298 0124 FFF7FEFF 		bl	__aeabi_dsub
+ 299              	.LVL48:
+ 300 0128 304B     		ldr	r3, .L30
+ 301 012a 9F69     		ldr	r7, [r3, #24]
+ 302 012c DE69     		ldr	r6, [r3, #28]
+ 303              	.LVL49:
+ 304 012e 3A46     		mov	r2, r7
+ 305 0130 3346     		mov	r3, r6
+ 306 0132 FFF7FEFF 		bl	__aeabi_dmul
+ 307              	.LVL50:
+ 308 0136 06F10046 		add	r6, r6, #-2147483648
+ 309 013a 0246     		mov	r2, r0
+ 310 013c 0B46     		mov	r3, r1
+ 311 013e DDE90201 		ldrd	r0, [sp, #8]
+ 312 0142 FFF7FEFF 		bl	__aeabi_dsub
+ 313              	.LVL51:
+ 314 0146 3A46     		mov	r2, r7
+ 315 0148 3346     		mov	r3, r6
+ 316 014a FFF7FEFF 		bl	convertToPWM
+ 317              	.LVL52:
+ 318 014e 34E0     		b	.L12
+ 319              	.LVL53:
+ 320              	.L28:
+  76:main.c        ****         }else if ( (t >= ta) && (t <= t_cf) ){
+ 321              		.loc 1 76 0
+ 322 0150 3246     		mov	r2, r6
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 8
+
+
+ 323 0152 3B46     		mov	r3, r7
+ 324 0154 5046     		mov	r0, r10
+ 325 0156 5946     		mov	r1, fp
+ 326 0158 FFF7FEFF 		bl	__aeabi_dcmple
+ 327              	.LVL54:
+ 328 015c 68B1     		cbz	r0, .L15
+ 329              		.loc 1 76 0 is_stmt 0 discriminator 1
+ 330 015e 3246     		mov	r2, r6
+ 331 0160 3B46     		mov	r3, r7
+ 332 0162 DDE90401 		ldrd	r0, [sp, #16]
+ 333 0166 FFF7FEFF 		bl	__aeabi_dcmpge
+ 334              	.LVL55:
+ 335 016a 30B1     		cbz	r0, .L15
+  77:main.c        ****             // There is constant speed region
+  78:main.c        ****             // And we are in the constant speed region
+  79:main.c        ****             convertToPWM(v_max, 0);
+ 336              		.loc 1 79 0 is_stmt 1
+ 337 016c 0022     		movs	r2, #0
+ 338 016e 0023     		movs	r3, #0
+ 339 0170 4046     		mov	r0, r8
+ 340 0172 4946     		mov	r1, r9
+ 341 0174 FFF7FEFF 		bl	convertToPWM
+ 342              	.LVL56:
+ 343 0178 1FE0     		b	.L12
+ 344              	.L15:
+  80:main.c        ****         }else if (t > t_cf){
+ 345              		.loc 1 80 0
+ 346 017a 3246     		mov	r2, r6
+ 347 017c 3B46     		mov	r3, r7
+ 348 017e DDE90401 		ldrd	r0, [sp, #16]
+ 349 0182 FFF7FEFF 		bl	__aeabi_dcmplt
+ 350              	.LVL57:
+ 351 0186 C0B1     		cbz	r0, .L12
+  81:main.c        ****             // There is a constant speed region(Vm > Vmax to come here) and we are in the decelerat
+  82:main.c        ****             convertToPWM(v_max - (t - t_cf) * a_max, -a_max);
+ 352              		.loc 1 82 0
+ 353 0188 DDE90423 		ldrd	r2, [sp, #16]
+ 354 018c 3046     		mov	r0, r6
+ 355 018e 3946     		mov	r1, r7
+ 356 0190 FFF7FEFF 		bl	__aeabi_dsub
+ 357              	.LVL58:
+ 358 0194 154B     		ldr	r3, .L30
+ 359 0196 9F69     		ldr	r7, [r3, #24]
+ 360 0198 DE69     		ldr	r6, [r3, #28]
+ 361              	.LVL59:
+ 362 019a 3A46     		mov	r2, r7
+ 363 019c 3346     		mov	r3, r6
+ 364 019e FFF7FEFF 		bl	__aeabi_dmul
+ 365              	.LVL60:
+ 366 01a2 06F10046 		add	r6, r6, #-2147483648
+ 367 01a6 0246     		mov	r2, r0
+ 368 01a8 0B46     		mov	r3, r1
+ 369 01aa 4046     		mov	r0, r8
+ 370 01ac 4946     		mov	r1, r9
+ 371 01ae FFF7FEFF 		bl	__aeabi_dsub
+ 372              	.LVL61:
+ 373 01b2 3A46     		mov	r2, r7
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 9
+
+
+ 374 01b4 3346     		mov	r3, r6
+ 375 01b6 FFF7FEFF 		bl	convertToPWM
+ 376              	.LVL62:
+ 377              	.L12:
+  83:main.c        ****         }
+  84:main.c        ****         CyDelay(milli_delay); 
+ 378              		.loc 1 84 0 discriminator 2
+ 379 01ba 2846     		mov	r0, r5
+ 380 01bc FFF7FEFF 		bl	CyDelay
+ 381              	.LVL63:
+  66:main.c        ****         t = (double) (i * min_interval);
+ 382              		.loc 1 66 0 discriminator 2
+ 383 01c0 0134     		adds	r4, r4, #1
+ 384              	.LVL64:
+ 385              	.L9:
+  66:main.c        ****         t = (double) (i * min_interval);
+ 386              		.loc 1 66 0 is_stmt 0 discriminator 1
+ 387 01c2 0A4B     		ldr	r3, .L30
+ 388 01c4 D3E90867 		ldrd	r6, [r3, #32]
+ 389 01c8 3246     		mov	r2, r6
+ 390 01ca 3B46     		mov	r3, r7
+ 391 01cc DDE90001 		ldrd	r0, [sp]
+ 392 01d0 FFF7FEFF 		bl	__aeabi_ddiv
+ 393              	.LVL65:
+ 394 01d4 FFF7FEFF 		bl	__aeabi_d2iz
+ 395              	.LVL66:
+ 396 01d8 0130     		adds	r0, r0, #1
+ 397 01da 8442     		cmp	r4, r0
+ 398 01dc FFF670AF 		blt	.L19
+ 399              	.LBE2:
+  85:main.c        ****     }
+  86:main.c        ****     PWM_1_WriteCompare(0);
+ 400              		.loc 1 86 0 is_stmt 1
+ 401 01e0 0020     		movs	r0, #0
+ 402 01e2 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 403              	.LVL67:
+  87:main.c        **** }
+ 404              		.loc 1 87 0
+ 405 01e6 07B0     		add	sp, sp, #28
+ 406              		.cfi_def_cfa_offset 36
+ 407              	.LVL68:
+ 408              		@ sp needed
+ 409 01e8 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 410              	.LVL69:
+ 411              	.L31:
+ 412              		.align	2
+ 413              	.L30:
+ 414 01ec 00000000 		.word	.LANCHOR0
+ 415 01f0 00408F40 		.word	1083129856
+ 416 01f4 00000000 		.word	.LANCHOR1
+ 417              		.cfi_endproc
+ 418              	.LFE65:
+ 419              		.size	feedForwardTrajectory, .-feedForwardTrajectory
+ 420              		.section	.text.main,"ax",%progbits
+ 421              		.align	2
+ 422              		.global	main
+ 423              		.thumb
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 10
+
+
+ 424              		.thumb_func
+ 425              		.type	main, %function
+ 426              	main:
+ 427              	.LFB66:
+  88:main.c        **** 
+  89:main.c        **** 
+  90:main.c        **** int main(void)
+  91:main.c        **** {
+ 428              		.loc 1 91 0
+ 429              		.cfi_startproc
+ 430              		@ args = 0, pretend = 0, frame = 24
+ 431              		@ frame_needed = 0, uses_anonymous_args = 0
+ 432 0000 00B5     		push	{lr}
+ 433              		.cfi_def_cfa_offset 4
+ 434              		.cfi_offset 14, -4
+ 435 0002 87B0     		sub	sp, sp, #28
+ 436              		.cfi_def_cfa_offset 32
+  92:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 437              		.loc 1 92 0
+ 438              		.syntax unified
+ 439              	@ 92 "main.c" 1
+ 440 0004 62B6     		CPSIE   i
+ 441              	@ 0 "" 2
+  93:main.c        ****     QuadDec_1_Start();
+ 442              		.loc 1 93 0
+ 443              		.thumb
+ 444              		.syntax unified
+ 445 0006 FFF7FEFF 		bl	QuadDec_1_Start
+ 446              	.LVL70:
+  94:main.c        ****     PWM_1_Start();
+ 447              		.loc 1 94 0
+ 448 000a FFF7FEFF 		bl	PWM_1_Start
+ 449              	.LVL71:
+  95:main.c        ****     UART_1_Start();
+ 450              		.loc 1 95 0
+ 451 000e FFF7FEFF 		bl	UART_1_Start
+ 452              	.LVL72:
+  96:main.c        ****     Motor_OUT1_Write(0);
+ 453              		.loc 1 96 0
+ 454 0012 0020     		movs	r0, #0
+ 455 0014 FFF7FEFF 		bl	Motor_OUT1_Write
+ 456              	.LVL73:
+  97:main.c        ****     Motor_OUT2_Write(1);
+ 457              		.loc 1 97 0
+ 458 0018 0120     		movs	r0, #1
+ 459 001a FFF7FEFF 		bl	Motor_OUT2_Write
+ 460              	.LVL74:
+  98:main.c        ****     PWM_1_WriteCompare(0);
+ 461              		.loc 1 98 0
+ 462 001e 0020     		movs	r0, #0
+ 463 0020 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 464              	.LVL75:
+  99:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+ 100:main.c        ****     feedForwardTrajectory(12560.0);
+ 465              		.loc 1 100 0
+ 466 0024 0AA1     		adr	r1, .L35
+ 467 0026 D1E90001 		ldrd	r0, [r1]
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 11
+
+
+ 468 002a FFF7FEFF 		bl	feedForwardTrajectory
+ 469              	.LVL76:
+ 101:main.c        ****     
+ 102:main.c        ****     int counter = QuadDec_1_GetCounter();
+ 470              		.loc 1 102 0
+ 471 002e FFF7FEFF 		bl	QuadDec_1_GetCounter
+ 472              	.LVL77:
+ 103:main.c        ****     char transmit_str[20];
+ 104:main.c        ****     sprintf(transmit_str, "\n%d\n", counter);
+ 473              		.loc 1 104 0
+ 474 0032 0246     		mov	r2, r0
+ 475 0034 0849     		ldr	r1, .L35+8
+ 476 0036 01A8     		add	r0, sp, #4
+ 477              	.LVL78:
+ 478 0038 FFF7FEFF 		bl	sprintf
+ 479              	.LVL79:
+ 105:main.c        ****     UART_1_PutString(transmit_str);
+ 480              		.loc 1 105 0
+ 481 003c 01A8     		add	r0, sp, #4
+ 482 003e FFF7FEFF 		bl	UART_1_PutString
+ 483              	.LVL80:
+ 106:main.c        ****     CyDelay(100);
+ 484              		.loc 1 106 0
+ 485 0042 6420     		movs	r0, #100
+ 486 0044 FFF7FEFF 		bl	CyDelay
+ 487              	.LVL81:
+ 488              	.L33:
+ 489 0048 FEE7     		b	.L33
+ 490              	.L36:
+ 491 004a 00BFAFF3 		.align	3
+ 491      0080
+ 492              	.L35:
+ 493 0050 00000000 		.word	0
+ 494 0054 0088C840 		.word	1086883840
+ 495 0058 00000000 		.word	.LC0
+ 496              		.cfi_endproc
+ 497              	.LFE66:
+ 498              		.size	main, .-main
+ 499              		.comm	printstr,50,4
+ 500              		.global	data
+ 501              		.global	K_acceleration
+ 502              		.global	K_velocity
+ 503              		.global	K_offset
+ 504              		.global	min_interval
+ 505              		.global	a_max
+ 506              		.global	v_max
+ 507              		.global	V_max
+ 508              		.data
+ 509              		.align	3
+ 510              		.set	.LANCHOR0,. + 0
+ 511              		.type	K_velocity, %object
+ 512              		.size	K_velocity, 8
+ 513              	K_velocity:
+ 514 0000 E36BCF2C 		.word	751791075
+ 515 0004 09F01840 		.word	1075376137
+ 516              		.type	K_offset, %object
+ 517              		.size	K_offset, 8
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 12
+
+
+ 518              	K_offset:
+ 519 0008 00000000 		.word	0
+ 520 000c 00409F40 		.word	1084178432
+ 521              		.type	K_acceleration, %object
+ 522              		.size	K_acceleration, 8
+ 523              	K_acceleration:
+ 524 0010 A50F0297 		.word	-1761472603
+ 525 0014 6CE16E3F 		.word	1064231276
+ 526              		.type	a_max, %object
+ 527              		.size	a_max, 8
+ 528              	a_max:
+ 529 0018 00000000 		.word	0
+ 530 001c 004CDD40 		.word	1088244736
+ 531              		.type	min_interval, %object
+ 532              		.size	min_interval, 8
+ 533              	min_interval:
+ 534 0020 7B14AE47 		.word	1202590843
+ 535 0024 E17A843F 		.word	1065646817
+ 536              		.type	v_max, %object
+ 537              		.size	v_max, 8
+ 538              	v_max:
+ 539 0028 00000000 		.word	0
+ 540 002c 0054AF40 		.word	1085232128
+ 541              		.type	V_max, %object
+ 542              		.size	V_max, 8
+ 543              	V_max:
+ 544 0030 00000000 		.word	0
+ 545 0034 006AD840 		.word	1087924736
+ 546              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 547              		.align	2
+ 548              	.LC0:
+ 549 0000 0A25640A 		.ascii	"\012%d\012\000"
+ 549      00
+ 550              		.bss
+ 551              		.align	2
+ 552              		.set	.LANCHOR1,. + 0
+ 553              		.type	data, %object
+ 554              		.size	data, 4
+ 555              	data:
+ 556 0000 00000000 		.space	4
+ 557              		.text
+ 558              	.Letext0:
+ 559              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 560              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 561              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 562              		.file 5 "Generated_Source\\PSoC5/Motor_OUT1.h"
+ 563              		.file 6 "Generated_Source\\PSoC5/PWM_1.h"
+ 564              		.file 7 "Generated_Source\\PSoC5/QuadDec_1.h"
+ 565              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
+ 566              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 567              		.file 10 "Generated_Source\\PSoC5/UART_1.h"
+ 568              		.file 11 "Generated_Source\\PSoC5/Motor_OUT2.h"
+ 569              		.file 12 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4
+ 570              		.section	.debug_info,"",%progbits
+ 571              	.Ldebug_info0:
+ 572 0000 81040000 		.4byte	0x481
+ 573 0004 0400     		.2byte	0x4
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 13
+
+
+ 574 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 575 000a 04       		.byte	0x4
+ 576 000b 01       		.uleb128 0x1
+ 577 000c D5000000 		.4byte	.LASF48
+ 578 0010 0C       		.byte	0xc
+ 579 0011 9D020000 		.4byte	.LASF49
+ 580 0015 C3010000 		.4byte	.LASF50
+ 581 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 582 001d 00000000 		.4byte	0
+ 583 0021 00000000 		.4byte	.Ldebug_line0
+ 584 0025 02       		.uleb128 0x2
+ 585 0026 08       		.byte	0x8
+ 586 0027 04       		.byte	0x4
+ 587 0028 69000000 		.4byte	.LASF0
+ 588 002c 02       		.uleb128 0x2
+ 589 002d 01       		.byte	0x1
+ 590 002e 06       		.byte	0x6
+ 591 002f DC020000 		.4byte	.LASF1
+ 592 0033 02       		.uleb128 0x2
+ 593 0034 01       		.byte	0x1
+ 594 0035 08       		.byte	0x8
+ 595 0036 C7000000 		.4byte	.LASF2
+ 596 003a 02       		.uleb128 0x2
+ 597 003b 02       		.byte	0x2
+ 598 003c 05       		.byte	0x5
+ 599 003d C0020000 		.4byte	.LASF3
+ 600 0041 02       		.uleb128 0x2
+ 601 0042 02       		.byte	0x2
+ 602 0043 07       		.byte	0x7
+ 603 0044 51000000 		.4byte	.LASF4
+ 604 0048 03       		.uleb128 0x3
+ 605 0049 41000000 		.4byte	.LASF10
+ 606 004d 02       		.byte	0x2
+ 607 004e 3F       		.byte	0x3f
+ 608 004f 53000000 		.4byte	0x53
+ 609 0053 02       		.uleb128 0x2
+ 610 0054 04       		.byte	0x4
+ 611 0055 05       		.byte	0x5
+ 612 0056 CA020000 		.4byte	.LASF5
+ 613 005a 02       		.uleb128 0x2
+ 614 005b 04       		.byte	0x4
+ 615 005c 07       		.byte	0x7
+ 616 005d 6B010000 		.4byte	.LASF6
+ 617 0061 02       		.uleb128 0x2
+ 618 0062 08       		.byte	0x8
+ 619 0063 05       		.byte	0x5
+ 620 0064 8F020000 		.4byte	.LASF7
+ 621 0068 02       		.uleb128 0x2
+ 622 0069 08       		.byte	0x8
+ 623 006a 07       		.byte	0x7
+ 624 006b 33020000 		.4byte	.LASF8
+ 625 006f 04       		.uleb128 0x4
+ 626 0070 04       		.byte	0x4
+ 627 0071 05       		.byte	0x5
+ 628 0072 696E7400 		.ascii	"int\000"
+ 629 0076 02       		.uleb128 0x2
+ 630 0077 04       		.byte	0x4
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 14
+
+
+ 631 0078 07       		.byte	0x7
+ 632 0079 26020000 		.4byte	.LASF9
+ 633 007d 03       		.uleb128 0x3
+ 634 007e 63010000 		.4byte	.LASF11
+ 635 0082 03       		.byte	0x3
+ 636 0083 2C       		.byte	0x2c
+ 637 0084 48000000 		.4byte	0x48
+ 638 0088 02       		.uleb128 0x2
+ 639 0089 04       		.byte	0x4
+ 640 008a 04       		.byte	0x4
+ 641 008b A2000000 		.4byte	.LASF12
+ 642 008f 02       		.uleb128 0x2
+ 643 0090 01       		.byte	0x1
+ 644 0091 08       		.byte	0x8
+ 645 0092 A4020000 		.4byte	.LASF13
+ 646 0096 02       		.uleb128 0x2
+ 647 0097 08       		.byte	0x8
+ 648 0098 04       		.byte	0x4
+ 649 0099 67020000 		.4byte	.LASF14
+ 650 009d 02       		.uleb128 0x2
+ 651 009e 04       		.byte	0x4
+ 652 009f 07       		.byte	0x7
+ 653 00a0 73020000 		.4byte	.LASF15
+ 654 00a4 05       		.uleb128 0x5
+ 655 00a5 8A000000 		.4byte	.LASF18
+ 656 00a9 01       		.byte	0x1
+ 657 00aa 21       		.byte	0x21
+ 658 00ab 00000000 		.4byte	.LFB64
+ 659 00af 64000000 		.4byte	.LFE64-.LFB64
+ 660 00b3 01       		.uleb128 0x1
+ 661 00b4 9C       		.byte	0x9c
+ 662 00b5 3F010000 		.4byte	0x13f
+ 663 00b9 06       		.uleb128 0x6
+ 664 00ba D3020000 		.4byte	.LASF16
+ 665 00be 01       		.byte	0x1
+ 666 00bf 21       		.byte	0x21
+ 667 00c0 25000000 		.4byte	0x25
+ 668 00c4 00000000 		.4byte	.LLST0
+ 669 00c8 06       		.uleb128 0x6
+ 670 00c9 50020000 		.4byte	.LASF17
+ 671 00cd 01       		.byte	0x1
+ 672 00ce 21       		.byte	0x21
+ 673 00cf 25000000 		.4byte	0x25
+ 674 00d3 28000000 		.4byte	.LLST1
+ 675 00d7 07       		.uleb128 0x7
+ 676 00d8 5D020000 		.4byte	.LASF21
+ 677 00dc 01       		.byte	0x1
+ 678 00dd 29       		.byte	0x29
+ 679 00de 6F000000 		.4byte	0x6f
+ 680 00e2 50000000 		.4byte	.LLST2
+ 681 00e6 08       		.uleb128 0x8
+ 682 00e7 48000000 		.4byte	.LVL8
+ 683 00eb 0B040000 		.4byte	0x40b
+ 684 00ef 0E010000 		.4byte	0x10e
+ 685 00f3 09       		.uleb128 0x9
+ 686 00f4 01       		.uleb128 0x1
+ 687 00f5 50       		.byte	0x50
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 15
+
+
+ 688 00f6 16       		.uleb128 0x16
+ 689 00f7 31       		.byte	0x31
+ 690 00f8 30       		.byte	0x30
+ 691 00f9 74       		.byte	0x74
+ 692 00fa 00       		.sleb128 0
+ 693 00fb 74       		.byte	0x74
+ 694 00fc 00       		.sleb128 0
+ 695 00fd 30       		.byte	0x30
+ 696 00fe 2C       		.byte	0x2c
+ 697 00ff 28       		.byte	0x28
+ 698 0100 0100     		.2byte	0x1
+ 699 0102 16       		.byte	0x16
+ 700 0103 13       		.byte	0x13
+ 701 0104 74       		.byte	0x74
+ 702 0105 00       		.sleb128 0
+ 703 0106 30       		.byte	0x30
+ 704 0107 2B       		.byte	0x2b
+ 705 0108 28       		.byte	0x28
+ 706 0109 0100     		.2byte	0x1
+ 707 010b 16       		.byte	0x16
+ 708 010c 13       		.byte	0x13
+ 709 010d 00       		.byte	0
+ 710 010e 08       		.uleb128 0x8
+ 711 010f 4E000000 		.4byte	.LVL9
+ 712 0113 0B040000 		.4byte	0x40b
+ 713 0117 24010000 		.4byte	0x124
+ 714 011b 09       		.uleb128 0x9
+ 715 011c 01       		.uleb128 0x1
+ 716 011d 50       		.byte	0x50
+ 717 011e 04       		.uleb128 0x4
+ 718 011f 74       		.byte	0x74
+ 719 0120 00       		.sleb128 0
+ 720 0121 4F       		.byte	0x4f
+ 721 0122 25       		.byte	0x25
+ 722 0123 00       		.byte	0
+ 723 0124 0A       		.uleb128 0xa
+ 724 0125 5C000000 		.4byte	.LVL10
+ 725 0129 16040000 		.4byte	0x416
+ 726 012d 09       		.uleb128 0x9
+ 727 012e 01       		.uleb128 0x1
+ 728 012f 50       		.byte	0x50
+ 729 0130 0C       		.uleb128 0xc
+ 730 0131 74       		.byte	0x74
+ 731 0132 00       		.sleb128 0
+ 732 0133 4F       		.byte	0x4f
+ 733 0134 26       		.byte	0x26
+ 734 0135 74       		.byte	0x74
+ 735 0136 00       		.sleb128 0
+ 736 0137 27       		.byte	0x27
+ 737 0138 74       		.byte	0x74
+ 738 0139 00       		.sleb128 0
+ 739 013a 4F       		.byte	0x4f
+ 740 013b 26       		.byte	0x26
+ 741 013c 1C       		.byte	0x1c
+ 742 013d 00       		.byte	0
+ 743 013e 00       		.byte	0
+ 744 013f 05       		.uleb128 0x5
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 16
+
+
+ 745 0140 92010000 		.4byte	.LASF19
+ 746 0144 01       		.byte	0x1
+ 747 0145 2F       		.byte	0x2f
+ 748 0146 00000000 		.4byte	.LFB65
+ 749 014a F8010000 		.4byte	.LFE65-.LFB65
+ 750 014e 01       		.uleb128 0x1
+ 751 014f 9C       		.byte	0x9c
+ 752 0150 4A020000 		.4byte	0x24a
+ 753 0154 06       		.uleb128 0x6
+ 754 0155 A9020000 		.4byte	.LASF20
+ 755 0159 01       		.byte	0x1
+ 756 015a 2F       		.byte	0x2f
+ 757 015b 25000000 		.4byte	0x25
+ 758 015f 6E000000 		.4byte	.LLST3
+ 759 0163 0B       		.uleb128 0xb
+ 760 0164 746100   		.ascii	"ta\000"
+ 761 0167 01       		.byte	0x1
+ 762 0168 31       		.byte	0x31
+ 763 0169 25000000 		.4byte	0x25
+ 764 016d 96000000 		.4byte	.LLST4
+ 765 0171 0B       		.uleb128 0xb
+ 766 0172 5400     		.ascii	"T\000"
+ 767 0174 01       		.byte	0x1
+ 768 0175 32       		.byte	0x32
+ 769 0176 25000000 		.4byte	0x25
+ 770 017a E6000000 		.4byte	.LLST5
+ 771 017e 0B       		.uleb128 0xb
+ 772 017f 746300   		.ascii	"tc\000"
+ 773 0182 01       		.byte	0x1
+ 774 0183 33       		.byte	0x33
+ 775 0184 25000000 		.4byte	0x25
+ 776 0188 5A010000 		.4byte	.LLST6
+ 777 018c 07       		.uleb128 0x7
+ 778 018d 85000000 		.4byte	.LASF22
+ 779 0191 01       		.byte	0x1
+ 780 0192 34       		.byte	0x34
+ 781 0193 25000000 		.4byte	0x25
+ 782 0197 86010000 		.4byte	.LLST7
+ 783 019b 0B       		.uleb128 0xb
+ 784 019c 566D00   		.ascii	"Vm\000"
+ 785 019f 01       		.byte	0x1
+ 786 01a0 35       		.byte	0x35
+ 787 01a1 25000000 		.4byte	0x25
+ 788 01a5 BA010000 		.4byte	.LLST8
+ 789 01a9 07       		.uleb128 0x7
+ 790 01aa 28000000 		.4byte	.LASF23
+ 791 01ae 01       		.byte	0x1
+ 792 01af 36       		.byte	0x36
+ 793 01b0 6F000000 		.4byte	0x6f
+ 794 01b4 06020000 		.4byte	.LLST9
+ 795 01b8 0B       		.uleb128 0xb
+ 796 01b9 7400     		.ascii	"t\000"
+ 797 01bb 01       		.byte	0x1
+ 798 01bc 40       		.byte	0x40
+ 799 01bd 25000000 		.4byte	0x25
+ 800 01c1 24020000 		.4byte	.LLST10
+ 801 01c5 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 17
+
+
+ 802 01c6 89010000 		.4byte	.LASF24
+ 803 01ca 01       		.byte	0x1
+ 804 01cb 41       		.byte	0x41
+ 805 01cc 25000000 		.4byte	0x25
+ 806 01d0 08       		.byte	0x8
+ 807 01d1 00000000 		.4byte	0
+ 808 01d5 00000000 		.4byte	0
+ 809 01d9 0D       		.uleb128 0xd
+ 810 01da BC000000 		.4byte	.LBB2
+ 811 01de 24010000 		.4byte	.LBE2-.LBB2
+ 812 01e2 31020000 		.4byte	0x231
+ 813 01e6 0B       		.uleb128 0xb
+ 814 01e7 6900     		.ascii	"i\000"
+ 815 01e9 01       		.byte	0x1
+ 816 01ea 42       		.byte	0x42
+ 817 01eb 6F000000 		.4byte	0x6f
+ 818 01ef 60020000 		.4byte	.LLST11
+ 819 01f3 0E       		.uleb128 0xe
+ 820 01f4 DA000000 		.4byte	.LVL43
+ 821 01f8 21040000 		.4byte	0x421
+ 822 01fc 0E       		.uleb128 0xe
+ 823 01fd 06010000 		.4byte	.LVL46
+ 824 0201 A4000000 		.4byte	0xa4
+ 825 0205 0E       		.uleb128 0xe
+ 826 0206 4E010000 		.4byte	.LVL52
+ 827 020a A4000000 		.4byte	0xa4
+ 828 020e 0E       		.uleb128 0xe
+ 829 020f 78010000 		.4byte	.LVL56
+ 830 0213 A4000000 		.4byte	0xa4
+ 831 0217 0E       		.uleb128 0xe
+ 832 0218 BA010000 		.4byte	.LVL62
+ 833 021c A4000000 		.4byte	0xa4
+ 834 0220 0A       		.uleb128 0xa
+ 835 0221 C0010000 		.4byte	.LVL63
+ 836 0225 2C040000 		.4byte	0x42c
+ 837 0229 09       		.uleb128 0x9
+ 838 022a 01       		.uleb128 0x1
+ 839 022b 50       		.byte	0x50
+ 840 022c 02       		.uleb128 0x2
+ 841 022d 75       		.byte	0x75
+ 842 022e 00       		.sleb128 0
+ 843 022f 00       		.byte	0
+ 844 0230 00       		.byte	0
+ 845 0231 0E       		.uleb128 0xe
+ 846 0232 18000000 		.4byte	.LVL15
+ 847 0236 37040000 		.4byte	0x437
+ 848 023a 0A       		.uleb128 0xa
+ 849 023b E6010000 		.4byte	.LVL67
+ 850 023f 16040000 		.4byte	0x416
+ 851 0243 09       		.uleb128 0x9
+ 852 0244 01       		.uleb128 0x1
+ 853 0245 50       		.byte	0x50
+ 854 0246 01       		.uleb128 0x1
+ 855 0247 30       		.byte	0x30
+ 856 0248 00       		.byte	0
+ 857 0249 00       		.byte	0
+ 858 024a 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 18
+
+
+ 859 024b BE010000 		.4byte	.LASF51
+ 860 024f 01       		.byte	0x1
+ 861 0250 5A       		.byte	0x5a
+ 862 0251 6F000000 		.4byte	0x6f
+ 863 0255 00000000 		.4byte	.LFB66
+ 864 0259 5C000000 		.4byte	.LFE66-.LFB66
+ 865 025d 01       		.uleb128 0x1
+ 866 025e 9C       		.byte	0x9c
+ 867 025f 41030000 		.4byte	0x341
+ 868 0263 07       		.uleb128 0x7
+ 869 0264 A8000000 		.4byte	.LASF25
+ 870 0268 01       		.byte	0x1
+ 871 0269 66       		.byte	0x66
+ 872 026a 6F000000 		.4byte	0x6f
+ 873 026e 7F020000 		.4byte	.LLST12
+ 874 0272 10       		.uleb128 0x10
+ 875 0273 34000000 		.4byte	.LASF26
+ 876 0277 01       		.byte	0x1
+ 877 0278 67       		.byte	0x67
+ 878 0279 41030000 		.4byte	0x341
+ 879 027d 02       		.uleb128 0x2
+ 880 027e 91       		.byte	0x91
+ 881 027f 64       		.sleb128 -28
+ 882 0280 0E       		.uleb128 0xe
+ 883 0281 0A000000 		.4byte	.LVL70
+ 884 0285 42040000 		.4byte	0x442
+ 885 0289 0E       		.uleb128 0xe
+ 886 028a 0E000000 		.4byte	.LVL71
+ 887 028e 4D040000 		.4byte	0x44d
+ 888 0292 0E       		.uleb128 0xe
+ 889 0293 12000000 		.4byte	.LVL72
+ 890 0297 58040000 		.4byte	0x458
+ 891 029b 08       		.uleb128 0x8
+ 892 029c 18000000 		.4byte	.LVL73
+ 893 02a0 0B040000 		.4byte	0x40b
+ 894 02a4 AE020000 		.4byte	0x2ae
+ 895 02a8 09       		.uleb128 0x9
+ 896 02a9 01       		.uleb128 0x1
+ 897 02aa 50       		.byte	0x50
+ 898 02ab 01       		.uleb128 0x1
+ 899 02ac 30       		.byte	0x30
+ 900 02ad 00       		.byte	0
+ 901 02ae 08       		.uleb128 0x8
+ 902 02af 1E000000 		.4byte	.LVL74
+ 903 02b3 63040000 		.4byte	0x463
+ 904 02b7 C1020000 		.4byte	0x2c1
+ 905 02bb 09       		.uleb128 0x9
+ 906 02bc 01       		.uleb128 0x1
+ 907 02bd 50       		.byte	0x50
+ 908 02be 01       		.uleb128 0x1
+ 909 02bf 31       		.byte	0x31
+ 910 02c0 00       		.byte	0
+ 911 02c1 08       		.uleb128 0x8
+ 912 02c2 24000000 		.4byte	.LVL75
+ 913 02c6 16040000 		.4byte	0x416
+ 914 02ca D4020000 		.4byte	0x2d4
+ 915 02ce 09       		.uleb128 0x9
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 19
+
+
+ 916 02cf 01       		.uleb128 0x1
+ 917 02d0 50       		.byte	0x50
+ 918 02d1 01       		.uleb128 0x1
+ 919 02d2 30       		.byte	0x30
+ 920 02d3 00       		.byte	0
+ 921 02d4 08       		.uleb128 0x8
+ 922 02d5 2E000000 		.4byte	.LVL76
+ 923 02d9 3F010000 		.4byte	0x13f
+ 924 02dd F6020000 		.4byte	0x2f6
+ 925 02e1 09       		.uleb128 0x9
+ 926 02e2 06       		.uleb128 0x6
+ 927 02e3 50       		.byte	0x50
+ 928 02e4 93       		.byte	0x93
+ 929 02e5 04       		.uleb128 0x4
+ 930 02e6 51       		.byte	0x51
+ 931 02e7 93       		.byte	0x93
+ 932 02e8 04       		.uleb128 0x4
+ 933 02e9 0B       		.uleb128 0xb
+ 934 02ea F4       		.byte	0xf4
+ 935 02eb 25       		.uleb128 0x25
+ 936 02ec 08       		.byte	0x8
+ 937 02ed 00000000 		.4byte	0
+ 938 02f1 0088C840 		.4byte	0x40c88800
+ 939 02f5 00       		.byte	0
+ 940 02f6 0E       		.uleb128 0xe
+ 941 02f7 32000000 		.4byte	.LVL77
+ 942 02fb 21040000 		.4byte	0x421
+ 943 02ff 08       		.uleb128 0x8
+ 944 0300 3C000000 		.4byte	.LVL79
+ 945 0304 6E040000 		.4byte	0x46e
+ 946 0308 1C030000 		.4byte	0x31c
+ 947 030c 09       		.uleb128 0x9
+ 948 030d 01       		.uleb128 0x1
+ 949 030e 50       		.byte	0x50
+ 950 030f 02       		.uleb128 0x2
+ 951 0310 91       		.byte	0x91
+ 952 0311 64       		.sleb128 -28
+ 953 0312 09       		.uleb128 0x9
+ 954 0313 01       		.uleb128 0x1
+ 955 0314 51       		.byte	0x51
+ 956 0315 05       		.uleb128 0x5
+ 957 0316 03       		.byte	0x3
+ 958 0317 00000000 		.4byte	.LC0
+ 959 031b 00       		.byte	0
+ 960 031c 08       		.uleb128 0x8
+ 961 031d 42000000 		.4byte	.LVL80
+ 962 0321 79040000 		.4byte	0x479
+ 963 0325 30030000 		.4byte	0x330
+ 964 0329 09       		.uleb128 0x9
+ 965 032a 01       		.uleb128 0x1
+ 966 032b 50       		.byte	0x50
+ 967 032c 02       		.uleb128 0x2
+ 968 032d 91       		.byte	0x91
+ 969 032e 64       		.sleb128 -28
+ 970 032f 00       		.byte	0
+ 971 0330 0A       		.uleb128 0xa
+ 972 0331 48000000 		.4byte	.LVL81
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 20
+
+
+ 973 0335 2C040000 		.4byte	0x42c
+ 974 0339 09       		.uleb128 0x9
+ 975 033a 01       		.uleb128 0x1
+ 976 033b 50       		.byte	0x50
+ 977 033c 02       		.uleb128 0x2
+ 978 033d 08       		.byte	0x8
+ 979 033e 64       		.byte	0x64
+ 980 033f 00       		.byte	0
+ 981 0340 00       		.byte	0
+ 982 0341 11       		.uleb128 0x11
+ 983 0342 8F000000 		.4byte	0x8f
+ 984 0346 51030000 		.4byte	0x351
+ 985 034a 12       		.uleb128 0x12
+ 986 034b 9D000000 		.4byte	0x9d
+ 987 034f 13       		.byte	0x13
+ 988 0350 00       		.byte	0
+ 989 0351 13       		.uleb128 0x13
+ 990 0352 A8010000 		.4byte	.LASF27
+ 991 0356 04       		.byte	0x4
+ 992 0357 1207     		.2byte	0x712
+ 993 0359 5D030000 		.4byte	0x35d
+ 994 035d 14       		.uleb128 0x14
+ 995 035e 7D000000 		.4byte	0x7d
+ 996 0362 15       		.uleb128 0x15
+ 997 0363 4B000000 		.4byte	.LASF28
+ 998 0367 01       		.byte	0x1
+ 999 0368 12       		.byte	0x12
+ 1000 0369 25000000 		.4byte	0x25
+ 1001 036d 05       		.uleb128 0x5
+ 1002 036e 03       		.byte	0x3
+ 1003 036f 00000000 		.4byte	V_max
+ 1004 0373 15       		.uleb128 0x15
+ 1005 0374 4A020000 		.4byte	.LASF29
+ 1006 0378 01       		.byte	0x1
+ 1007 0379 13       		.byte	0x13
+ 1008 037a 25000000 		.4byte	0x25
+ 1009 037e 05       		.uleb128 0x5
+ 1010 037f 03       		.byte	0x3
+ 1011 0380 00000000 		.4byte	v_max
+ 1012 0384 15       		.uleb128 0x15
+ 1013 0385 B0000000 		.4byte	.LASF30
+ 1014 0389 01       		.byte	0x1
+ 1015 038a 14       		.byte	0x14
+ 1016 038b 25000000 		.4byte	0x25
+ 1017 038f 05       		.uleb128 0x5
+ 1018 0390 03       		.byte	0x3
+ 1019 0391 00000000 		.4byte	a_max
+ 1020 0395 15       		.uleb128 0x15
+ 1021 0396 E8020000 		.4byte	.LASF31
+ 1022 039a 01       		.byte	0x1
+ 1023 039b 15       		.byte	0x15
+ 1024 039c 25000000 		.4byte	0x25
+ 1025 03a0 05       		.uleb128 0x5
+ 1026 03a1 03       		.byte	0x3
+ 1027 03a2 00000000 		.4byte	min_interval
+ 1028 03a6 15       		.uleb128 0x15
+ 1029 03a7 B5010000 		.4byte	.LASF32
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 21
+
+
+ 1030 03ab 01       		.byte	0x1
+ 1031 03ac 16       		.byte	0x16
+ 1032 03ad 25000000 		.4byte	0x25
+ 1033 03b1 05       		.uleb128 0x5
+ 1034 03b2 03       		.byte	0x3
+ 1035 03b3 00000000 		.4byte	K_offset
+ 1036 03b7 15       		.uleb128 0x15
+ 1037 03b8 97000000 		.4byte	.LASF33
+ 1038 03bc 01       		.byte	0x1
+ 1039 03bd 17       		.byte	0x17
+ 1040 03be 25000000 		.4byte	0x25
+ 1041 03c2 05       		.uleb128 0x5
+ 1042 03c3 03       		.byte	0x3
+ 1043 03c4 00000000 		.4byte	K_velocity
+ 1044 03c8 15       		.uleb128 0x15
+ 1045 03c9 19000000 		.4byte	.LASF34
+ 1046 03cd 01       		.byte	0x1
+ 1047 03ce 18       		.byte	0x18
+ 1048 03cf 25000000 		.4byte	0x25
+ 1049 03d3 05       		.uleb128 0x5
+ 1050 03d4 03       		.byte	0x3
+ 1051 03d5 00000000 		.4byte	K_acceleration
+ 1052 03d9 15       		.uleb128 0x15
+ 1053 03da 64000000 		.4byte	.LASF35
+ 1054 03de 01       		.byte	0x1
+ 1055 03df 1E       		.byte	0x1e
+ 1056 03e0 6F000000 		.4byte	0x6f
+ 1057 03e4 05       		.uleb128 0x5
+ 1058 03e5 03       		.byte	0x3
+ 1059 03e6 00000000 		.4byte	data
+ 1060 03ea 11       		.uleb128 0x11
+ 1061 03eb 8F000000 		.4byte	0x8f
+ 1062 03ef FA030000 		.4byte	0x3fa
+ 1063 03f3 12       		.uleb128 0x12
+ 1064 03f4 9D000000 		.4byte	0x9d
+ 1065 03f8 31       		.byte	0x31
+ 1066 03f9 00       		.byte	0
+ 1067 03fa 15       		.uleb128 0x15
+ 1068 03fb 00000000 		.4byte	.LASF36
+ 1069 03ff 01       		.byte	0x1
+ 1070 0400 1F       		.byte	0x1f
+ 1071 0401 EA030000 		.4byte	0x3ea
+ 1072 0405 05       		.uleb128 0x5
+ 1073 0406 03       		.byte	0x3
+ 1074 0407 00000000 		.4byte	printstr
+ 1075 040b 16       		.uleb128 0x16
+ 1076 040c AF020000 		.4byte	.LASF37
+ 1077 0410 AF020000 		.4byte	.LASF37
+ 1078 0414 05       		.byte	0x5
+ 1079 0415 26       		.byte	0x26
+ 1080 0416 16       		.uleb128 0x16
+ 1081 0417 7C020000 		.4byte	.LASF38
+ 1082 041b 7C020000 		.4byte	.LASF38
+ 1083 041f 06       		.byte	0x6
+ 1084 0420 C3       		.byte	0xc3
+ 1085 0421 16       		.uleb128 0x16
+ 1086 0422 70000000 		.4byte	.LASF39
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 22
+
+
+ 1087 0426 70000000 		.4byte	.LASF39
+ 1088 042a 07       		.byte	0x7
+ 1089 042b 4E       		.byte	0x4e
+ 1090 042c 16       		.uleb128 0x16
+ 1091 042d 0E030000 		.4byte	.LASF40
+ 1092 0431 0E030000 		.4byte	.LASF40
+ 1093 0435 08       		.byte	0x8
+ 1094 0436 76       		.byte	0x76
+ 1095 0437 16       		.uleb128 0x16
+ 1096 0438 16030000 		.4byte	.LASF41
+ 1097 043c 16030000 		.4byte	.LASF41
+ 1098 0440 09       		.byte	0x9
+ 1099 0441 87       		.byte	0x87
+ 1100 0442 16       		.uleb128 0x16
+ 1101 0443 09000000 		.4byte	.LASF42
+ 1102 0447 09000000 		.4byte	.LASF42
+ 1103 044b 07       		.byte	0x7
+ 1104 044c 48       		.byte	0x48
+ 1105 044d 16       		.uleb128 0x16
+ 1106 044e 7D010000 		.4byte	.LASF43
+ 1107 0452 7D010000 		.4byte	.LASF43
+ 1108 0456 06       		.byte	0x6
+ 1109 0457 92       		.byte	0x92
+ 1110 0458 16       		.uleb128 0x16
+ 1111 0459 1B030000 		.4byte	.LASF44
+ 1112 045d 1B030000 		.4byte	.LASF44
+ 1113 0461 0A       		.byte	0xa
+ 1114 0462 54       		.byte	0x54
+ 1115 0463 16       		.uleb128 0x16
+ 1116 0464 B6000000 		.4byte	.LASF45
+ 1117 0468 B6000000 		.4byte	.LASF45
+ 1118 046c 0B       		.byte	0xb
+ 1119 046d 26       		.byte	0x26
+ 1120 046e 16       		.uleb128 0x16
+ 1121 046f 06030000 		.4byte	.LASF46
+ 1122 0473 06030000 		.4byte	.LASF46
+ 1123 0477 0C       		.byte	0xc
+ 1124 0478 E7       		.byte	0xe7
+ 1125 0479 16       		.uleb128 0x16
+ 1126 047a F5020000 		.4byte	.LASF47
+ 1127 047e F5020000 		.4byte	.LASF47
+ 1128 0482 0A       		.byte	0xa
+ 1129 0483 8B       		.byte	0x8b
+ 1130 0484 00       		.byte	0
+ 1131              		.section	.debug_abbrev,"",%progbits
+ 1132              	.Ldebug_abbrev0:
+ 1133 0000 01       		.uleb128 0x1
+ 1134 0001 11       		.uleb128 0x11
+ 1135 0002 01       		.byte	0x1
+ 1136 0003 25       		.uleb128 0x25
+ 1137 0004 0E       		.uleb128 0xe
+ 1138 0005 13       		.uleb128 0x13
+ 1139 0006 0B       		.uleb128 0xb
+ 1140 0007 03       		.uleb128 0x3
+ 1141 0008 0E       		.uleb128 0xe
+ 1142 0009 1B       		.uleb128 0x1b
+ 1143 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 23
+
+
+ 1144 000b 55       		.uleb128 0x55
+ 1145 000c 17       		.uleb128 0x17
+ 1146 000d 11       		.uleb128 0x11
+ 1147 000e 01       		.uleb128 0x1
+ 1148 000f 10       		.uleb128 0x10
+ 1149 0010 17       		.uleb128 0x17
+ 1150 0011 00       		.byte	0
+ 1151 0012 00       		.byte	0
+ 1152 0013 02       		.uleb128 0x2
+ 1153 0014 24       		.uleb128 0x24
+ 1154 0015 00       		.byte	0
+ 1155 0016 0B       		.uleb128 0xb
+ 1156 0017 0B       		.uleb128 0xb
+ 1157 0018 3E       		.uleb128 0x3e
+ 1158 0019 0B       		.uleb128 0xb
+ 1159 001a 03       		.uleb128 0x3
+ 1160 001b 0E       		.uleb128 0xe
+ 1161 001c 00       		.byte	0
+ 1162 001d 00       		.byte	0
+ 1163 001e 03       		.uleb128 0x3
+ 1164 001f 16       		.uleb128 0x16
+ 1165 0020 00       		.byte	0
+ 1166 0021 03       		.uleb128 0x3
+ 1167 0022 0E       		.uleb128 0xe
+ 1168 0023 3A       		.uleb128 0x3a
+ 1169 0024 0B       		.uleb128 0xb
+ 1170 0025 3B       		.uleb128 0x3b
+ 1171 0026 0B       		.uleb128 0xb
+ 1172 0027 49       		.uleb128 0x49
+ 1173 0028 13       		.uleb128 0x13
+ 1174 0029 00       		.byte	0
+ 1175 002a 00       		.byte	0
+ 1176 002b 04       		.uleb128 0x4
+ 1177 002c 24       		.uleb128 0x24
+ 1178 002d 00       		.byte	0
+ 1179 002e 0B       		.uleb128 0xb
+ 1180 002f 0B       		.uleb128 0xb
+ 1181 0030 3E       		.uleb128 0x3e
+ 1182 0031 0B       		.uleb128 0xb
+ 1183 0032 03       		.uleb128 0x3
+ 1184 0033 08       		.uleb128 0x8
+ 1185 0034 00       		.byte	0
+ 1186 0035 00       		.byte	0
+ 1187 0036 05       		.uleb128 0x5
+ 1188 0037 2E       		.uleb128 0x2e
+ 1189 0038 01       		.byte	0x1
+ 1190 0039 3F       		.uleb128 0x3f
+ 1191 003a 19       		.uleb128 0x19
+ 1192 003b 03       		.uleb128 0x3
+ 1193 003c 0E       		.uleb128 0xe
+ 1194 003d 3A       		.uleb128 0x3a
+ 1195 003e 0B       		.uleb128 0xb
+ 1196 003f 3B       		.uleb128 0x3b
+ 1197 0040 0B       		.uleb128 0xb
+ 1198 0041 27       		.uleb128 0x27
+ 1199 0042 19       		.uleb128 0x19
+ 1200 0043 11       		.uleb128 0x11
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 24
+
+
+ 1201 0044 01       		.uleb128 0x1
+ 1202 0045 12       		.uleb128 0x12
+ 1203 0046 06       		.uleb128 0x6
+ 1204 0047 40       		.uleb128 0x40
+ 1205 0048 18       		.uleb128 0x18
+ 1206 0049 9642     		.uleb128 0x2116
+ 1207 004b 19       		.uleb128 0x19
+ 1208 004c 01       		.uleb128 0x1
+ 1209 004d 13       		.uleb128 0x13
+ 1210 004e 00       		.byte	0
+ 1211 004f 00       		.byte	0
+ 1212 0050 06       		.uleb128 0x6
+ 1213 0051 05       		.uleb128 0x5
+ 1214 0052 00       		.byte	0
+ 1215 0053 03       		.uleb128 0x3
+ 1216 0054 0E       		.uleb128 0xe
+ 1217 0055 3A       		.uleb128 0x3a
+ 1218 0056 0B       		.uleb128 0xb
+ 1219 0057 3B       		.uleb128 0x3b
+ 1220 0058 0B       		.uleb128 0xb
+ 1221 0059 49       		.uleb128 0x49
+ 1222 005a 13       		.uleb128 0x13
+ 1223 005b 02       		.uleb128 0x2
+ 1224 005c 17       		.uleb128 0x17
+ 1225 005d 00       		.byte	0
+ 1226 005e 00       		.byte	0
+ 1227 005f 07       		.uleb128 0x7
+ 1228 0060 34       		.uleb128 0x34
+ 1229 0061 00       		.byte	0
+ 1230 0062 03       		.uleb128 0x3
+ 1231 0063 0E       		.uleb128 0xe
+ 1232 0064 3A       		.uleb128 0x3a
+ 1233 0065 0B       		.uleb128 0xb
+ 1234 0066 3B       		.uleb128 0x3b
+ 1235 0067 0B       		.uleb128 0xb
+ 1236 0068 49       		.uleb128 0x49
+ 1237 0069 13       		.uleb128 0x13
+ 1238 006a 02       		.uleb128 0x2
+ 1239 006b 17       		.uleb128 0x17
+ 1240 006c 00       		.byte	0
+ 1241 006d 00       		.byte	0
+ 1242 006e 08       		.uleb128 0x8
+ 1243 006f 898201   		.uleb128 0x4109
+ 1244 0072 01       		.byte	0x1
+ 1245 0073 11       		.uleb128 0x11
+ 1246 0074 01       		.uleb128 0x1
+ 1247 0075 31       		.uleb128 0x31
+ 1248 0076 13       		.uleb128 0x13
+ 1249 0077 01       		.uleb128 0x1
+ 1250 0078 13       		.uleb128 0x13
+ 1251 0079 00       		.byte	0
+ 1252 007a 00       		.byte	0
+ 1253 007b 09       		.uleb128 0x9
+ 1254 007c 8A8201   		.uleb128 0x410a
+ 1255 007f 00       		.byte	0
+ 1256 0080 02       		.uleb128 0x2
+ 1257 0081 18       		.uleb128 0x18
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 25
+
+
+ 1258 0082 9142     		.uleb128 0x2111
+ 1259 0084 18       		.uleb128 0x18
+ 1260 0085 00       		.byte	0
+ 1261 0086 00       		.byte	0
+ 1262 0087 0A       		.uleb128 0xa
+ 1263 0088 898201   		.uleb128 0x4109
+ 1264 008b 01       		.byte	0x1
+ 1265 008c 11       		.uleb128 0x11
+ 1266 008d 01       		.uleb128 0x1
+ 1267 008e 31       		.uleb128 0x31
+ 1268 008f 13       		.uleb128 0x13
+ 1269 0090 00       		.byte	0
+ 1270 0091 00       		.byte	0
+ 1271 0092 0B       		.uleb128 0xb
+ 1272 0093 34       		.uleb128 0x34
+ 1273 0094 00       		.byte	0
+ 1274 0095 03       		.uleb128 0x3
+ 1275 0096 08       		.uleb128 0x8
+ 1276 0097 3A       		.uleb128 0x3a
+ 1277 0098 0B       		.uleb128 0xb
+ 1278 0099 3B       		.uleb128 0x3b
+ 1279 009a 0B       		.uleb128 0xb
+ 1280 009b 49       		.uleb128 0x49
+ 1281 009c 13       		.uleb128 0x13
+ 1282 009d 02       		.uleb128 0x2
+ 1283 009e 17       		.uleb128 0x17
+ 1284 009f 00       		.byte	0
+ 1285 00a0 00       		.byte	0
+ 1286 00a1 0C       		.uleb128 0xc
+ 1287 00a2 34       		.uleb128 0x34
+ 1288 00a3 00       		.byte	0
+ 1289 00a4 03       		.uleb128 0x3
+ 1290 00a5 0E       		.uleb128 0xe
+ 1291 00a6 3A       		.uleb128 0x3a
+ 1292 00a7 0B       		.uleb128 0xb
+ 1293 00a8 3B       		.uleb128 0x3b
+ 1294 00a9 0B       		.uleb128 0xb
+ 1295 00aa 49       		.uleb128 0x49
+ 1296 00ab 13       		.uleb128 0x13
+ 1297 00ac 1C       		.uleb128 0x1c
+ 1298 00ad 0A       		.uleb128 0xa
+ 1299 00ae 00       		.byte	0
+ 1300 00af 00       		.byte	0
+ 1301 00b0 0D       		.uleb128 0xd
+ 1302 00b1 0B       		.uleb128 0xb
+ 1303 00b2 01       		.byte	0x1
+ 1304 00b3 11       		.uleb128 0x11
+ 1305 00b4 01       		.uleb128 0x1
+ 1306 00b5 12       		.uleb128 0x12
+ 1307 00b6 06       		.uleb128 0x6
+ 1308 00b7 01       		.uleb128 0x1
+ 1309 00b8 13       		.uleb128 0x13
+ 1310 00b9 00       		.byte	0
+ 1311 00ba 00       		.byte	0
+ 1312 00bb 0E       		.uleb128 0xe
+ 1313 00bc 898201   		.uleb128 0x4109
+ 1314 00bf 00       		.byte	0
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 26
+
+
+ 1315 00c0 11       		.uleb128 0x11
+ 1316 00c1 01       		.uleb128 0x1
+ 1317 00c2 31       		.uleb128 0x31
+ 1318 00c3 13       		.uleb128 0x13
+ 1319 00c4 00       		.byte	0
+ 1320 00c5 00       		.byte	0
+ 1321 00c6 0F       		.uleb128 0xf
+ 1322 00c7 2E       		.uleb128 0x2e
+ 1323 00c8 01       		.byte	0x1
+ 1324 00c9 3F       		.uleb128 0x3f
+ 1325 00ca 19       		.uleb128 0x19
+ 1326 00cb 03       		.uleb128 0x3
+ 1327 00cc 0E       		.uleb128 0xe
+ 1328 00cd 3A       		.uleb128 0x3a
+ 1329 00ce 0B       		.uleb128 0xb
+ 1330 00cf 3B       		.uleb128 0x3b
+ 1331 00d0 0B       		.uleb128 0xb
+ 1332 00d1 27       		.uleb128 0x27
+ 1333 00d2 19       		.uleb128 0x19
+ 1334 00d3 49       		.uleb128 0x49
+ 1335 00d4 13       		.uleb128 0x13
+ 1336 00d5 8701     		.uleb128 0x87
+ 1337 00d7 19       		.uleb128 0x19
+ 1338 00d8 11       		.uleb128 0x11
+ 1339 00d9 01       		.uleb128 0x1
+ 1340 00da 12       		.uleb128 0x12
+ 1341 00db 06       		.uleb128 0x6
+ 1342 00dc 40       		.uleb128 0x40
+ 1343 00dd 18       		.uleb128 0x18
+ 1344 00de 9742     		.uleb128 0x2117
+ 1345 00e0 19       		.uleb128 0x19
+ 1346 00e1 01       		.uleb128 0x1
+ 1347 00e2 13       		.uleb128 0x13
+ 1348 00e3 00       		.byte	0
+ 1349 00e4 00       		.byte	0
+ 1350 00e5 10       		.uleb128 0x10
+ 1351 00e6 34       		.uleb128 0x34
+ 1352 00e7 00       		.byte	0
+ 1353 00e8 03       		.uleb128 0x3
+ 1354 00e9 0E       		.uleb128 0xe
+ 1355 00ea 3A       		.uleb128 0x3a
+ 1356 00eb 0B       		.uleb128 0xb
+ 1357 00ec 3B       		.uleb128 0x3b
+ 1358 00ed 0B       		.uleb128 0xb
+ 1359 00ee 49       		.uleb128 0x49
+ 1360 00ef 13       		.uleb128 0x13
+ 1361 00f0 02       		.uleb128 0x2
+ 1362 00f1 18       		.uleb128 0x18
+ 1363 00f2 00       		.byte	0
+ 1364 00f3 00       		.byte	0
+ 1365 00f4 11       		.uleb128 0x11
+ 1366 00f5 01       		.uleb128 0x1
+ 1367 00f6 01       		.byte	0x1
+ 1368 00f7 49       		.uleb128 0x49
+ 1369 00f8 13       		.uleb128 0x13
+ 1370 00f9 01       		.uleb128 0x1
+ 1371 00fa 13       		.uleb128 0x13
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 27
+
+
+ 1372 00fb 00       		.byte	0
+ 1373 00fc 00       		.byte	0
+ 1374 00fd 12       		.uleb128 0x12
+ 1375 00fe 21       		.uleb128 0x21
+ 1376 00ff 00       		.byte	0
+ 1377 0100 49       		.uleb128 0x49
+ 1378 0101 13       		.uleb128 0x13
+ 1379 0102 2F       		.uleb128 0x2f
+ 1380 0103 0B       		.uleb128 0xb
+ 1381 0104 00       		.byte	0
+ 1382 0105 00       		.byte	0
+ 1383 0106 13       		.uleb128 0x13
+ 1384 0107 34       		.uleb128 0x34
+ 1385 0108 00       		.byte	0
+ 1386 0109 03       		.uleb128 0x3
+ 1387 010a 0E       		.uleb128 0xe
+ 1388 010b 3A       		.uleb128 0x3a
+ 1389 010c 0B       		.uleb128 0xb
+ 1390 010d 3B       		.uleb128 0x3b
+ 1391 010e 05       		.uleb128 0x5
+ 1392 010f 49       		.uleb128 0x49
+ 1393 0110 13       		.uleb128 0x13
+ 1394 0111 3F       		.uleb128 0x3f
+ 1395 0112 19       		.uleb128 0x19
+ 1396 0113 3C       		.uleb128 0x3c
+ 1397 0114 19       		.uleb128 0x19
+ 1398 0115 00       		.byte	0
+ 1399 0116 00       		.byte	0
+ 1400 0117 14       		.uleb128 0x14
+ 1401 0118 35       		.uleb128 0x35
+ 1402 0119 00       		.byte	0
+ 1403 011a 49       		.uleb128 0x49
+ 1404 011b 13       		.uleb128 0x13
+ 1405 011c 00       		.byte	0
+ 1406 011d 00       		.byte	0
+ 1407 011e 15       		.uleb128 0x15
+ 1408 011f 34       		.uleb128 0x34
+ 1409 0120 00       		.byte	0
+ 1410 0121 03       		.uleb128 0x3
+ 1411 0122 0E       		.uleb128 0xe
+ 1412 0123 3A       		.uleb128 0x3a
+ 1413 0124 0B       		.uleb128 0xb
+ 1414 0125 3B       		.uleb128 0x3b
+ 1415 0126 0B       		.uleb128 0xb
+ 1416 0127 49       		.uleb128 0x49
+ 1417 0128 13       		.uleb128 0x13
+ 1418 0129 3F       		.uleb128 0x3f
+ 1419 012a 19       		.uleb128 0x19
+ 1420 012b 02       		.uleb128 0x2
+ 1421 012c 18       		.uleb128 0x18
+ 1422 012d 00       		.byte	0
+ 1423 012e 00       		.byte	0
+ 1424 012f 16       		.uleb128 0x16
+ 1425 0130 2E       		.uleb128 0x2e
+ 1426 0131 00       		.byte	0
+ 1427 0132 3F       		.uleb128 0x3f
+ 1428 0133 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 28
+
+
+ 1429 0134 3C       		.uleb128 0x3c
+ 1430 0135 19       		.uleb128 0x19
+ 1431 0136 6E       		.uleb128 0x6e
+ 1432 0137 0E       		.uleb128 0xe
+ 1433 0138 03       		.uleb128 0x3
+ 1434 0139 0E       		.uleb128 0xe
+ 1435 013a 3A       		.uleb128 0x3a
+ 1436 013b 0B       		.uleb128 0xb
+ 1437 013c 3B       		.uleb128 0x3b
+ 1438 013d 0B       		.uleb128 0xb
+ 1439 013e 00       		.byte	0
+ 1440 013f 00       		.byte	0
+ 1441 0140 00       		.byte	0
+ 1442              		.section	.debug_loc,"",%progbits
+ 1443              	.Ldebug_loc0:
+ 1444              	.LLST0:
+ 1445 0000 00000000 		.4byte	.LVL0
+ 1446 0004 11000000 		.4byte	.LVL2-1
+ 1447 0008 0600     		.2byte	0x6
+ 1448 000a 50       		.byte	0x50
+ 1449 000b 93       		.byte	0x93
+ 1450 000c 04       		.uleb128 0x4
+ 1451 000d 51       		.byte	0x51
+ 1452 000e 93       		.byte	0x93
+ 1453 000f 04       		.uleb128 0x4
+ 1454 0010 11000000 		.4byte	.LVL2-1
+ 1455 0014 64000000 		.4byte	.LFE64
+ 1456 0018 0600     		.2byte	0x6
+ 1457 001a F3       		.byte	0xf3
+ 1458 001b 03       		.uleb128 0x3
+ 1459 001c F5       		.byte	0xf5
+ 1460 001d 00       		.uleb128 0
+ 1461 001e 25       		.uleb128 0x25
+ 1462 001f 9F       		.byte	0x9f
+ 1463 0020 00000000 		.4byte	0
+ 1464 0024 00000000 		.4byte	0
+ 1465              	.LLST1:
+ 1466 0028 00000000 		.4byte	.LVL0
+ 1467 002c 0E000000 		.4byte	.LVL1
+ 1468 0030 0600     		.2byte	0x6
+ 1469 0032 52       		.byte	0x52
+ 1470 0033 93       		.byte	0x93
+ 1471 0034 04       		.uleb128 0x4
+ 1472 0035 53       		.byte	0x53
+ 1473 0036 93       		.byte	0x93
+ 1474 0037 04       		.uleb128 0x4
+ 1475 0038 0E000000 		.4byte	.LVL1
+ 1476 003c 64000000 		.4byte	.LFE64
+ 1477 0040 0600     		.2byte	0x6
+ 1478 0042 F3       		.byte	0xf3
+ 1479 0043 03       		.uleb128 0x3
+ 1480 0044 F5       		.byte	0xf5
+ 1481 0045 02       		.uleb128 0x2
+ 1482 0046 25       		.uleb128 0x25
+ 1483 0047 9F       		.byte	0x9f
+ 1484 0048 00000000 		.4byte	0
+ 1485 004c 00000000 		.4byte	0
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 29
+
+
+ 1486              	.LLST2:
+ 1487 0050 3A000000 		.4byte	.LVL6
+ 1488 0054 42000000 		.4byte	.LVL7
+ 1489 0058 0100     		.2byte	0x1
+ 1490 005a 50       		.byte	0x50
+ 1491 005b 42000000 		.4byte	.LVL7
+ 1492 005f 60000000 		.4byte	.LVL11
+ 1493 0063 0100     		.2byte	0x1
+ 1494 0065 54       		.byte	0x54
+ 1495 0066 00000000 		.4byte	0
+ 1496 006a 00000000 		.4byte	0
+ 1497              	.LLST3:
+ 1498 006e 00000000 		.4byte	.LVL12
+ 1499 0072 13000000 		.4byte	.LVL14-1
+ 1500 0076 0600     		.2byte	0x6
+ 1501 0078 50       		.byte	0x50
+ 1502 0079 93       		.byte	0x93
+ 1503 007a 04       		.uleb128 0x4
+ 1504 007b 51       		.byte	0x51
+ 1505 007c 93       		.byte	0x93
+ 1506 007d 04       		.uleb128 0x4
+ 1507 007e 13000000 		.4byte	.LVL14-1
+ 1508 0082 F8010000 		.4byte	.LFE65
+ 1509 0086 0600     		.2byte	0x6
+ 1510 0088 F3       		.byte	0xf3
+ 1511 0089 03       		.uleb128 0x3
+ 1512 008a F5       		.byte	0xf5
+ 1513 008b 00       		.uleb128 0
+ 1514 008c 25       		.uleb128 0x25
+ 1515 008d 9F       		.byte	0x9f
+ 1516 008e 00000000 		.4byte	0
+ 1517 0092 00000000 		.4byte	0
+ 1518              	.LLST4:
+ 1519 0096 0A000000 		.4byte	.LVL13
+ 1520 009a 54000000 		.4byte	.LVL24
+ 1521 009e 0A00     		.2byte	0xa
+ 1522 00a0 9E       		.byte	0x9e
+ 1523 00a1 08       		.uleb128 0x8
+ 1524 00a2 00000000 		.4byte	0
+ 1525 00a6 00000000 		.4byte	0
+ 1526 00aa 54000000 		.4byte	.LVL24
+ 1527 00ae 6A000000 		.4byte	.LVL27
+ 1528 00b2 0600     		.2byte	0x6
+ 1529 00b4 5A       		.byte	0x5a
+ 1530 00b5 93       		.byte	0x93
+ 1531 00b6 04       		.uleb128 0x4
+ 1532 00b7 5B       		.byte	0x5b
+ 1533 00b8 93       		.byte	0x93
+ 1534 00b9 04       		.uleb128 0x4
+ 1535 00ba 6A000000 		.4byte	.LVL27
+ 1536 00be 7C000000 		.4byte	.LVL30
+ 1537 00c2 0A00     		.2byte	0xa
+ 1538 00c4 9E       		.byte	0x9e
+ 1539 00c5 08       		.uleb128 0x8
+ 1540 00c6 00000000 		.4byte	0
+ 1541 00ca 00000000 		.4byte	0
+ 1542 00ce 7C000000 		.4byte	.LVL30
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 30
+
+
+ 1543 00d2 EC010000 		.4byte	.LVL69
+ 1544 00d6 0600     		.2byte	0x6
+ 1545 00d8 5A       		.byte	0x5a
+ 1546 00d9 93       		.byte	0x93
+ 1547 00da 04       		.uleb128 0x4
+ 1548 00db 5B       		.byte	0x5b
+ 1549 00dc 93       		.byte	0x93
+ 1550 00dd 04       		.uleb128 0x4
+ 1551 00de 00000000 		.4byte	0
+ 1552 00e2 00000000 		.4byte	0
+ 1553              	.LLST5:
+ 1554 00e6 0A000000 		.4byte	.LVL13
+ 1555 00ea 60000000 		.4byte	.LVL26
+ 1556 00ee 0A00     		.2byte	0xa
+ 1557 00f0 9E       		.byte	0x9e
+ 1558 00f1 08       		.uleb128 0x8
+ 1559 00f2 00000000 		.4byte	0
+ 1560 00f6 00000000 		.4byte	0
+ 1561 00fa 60000000 		.4byte	.LVL26
+ 1562 00fe 6A000000 		.4byte	.LVL27
+ 1563 0102 0600     		.2byte	0x6
+ 1564 0104 50       		.byte	0x50
+ 1565 0105 93       		.byte	0x93
+ 1566 0106 04       		.uleb128 0x4
+ 1567 0107 51       		.byte	0x51
+ 1568 0108 93       		.byte	0x93
+ 1569 0109 04       		.uleb128 0x4
+ 1570 010a 6A000000 		.4byte	.LVL27
+ 1571 010e B0000000 		.4byte	.LVL36
+ 1572 0112 0A00     		.2byte	0xa
+ 1573 0114 9E       		.byte	0x9e
+ 1574 0115 08       		.uleb128 0x8
+ 1575 0116 00000000 		.4byte	0
+ 1576 011a 00000000 		.4byte	0
+ 1577 011e B0000000 		.4byte	.LVL36
+ 1578 0122 B7000000 		.4byte	.LVL37-1
+ 1579 0126 0600     		.2byte	0x6
+ 1580 0128 50       		.byte	0x50
+ 1581 0129 93       		.byte	0x93
+ 1582 012a 04       		.uleb128 0x4
+ 1583 012b 51       		.byte	0x51
+ 1584 012c 93       		.byte	0x93
+ 1585 012d 04       		.uleb128 0x4
+ 1586 012e B7000000 		.4byte	.LVL37-1
+ 1587 0132 E8010000 		.4byte	.LVL68
+ 1588 0136 0200     		.2byte	0x2
+ 1589 0138 7D       		.byte	0x7d
+ 1590 0139 00       		.sleb128 0
+ 1591 013a E8010000 		.4byte	.LVL68
+ 1592 013e EC010000 		.4byte	.LVL69
+ 1593 0142 0200     		.2byte	0x2
+ 1594 0144 91       		.byte	0x91
+ 1595 0145 40       		.sleb128 -64
+ 1596 0146 EC010000 		.4byte	.LVL69
+ 1597 014a F8010000 		.4byte	.LFE65
+ 1598 014e 0200     		.2byte	0x2
+ 1599 0150 7D       		.byte	0x7d
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 31
+
+
+ 1600 0151 40       		.sleb128 -64
+ 1601 0152 00000000 		.4byte	0
+ 1602 0156 00000000 		.4byte	0
+ 1603              	.LLST6:
+ 1604 015a 0A000000 		.4byte	.LVL13
+ 1605 015e 94000000 		.4byte	.LVL33
+ 1606 0162 0A00     		.2byte	0xa
+ 1607 0164 9E       		.byte	0x9e
+ 1608 0165 08       		.uleb128 0x8
+ 1609 0166 00000000 		.4byte	0
+ 1610 016a 00000000 		.4byte	0
+ 1611 016e 94000000 		.4byte	.LVL33
+ 1612 0172 BC000000 		.4byte	.LVL38
+ 1613 0176 0600     		.2byte	0x6
+ 1614 0178 56       		.byte	0x56
+ 1615 0179 93       		.byte	0x93
+ 1616 017a 04       		.uleb128 0x4
+ 1617 017b 57       		.byte	0x57
+ 1618 017c 93       		.byte	0x93
+ 1619 017d 04       		.uleb128 0x4
+ 1620 017e 00000000 		.4byte	0
+ 1621 0182 00000000 		.4byte	0
+ 1622              	.LLST7:
+ 1623 0186 0A000000 		.4byte	.LVL13
+ 1624 018a BC000000 		.4byte	.LVL38
+ 1625 018e 0A00     		.2byte	0xa
+ 1626 0190 9E       		.byte	0x9e
+ 1627 0191 08       		.uleb128 0x8
+ 1628 0192 00000000 		.4byte	0
+ 1629 0196 00000000 		.4byte	0
+ 1630 019a BC000000 		.4byte	.LVL38
+ 1631 019e EC010000 		.4byte	.LVL69
+ 1632 01a2 0200     		.2byte	0x2
+ 1633 01a4 91       		.byte	0x91
+ 1634 01a5 50       		.sleb128 -48
+ 1635 01a6 EC010000 		.4byte	.LVL69
+ 1636 01aa F8010000 		.4byte	.LFE65
+ 1637 01ae 0200     		.2byte	0x2
+ 1638 01b0 7D       		.byte	0x7d
+ 1639 01b1 50       		.sleb128 -48
+ 1640 01b2 00000000 		.4byte	0
+ 1641 01b6 00000000 		.4byte	0
+ 1642              	.LLST8:
+ 1643 01ba 20000000 		.4byte	.LVL16
+ 1644 01be 52000000 		.4byte	.LVL23
+ 1645 01c2 0600     		.2byte	0x6
+ 1646 01c4 5A       		.byte	0x5a
+ 1647 01c5 93       		.byte	0x93
+ 1648 01c6 04       		.uleb128 0x4
+ 1649 01c7 5B       		.byte	0x5b
+ 1650 01c8 93       		.byte	0x93
+ 1651 01c9 04       		.uleb128 0x4
+ 1652 01ca 52000000 		.4byte	.LVL23
+ 1653 01ce 6A000000 		.4byte	.LVL27
+ 1654 01d2 0200     		.2byte	0x2
+ 1655 01d4 91       		.byte	0x91
+ 1656 01d5 48       		.sleb128 -56
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 32
+
+
+ 1657 01d6 6A000000 		.4byte	.LVL27
+ 1658 01da 7A000000 		.4byte	.LVL29
+ 1659 01de 0600     		.2byte	0x6
+ 1660 01e0 5A       		.byte	0x5a
+ 1661 01e1 93       		.byte	0x93
+ 1662 01e2 04       		.uleb128 0x4
+ 1663 01e3 5B       		.byte	0x5b
+ 1664 01e4 93       		.byte	0x93
+ 1665 01e5 04       		.uleb128 0x4
+ 1666 01e6 7A000000 		.4byte	.LVL29
+ 1667 01ea EC010000 		.4byte	.LVL69
+ 1668 01ee 0200     		.2byte	0x2
+ 1669 01f0 91       		.byte	0x91
+ 1670 01f1 48       		.sleb128 -56
+ 1671 01f2 EC010000 		.4byte	.LVL69
+ 1672 01f6 F8010000 		.4byte	.LFE65
+ 1673 01fa 0200     		.2byte	0x2
+ 1674 01fc 7D       		.byte	0x7d
+ 1675 01fd 48       		.sleb128 -56
+ 1676 01fe 00000000 		.4byte	0
+ 1677 0202 00000000 		.4byte	0
+ 1678              	.LLST9:
+ 1679 0206 32000000 		.4byte	.LVL19
+ 1680 020a 3C000000 		.4byte	.LVL20
+ 1681 020e 0100     		.2byte	0x1
+ 1682 0210 50       		.byte	0x50
+ 1683 0211 3C000000 		.4byte	.LVL20
+ 1684 0215 EC010000 		.4byte	.LVL69
+ 1685 0219 0100     		.2byte	0x1
+ 1686 021b 55       		.byte	0x55
+ 1687 021c 00000000 		.4byte	0
+ 1688 0220 00000000 		.4byte	0
+ 1689              	.LLST10:
+ 1690 0224 BC000000 		.4byte	.LVL38
+ 1691 0228 C0000000 		.4byte	.LVL39
+ 1692 022c 0A00     		.2byte	0xa
+ 1693 022e 9E       		.byte	0x9e
+ 1694 022f 08       		.uleb128 0x8
+ 1695 0230 00000000 		.4byte	0
+ 1696 0234 00000000 		.4byte	0
+ 1697 0238 D6000000 		.4byte	.LVL42
+ 1698 023c 2E010000 		.4byte	.LVL49
+ 1699 0240 0600     		.2byte	0x6
+ 1700 0242 56       		.byte	0x56
+ 1701 0243 93       		.byte	0x93
+ 1702 0244 04       		.uleb128 0x4
+ 1703 0245 57       		.byte	0x57
+ 1704 0246 93       		.byte	0x93
+ 1705 0247 04       		.uleb128 0x4
+ 1706 0248 50010000 		.4byte	.LVL53
+ 1707 024c 9A010000 		.4byte	.LVL59
+ 1708 0250 0600     		.2byte	0x6
+ 1709 0252 56       		.byte	0x56
+ 1710 0253 93       		.byte	0x93
+ 1711 0254 04       		.uleb128 0x4
+ 1712 0255 57       		.byte	0x57
+ 1713 0256 93       		.byte	0x93
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 33
+
+
+ 1714 0257 04       		.uleb128 0x4
+ 1715 0258 00000000 		.4byte	0
+ 1716 025c 00000000 		.4byte	0
+ 1717              	.LLST11:
+ 1718 0260 BC000000 		.4byte	.LVL38
+ 1719 0264 C0000000 		.4byte	.LVL39
+ 1720 0268 0200     		.2byte	0x2
+ 1721 026a 30       		.byte	0x30
+ 1722 026b 9F       		.byte	0x9f
+ 1723 026c C0000000 		.4byte	.LVL39
+ 1724 0270 EC010000 		.4byte	.LVL69
+ 1725 0274 0100     		.2byte	0x1
+ 1726 0276 54       		.byte	0x54
+ 1727 0277 00000000 		.4byte	0
+ 1728 027b 00000000 		.4byte	0
+ 1729              	.LLST12:
+ 1730 027f 32000000 		.4byte	.LVL77
+ 1731 0283 38000000 		.4byte	.LVL78
+ 1732 0287 0100     		.2byte	0x1
+ 1733 0289 50       		.byte	0x50
+ 1734 028a 38000000 		.4byte	.LVL78
+ 1735 028e 3B000000 		.4byte	.LVL79-1
+ 1736 0292 0100     		.2byte	0x1
+ 1737 0294 52       		.byte	0x52
+ 1738 0295 00000000 		.4byte	0
+ 1739 0299 00000000 		.4byte	0
+ 1740              		.section	.debug_aranges,"",%progbits
+ 1741 0000 2C000000 		.4byte	0x2c
+ 1742 0004 0200     		.2byte	0x2
+ 1743 0006 00000000 		.4byte	.Ldebug_info0
+ 1744 000a 04       		.byte	0x4
+ 1745 000b 00       		.byte	0
+ 1746 000c 0000     		.2byte	0
+ 1747 000e 0000     		.2byte	0
+ 1748 0010 00000000 		.4byte	.LFB64
+ 1749 0014 64000000 		.4byte	.LFE64-.LFB64
+ 1750 0018 00000000 		.4byte	.LFB65
+ 1751 001c F8010000 		.4byte	.LFE65-.LFB65
+ 1752 0020 00000000 		.4byte	.LFB66
+ 1753 0024 5C000000 		.4byte	.LFE66-.LFB66
+ 1754 0028 00000000 		.4byte	0
+ 1755 002c 00000000 		.4byte	0
+ 1756              		.section	.debug_ranges,"",%progbits
+ 1757              	.Ldebug_ranges0:
+ 1758 0000 00000000 		.4byte	.LFB64
+ 1759 0004 64000000 		.4byte	.LFE64
+ 1760 0008 00000000 		.4byte	.LFB65
+ 1761 000c F8010000 		.4byte	.LFE65
+ 1762 0010 00000000 		.4byte	.LFB66
+ 1763 0014 5C000000 		.4byte	.LFE66
+ 1764 0018 00000000 		.4byte	0
+ 1765 001c 00000000 		.4byte	0
+ 1766              		.section	.debug_line,"",%progbits
+ 1767              	.Ldebug_line0:
+ 1768 0000 87020000 		.section	.debug_str,"MS",%progbits,1
+ 1768      02000D02 
+ 1768      00000201 
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 34
+
+
+ 1768      FB0E0D00 
+ 1768      01010101 
+ 1769              	.LASF36:
+ 1770 0000 7072696E 		.ascii	"printstr\000"
+ 1770      74737472 
+ 1770      00
+ 1771              	.LASF42:
+ 1772 0009 51756164 		.ascii	"QuadDec_1_Start\000"
+ 1772      4465635F 
+ 1772      315F5374 
+ 1772      61727400 
+ 1773              	.LASF34:
+ 1774 0019 4B5F6163 		.ascii	"K_acceleration\000"
+ 1774      63656C65 
+ 1774      72617469 
+ 1774      6F6E00
+ 1775              	.LASF23:
+ 1776 0028 6D696C6C 		.ascii	"milli_delay\000"
+ 1776      695F6465 
+ 1776      6C617900 
+ 1777              	.LASF26:
+ 1778 0034 7472616E 		.ascii	"transmit_str\000"
+ 1778      736D6974 
+ 1778      5F737472 
+ 1778      00
+ 1779              	.LASF10:
+ 1780 0041 5F5F696E 		.ascii	"__int32_t\000"
+ 1780      7433325F 
+ 1780      7400
+ 1781              	.LASF28:
+ 1782 004b 565F6D61 		.ascii	"V_max\000"
+ 1782      7800
+ 1783              	.LASF4:
+ 1784 0051 73686F72 		.ascii	"short unsigned int\000"
+ 1784      7420756E 
+ 1784      7369676E 
+ 1784      65642069 
+ 1784      6E7400
+ 1785              	.LASF35:
+ 1786 0064 64617461 		.ascii	"data\000"
+ 1786      00
+ 1787              	.LASF0:
+ 1788 0069 646F7562 		.ascii	"double\000"
+ 1788      6C6500
+ 1789              	.LASF39:
+ 1790 0070 51756164 		.ascii	"QuadDec_1_GetCounter\000"
+ 1790      4465635F 
+ 1790      315F4765 
+ 1790      74436F75 
+ 1790      6E746572 
+ 1791              	.LASF22:
+ 1792 0085 745F6366 		.ascii	"t_cf\000"
+ 1792      00
+ 1793              	.LASF18:
+ 1794 008a 636F6E76 		.ascii	"convertToPWM\000"
+ 1794      65727454 
+ 1794      6F50574D 
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 35
+
+
+ 1794      00
+ 1795              	.LASF33:
+ 1796 0097 4B5F7665 		.ascii	"K_velocity\000"
+ 1796      6C6F6369 
+ 1796      747900
+ 1797              	.LASF12:
+ 1798 00a2 666C6F61 		.ascii	"float\000"
+ 1798      7400
+ 1799              	.LASF25:
+ 1800 00a8 636F756E 		.ascii	"counter\000"
+ 1800      74657200 
+ 1801              	.LASF30:
+ 1802 00b0 615F6D61 		.ascii	"a_max\000"
+ 1802      7800
+ 1803              	.LASF45:
+ 1804 00b6 4D6F746F 		.ascii	"Motor_OUT2_Write\000"
+ 1804      725F4F55 
+ 1804      54325F57 
+ 1804      72697465 
+ 1804      00
+ 1805              	.LASF2:
+ 1806 00c7 756E7369 		.ascii	"unsigned char\000"
+ 1806      676E6564 
+ 1806      20636861 
+ 1806      7200
+ 1807              	.LASF48:
+ 1808 00d5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1808      43313120 
+ 1808      352E342E 
+ 1808      31203230 
+ 1808      31363036 
+ 1809 0108 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1809      20726576 
+ 1809      6973696F 
+ 1809      6E203233 
+ 1809      37373135 
+ 1810 013b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1810      66756E63 
+ 1810      74696F6E 
+ 1810      2D736563 
+ 1810      74696F6E 
+ 1811              	.LASF11:
+ 1812 0163 696E7433 		.ascii	"int32_t\000"
+ 1812      325F7400 
+ 1813              	.LASF6:
+ 1814 016b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1814      20756E73 
+ 1814      69676E65 
+ 1814      6420696E 
+ 1814      7400
+ 1815              	.LASF43:
+ 1816 017d 50574D5F 		.ascii	"PWM_1_Start\000"
+ 1816      315F5374 
+ 1816      61727400 
+ 1817              	.LASF24:
+ 1818 0189 695F646F 		.ascii	"i_double\000"
+ 1818      75626C65 
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 36
+
+
+ 1818      00
+ 1819              	.LASF19:
+ 1820 0192 66656564 		.ascii	"feedForwardTrajectory\000"
+ 1820      466F7277 
+ 1820      61726454 
+ 1820      72616A65 
+ 1820      63746F72 
+ 1821              	.LASF27:
+ 1822 01a8 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1822      52784275 
+ 1822      66666572 
+ 1822      00
+ 1823              	.LASF32:
+ 1824 01b5 4B5F6F66 		.ascii	"K_offset\000"
+ 1824      66736574 
+ 1824      00
+ 1825              	.LASF51:
+ 1826 01be 6D61696E 		.ascii	"main\000"
+ 1826      00
+ 1827              	.LASF50:
+ 1828 01c3 433A5C55 		.ascii	"C:\\Users\\Nulan\\OneDrive - Monash University\\Doc"
+ 1828      73657273 
+ 1828      5C4E756C 
+ 1828      616E5C4F 
+ 1828      6E654472 
+ 1829 01f2 756D656E 		.ascii	"uments\\PSoC Creator\\FeedForwardMotor\\Design01.cy"
+ 1829      74735C50 
+ 1829      536F4320 
+ 1829      43726561 
+ 1829      746F725C 
+ 1830 0222 64736E00 		.ascii	"dsn\000"
+ 1831              	.LASF9:
+ 1832 0226 756E7369 		.ascii	"unsigned int\000"
+ 1832      676E6564 
+ 1832      20696E74 
+ 1832      00
+ 1833              	.LASF8:
+ 1834 0233 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1834      206C6F6E 
+ 1834      6720756E 
+ 1834      7369676E 
+ 1834      65642069 
+ 1835              	.LASF29:
+ 1836 024a 765F6D61 		.ascii	"v_max\000"
+ 1836      7800
+ 1837              	.LASF17:
+ 1838 0250 61636365 		.ascii	"acceleration\000"
+ 1838      6C657261 
+ 1838      74696F6E 
+ 1838      00
+ 1839              	.LASF21:
+ 1840 025d 70776D5F 		.ascii	"pwm_value\000"
+ 1840      76616C75 
+ 1840      6500
+ 1841              	.LASF14:
+ 1842 0267 6C6F6E67 		.ascii	"long double\000"
+ 1842      20646F75 
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 37
+
+
+ 1842      626C6500 
+ 1843              	.LASF15:
+ 1844 0273 73697A65 		.ascii	"sizetype\000"
+ 1844      74797065 
+ 1844      00
+ 1845              	.LASF38:
+ 1846 027c 50574D5F 		.ascii	"PWM_1_WriteCompare\000"
+ 1846      315F5772 
+ 1846      69746543 
+ 1846      6F6D7061 
+ 1846      726500
+ 1847              	.LASF7:
+ 1848 028f 6C6F6E67 		.ascii	"long long int\000"
+ 1848      206C6F6E 
+ 1848      6720696E 
+ 1848      7400
+ 1849              	.LASF49:
+ 1850 029d 6D61696E 		.ascii	"main.c\000"
+ 1850      2E6300
+ 1851              	.LASF13:
+ 1852 02a4 63686172 		.ascii	"char\000"
+ 1852      00
+ 1853              	.LASF20:
+ 1854 02a9 735F7265 		.ascii	"s_req\000"
+ 1854      7100
+ 1855              	.LASF37:
+ 1856 02af 4D6F746F 		.ascii	"Motor_OUT1_Write\000"
+ 1856      725F4F55 
+ 1856      54315F57 
+ 1856      72697465 
+ 1856      00
+ 1857              	.LASF3:
+ 1858 02c0 73686F72 		.ascii	"short int\000"
+ 1858      7420696E 
+ 1858      7400
+ 1859              	.LASF5:
+ 1860 02ca 6C6F6E67 		.ascii	"long int\000"
+ 1860      20696E74 
+ 1860      00
+ 1861              	.LASF16:
+ 1862 02d3 76656C6F 		.ascii	"velocity\000"
+ 1862      63697479 
+ 1862      00
+ 1863              	.LASF1:
+ 1864 02dc 7369676E 		.ascii	"signed char\000"
+ 1864      65642063 
+ 1864      68617200 
+ 1865              	.LASF31:
+ 1866 02e8 6D696E5F 		.ascii	"min_interval\000"
+ 1866      696E7465 
+ 1866      7276616C 
+ 1866      00
+ 1867              	.LASF47:
+ 1868 02f5 55415254 		.ascii	"UART_1_PutString\000"
+ 1868      5F315F50 
+ 1868      75745374 
+ 1868      72696E67 
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccou1tLX.s 			page 38
+
+
+ 1868      00
+ 1869              	.LASF46:
+ 1870 0306 73707269 		.ascii	"sprintf\000"
+ 1870      6E746600 
+ 1871              	.LASF40:
+ 1872 030e 43794465 		.ascii	"CyDelay\000"
+ 1872      6C617900 
+ 1873              	.LASF41:
+ 1874 0316 73717274 		.ascii	"sqrt\000"
+ 1874      00
+ 1875              	.LASF44:
+ 1876 031b 55415254 		.ascii	"UART_1_Start\000"
+ 1876      5F315F53 
+ 1876      74617274 
+ 1876      00
+ 1877              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

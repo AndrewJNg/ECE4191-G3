@@ -1,6 +1,0 @@
-D:\Monash_Apps\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|9158b677-7266-4513-bef6-92e885cea024
-C:\Users\AndrewJNg_Legion\OneDrive - Monash University\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|9cb0276d-3019-47ce-8ead-5c61ae914dbb
-D:\Monash_Apps\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b94e62f4-cca1-4b30-9dc4-843ead4f09c4
-D:\Monash_Apps\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4234ffc8-48ce-4210-82e6-f5001f3e186b
-D:\Monash_Apps\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|255b25ea-c361-4936-874e-17cb7e1b07bb
-D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\Robot_code_G3.cydsn\Robot_code_G3.cyprj|8563cd4a-de49-4d91-92f3-9b07be826cfa

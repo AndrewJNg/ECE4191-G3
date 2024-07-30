@@ -1,0 +1,6 @@
+C:\Users\Nulan\OneDrive - Monash University\Documents\PSoC Creator\FeedForwardMotor\Design01.cydsn\Design01.cyprj|4532b75d-99ec-4b29-a1c5-80033d5b434c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d2ec506e-0f41-47e3-8234-d9cd27f368f8
+C:\Users\Nulan\OneDrive - Monash University\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|8484f83a-fff4-4da5-998b-bb9bc48fc7c8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|28b787dd-3a3c-442d-88aa-d5830382e613
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|410672fd-8706-4d14-9db8-f629e4e22d18
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|d67b532f-a1b2-4457-a1b8-0fd289f18586
