@@ -1,5 +1,5 @@
 -- Project:   Design01
--- Generated: 07/29/2024 17:59:24
+-- Generated: 07/30/2024 17:32:04
 -- PSoC Creator  4.4
 
 ENTITY Design01 IS
@@ -76,6 +76,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \QuadDec_1:Cnt16:CounterUDB:status_6\ : bit;
     SIGNAL \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\ : bit;
     SIGNAL \QuadDec_1:Net_1203\ : bit;
+    SIGNAL \QuadDec_1:Net_1203_split\ : bit;
     SIGNAL \QuadDec_1:Net_1251\ : bit;
     SIGNAL \QuadDec_1:Net_1251_split\ : bit;
     SIGNAL \QuadDec_1:Net_1260\ : bit;
@@ -157,6 +158,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\ : bit;
     SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\ : bit;
     SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\ : bit;
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1203_split\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Motor_OUT1(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF Motor_OUT1(0) : LABEL IS "P1[2]";
     ATTRIBUTE lib_model OF Motor_OUT2(0) : LABEL IS "iocell2";
@@ -164,75 +166,75 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF Motor_En_1(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Motor_En_1(0) : LABEL IS "P1[5]";
     ATTRIBUTE lib_model OF Motor_IN_1(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF Motor_IN_1(0) : LABEL IS "P1[6]";
+    ATTRIBUTE Location OF Motor_IN_1(0) : LABEL IS "P1[7]";
     ATTRIBUTE lib_model OF Motor_IN_2(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF Motor_IN_2(0) : LABEL IS "P1[7]";
+    ATTRIBUTE Location OF Motor_IN_2(0) : LABEL IS "P1[6]";
     ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF Rx_1(0) : LABEL IS "P12[6]";
     ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P12[7]";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell1";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell2";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell3";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell4";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell5";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_530\ : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_611\ : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF Net_50 : LABEL IS "macrocell8";
-    ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell9";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_2\ : LABEL IS "macrocell11";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_counter_load\ : LABEL IS "macrocell12";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_postpoll\ : LABEL IS "macrocell13";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_4\ : LABEL IS "macrocell14";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_5\ : LABEL IS "macrocell15";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell16";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell2";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell3";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell4";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell5";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_530\ : LABEL IS "macrocell7";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_611\ : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF Net_50 : LABEL IS "macrocell9";
+    ATTRIBUTE lib_model OF \UART_1:BUART:counter_load_not\ : LABEL IS "macrocell10";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_0\ : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_status_2\ : LABEL IS "macrocell12";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_counter_load\ : LABEL IS "macrocell13";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_postpoll\ : LABEL IS "macrocell14";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_4\ : LABEL IS "macrocell15";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_5\ : LABEL IS "macrocell16";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell17";
     ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sCTRLReg:ctrlreg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sSTSReg:stsreg\ : LABEL IS "statusicell1";
     ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "datapathcell1";
     ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "datapathcell2";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_delayed_0\ : LABEL IS "macrocell17";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_delayed_1\ : LABEL IS "macrocell18";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_delayed_2\ : LABEL IS "macrocell19";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_delayed_0\ : LABEL IS "macrocell20";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_delayed_1\ : LABEL IS "macrocell21";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_delayed_2\ : LABEL IS "macrocell22";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_delayed_0\ : LABEL IS "macrocell18";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_delayed_1\ : LABEL IS "macrocell19";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_delayed_2\ : LABEL IS "macrocell20";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_delayed_0\ : LABEL IS "macrocell21";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_delayed_1\ : LABEL IS "macrocell22";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_delayed_2\ : LABEL IS "macrocell23";
     ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:Stsreg\ : LABEL IS "statusicell2";
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell3";
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell4";
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "statusicell3";
     ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell5";
     ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxSts\ : LABEL IS "statusicell4";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_1251\ : LABEL IS "macrocell23";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell24";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell25";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_1275\ : LABEL IS "macrocell26";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell27";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_1251_split\ : LABEL IS "macrocell28";
-    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell29";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_1203\ : LABEL IS "macrocell30";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_filt\ : LABEL IS "macrocell31";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_filt\ : LABEL IS "macrocell32";
-    ATTRIBUTE lib_model OF \QuadDec_1:Net_1260\ : LABEL IS "macrocell33";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:error\ : LABEL IS "macrocell34";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:state_1\ : LABEL IS "macrocell35";
-    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:state_0\ : LABEL IS "macrocell36";
-    ATTRIBUTE lib_model OF \UART_1:BUART:txn\ : LABEL IS "macrocell37";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_1\ : LABEL IS "macrocell38";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_0\ : LABEL IS "macrocell39";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_2\ : LABEL IS "macrocell40";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk\ : LABEL IS "macrocell41";
-    ATTRIBUTE lib_model OF \UART_1:BUART:tx_ctrl_mark_last\ : LABEL IS "macrocell42";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_0\ : LABEL IS "macrocell43";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_load_fifo\ : LABEL IS "macrocell44";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_3\ : LABEL IS "macrocell45";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_2\ : LABEL IS "macrocell46";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_bitclk_enable\ : LABEL IS "macrocell47";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell48";
-    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_1\ : LABEL IS "macrocell49";
-    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_0\ : LABEL IS "macrocell50";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell51";
-    ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell52";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1251\ : LABEL IS "macrocell24";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell25";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell26";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1275\ : LABEL IS "macrocell27";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell28";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1251_split\ : LABEL IS "macrocell29";
+    ATTRIBUTE lib_model OF \QuadDec_1:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell30";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1203\ : LABEL IS "macrocell31";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_A_filt\ : LABEL IS "macrocell32";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:quad_B_filt\ : LABEL IS "macrocell33";
+    ATTRIBUTE lib_model OF \QuadDec_1:Net_1260\ : LABEL IS "macrocell34";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:error\ : LABEL IS "macrocell35";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:state_1\ : LABEL IS "macrocell36";
+    ATTRIBUTE lib_model OF \QuadDec_1:bQuadDec:state_0\ : LABEL IS "macrocell37";
+    ATTRIBUTE lib_model OF \UART_1:BUART:txn\ : LABEL IS "macrocell38";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_1\ : LABEL IS "macrocell39";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_0\ : LABEL IS "macrocell40";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_2\ : LABEL IS "macrocell41";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_bitclk\ : LABEL IS "macrocell42";
+    ATTRIBUTE lib_model OF \UART_1:BUART:tx_ctrl_mark_last\ : LABEL IS "macrocell43";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_0\ : LABEL IS "macrocell44";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_load_fifo\ : LABEL IS "macrocell45";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_3\ : LABEL IS "macrocell46";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_2\ : LABEL IS "macrocell47";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_bitclk_enable\ : LABEL IS "macrocell48";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell49";
+    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_1\ : LABEL IS "macrocell50";
+    ATTRIBUTE lib_model OF \UART_1:BUART:pollcount_0\ : LABEL IS "macrocell51";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell52";
+    ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell53";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -569,6 +571,21 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
             irq : OUT std_ulogic);
     END COMPONENT;
 BEGIN
+
+    \QuadDec_1:Net_1203_split\:macrocell
+        GENERIC MAP(
+            eqn_main => "(!main_0 * main_1 * main_4 * !main_5 * !main_6) + (!main_0 * !main_2 * !main_3 * !main_4 * !main_5 * main_6) + (!main_0 * !main_2 * !main_3 * !main_4 * main_5 * !main_6) + (!main_0 * !main_2 * main_3 * !main_4 * main_5 * main_6) + (!main_0 * main_2 * !main_3 * !main_4 * main_5 * main_6) + (!main_0 * main_2 * main_3 * !main_4 * !main_5 * main_6) + (!main_0 * main_2 * main_3 * !main_4 * main_5 * !main_6) + (main_2 * !main_3 * !main_4 * !main_5 * !main_6)",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => \QuadDec_1:Net_1203_split\,
+            main_0 => \QuadDec_1:Net_1260\,
+            main_1 => \QuadDec_1:Net_1203\,
+            main_2 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_3 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_4 => \QuadDec_1:bQuadDec:error\,
+            main_5 => \QuadDec_1:bQuadDec:state_1\,
+            main_6 => \QuadDec_1:bQuadDec:state_0\);
 
     ClockBlock:clockblockcell
         PORT MAP(
@@ -1903,20 +1920,19 @@ BEGIN
 
     \QuadDec_1:Net_1203\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1 * main_4 * !main_5 * !main_6) + (!main_0 * !main_2 * !main_3 * !main_4 * !main_5 * main_6) + (!main_2 * main_3 * !main_4 * !main_5 * !main_6)",
+            eqn_main => "(!main_0 * main_1 * !main_2 * !main_3 * !main_4) + (main_5)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => \QuadDec_1:Net_1203\,
             clock_0 => Net_16,
-            main_0 => \QuadDec_1:Net_1260\,
-            main_1 => \QuadDec_1:Net_1203\,
-            main_2 => \QuadDec_1:bQuadDec:quad_A_filt\,
-            main_3 => \QuadDec_1:bQuadDec:quad_B_filt\,
-            main_4 => \QuadDec_1:bQuadDec:error\,
-            main_5 => \QuadDec_1:bQuadDec:state_1\,
-            main_6 => \QuadDec_1:bQuadDec:state_0\);
+            main_0 => \QuadDec_1:bQuadDec:quad_A_filt\,
+            main_1 => \QuadDec_1:bQuadDec:quad_B_filt\,
+            main_2 => \QuadDec_1:bQuadDec:error\,
+            main_3 => \QuadDec_1:bQuadDec:state_1\,
+            main_4 => \QuadDec_1:bQuadDec:state_0\,
+            main_5 => \QuadDec_1:Net_1203_split\);
 
     \QuadDec_1:bQuadDec:quad_A_filt\:macrocell
         GENERIC MAP(

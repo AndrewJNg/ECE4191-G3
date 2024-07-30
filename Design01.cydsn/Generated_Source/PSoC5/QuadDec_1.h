@@ -50,7 +50,7 @@ extern uint8 QuadDec_1_initVar;
 *   Conditional Compilation Parameters
 ***************************************/
 
-#define QuadDec_1_COUNTER_RESOLUTION         (1u)
+#define QuadDec_1_COUNTER_RESOLUTION         (4u)
 
 
 /***************************************

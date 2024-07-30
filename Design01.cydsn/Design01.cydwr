@@ -3346,12 +3346,12 @@
   <Group key="Pin2">
     <Group key="0a28d807-1032-4e9a-854f-0543046d3fac">
       <Group key="0">
-        <Data key="Port Format" value="1,7" />
+        <Data key="Port Format" value="1,6" />
       </Group>
     </Group>
     <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
       <Group key="0">
-        <Data key="Port Format" value="1,6" />
+        <Data key="Port Format" value="1,7" />
       </Group>
     </Group>
     <Group key="15d1cba3-c87d-46f9-99c6-ff8327e23ddd">
