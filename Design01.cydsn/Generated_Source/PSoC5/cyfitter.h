@@ -426,11 +426,11 @@
 #define Motor_IN_2__SLW CYREG_PRT1_SLW
 
 /* Motor_OUT1 */
-#define Motor_OUT1__0__INTTYPE CYREG_PICU1_INTTYPE2
-#define Motor_OUT1__0__MASK 0x04u
-#define Motor_OUT1__0__PC CYREG_PRT1_PC2
+#define Motor_OUT1__0__INTTYPE CYREG_PICU1_INTTYPE4
+#define Motor_OUT1__0__MASK 0x10u
+#define Motor_OUT1__0__PC CYREG_PRT1_PC4
 #define Motor_OUT1__0__PORT 1u
-#define Motor_OUT1__0__SHIFT 2u
+#define Motor_OUT1__0__SHIFT 4u
 #define Motor_OUT1__AG CYREG_PRT1_AG
 #define Motor_OUT1__AMUX CYREG_PRT1_AMUX
 #define Motor_OUT1__BIE CYREG_PRT1_BIE
@@ -445,7 +445,7 @@
 #define Motor_OUT1__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU1_BASE
 #define Motor_OUT1__LCD_COM_SEG CYREG_PRT1_LCD_COM_SEG
 #define Motor_OUT1__LCD_EN CYREG_PRT1_LCD_EN
-#define Motor_OUT1__MASK 0x04u
+#define Motor_OUT1__MASK 0x10u
 #define Motor_OUT1__PORT 1u
 #define Motor_OUT1__PRT CYREG_PRT1_PRT
 #define Motor_OUT1__PRTDSI__CAPS_SEL CYREG_PRT1_CAPS_SEL
@@ -456,15 +456,15 @@
 #define Motor_OUT1__PRTDSI__OUT_SEL1 CYREG_PRT1_OUT_SEL1
 #define Motor_OUT1__PRTDSI__SYNC_OUT CYREG_PRT1_SYNC_OUT
 #define Motor_OUT1__PS CYREG_PRT1_PS
-#define Motor_OUT1__SHIFT 2u
+#define Motor_OUT1__SHIFT 4u
 #define Motor_OUT1__SLW CYREG_PRT1_SLW
 
 /* Motor_OUT2 */
-#define Motor_OUT2__0__INTTYPE CYREG_PICU1_INTTYPE4
-#define Motor_OUT2__0__MASK 0x10u
-#define Motor_OUT2__0__PC CYREG_PRT1_PC4
+#define Motor_OUT2__0__INTTYPE CYREG_PICU1_INTTYPE2
+#define Motor_OUT2__0__MASK 0x04u
+#define Motor_OUT2__0__PC CYREG_PRT1_PC2
 #define Motor_OUT2__0__PORT 1u
-#define Motor_OUT2__0__SHIFT 4u
+#define Motor_OUT2__0__SHIFT 2u
 #define Motor_OUT2__AG CYREG_PRT1_AG
 #define Motor_OUT2__AMUX CYREG_PRT1_AMUX
 #define Motor_OUT2__BIE CYREG_PRT1_BIE
@@ -479,7 +479,7 @@
 #define Motor_OUT2__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU1_BASE
 #define Motor_OUT2__LCD_COM_SEG CYREG_PRT1_LCD_COM_SEG
 #define Motor_OUT2__LCD_EN CYREG_PRT1_LCD_EN
-#define Motor_OUT2__MASK 0x10u
+#define Motor_OUT2__MASK 0x04u
 #define Motor_OUT2__PORT 1u
 #define Motor_OUT2__PRT CYREG_PRT1_PRT
 #define Motor_OUT2__PRTDSI__CAPS_SEL CYREG_PRT1_CAPS_SEL
@@ -490,7 +490,7 @@
 #define Motor_OUT2__PRTDSI__OUT_SEL1 CYREG_PRT1_OUT_SEL1
 #define Motor_OUT2__PRTDSI__SYNC_OUT CYREG_PRT1_SYNC_OUT
 #define Motor_OUT2__PS CYREG_PRT1_PS
-#define Motor_OUT2__SHIFT 4u
+#define Motor_OUT2__SHIFT 2u
 #define Motor_OUT2__SLW CYREG_PRT1_SLW
 
 /* Miscellaneous */

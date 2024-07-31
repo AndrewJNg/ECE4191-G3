@@ -75,5 +75,5 @@ set_io "Motor_IN_2(0)" iocell 1 6
 set_io "Tx_1(0)" iocell 12 7
 set_location "\PWM_1:PWMHW\" timercell -1 -1 0
 set_location "\QuadDec_1:isr\" interrupt -1 -1 0
-set_io "Motor_OUT1(0)" iocell 1 2
-set_io "Motor_OUT2(0)" iocell 1 4
+set_io "Motor_OUT1(0)" iocell 1 4
+set_io "Motor_OUT2(0)" iocell 1 2

@@ -11744,11 +11744,11 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  426              	.set Motor_IN_2__SLW, CYREG_PRT1_SLW
  427              	
  428              	/* Motor_OUT1 */
- 429              	.set Motor_OUT1__0__INTTYPE, CYREG_PICU1_INTTYPE2
- 430              	.set Motor_OUT1__0__MASK, 0x04
- 431              	.set Motor_OUT1__0__PC, CYREG_PRT1_PC2
+ 429              	.set Motor_OUT1__0__INTTYPE, CYREG_PICU1_INTTYPE4
+ 430              	.set Motor_OUT1__0__MASK, 0x10
+ 431              	.set Motor_OUT1__0__PC, CYREG_PRT1_PC4
  432              	.set Motor_OUT1__0__PORT, 1
- 433              	.set Motor_OUT1__0__SHIFT, 2
+ 433              	.set Motor_OUT1__0__SHIFT, 4
  434              	.set Motor_OUT1__AG, CYREG_PRT1_AG
  435              	.set Motor_OUT1__AMUX, CYREG_PRT1_AMUX
  436              	.set Motor_OUT1__BIE, CYREG_PRT1_BIE
@@ -11766,7 +11766,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  445              	.set Motor_OUT1__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU1_BASE
  446              	.set Motor_OUT1__LCD_COM_SEG, CYREG_PRT1_LCD_COM_SEG
  447              	.set Motor_OUT1__LCD_EN, CYREG_PRT1_LCD_EN
- 448              	.set Motor_OUT1__MASK, 0x04
+ 448              	.set Motor_OUT1__MASK, 0x10
  449              	.set Motor_OUT1__PORT, 1
  450              	.set Motor_OUT1__PRT, CYREG_PRT1_PRT
  451              	.set Motor_OUT1__PRTDSI__CAPS_SEL, CYREG_PRT1_CAPS_SEL
@@ -11777,15 +11777,15 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  456              	.set Motor_OUT1__PRTDSI__OUT_SEL1, CYREG_PRT1_OUT_SEL1
  457              	.set Motor_OUT1__PRTDSI__SYNC_OUT, CYREG_PRT1_SYNC_OUT
  458              	.set Motor_OUT1__PS, CYREG_PRT1_PS
- 459              	.set Motor_OUT1__SHIFT, 2
+ 459              	.set Motor_OUT1__SHIFT, 4
  460              	.set Motor_OUT1__SLW, CYREG_PRT1_SLW
  461              	
  462              	/* Motor_OUT2 */
- 463              	.set Motor_OUT2__0__INTTYPE, CYREG_PICU1_INTTYPE4
- 464              	.set Motor_OUT2__0__MASK, 0x10
- 465              	.set Motor_OUT2__0__PC, CYREG_PRT1_PC4
+ 463              	.set Motor_OUT2__0__INTTYPE, CYREG_PICU1_INTTYPE2
+ 464              	.set Motor_OUT2__0__MASK, 0x04
+ 465              	.set Motor_OUT2__0__PC, CYREG_PRT1_PC2
  466              	.set Motor_OUT2__0__PORT, 1
- 467              	.set Motor_OUT2__0__SHIFT, 4
+ 467              	.set Motor_OUT2__0__SHIFT, 2
  468              	.set Motor_OUT2__AG, CYREG_PRT1_AG
  469              	.set Motor_OUT2__AMUX, CYREG_PRT1_AMUX
  470              	.set Motor_OUT2__BIE, CYREG_PRT1_BIE
@@ -11800,7 +11800,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  479              	.set Motor_OUT2__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU1_BASE
  480              	.set Motor_OUT2__LCD_COM_SEG, CYREG_PRT1_LCD_COM_SEG
  481              	.set Motor_OUT2__LCD_EN, CYREG_PRT1_LCD_EN
- 482              	.set Motor_OUT2__MASK, 0x10
+ 482              	.set Motor_OUT2__MASK, 0x04
  483              	.set Motor_OUT2__PORT, 1
  484              	.set Motor_OUT2__PRT, CYREG_PRT1_PRT
  485              	.set Motor_OUT2__PRTDSI__CAPS_SEL, CYREG_PRT1_CAPS_SEL
@@ -11811,7 +11811,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  490              	.set Motor_OUT2__PRTDSI__OUT_SEL1, CYREG_PRT1_OUT_SEL1
  491              	.set Motor_OUT2__PRTDSI__SYNC_OUT, CYREG_PRT1_SYNC_OUT
  492              	.set Motor_OUT2__PS, CYREG_PRT1_PS
- 493              	.set Motor_OUT2__SHIFT, 4
+ 493              	.set Motor_OUT2__SHIFT, 2
  494              	.set Motor_OUT2__SLW, CYREG_PRT1_SLW
  495              	
  496              	/* Miscellaneous */

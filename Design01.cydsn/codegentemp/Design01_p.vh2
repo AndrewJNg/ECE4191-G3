@@ -1,5 +1,5 @@
 -- Project:   Design01
--- Generated: 07/30/2024 17:32:04
+-- Generated: 07/30/2024 19:14:29
 -- PSoC Creator  4.4
 
 ENTITY Design01 IS
@@ -160,9 +160,9 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \QuadDec_1:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\ : bit;
     ATTRIBUTE lib_model OF \QuadDec_1:Net_1203_split\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Motor_OUT1(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF Motor_OUT1(0) : LABEL IS "P1[2]";
+    ATTRIBUTE Location OF Motor_OUT1(0) : LABEL IS "P1[4]";
     ATTRIBUTE lib_model OF Motor_OUT2(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF Motor_OUT2(0) : LABEL IS "P1[4]";
+    ATTRIBUTE Location OF Motor_OUT2(0) : LABEL IS "P1[2]";
     ATTRIBUTE lib_model OF Motor_En_1(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Motor_En_1(0) : LABEL IS "P1[5]";
     ATTRIBUTE lib_model OF Motor_IN_1(0) : LABEL IS "iocell4";
