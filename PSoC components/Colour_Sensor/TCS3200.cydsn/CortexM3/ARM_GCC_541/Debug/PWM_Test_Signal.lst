@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
   28:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #error PWM_v3_30 detected with a constant 0 for the enable or \
   29:Generated_Source\PSoC5/PWM_Test_Signal.c ****          constant 1 for reset. This will prevent the component from operating.
   30:Generated_Source\PSoC5/PWM_Test_Signal.c **** #endif /* PWM_Test_Signal_PWMUDB_genblk1_ctrlreg__REMOVED */
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 2
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 2
 
 
   31:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
   85:Generated_Source\PSoC5/PWM_Test_Signal.c **** {
   86:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #if (PWM_Test_Signal_UsingFixedFunction || PWM_Test_Signal_UseControl)
   87:Generated_Source\PSoC5/PWM_Test_Signal.c ****         uint8 ctrl;
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 3
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 3
 
 
   88:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #endif /* (PWM_Test_Signal_UsingFixedFunction || PWM_Test_Signal_UseControl) */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  142:Generated_Source\PSoC5/PWM_Test_Signal.c ****             PWM_Test_Signal_WriteCompare2(PWM_Test_Signal_INIT_COMPARE_VALUE2);
  143:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_UseOneCompareMode) */
  144:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 4
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 4
 
 
  145:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if (PWM_Test_Signal_KillModeMinTime)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  199:Generated_Source\PSoC5/PWM_Test_Signal.c **** void PWM_Test_Signal_Enable(void) 
  200:Generated_Source\PSoC5/PWM_Test_Signal.c **** {
   28              		.loc 1 200 0
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 5
 
 
   29              		.cfi_startproc
@@ -263,7 +263,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
   39              	.L3:
   40              		.align	2
   41              	.L2:
-  42 000c 74640040 		.word	1073767540
+  42 000c 7D640040 		.word	1073767549
   43              		.cfi_endproc
   44              	.LFE2:
   45              		.size	PWM_Test_Signal_Enable, .-PWM_Test_Signal_Enable
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  230:Generated_Source\PSoC5/PWM_Test_Signal.c **** *  has no effect on the operation of the PWM
  231:Generated_Source\PSoC5/PWM_Test_Signal.c **** *
  232:Generated_Source\PSoC5/PWM_Test_Signal.c **** *******************************************************************************/
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 6
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 6
 
 
  233:Generated_Source\PSoC5/PWM_Test_Signal.c **** void PWM_Test_Signal_Stop(void) 
@@ -319,7 +319,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
   65              	.L6:
   66              		.align	2
   67              	.L5:
-  68 000c 74640040 		.word	1073767540
+  68 000c 7D640040 		.word	1073767549
   69              		.cfi_endproc
   70              	.LFE3:
   71              		.size	PWM_Test_Signal_Stop, .-PWM_Test_Signal_Stop
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  261:Generated_Source\PSoC5/PWM_Test_Signal.c ****         *
  262:Generated_Source\PSoC5/PWM_Test_Signal.c ****         * Return:
  263:Generated_Source\PSoC5/PWM_Test_Signal.c ****         *  None
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 7
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 7
 
 
  264:Generated_Source\PSoC5/PWM_Test_Signal.c ****         *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  318:Generated_Source\PSoC5/PWM_Test_Signal.c ****         * Parameters:
  319:Generated_Source\PSoC5/PWM_Test_Signal.c ****         *  comparemode:  The new compare mode for the PWM output. Use the compare types
  320:Generated_Source\PSoC5/PWM_Test_Signal.c ****         *                defined in the H file as input arguments.
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 8
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 8
 
 
  321:Generated_Source\PSoC5/PWM_Test_Signal.c ****         *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  375:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #endif /*PWM_Test_Signal_CompareMode2SW */
  376:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  377:Generated_Source\PSoC5/PWM_Test_Signal.c **** #endif /* UseOneCompareMode */
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 9
 
 
  378:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -523,7 +523,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
   90              	.L9:
   91 0006 00BF     		.align	2
   92              	.L8:
-  93 0008 10680040 		.word	1073768464
+  93 0008 18680040 		.word	1073768472
   94              		.cfi_endproc
   95              	.LFE4:
   96              		.size	PWM_Test_Signal_WriteCounter, .-PWM_Test_Signal_WriteCounter
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  407:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
  408:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  409:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 10
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 10
 
 
  410:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /*******************************************************************************
@@ -583,8 +583,8 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  119              	.L12:
  120              		.align	2
  121              	.L11:
- 122 000c 18640040 		.word	1073767448
- 123 0010 B0680040 		.word	1073768624
+ 122 000c 1C640040 		.word	1073767452
+ 123 0010 B8680040 		.word	1073768632
  124              		.cfi_endproc
  125              	.LFE5:
  126              		.size	PWM_Test_Signal_ReadCounter, .-PWM_Test_Signal_ReadCounter
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  134              	.LFB6:
  435:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  436:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #if (PWM_Test_Signal_UseStatus)
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 11
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 11
 
 
  437:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  485:Generated_Source\PSoC5/PWM_Test_Signal.c ****         CY_SET_REG16(PWM_Test_Signal_PERIOD_LSB_PTR, (uint16)period);
  486:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #else
  487:Generated_Source\PSoC5/PWM_Test_Signal.c ****         CY_SET_REG16(PWM_Test_Signal_PERIOD_LSB_PTR, period);
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 12
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 12
 
 
  141              		.loc 1 487 0
@@ -668,17 +668,17 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  145              	.L15:
  146 0006 00BF     		.align	2
  147              	.L14:
- 148 0008 90680040 		.word	1073768592
+ 148 0008 98680040 		.word	1073768600
  149              		.cfi_endproc
  150              	.LFE6:
  151              		.size	PWM_Test_Signal_WritePeriod, .-PWM_Test_Signal_WritePeriod
- 152              		.section	.text.PWM_Test_Signal_WriteCompare,"ax",%progbits
+ 152              		.section	.text.PWM_Test_Signal_WriteCompare1,"ax",%progbits
  153              		.align	2
- 154              		.global	PWM_Test_Signal_WriteCompare
+ 154              		.global	PWM_Test_Signal_WriteCompare1
  155              		.thumb
  156              		.thumb_func
- 157              		.type	PWM_Test_Signal_WriteCompare, %function
- 158              	PWM_Test_Signal_WriteCompare:
+ 157              		.type	PWM_Test_Signal_WriteCompare1, %function
+ 158              	PWM_Test_Signal_WriteCompare1:
  159              	.LFB7:
  488:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #endif /* (PWM_Test_Signal_UsingFixedFunction) */
  489:Generated_Source\PSoC5/PWM_Test_Signal.c **** }
@@ -711,154 +711,16 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  516:Generated_Source\PSoC5/PWM_Test_Signal.c ****     void PWM_Test_Signal_WriteCompare(uint16 compare) \
  517:Generated_Source\PSoC5/PWM_Test_Signal.c ****                                        
  518:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
- 160              		.loc 1 518 0
- 161              		.cfi_startproc
- 162              		@ args = 0, pretend = 0, frame = 0
- 163              		@ frame_needed = 0, uses_anonymous_args = 0
- 164              		@ link register save eliminated.
- 165              	.LVL2:
  519:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if(PWM_Test_Signal_UsingFixedFunction)
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 13
-
-
  520:Generated_Source\PSoC5/PWM_Test_Signal.c ****             CY_SET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR, (uint16)compare);
  521:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #else
  522:Generated_Source\PSoC5/PWM_Test_Signal.c ****             CY_SET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR, compare);
- 166              		.loc 1 522 0
- 167 0000 014B     		ldr	r3, .L17
- 168 0002 1880     		strh	r0, [r3]	@ movhi
- 169 0004 7047     		bx	lr
- 170              	.L18:
- 171 0006 00BF     		.align	2
- 172              	.L17:
- 173 0008 50680040 		.word	1073768528
- 174              		.cfi_endproc
- 175              	.LFE7:
- 176              		.size	PWM_Test_Signal_WriteCompare, .-PWM_Test_Signal_WriteCompare
- 177              		.section	.text.PWM_Test_Signal_Init,"ax",%progbits
- 178              		.align	2
- 179              		.global	PWM_Test_Signal_Init
- 180              		.thumb
- 181              		.thumb_func
- 182              		.type	PWM_Test_Signal_Init, %function
- 183              	PWM_Test_Signal_Init:
- 184              	.LFB1:
-  85:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #if (PWM_Test_Signal_UsingFixedFunction || PWM_Test_Signal_UseControl)
- 185              		.loc 1 85 0
- 186              		.cfi_startproc
- 187              		@ args = 0, pretend = 0, frame = 0
- 188              		@ frame_needed = 0, uses_anonymous_args = 0
- 189 0000 08B5     		push	{r3, lr}
- 190              		.cfi_def_cfa_offset 8
- 191              		.cfi_offset 3, -8
- 192              		.cfi_offset 14, -4
- 117:Generated_Source\PSoC5/PWM_Test_Signal.c ****                 ((uint8)(~PWM_Test_Signal_CTRL_CMPMODE1_MASK));
- 193              		.loc 1 117 0
- 194 0002 0D4A     		ldr	r2, .L21
- 195 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 196 0006 03F0C003 		and	r3, r3, #192
- 197              	.LVL3:
- 119:Generated_Source\PSoC5/PWM_Test_Signal.c ****                                    PWM_Test_Signal_DEFAULT_COMPARE1_MODE;
- 198              		.loc 1 119 0
- 199 000a 43F00903 		orr	r3, r3, #9
- 200              	.LVL4:
- 201 000e 1370     		strb	r3, [r2]
- 129:Generated_Source\PSoC5/PWM_Test_Signal.c ****             PWM_Test_Signal_AUX_CONTROLDP1 |= (PWM_Test_Signal_AUX_CTRL_FIFO0_CLR);
- 202              		.loc 1 129 0
- 203 0010 2432     		adds	r2, r2, #36
- 204 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 205 0014 43F00103 		orr	r3, r3, #1
- 206 0018 1370     		strb	r3, [r2]
- 130:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_Resolution == 8) */
- 207              		.loc 1 130 0
- 208 001a 0132     		adds	r2, r2, #1
- 209 001c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 210 001e 43F00103 		orr	r3, r3, #1
- 211 0022 1370     		strb	r3, [r2]
- 133:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #endif /* (!PWM_Test_Signal_UsingFixedFunction) */
- 212              		.loc 1 133 0
- 213 0024 0920     		movs	r0, #9
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 14
-
-
- 214 0026 FFF7FEFF 		bl	PWM_Test_Signal_WriteCounter
- 215              	.LVL5:
- 136:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
- 216              		.loc 1 136 0
- 217 002a 0920     		movs	r0, #9
- 218 002c FFF7FEFF 		bl	PWM_Test_Signal_WritePeriod
- 219              	.LVL6:
- 139:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #else
- 220              		.loc 1 139 0
- 221 0030 0520     		movs	r0, #5
- 222 0032 FFF7FEFF 		bl	PWM_Test_Signal_WriteCompare
- 223              	.LVL7:
- 224 0036 08BD     		pop	{r3, pc}
- 225              	.L22:
- 226              		.align	2
- 227              	.L21:
- 228 0038 74640040 		.word	1073767540
- 229              		.cfi_endproc
- 230              	.LFE1:
- 231              		.size	PWM_Test_Signal_Init, .-PWM_Test_Signal_Init
- 232              		.section	.text.PWM_Test_Signal_Start,"ax",%progbits
- 233              		.align	2
- 234              		.global	PWM_Test_Signal_Start
- 235              		.thumb
- 236              		.thumb_func
- 237              		.type	PWM_Test_Signal_Start, %function
- 238              	PWM_Test_Signal_Start:
- 239              	.LFB0:
-  56:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /* If not Initialized then initialize all required hardware and software */
- 240              		.loc 1 56 0
- 241              		.cfi_startproc
- 242              		@ args = 0, pretend = 0, frame = 0
- 243              		@ frame_needed = 0, uses_anonymous_args = 0
- 244 0000 08B5     		push	{r3, lr}
- 245              		.cfi_def_cfa_offset 8
- 246              		.cfi_offset 3, -8
- 247              		.cfi_offset 14, -4
-  58:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
- 248              		.loc 1 58 0
- 249 0002 054B     		ldr	r3, .L26
- 250 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 251 0006 23B9     		cbnz	r3, .L24
-  60:Generated_Source\PSoC5/PWM_Test_Signal.c ****         PWM_Test_Signal_initVar = 1u;
- 252              		.loc 1 60 0
- 253 0008 FFF7FEFF 		bl	PWM_Test_Signal_Init
- 254              	.LVL8:
-  61:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
- 255              		.loc 1 61 0
- 256 000c 0122     		movs	r2, #1
- 257 000e 024B     		ldr	r3, .L26
- 258 0010 1A70     		strb	r2, [r3]
- 259              	.L24:
-  63:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
- 260              		.loc 1 63 0
- 261 0012 FFF7FEFF 		bl	PWM_Test_Signal_Enable
- 262              	.LVL9:
- 263 0016 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 15
-
-
- 264              	.L27:
- 265              		.align	2
- 266              	.L26:
- 267 0018 00000000 		.word	.LANCHOR0
- 268              		.cfi_endproc
- 269              	.LFE0:
- 270              		.size	PWM_Test_Signal_Start, .-PWM_Test_Signal_Start
- 271              		.section	.text.PWM_Test_Signal_ReadControlRegister,"ax",%progbits
- 272              		.align	2
- 273              		.global	PWM_Test_Signal_ReadControlRegister
- 274              		.thumb
- 275              		.thumb_func
- 276              		.type	PWM_Test_Signal_ReadControlRegister, %function
- 277              	PWM_Test_Signal_ReadControlRegister:
- 278              	.LFB8:
  523:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_UsingFixedFunction) */
  524:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  525:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if (PWM_Test_Signal_PWMMode == PWM_Test_Signal__B_PWM__DITHER)
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 13
+
+
  526:Generated_Source\PSoC5/PWM_Test_Signal.c ****             #if(PWM_Test_Signal_UsingFixedFunction)
  527:Generated_Source\PSoC5/PWM_Test_Signal.c ****                 CY_SET_REG16(PWM_Test_Signal_COMPARE2_LSB_PTR, (uint16)(compare + 1u));
  528:Generated_Source\PSoC5/PWM_Test_Signal.c ****             #else
@@ -891,16 +753,41 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  555:Generated_Source\PSoC5/PWM_Test_Signal.c ****     void PWM_Test_Signal_WriteCompare1(uint16 compare) \
  556:Generated_Source\PSoC5/PWM_Test_Signal.c ****                                         
  557:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
+ 160              		.loc 1 557 0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+ 165              	.LVL2:
  558:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if(PWM_Test_Signal_UsingFixedFunction)
  559:Generated_Source\PSoC5/PWM_Test_Signal.c ****             CY_SET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR, (uint16)compare);
  560:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #else
  561:Generated_Source\PSoC5/PWM_Test_Signal.c ****             CY_SET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR, compare);
+ 166              		.loc 1 561 0
+ 167 0000 014B     		ldr	r3, .L17
+ 168 0002 1880     		strh	r0, [r3]	@ movhi
+ 169 0004 7047     		bx	lr
+ 170              	.L18:
+ 171 0006 00BF     		.align	2
+ 172              	.L17:
+ 173 0008 58680040 		.word	1073768536
+ 174              		.cfi_endproc
+ 175              	.LFE7:
+ 176              		.size	PWM_Test_Signal_WriteCompare1, .-PWM_Test_Signal_WriteCompare1
+ 177              		.section	.text.PWM_Test_Signal_WriteCompare2,"ax",%progbits
+ 178              		.align	2
+ 179              		.global	PWM_Test_Signal_WriteCompare2
+ 180              		.thumb
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 14
+
+
+ 181              		.thumb_func
+ 182              		.type	PWM_Test_Signal_WriteCompare2, %function
+ 183              	PWM_Test_Signal_WriteCompare2:
+ 184              	.LFB8:
  562:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_UsingFixedFunction) */
  563:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
  564:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 16
-
-
  565:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  566:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /*******************************************************************************
  567:Generated_Source\PSoC5/PWM_Test_Signal.c ****     * Function Name: PWM_Test_Signal_WriteCompare2
@@ -923,11 +810,157 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  584:Generated_Source\PSoC5/PWM_Test_Signal.c ****     void PWM_Test_Signal_WriteCompare2(uint16 compare) \
  585:Generated_Source\PSoC5/PWM_Test_Signal.c ****                                         
  586:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
+ 185              		.loc 1 586 0
+ 186              		.cfi_startproc
+ 187              		@ args = 0, pretend = 0, frame = 0
+ 188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189              		@ link register save eliminated.
+ 190              	.LVL3:
  587:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if(PWM_Test_Signal_UsingFixedFunction)
  588:Generated_Source\PSoC5/PWM_Test_Signal.c ****             CY_SET_REG16(PWM_Test_Signal_COMPARE2_LSB_PTR, compare);
  589:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #else
  590:Generated_Source\PSoC5/PWM_Test_Signal.c ****             CY_SET_REG16(PWM_Test_Signal_COMPARE2_LSB_PTR, compare);
+ 191              		.loc 1 590 0
+ 192 0000 014B     		ldr	r3, .L20
+ 193 0002 1880     		strh	r0, [r3]	@ movhi
+ 194 0004 7047     		bx	lr
+ 195              	.L21:
+ 196 0006 00BF     		.align	2
+ 197              	.L20:
+ 198 0008 78680040 		.word	1073768568
+ 199              		.cfi_endproc
+ 200              	.LFE8:
+ 201              		.size	PWM_Test_Signal_WriteCompare2, .-PWM_Test_Signal_WriteCompare2
+ 202              		.section	.text.PWM_Test_Signal_Init,"ax",%progbits
+ 203              		.align	2
+ 204              		.global	PWM_Test_Signal_Init
+ 205              		.thumb
+ 206              		.thumb_func
+ 207              		.type	PWM_Test_Signal_Init, %function
+ 208              	PWM_Test_Signal_Init:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 15
+
+
+ 209              	.LFB1:
+  85:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #if (PWM_Test_Signal_UsingFixedFunction || PWM_Test_Signal_UseControl)
+ 210              		.loc 1 85 0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 08B5     		push	{r3, lr}
+ 215              		.cfi_def_cfa_offset 8
+ 216              		.cfi_offset 3, -8
+ 217              		.cfi_offset 14, -4
+ 117:Generated_Source\PSoC5/PWM_Test_Signal.c ****                 ((uint8)(~PWM_Test_Signal_CTRL_CMPMODE1_MASK));
+ 218              		.loc 1 117 0
+ 219 0002 114A     		ldr	r2, .L24
+ 220 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 221 0006 03F0C003 		and	r3, r3, #192
+ 222              	.LVL4:
+ 119:Generated_Source\PSoC5/PWM_Test_Signal.c ****                                    PWM_Test_Signal_DEFAULT_COMPARE1_MODE;
+ 223              		.loc 1 119 0
+ 224 000a 43F00903 		orr	r3, r3, #9
+ 225              	.LVL5:
+ 226 000e 1370     		strb	r3, [r2]
+ 129:Generated_Source\PSoC5/PWM_Test_Signal.c ****             PWM_Test_Signal_AUX_CONTROLDP1 |= (PWM_Test_Signal_AUX_CTRL_FIFO0_CLR);
+ 227              		.loc 1 129 0
+ 228 0010 1F32     		adds	r2, r2, #31
+ 229 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 230 0014 43F00103 		orr	r3, r3, #1
+ 231 0018 1370     		strb	r3, [r2]
+ 130:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_Resolution == 8) */
+ 232              		.loc 1 130 0
+ 233 001a 0132     		adds	r2, r2, #1
+ 234 001c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 235 001e 43F00103 		orr	r3, r3, #1
+ 236 0022 1370     		strb	r3, [r2]
+ 133:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #endif /* (!PWM_Test_Signal_UsingFixedFunction) */
+ 237              		.loc 1 133 0
+ 238 0024 49F64040 		movw	r0, #40000
+ 239 0028 FFF7FEFF 		bl	PWM_Test_Signal_WriteCounter
+ 240              	.LVL6:
+ 136:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
+ 241              		.loc 1 136 0
+ 242 002c 49F64040 		movw	r0, #40000
+ 243 0030 FFF7FEFF 		bl	PWM_Test_Signal_WritePeriod
+ 244              	.LVL7:
+ 141:Generated_Source\PSoC5/PWM_Test_Signal.c ****             PWM_Test_Signal_WriteCompare2(PWM_Test_Signal_INIT_COMPARE_VALUE2);
+ 245              		.loc 1 141 0
+ 246 0034 40F6B830 		movw	r0, #3000
+ 247 0038 FFF7FEFF 		bl	PWM_Test_Signal_WriteCompare1
+ 248              	.LVL8:
+ 142:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_UseOneCompareMode) */
+ 249              		.loc 1 142 0
+ 250 003c 40F6B830 		movw	r0, #3000
+ 251 0040 FFF7FEFF 		bl	PWM_Test_Signal_WriteCompare2
+ 252              	.LVL9:
+ 253 0044 08BD     		pop	{r3, pc}
+ 254              	.L25:
+ 255 0046 00BF     		.align	2
+ 256              	.L24:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 16
+
+
+ 257 0048 7D640040 		.word	1073767549
+ 258              		.cfi_endproc
+ 259              	.LFE1:
+ 260              		.size	PWM_Test_Signal_Init, .-PWM_Test_Signal_Init
+ 261              		.section	.text.PWM_Test_Signal_Start,"ax",%progbits
+ 262              		.align	2
+ 263              		.global	PWM_Test_Signal_Start
+ 264              		.thumb
+ 265              		.thumb_func
+ 266              		.type	PWM_Test_Signal_Start, %function
+ 267              	PWM_Test_Signal_Start:
+ 268              	.LFB0:
+  56:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /* If not Initialized then initialize all required hardware and software */
+ 269              		.loc 1 56 0
+ 270              		.cfi_startproc
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273 0000 08B5     		push	{r3, lr}
+ 274              		.cfi_def_cfa_offset 8
+ 275              		.cfi_offset 3, -8
+ 276              		.cfi_offset 14, -4
+  58:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
+ 277              		.loc 1 58 0
+ 278 0002 054B     		ldr	r3, .L29
+ 279 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 280 0006 23B9     		cbnz	r3, .L27
+  60:Generated_Source\PSoC5/PWM_Test_Signal.c ****         PWM_Test_Signal_initVar = 1u;
+ 281              		.loc 1 60 0
+ 282 0008 FFF7FEFF 		bl	PWM_Test_Signal_Init
+ 283              	.LVL10:
+  61:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
+ 284              		.loc 1 61 0
+ 285 000c 0122     		movs	r2, #1
+ 286 000e 024B     		ldr	r3, .L29
+ 287 0010 1A70     		strb	r2, [r3]
+ 288              	.L27:
+  63:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
+ 289              		.loc 1 63 0
+ 290 0012 FFF7FEFF 		bl	PWM_Test_Signal_Enable
+ 291              	.LVL11:
+ 292 0016 08BD     		pop	{r3, pc}
+ 293              	.L30:
+ 294              		.align	2
+ 295              	.L29:
+ 296 0018 00000000 		.word	.LANCHOR0
+ 297              		.cfi_endproc
+ 298              	.LFE0:
+ 299              		.size	PWM_Test_Signal_Start, .-PWM_Test_Signal_Start
+ 300              		.section	.text.PWM_Test_Signal_ReadControlRegister,"ax",%progbits
+ 301              		.align	2
+ 302              		.global	PWM_Test_Signal_ReadControlRegister
+ 303              		.thumb
+ 304              		.thumb_func
+ 305              		.type	PWM_Test_Signal_ReadControlRegister, %function
+ 306              	PWM_Test_Signal_ReadControlRegister:
+ 307              	.LFB9:
  591:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_UsingFixedFunction) */
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 17
+
+
  592:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
  593:Generated_Source\PSoC5/PWM_Test_Signal.c **** #endif /* UseOneCompareMode */
  594:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -958,9 +991,6 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  619:Generated_Source\PSoC5/PWM_Test_Signal.c ****             /* Clear existing data */
  620:Generated_Source\PSoC5/PWM_Test_Signal.c ****             PWM_Test_Signal_DEADBAND_COUNT &= ((uint8)(~PWM_Test_Signal_DEADBAND_COUNT_MASK));
  621:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 17
-
-
  622:Generated_Source\PSoC5/PWM_Test_Signal.c ****             /* Set new dead time */
  623:Generated_Source\PSoC5/PWM_Test_Signal.c ****             #if(PWM_Test_Signal_DEADBAND_COUNT_SHIFT)
  624:Generated_Source\PSoC5/PWM_Test_Signal.c ****                 PWM_Test_Signal_DEADBAND_COUNT |= ((uint8)((uint8)deadtime << PWM_Test_Signal_DEADB
@@ -988,6 +1018,9 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  646:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *
  647:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  648:Generated_Source\PSoC5/PWM_Test_Signal.c ****     uint8 PWM_Test_Signal_ReadDeadTime(void) 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 18
+
+
  649:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
  650:Generated_Source\PSoC5/PWM_Test_Signal.c ****         /* If using the Dead Band 1-255 mode then just read the register */
  651:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if(!PWM_Test_Signal_DeadBand2_4)
@@ -1018,9 +1051,6 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  676:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *
  677:Generated_Source\PSoC5/PWM_Test_Signal.c ****     * Parameters:
  678:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  uint8 interruptMode: Bit field containing the interrupt sources enabled
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 18
-
-
  679:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *
  680:Generated_Source\PSoC5/PWM_Test_Signal.c ****     * Return:
  681:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  None
@@ -1048,6 +1078,9 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  703:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  [5]   : Kill event output
  704:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  [4]   : FIFO not empty
  705:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  [3]   : FIFO full
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 19
+
+
  706:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  [2]   : Terminal count
  707:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  [1]   : Compare output 2
  708:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  [0]   : Compare output 1
@@ -1078,43 +1111,43 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  733:Generated_Source\PSoC5/PWM_Test_Signal.c ****     * Return:
  734:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  uint8 : Current control register value
  735:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 19
-
-
  736:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  737:Generated_Source\PSoC5/PWM_Test_Signal.c ****     uint8 PWM_Test_Signal_ReadControlRegister(void) 
  738:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
- 279              		.loc 1 738 0
- 280              		.cfi_startproc
- 281              		@ args = 0, pretend = 0, frame = 0
- 282              		@ frame_needed = 0, uses_anonymous_args = 0
- 283              		@ link register save eliminated.
+ 308              		.loc 1 738 0
+ 309              		.cfi_startproc
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312              		@ link register save eliminated.
  739:Generated_Source\PSoC5/PWM_Test_Signal.c ****         uint8 result;
  740:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  741:Generated_Source\PSoC5/PWM_Test_Signal.c ****         result = CY_GET_REG8(PWM_Test_Signal_CONTROL_PTR);
- 284              		.loc 1 741 0
- 285 0000 014B     		ldr	r3, .L29
- 286 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 287              	.LVL10:
+ 313              		.loc 1 741 0
+ 314 0000 014B     		ldr	r3, .L32
+ 315 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 316              	.LVL12:
  742:Generated_Source\PSoC5/PWM_Test_Signal.c ****         return (result);
  743:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
- 288              		.loc 1 743 0
- 289 0004 7047     		bx	lr
- 290              	.L30:
- 291 0006 00BF     		.align	2
- 292              	.L29:
- 293 0008 74640040 		.word	1073767540
- 294              		.cfi_endproc
- 295              	.LFE8:
- 296              		.size	PWM_Test_Signal_ReadControlRegister, .-PWM_Test_Signal_ReadControlRegister
- 297              		.section	.text.PWM_Test_Signal_WriteControlRegister,"ax",%progbits
- 298              		.align	2
- 299              		.global	PWM_Test_Signal_WriteControlRegister
- 300              		.thumb
- 301              		.thumb_func
- 302              		.type	PWM_Test_Signal_WriteControlRegister, %function
- 303              	PWM_Test_Signal_WriteControlRegister:
- 304              	.LFB9:
+ 317              		.loc 1 743 0
+ 318 0004 7047     		bx	lr
+ 319              	.L33:
+ 320 0006 00BF     		.align	2
+ 321              	.L32:
+ 322 0008 7D640040 		.word	1073767549
+ 323              		.cfi_endproc
+ 324              	.LFE9:
+ 325              		.size	PWM_Test_Signal_ReadControlRegister, .-PWM_Test_Signal_ReadControlRegister
+ 326              		.section	.text.PWM_Test_Signal_WriteControlRegister,"ax",%progbits
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 20
+
+
+ 327              		.align	2
+ 328              		.global	PWM_Test_Signal_WriteControlRegister
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.type	PWM_Test_Signal_WriteControlRegister, %function
+ 332              	PWM_Test_Signal_WriteControlRegister:
+ 333              	.LFB10:
  744:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  745:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  746:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /*******************************************************************************
@@ -1138,36 +1171,36 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  764:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  765:Generated_Source\PSoC5/PWM_Test_Signal.c ****     void PWM_Test_Signal_WriteControlRegister(uint8 control) 
  766:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 20
-
-
- 305              		.loc 1 766 0
- 306              		.cfi_startproc
- 307              		@ args = 0, pretend = 0, frame = 0
- 308              		@ frame_needed = 0, uses_anonymous_args = 0
- 309              		@ link register save eliminated.
- 310              	.LVL11:
+ 334              		.loc 1 766 0
+ 335              		.cfi_startproc
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339              	.LVL13:
  767:Generated_Source\PSoC5/PWM_Test_Signal.c ****         CY_SET_REG8(PWM_Test_Signal_CONTROL_PTR, control);
- 311              		.loc 1 767 0
- 312 0000 014B     		ldr	r3, .L32
- 313 0002 1870     		strb	r0, [r3]
- 314 0004 7047     		bx	lr
- 315              	.L33:
- 316 0006 00BF     		.align	2
- 317              	.L32:
- 318 0008 74640040 		.word	1073767540
- 319              		.cfi_endproc
- 320              	.LFE9:
- 321              		.size	PWM_Test_Signal_WriteControlRegister, .-PWM_Test_Signal_WriteControlRegister
- 322              		.section	.text.PWM_Test_Signal_ReadCapture,"ax",%progbits
- 323              		.align	2
- 324              		.global	PWM_Test_Signal_ReadCapture
- 325              		.thumb
- 326              		.thumb_func
- 327              		.type	PWM_Test_Signal_ReadCapture, %function
- 328              	PWM_Test_Signal_ReadCapture:
- 329              	.LFB10:
+ 340              		.loc 1 767 0
+ 341 0000 014B     		ldr	r3, .L35
+ 342 0002 1870     		strb	r0, [r3]
+ 343 0004 7047     		bx	lr
+ 344              	.L36:
+ 345 0006 00BF     		.align	2
+ 346              	.L35:
+ 347 0008 7D640040 		.word	1073767549
+ 348              		.cfi_endproc
+ 349              	.LFE10:
+ 350              		.size	PWM_Test_Signal_WriteControlRegister, .-PWM_Test_Signal_WriteControlRegister
+ 351              		.section	.text.PWM_Test_Signal_ReadCapture,"ax",%progbits
+ 352              		.align	2
+ 353              		.global	PWM_Test_Signal_ReadCapture
+ 354              		.thumb
+ 355              		.thumb_func
+ 356              		.type	PWM_Test_Signal_ReadCapture, %function
+ 357              	PWM_Test_Signal_ReadCapture:
+ 358              	.LFB11:
  768:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 21
+
+
  769:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  770:Generated_Source\PSoC5/PWM_Test_Signal.c **** #endif /* (PWM_Test_Signal_UseControl) */
  771:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -1191,43 +1224,43 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  789:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  790:Generated_Source\PSoC5/PWM_Test_Signal.c ****     uint16 PWM_Test_Signal_ReadCapture(void) 
  791:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
- 330              		.loc 1 791 0
- 331              		.cfi_startproc
- 332              		@ args = 0, pretend = 0, frame = 0
- 333              		@ frame_needed = 0, uses_anonymous_args = 0
- 334              		@ link register save eliminated.
+ 359              		.loc 1 791 0
+ 360              		.cfi_startproc
+ 361              		@ args = 0, pretend = 0, frame = 0
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363              		@ link register save eliminated.
  792:Generated_Source\PSoC5/PWM_Test_Signal.c ****         return (CY_GET_REG16(PWM_Test_Signal_CAPTURE_LSB_PTR));
- 335              		.loc 1 792 0
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 21
-
-
- 336 0000 014B     		ldr	r3, .L35
- 337 0002 1888     		ldrh	r0, [r3]
+ 364              		.loc 1 792 0
+ 365 0000 014B     		ldr	r3, .L38
+ 366 0002 1888     		ldrh	r0, [r3]
  793:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
- 338              		.loc 1 793 0
- 339 0004 80B2     		uxth	r0, r0
- 340 0006 7047     		bx	lr
- 341              	.L36:
- 342              		.align	2
- 343              	.L35:
- 344 0008 B0680040 		.word	1073768624
- 345              		.cfi_endproc
- 346              	.LFE10:
- 347              		.size	PWM_Test_Signal_ReadCapture, .-PWM_Test_Signal_ReadCapture
- 348              		.section	.text.PWM_Test_Signal_ReadCompare,"ax",%progbits
- 349              		.align	2
- 350              		.global	PWM_Test_Signal_ReadCompare
- 351              		.thumb
- 352              		.thumb_func
- 353              		.type	PWM_Test_Signal_ReadCompare, %function
- 354              	PWM_Test_Signal_ReadCompare:
- 355              	.LFB11:
+ 367              		.loc 1 793 0
+ 368 0004 80B2     		uxth	r0, r0
+ 369 0006 7047     		bx	lr
+ 370              	.L39:
+ 371              		.align	2
+ 372              	.L38:
+ 373 0008 B8680040 		.word	1073768632
+ 374              		.cfi_endproc
+ 375              	.LFE11:
+ 376              		.size	PWM_Test_Signal_ReadCapture, .-PWM_Test_Signal_ReadCapture
+ 377              		.section	.text.PWM_Test_Signal_ReadCompare1,"ax",%progbits
+ 378              		.align	2
+ 379              		.global	PWM_Test_Signal_ReadCompare1
+ 380              		.thumb
+ 381              		.thumb_func
+ 382              		.type	PWM_Test_Signal_ReadCompare1, %function
+ 383              	PWM_Test_Signal_ReadCompare1:
+ 384              	.LFB12:
  794:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  795:Generated_Source\PSoC5/PWM_Test_Signal.c **** #endif /* (!PWM_Test_Signal_UsingFixedFunction) */
  796:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  797:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  798:Generated_Source\PSoC5/PWM_Test_Signal.c **** #if (PWM_Test_Signal_UseOneCompareMode)
  799:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 22
+
+
  800:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  801:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /*******************************************************************************
  802:Generated_Source\PSoC5/PWM_Test_Signal.c ****     * Function Name: PWM_Test_Signal_ReadCompare
@@ -1246,41 +1279,12 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  815:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  816:Generated_Source\PSoC5/PWM_Test_Signal.c ****     uint16 PWM_Test_Signal_ReadCompare(void) 
  817:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
- 356              		.loc 1 817 0
- 357              		.cfi_startproc
- 358              		@ args = 0, pretend = 0, frame = 0
- 359              		@ frame_needed = 0, uses_anonymous_args = 0
- 360              		@ link register save eliminated.
  818:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #if(PWM_Test_Signal_UsingFixedFunction)
  819:Generated_Source\PSoC5/PWM_Test_Signal.c ****             return ((uint16)CY_GET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR));
  820:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #else
  821:Generated_Source\PSoC5/PWM_Test_Signal.c ****             return (CY_GET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR));
- 361              		.loc 1 821 0
- 362 0000 014B     		ldr	r3, .L38
- 363 0002 1888     		ldrh	r0, [r3]
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 22
-
-
  822:Generated_Source\PSoC5/PWM_Test_Signal.c ****         #endif /* (PWM_Test_Signal_UsingFixedFunction) */
  823:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
- 364              		.loc 1 823 0
- 365 0004 80B2     		uxth	r0, r0
- 366 0006 7047     		bx	lr
- 367              	.L39:
- 368              		.align	2
- 369              	.L38:
- 370 0008 50680040 		.word	1073768528
- 371              		.cfi_endproc
- 372              	.LFE11:
- 373              		.size	PWM_Test_Signal_ReadCompare, .-PWM_Test_Signal_ReadCompare
- 374              		.section	.text.PWM_Test_Signal_ReadPeriod,"ax",%progbits
- 375              		.align	2
- 376              		.global	PWM_Test_Signal_ReadPeriod
- 377              		.thumb
- 378              		.thumb_func
- 379              		.type	PWM_Test_Signal_ReadPeriod, %function
- 380              	PWM_Test_Signal_ReadPeriod:
- 381              	.LFB12:
  824:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  825:Generated_Source\PSoC5/PWM_Test_Signal.c **** #else
  826:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -1301,8 +1305,37 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  841:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  842:Generated_Source\PSoC5/PWM_Test_Signal.c ****     uint16 PWM_Test_Signal_ReadCompare1(void) 
  843:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
+ 385              		.loc 1 843 0
+ 386              		.cfi_startproc
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389              		@ link register save eliminated.
  844:Generated_Source\PSoC5/PWM_Test_Signal.c ****         return (CY_GET_REG16(PWM_Test_Signal_COMPARE1_LSB_PTR));
+ 390              		.loc 1 844 0
+ 391 0000 014B     		ldr	r3, .L41
+ 392 0002 1888     		ldrh	r0, [r3]
  845:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
+ 393              		.loc 1 845 0
+ 394 0004 80B2     		uxth	r0, r0
+ 395 0006 7047     		bx	lr
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 23
+
+
+ 396              	.L42:
+ 397              		.align	2
+ 398              	.L41:
+ 399 0008 58680040 		.word	1073768536
+ 400              		.cfi_endproc
+ 401              	.LFE12:
+ 402              		.size	PWM_Test_Signal_ReadCompare1, .-PWM_Test_Signal_ReadCompare1
+ 403              		.section	.text.PWM_Test_Signal_ReadCompare2,"ax",%progbits
+ 404              		.align	2
+ 405              		.global	PWM_Test_Signal_ReadCompare2
+ 406              		.thumb
+ 407              		.thumb_func
+ 408              		.type	PWM_Test_Signal_ReadCompare2, %function
+ 409              	PWM_Test_Signal_ReadCompare2:
+ 410              	.LFB13:
  846:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  847:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  848:Generated_Source\PSoC5/PWM_Test_Signal.c ****     /*******************************************************************************
@@ -1318,14 +1351,40 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  858:Generated_Source\PSoC5/PWM_Test_Signal.c ****     * Return:
  859:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *  uint8/uint16: Current compare value.
  860:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 23
-
-
  861:Generated_Source\PSoC5/PWM_Test_Signal.c ****     *******************************************************************************/
  862:Generated_Source\PSoC5/PWM_Test_Signal.c ****     uint16 PWM_Test_Signal_ReadCompare2(void) 
  863:Generated_Source\PSoC5/PWM_Test_Signal.c ****     {
+ 411              		.loc 1 863 0
+ 412              		.cfi_startproc
+ 413              		@ args = 0, pretend = 0, frame = 0
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 415              		@ link register save eliminated.
  864:Generated_Source\PSoC5/PWM_Test_Signal.c ****         return (CY_GET_REG16(PWM_Test_Signal_COMPARE2_LSB_PTR));
+ 416              		.loc 1 864 0
+ 417 0000 014B     		ldr	r3, .L44
+ 418 0002 1888     		ldrh	r0, [r3]
  865:Generated_Source\PSoC5/PWM_Test_Signal.c ****     }
+ 419              		.loc 1 865 0
+ 420 0004 80B2     		uxth	r0, r0
+ 421 0006 7047     		bx	lr
+ 422              	.L45:
+ 423              		.align	2
+ 424              	.L44:
+ 425 0008 78680040 		.word	1073768568
+ 426              		.cfi_endproc
+ 427              	.LFE13:
+ 428              		.size	PWM_Test_Signal_ReadCompare2, .-PWM_Test_Signal_ReadCompare2
+ 429              		.section	.text.PWM_Test_Signal_ReadPeriod,"ax",%progbits
+ 430              		.align	2
+ 431              		.global	PWM_Test_Signal_ReadPeriod
+ 432              		.thumb
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 24
+
+
+ 433              		.thumb_func
+ 434              		.type	PWM_Test_Signal_ReadPeriod, %function
+ 435              	PWM_Test_Signal_ReadPeriod:
+ 436              	.LFB14:
  866:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
  867:Generated_Source\PSoC5/PWM_Test_Signal.c **** #endif /* (PWM_Test_Signal_UseOneCompareMode) */
  868:Generated_Source\PSoC5/PWM_Test_Signal.c **** 
@@ -1346,972 +1405,1035 @@ ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 1
  883:Generated_Source\PSoC5/PWM_Test_Signal.c **** *******************************************************************************/
  884:Generated_Source\PSoC5/PWM_Test_Signal.c **** uint16 PWM_Test_Signal_ReadPeriod(void) 
  885:Generated_Source\PSoC5/PWM_Test_Signal.c **** {
- 382              		.loc 1 885 0
- 383              		.cfi_startproc
- 384              		@ args = 0, pretend = 0, frame = 0
- 385              		@ frame_needed = 0, uses_anonymous_args = 0
- 386              		@ link register save eliminated.
+ 437              		.loc 1 885 0
+ 438              		.cfi_startproc
+ 439              		@ args = 0, pretend = 0, frame = 0
+ 440              		@ frame_needed = 0, uses_anonymous_args = 0
+ 441              		@ link register save eliminated.
  886:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #if(PWM_Test_Signal_UsingFixedFunction)
  887:Generated_Source\PSoC5/PWM_Test_Signal.c ****         return ((uint16)CY_GET_REG16(PWM_Test_Signal_PERIOD_LSB_PTR));
  888:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #else
  889:Generated_Source\PSoC5/PWM_Test_Signal.c ****         return (CY_GET_REG16(PWM_Test_Signal_PERIOD_LSB_PTR));
- 387              		.loc 1 889 0
- 388 0000 014B     		ldr	r3, .L41
- 389 0002 1888     		ldrh	r0, [r3]
+ 442              		.loc 1 889 0
+ 443 0000 014B     		ldr	r3, .L47
+ 444 0002 1888     		ldrh	r0, [r3]
  890:Generated_Source\PSoC5/PWM_Test_Signal.c ****     #endif /* (PWM_Test_Signal_UsingFixedFunction) */
  891:Generated_Source\PSoC5/PWM_Test_Signal.c **** }
- 390              		.loc 1 891 0
- 391 0004 80B2     		uxth	r0, r0
- 392 0006 7047     		bx	lr
- 393              	.L42:
- 394              		.align	2
- 395              	.L41:
- 396 0008 90680040 		.word	1073768592
- 397              		.cfi_endproc
- 398              	.LFE12:
- 399              		.size	PWM_Test_Signal_ReadPeriod, .-PWM_Test_Signal_ReadPeriod
- 400              		.global	PWM_Test_Signal_initVar
- 401              		.bss
- 402              		.set	.LANCHOR0,. + 0
- 403              		.type	PWM_Test_Signal_initVar, %object
- 404              		.size	PWM_Test_Signal_initVar, 1
- 405              	PWM_Test_Signal_initVar:
- 406 0000 00       		.space	1
- 407              		.text
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 24
+ 445              		.loc 1 891 0
+ 446 0004 80B2     		uxth	r0, r0
+ 447 0006 7047     		bx	lr
+ 448              	.L48:
+ 449              		.align	2
+ 450              	.L47:
+ 451 0008 98680040 		.word	1073768600
+ 452              		.cfi_endproc
+ 453              	.LFE14:
+ 454              		.size	PWM_Test_Signal_ReadPeriod, .-PWM_Test_Signal_ReadPeriod
+ 455              		.global	PWM_Test_Signal_initVar
+ 456              		.bss
+ 457              		.set	.LANCHOR0,. + 0
+ 458              		.type	PWM_Test_Signal_initVar, %object
+ 459              		.size	PWM_Test_Signal_initVar, 1
+ 460              	PWM_Test_Signal_initVar:
+ 461 0000 00       		.space	1
+ 462              		.text
+ 463              	.Letext0:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 25
 
 
- 408              	.Letext0:
- 409              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 410              		.section	.debug_info,"",%progbits
- 411              	.Ldebug_info0:
- 412 0000 8F020000 		.4byte	0x28f
- 413 0004 0400     		.2byte	0x4
- 414 0006 00000000 		.4byte	.Ldebug_abbrev0
- 415 000a 04       		.byte	0x4
- 416 000b 01       		.uleb128 0x1
- 417 000c CD000000 		.4byte	.LASF36
- 418 0010 0C       		.byte	0xc
- 419 0011 5B010000 		.4byte	.LASF37
- 420 0015 24000000 		.4byte	.LASF38
- 421 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 422 001d 00000000 		.4byte	0
- 423 0021 00000000 		.4byte	.Ldebug_line0
- 424 0025 02       		.uleb128 0x2
- 425 0026 01       		.byte	0x1
- 426 0027 06       		.byte	0x6
- 427 0028 25030000 		.4byte	.LASF0
- 428 002c 02       		.uleb128 0x2
- 429 002d 01       		.byte	0x1
- 430 002e 08       		.byte	0x8
- 431 002f BF000000 		.4byte	.LASF1
- 432 0033 02       		.uleb128 0x2
- 433 0034 02       		.byte	0x2
- 434 0035 05       		.byte	0x5
- 435 0036 EB020000 		.4byte	.LASF2
- 436 003a 02       		.uleb128 0x2
- 437 003b 02       		.byte	0x2
- 438 003c 07       		.byte	0x7
- 439 003d 82000000 		.4byte	.LASF3
- 440 0041 02       		.uleb128 0x2
- 441 0042 04       		.byte	0x4
- 442 0043 05       		.byte	0x5
- 443 0044 10030000 		.4byte	.LASF4
- 444 0048 02       		.uleb128 0x2
- 445 0049 04       		.byte	0x4
- 446 004a 07       		.byte	0x7
- 447 004b A6010000 		.4byte	.LASF5
- 448 004f 02       		.uleb128 0x2
- 449 0050 08       		.byte	0x8
- 450 0051 05       		.byte	0x5
- 451 0052 C3020000 		.4byte	.LASF6
- 452 0056 02       		.uleb128 0x2
- 453 0057 08       		.byte	0x8
- 454 0058 07       		.byte	0x7
- 455 0059 4E020000 		.4byte	.LASF7
- 456 005d 03       		.uleb128 0x3
- 457 005e 04       		.byte	0x4
- 458 005f 05       		.byte	0x5
- 459 0060 696E7400 		.ascii	"int\000"
- 460 0064 02       		.uleb128 0x2
- 461 0065 04       		.byte	0x4
- 462 0066 07       		.byte	0x7
- 463 0067 41020000 		.4byte	.LASF8
- 464 006b 04       		.uleb128 0x4
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 25
+ 464              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 465              		.section	.debug_info,"",%progbits
+ 466              	.Ldebug_info0:
+ 467 0000 E5020000 		.4byte	0x2e5
+ 468 0004 0400     		.2byte	0x4
+ 469 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 470 000a 04       		.byte	0x4
+ 471 000b 01       		.uleb128 0x1
+ 472 000c C6000000 		.4byte	.LASF38
+ 473 0010 0C       		.byte	0xc
+ 474 0011 54010000 		.4byte	.LASF39
+ 475 0015 1D000000 		.4byte	.LASF40
+ 476 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 477 001d 00000000 		.4byte	0
+ 478 0021 00000000 		.4byte	.Ldebug_line0
+ 479 0025 02       		.uleb128 0x2
+ 480 0026 01       		.byte	0x1
+ 481 0027 06       		.byte	0x6
+ 482 0028 62030000 		.4byte	.LASF0
+ 483 002c 02       		.uleb128 0x2
+ 484 002d 01       		.byte	0x1
+ 485 002e 08       		.byte	0x8
+ 486 002f B8000000 		.4byte	.LASF1
+ 487 0033 02       		.uleb128 0x2
+ 488 0034 02       		.byte	0x2
+ 489 0035 05       		.byte	0x5
+ 490 0036 28030000 		.4byte	.LASF2
+ 491 003a 02       		.uleb128 0x2
+ 492 003b 02       		.byte	0x2
+ 493 003c 07       		.byte	0x7
+ 494 003d 7B000000 		.4byte	.LASF3
+ 495 0041 02       		.uleb128 0x2
+ 496 0042 04       		.byte	0x4
+ 497 0043 05       		.byte	0x5
+ 498 0044 4D030000 		.4byte	.LASF4
+ 499 0048 02       		.uleb128 0x2
+ 500 0049 04       		.byte	0x4
+ 501 004a 07       		.byte	0x7
+ 502 004b 82010000 		.4byte	.LASF5
+ 503 004f 02       		.uleb128 0x2
+ 504 0050 08       		.byte	0x8
+ 505 0051 05       		.byte	0x5
+ 506 0052 C6020000 		.4byte	.LASF6
+ 507 0056 02       		.uleb128 0x2
+ 508 0057 08       		.byte	0x8
+ 509 0058 07       		.byte	0x7
+ 510 0059 66020000 		.4byte	.LASF7
+ 511 005d 03       		.uleb128 0x3
+ 512 005e 04       		.byte	0x4
+ 513 005f 05       		.byte	0x5
+ 514 0060 696E7400 		.ascii	"int\000"
+ 515 0064 02       		.uleb128 0x2
+ 516 0065 04       		.byte	0x4
+ 517 0066 07       		.byte	0x7
+ 518 0067 59020000 		.4byte	.LASF8
+ 519 006b 04       		.uleb128 0x4
+ 520 006c 94010000 		.4byte	.LASF9
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 26
 
 
- 465 006c B8010000 		.4byte	.LASF9
- 466 0070 02       		.byte	0x2
- 467 0071 E801     		.2byte	0x1e8
- 468 0073 2C000000 		.4byte	0x2c
- 469 0077 04       		.uleb128 0x4
- 470 0078 22020000 		.4byte	.LASF10
- 471 007c 02       		.byte	0x2
- 472 007d E901     		.2byte	0x1e9
- 473 007f 3A000000 		.4byte	0x3a
- 474 0083 02       		.uleb128 0x2
- 475 0084 04       		.byte	0x4
- 476 0085 04       		.byte	0x4
- 477 0086 B1000000 		.4byte	.LASF11
- 478 008a 02       		.uleb128 0x2
- 479 008b 08       		.byte	0x8
- 480 008c 04       		.byte	0x4
- 481 008d F6010000 		.4byte	.LASF12
- 482 0091 02       		.uleb128 0x2
- 483 0092 01       		.byte	0x1
- 484 0093 08       		.byte	0x8
- 485 0094 D1020000 		.4byte	.LASF13
- 486 0098 04       		.uleb128 0x4
- 487 0099 84010000 		.4byte	.LASF14
- 488 009d 02       		.byte	0x2
- 489 009e 9202     		.2byte	0x292
- 490 00a0 A4000000 		.4byte	0xa4
- 491 00a4 05       		.uleb128 0x5
- 492 00a5 6B000000 		.4byte	0x6b
- 493 00a9 04       		.uleb128 0x4
- 494 00aa 00000000 		.4byte	.LASF15
- 495 00ae 02       		.byte	0x2
- 496 00af 9302     		.2byte	0x293
- 497 00b1 B5000000 		.4byte	0xb5
- 498 00b5 05       		.uleb128 0x5
- 499 00b6 77000000 		.4byte	0x77
- 500 00ba 02       		.uleb128 0x2
- 501 00bb 08       		.byte	0x8
- 502 00bc 04       		.byte	0x4
- 503 00bd 19030000 		.4byte	.LASF16
- 504 00c1 02       		.uleb128 0x2
- 505 00c2 04       		.byte	0x4
- 506 00c3 07       		.byte	0x7
- 507 00c4 BA020000 		.4byte	.LASF17
- 508 00c8 06       		.uleb128 0x6
- 509 00c9 0D000000 		.4byte	.LASF18
- 510 00cd 01       		.byte	0x1
- 511 00ce C7       		.byte	0xc7
- 512 00cf 00000000 		.4byte	.LFB2
- 513 00d3 10000000 		.4byte	.LFE2-.LFB2
- 514 00d7 01       		.uleb128 0x1
- 515 00d8 9C       		.byte	0x9c
- 516 00d9 06       		.uleb128 0x6
- 517 00da D6020000 		.4byte	.LASF19
- 518 00de 01       		.byte	0x1
- 519 00df E9       		.byte	0xe9
- 520 00e0 00000000 		.4byte	.LFB3
- 521 00e4 10000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 26
+ 521 0070 02       		.byte	0x2
+ 522 0071 E801     		.2byte	0x1e8
+ 523 0073 2C000000 		.4byte	0x2c
+ 524 0077 04       		.uleb128 0x4
+ 525 0078 3A020000 		.4byte	.LASF10
+ 526 007c 02       		.byte	0x2
+ 527 007d E901     		.2byte	0x1e9
+ 528 007f 3A000000 		.4byte	0x3a
+ 529 0083 02       		.uleb128 0x2
+ 530 0084 04       		.byte	0x4
+ 531 0085 04       		.byte	0x4
+ 532 0086 AA000000 		.4byte	.LASF11
+ 533 008a 02       		.uleb128 0x2
+ 534 008b 08       		.byte	0x8
+ 535 008c 04       		.byte	0x4
+ 536 008d 0E020000 		.4byte	.LASF12
+ 537 0091 02       		.uleb128 0x2
+ 538 0092 01       		.byte	0x1
+ 539 0093 08       		.byte	0x8
+ 540 0094 D4020000 		.4byte	.LASF13
+ 541 0098 04       		.uleb128 0x4
+ 542 0099 7D010000 		.4byte	.LASF14
+ 543 009d 02       		.byte	0x2
+ 544 009e 9202     		.2byte	0x292
+ 545 00a0 A4000000 		.4byte	0xa4
+ 546 00a4 05       		.uleb128 0x5
+ 547 00a5 6B000000 		.4byte	0x6b
+ 548 00a9 04       		.uleb128 0x4
+ 549 00aa 00000000 		.4byte	.LASF15
+ 550 00ae 02       		.byte	0x2
+ 551 00af 9302     		.2byte	0x293
+ 552 00b1 B5000000 		.4byte	0xb5
+ 553 00b5 05       		.uleb128 0x5
+ 554 00b6 77000000 		.4byte	0x77
+ 555 00ba 02       		.uleb128 0x2
+ 556 00bb 08       		.byte	0x8
+ 557 00bc 04       		.byte	0x4
+ 558 00bd 56030000 		.4byte	.LASF16
+ 559 00c1 02       		.uleb128 0x2
+ 560 00c2 04       		.byte	0x4
+ 561 00c3 07       		.byte	0x7
+ 562 00c4 BD020000 		.4byte	.LASF17
+ 563 00c8 06       		.uleb128 0x6
+ 564 00c9 06000000 		.4byte	.LASF18
+ 565 00cd 01       		.byte	0x1
+ 566 00ce C7       		.byte	0xc7
+ 567 00cf 00000000 		.4byte	.LFB2
+ 568 00d3 10000000 		.4byte	.LFE2-.LFB2
+ 569 00d7 01       		.uleb128 0x1
+ 570 00d8 9C       		.byte	0x9c
+ 571 00d9 06       		.uleb128 0x6
+ 572 00da D9020000 		.4byte	.LASF19
+ 573 00de 01       		.byte	0x1
+ 574 00df E9       		.byte	0xe9
+ 575 00e0 00000000 		.4byte	.LFB3
+ 576 00e4 10000000 		.4byte	.LFE3-.LFB3
+ 577 00e8 01       		.uleb128 0x1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 27
 
 
- 522 00e8 01       		.uleb128 0x1
- 523 00e9 9C       		.byte	0x9c
- 524 00ea 07       		.uleb128 0x7
- 525 00eb 81020000 		.4byte	.LASF20
- 526 00ef 01       		.byte	0x1
- 527 00f0 9301     		.2byte	0x193
- 528 00f2 00000000 		.4byte	.LFB4
- 529 00f6 0C000000 		.4byte	.LFE4-.LFB4
- 530 00fa 01       		.uleb128 0x1
- 531 00fb 9C       		.byte	0x9c
- 532 00fc 0F010000 		.4byte	0x10f
- 533 0100 08       		.uleb128 0x8
- 534 0101 B7000000 		.4byte	.LASF22
- 535 0105 01       		.byte	0x1
- 536 0106 9301     		.2byte	0x193
- 537 0108 77000000 		.4byte	0x77
- 538 010c 01       		.uleb128 0x1
- 539 010d 50       		.byte	0x50
- 540 010e 00       		.byte	0
- 541 010f 09       		.uleb128 0x9
- 542 0110 5D030000 		.4byte	.LASF32
- 543 0114 01       		.byte	0x1
- 544 0115 A901     		.2byte	0x1a9
- 545 0117 77000000 		.4byte	0x77
- 546 011b 00000000 		.4byte	.LFB5
- 547 011f 14000000 		.4byte	.LFE5-.LFB5
- 548 0123 01       		.uleb128 0x1
- 549 0124 9C       		.byte	0x9c
- 550 0125 07       		.uleb128 0x7
- 551 0126 95000000 		.4byte	.LASF21
- 552 012a 01       		.byte	0x1
- 553 012b E201     		.2byte	0x1e2
- 554 012d 00000000 		.4byte	.LFB6
- 555 0131 0C000000 		.4byte	.LFE6-.LFB6
- 556 0135 01       		.uleb128 0x1
- 557 0136 9C       		.byte	0x9c
- 558 0137 4A010000 		.4byte	0x14a
- 559 013b 08       		.uleb128 0x8
- 560 013c 7B000000 		.4byte	.LASF23
- 561 0140 01       		.byte	0x1
- 562 0141 E201     		.2byte	0x1e2
- 563 0143 77000000 		.4byte	0x77
- 564 0147 01       		.uleb128 0x1
- 565 0148 50       		.byte	0x50
- 566 0149 00       		.byte	0
- 567 014a 07       		.uleb128 0x7
- 568 014b 89010000 		.4byte	.LASF24
- 569 014f 01       		.byte	0x1
- 570 0150 0402     		.2byte	0x204
- 571 0152 00000000 		.4byte	.LFB7
- 572 0156 0C000000 		.4byte	.LFE7-.LFB7
- 573 015a 01       		.uleb128 0x1
- 574 015b 9C       		.byte	0x9c
- 575 015c 6F010000 		.4byte	0x16f
- 576 0160 08       		.uleb128 0x8
- 577 0161 31030000 		.4byte	.LASF25
- 578 0165 01       		.byte	0x1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 27
+ 578 00e9 9C       		.byte	0x9c
+ 579 00ea 07       		.uleb128 0x7
+ 580 00eb 84020000 		.4byte	.LASF20
+ 581 00ef 01       		.byte	0x1
+ 582 00f0 9301     		.2byte	0x193
+ 583 00f2 00000000 		.4byte	.LFB4
+ 584 00f6 0C000000 		.4byte	.LFE4-.LFB4
+ 585 00fa 01       		.uleb128 0x1
+ 586 00fb 9C       		.byte	0x9c
+ 587 00fc 0F010000 		.4byte	0x10f
+ 588 0100 08       		.uleb128 0x8
+ 589 0101 B0000000 		.4byte	.LASF22
+ 590 0105 01       		.byte	0x1
+ 591 0106 9301     		.2byte	0x193
+ 592 0108 77000000 		.4byte	0x77
+ 593 010c 01       		.uleb128 0x1
+ 594 010d 50       		.byte	0x50
+ 595 010e 00       		.byte	0
+ 596 010f 09       		.uleb128 0x9
+ 597 0110 9A030000 		.4byte	.LASF33
+ 598 0114 01       		.byte	0x1
+ 599 0115 A901     		.2byte	0x1a9
+ 600 0117 77000000 		.4byte	0x77
+ 601 011b 00000000 		.4byte	.LFB5
+ 602 011f 14000000 		.4byte	.LFE5-.LFB5
+ 603 0123 01       		.uleb128 0x1
+ 604 0124 9C       		.byte	0x9c
+ 605 0125 07       		.uleb128 0x7
+ 606 0126 8E000000 		.4byte	.LASF21
+ 607 012a 01       		.byte	0x1
+ 608 012b E201     		.2byte	0x1e2
+ 609 012d 00000000 		.4byte	.LFB6
+ 610 0131 0C000000 		.4byte	.LFE6-.LFB6
+ 611 0135 01       		.uleb128 0x1
+ 612 0136 9C       		.byte	0x9c
+ 613 0137 4A010000 		.4byte	0x14a
+ 614 013b 08       		.uleb128 0x8
+ 615 013c 74000000 		.4byte	.LASF23
+ 616 0140 01       		.byte	0x1
+ 617 0141 E201     		.2byte	0x1e2
+ 618 0143 77000000 		.4byte	0x77
+ 619 0147 01       		.uleb128 0x1
+ 620 0148 50       		.byte	0x50
+ 621 0149 00       		.byte	0
+ 622 014a 07       		.uleb128 0x7
+ 623 014b A2010000 		.4byte	.LASF24
+ 624 014f 01       		.byte	0x1
+ 625 0150 2B02     		.2byte	0x22b
+ 626 0152 00000000 		.4byte	.LFB7
+ 627 0156 0C000000 		.4byte	.LFE7-.LFB7
+ 628 015a 01       		.uleb128 0x1
+ 629 015b 9C       		.byte	0x9c
+ 630 015c 6F010000 		.4byte	0x16f
+ 631 0160 08       		.uleb128 0x8
+ 632 0161 6E030000 		.4byte	.LASF25
+ 633 0165 01       		.byte	0x1
+ 634 0166 2B02     		.2byte	0x22b
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 28
 
 
- 579 0166 0402     		.2byte	0x204
- 580 0168 77000000 		.4byte	0x77
- 581 016c 01       		.uleb128 0x1
- 582 016d 50       		.byte	0x50
- 583 016e 00       		.byte	0
- 584 016f 0A       		.uleb128 0xa
- 585 0170 E1010000 		.4byte	.LASF26
- 586 0174 01       		.byte	0x1
- 587 0175 54       		.byte	0x54
- 588 0176 00000000 		.4byte	.LFB1
- 589 017a 3C000000 		.4byte	.LFE1-.LFB1
- 590 017e 01       		.uleb128 0x1
- 591 017f 9C       		.byte	0x9c
- 592 0180 C9010000 		.4byte	0x1c9
- 593 0184 0B       		.uleb128 0xb
- 594 0185 F5020000 		.4byte	.LASF28
- 595 0189 01       		.byte	0x1
- 596 018a 57       		.byte	0x57
- 597 018b 6B000000 		.4byte	0x6b
- 598 018f 00000000 		.4byte	.LLST0
- 599 0193 0C       		.uleb128 0xc
- 600 0194 2A000000 		.4byte	.LVL5
- 601 0198 EA000000 		.4byte	0xea
- 602 019c A6010000 		.4byte	0x1a6
- 603 01a0 0D       		.uleb128 0xd
- 604 01a1 01       		.uleb128 0x1
- 605 01a2 50       		.byte	0x50
- 606 01a3 01       		.uleb128 0x1
- 607 01a4 39       		.byte	0x39
- 608 01a5 00       		.byte	0
- 609 01a6 0C       		.uleb128 0xc
- 610 01a7 30000000 		.4byte	.LVL6
- 611 01ab 25010000 		.4byte	0x125
- 612 01af B9010000 		.4byte	0x1b9
- 613 01b3 0D       		.uleb128 0xd
- 614 01b4 01       		.uleb128 0x1
- 615 01b5 50       		.byte	0x50
- 616 01b6 01       		.uleb128 0x1
- 617 01b7 39       		.byte	0x39
- 618 01b8 00       		.byte	0
- 619 01b9 0E       		.uleb128 0xe
- 620 01ba 36000000 		.4byte	.LVL7
- 621 01be 4A010000 		.4byte	0x14a
- 622 01c2 0D       		.uleb128 0xd
- 623 01c3 01       		.uleb128 0x1
- 624 01c4 50       		.byte	0x50
- 625 01c5 01       		.uleb128 0x1
- 626 01c6 35       		.byte	0x35
- 627 01c7 00       		.byte	0
- 628 01c8 00       		.byte	0
- 629 01c9 0A       		.uleb128 0xa
- 630 01ca FA020000 		.4byte	.LASF27
- 631 01ce 01       		.byte	0x1
- 632 01cf 37       		.byte	0x37
- 633 01d0 00000000 		.4byte	.LFB0
- 634 01d4 1C000000 		.4byte	.LFE0-.LFB0
- 635 01d8 01       		.uleb128 0x1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 28
+ 635 0168 77000000 		.4byte	0x77
+ 636 016c 01       		.uleb128 0x1
+ 637 016d 50       		.byte	0x50
+ 638 016e 00       		.byte	0
+ 639 016f 07       		.uleb128 0x7
+ 640 0170 C0010000 		.4byte	.LASF26
+ 641 0174 01       		.byte	0x1
+ 642 0175 4802     		.2byte	0x248
+ 643 0177 00000000 		.4byte	.LFB8
+ 644 017b 0C000000 		.4byte	.LFE8-.LFB8
+ 645 017f 01       		.uleb128 0x1
+ 646 0180 9C       		.byte	0x9c
+ 647 0181 94010000 		.4byte	0x194
+ 648 0185 08       		.uleb128 0x8
+ 649 0186 6E030000 		.4byte	.LASF25
+ 650 018a 01       		.byte	0x1
+ 651 018b 4802     		.2byte	0x248
+ 652 018d 77000000 		.4byte	0x77
+ 653 0191 01       		.uleb128 0x1
+ 654 0192 50       		.byte	0x50
+ 655 0193 00       		.byte	0
+ 656 0194 0A       		.uleb128 0xa
+ 657 0195 F9010000 		.4byte	.LASF27
+ 658 0199 01       		.byte	0x1
+ 659 019a 54       		.byte	0x54
+ 660 019b 00000000 		.4byte	.LFB1
+ 661 019f 4C000000 		.4byte	.LFE1-.LFB1
+ 662 01a3 01       		.uleb128 0x1
+ 663 01a4 9C       		.byte	0x9c
+ 664 01a5 09020000 		.4byte	0x209
+ 665 01a9 0B       		.uleb128 0xb
+ 666 01aa 32030000 		.4byte	.LASF29
+ 667 01ae 01       		.byte	0x1
+ 668 01af 57       		.byte	0x57
+ 669 01b0 6B000000 		.4byte	0x6b
+ 670 01b4 00000000 		.4byte	.LLST0
+ 671 01b8 0C       		.uleb128 0xc
+ 672 01b9 2C000000 		.4byte	.LVL6
+ 673 01bd EA000000 		.4byte	0xea
+ 674 01c1 CD010000 		.4byte	0x1cd
+ 675 01c5 0D       		.uleb128 0xd
+ 676 01c6 01       		.uleb128 0x1
+ 677 01c7 50       		.byte	0x50
+ 678 01c8 03       		.uleb128 0x3
+ 679 01c9 0B       		.byte	0xb
+ 680 01ca 409C     		.2byte	0x9c40
+ 681 01cc 00       		.byte	0
+ 682 01cd 0C       		.uleb128 0xc
+ 683 01ce 34000000 		.4byte	.LVL7
+ 684 01d2 25010000 		.4byte	0x125
+ 685 01d6 E2010000 		.4byte	0x1e2
+ 686 01da 0D       		.uleb128 0xd
+ 687 01db 01       		.uleb128 0x1
+ 688 01dc 50       		.byte	0x50
+ 689 01dd 03       		.uleb128 0x3
+ 690 01de 0B       		.byte	0xb
+ 691 01df 409C     		.2byte	0x9c40
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 29
 
 
- 636 01d9 9C       		.byte	0x9c
- 637 01da F1010000 		.4byte	0x1f1
- 638 01de 0F       		.uleb128 0xf
- 639 01df 0C000000 		.4byte	.LVL8
- 640 01e3 6F010000 		.4byte	0x16f
- 641 01e7 0F       		.uleb128 0xf
- 642 01e8 16000000 		.4byte	.LVL9
- 643 01ec C8000000 		.4byte	0xc8
- 644 01f0 00       		.byte	0
- 645 01f1 10       		.uleb128 0x10
- 646 01f2 39030000 		.4byte	.LASF39
- 647 01f6 01       		.byte	0x1
- 648 01f7 E102     		.2byte	0x2e1
- 649 01f9 6B000000 		.4byte	0x6b
- 650 01fd 00000000 		.4byte	.LFB8
- 651 0201 0C000000 		.4byte	.LFE8-.LFB8
- 652 0205 01       		.uleb128 0x1
- 653 0206 9C       		.byte	0x9c
- 654 0207 1A020000 		.4byte	0x21a
- 655 020b 11       		.uleb128 0x11
- 656 020c 06000000 		.4byte	.LASF29
- 657 0210 01       		.byte	0x1
- 658 0211 E302     		.2byte	0x2e3
- 659 0213 6B000000 		.4byte	0x6b
- 660 0217 01       		.uleb128 0x1
- 661 0218 50       		.byte	0x50
- 662 0219 00       		.byte	0
- 663 021a 07       		.uleb128 0x7
- 664 021b FD010000 		.4byte	.LASF30
- 665 021f 01       		.byte	0x1
- 666 0220 FD02     		.2byte	0x2fd
- 667 0222 00000000 		.4byte	.LFB9
- 668 0226 0C000000 		.4byte	.LFE9-.LFB9
- 669 022a 01       		.uleb128 0x1
- 670 022b 9C       		.byte	0x9c
- 671 022c 3F020000 		.4byte	0x23f
- 672 0230 08       		.uleb128 0x8
- 673 0231 BE010000 		.4byte	.LASF31
- 674 0235 01       		.byte	0x1
- 675 0236 FD02     		.2byte	0x2fd
- 676 0238 6B000000 		.4byte	0x6b
- 677 023c 01       		.uleb128 0x1
- 678 023d 50       		.byte	0x50
- 679 023e 00       		.byte	0
- 680 023f 09       		.uleb128 0x9
- 681 0240 9E020000 		.4byte	.LASF33
- 682 0244 01       		.byte	0x1
- 683 0245 1603     		.2byte	0x316
- 684 0247 77000000 		.4byte	0x77
- 685 024b 00000000 		.4byte	.LFB10
- 686 024f 0C000000 		.4byte	.LFE10-.LFB10
- 687 0253 01       		.uleb128 0x1
- 688 0254 9C       		.byte	0x9c
- 689 0255 09       		.uleb128 0x9
- 690 0256 65020000 		.4byte	.LASF34
- 691 025a 01       		.byte	0x1
- 692 025b 3003     		.2byte	0x330
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 29
+ 692 01e1 00       		.byte	0
+ 693 01e2 0C       		.uleb128 0xc
+ 694 01e3 3C000000 		.4byte	.LVL8
+ 695 01e7 4A010000 		.4byte	0x14a
+ 696 01eb F7010000 		.4byte	0x1f7
+ 697 01ef 0D       		.uleb128 0xd
+ 698 01f0 01       		.uleb128 0x1
+ 699 01f1 50       		.byte	0x50
+ 700 01f2 03       		.uleb128 0x3
+ 701 01f3 0A       		.byte	0xa
+ 702 01f4 B80B     		.2byte	0xbb8
+ 703 01f6 00       		.byte	0
+ 704 01f7 0E       		.uleb128 0xe
+ 705 01f8 44000000 		.4byte	.LVL9
+ 706 01fc 6F010000 		.4byte	0x16f
+ 707 0200 0D       		.uleb128 0xd
+ 708 0201 01       		.uleb128 0x1
+ 709 0202 50       		.byte	0x50
+ 710 0203 03       		.uleb128 0x3
+ 711 0204 0A       		.byte	0xa
+ 712 0205 B80B     		.2byte	0xbb8
+ 713 0207 00       		.byte	0
+ 714 0208 00       		.byte	0
+ 715 0209 0A       		.uleb128 0xa
+ 716 020a 37030000 		.4byte	.LASF28
+ 717 020e 01       		.byte	0x1
+ 718 020f 37       		.byte	0x37
+ 719 0210 00000000 		.4byte	.LFB0
+ 720 0214 1C000000 		.4byte	.LFE0-.LFB0
+ 721 0218 01       		.uleb128 0x1
+ 722 0219 9C       		.byte	0x9c
+ 723 021a 31020000 		.4byte	0x231
+ 724 021e 0F       		.uleb128 0xf
+ 725 021f 0C000000 		.4byte	.LVL10
+ 726 0223 94010000 		.4byte	0x194
+ 727 0227 0F       		.uleb128 0xf
+ 728 0228 16000000 		.4byte	.LVL11
+ 729 022c C8000000 		.4byte	0xc8
+ 730 0230 00       		.byte	0
+ 731 0231 10       		.uleb128 0x10
+ 732 0232 76030000 		.4byte	.LASF41
+ 733 0236 01       		.byte	0x1
+ 734 0237 E102     		.2byte	0x2e1
+ 735 0239 6B000000 		.4byte	0x6b
+ 736 023d 00000000 		.4byte	.LFB9
+ 737 0241 0C000000 		.4byte	.LFE9-.LFB9
+ 738 0245 01       		.uleb128 0x1
+ 739 0246 9C       		.byte	0x9c
+ 740 0247 5A020000 		.4byte	0x25a
+ 741 024b 11       		.uleb128 0x11
+ 742 024c 7D020000 		.4byte	.LASF30
+ 743 0250 01       		.byte	0x1
+ 744 0251 E302     		.2byte	0x2e3
+ 745 0253 6B000000 		.4byte	0x6b
+ 746 0257 01       		.uleb128 0x1
+ 747 0258 50       		.byte	0x50
+ 748 0259 00       		.byte	0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 30
 
 
- 693 025d 77000000 		.4byte	0x77
- 694 0261 00000000 		.4byte	.LFB11
- 695 0265 0C000000 		.4byte	.LFE11-.LFB11
- 696 0269 01       		.uleb128 0x1
- 697 026a 9C       		.byte	0x9c
- 698 026b 09       		.uleb128 0x9
- 699 026c C6010000 		.4byte	.LASF35
- 700 0270 01       		.byte	0x1
- 701 0271 7403     		.2byte	0x374
- 702 0273 77000000 		.4byte	0x77
- 703 0277 00000000 		.4byte	.LFB12
- 704 027b 0C000000 		.4byte	.LFE12-.LFB12
- 705 027f 01       		.uleb128 0x1
- 706 0280 9C       		.byte	0x9c
- 707 0281 12       		.uleb128 0x12
- 708 0282 29020000 		.4byte	.LASF40
- 709 0286 01       		.byte	0x1
- 710 0287 20       		.byte	0x20
- 711 0288 6B000000 		.4byte	0x6b
- 712 028c 05       		.uleb128 0x5
- 713 028d 03       		.byte	0x3
- 714 028e 00000000 		.4byte	PWM_Test_Signal_initVar
- 715 0292 00       		.byte	0
- 716              		.section	.debug_abbrev,"",%progbits
- 717              	.Ldebug_abbrev0:
- 718 0000 01       		.uleb128 0x1
- 719 0001 11       		.uleb128 0x11
- 720 0002 01       		.byte	0x1
- 721 0003 25       		.uleb128 0x25
- 722 0004 0E       		.uleb128 0xe
- 723 0005 13       		.uleb128 0x13
- 724 0006 0B       		.uleb128 0xb
- 725 0007 03       		.uleb128 0x3
- 726 0008 0E       		.uleb128 0xe
- 727 0009 1B       		.uleb128 0x1b
- 728 000a 0E       		.uleb128 0xe
- 729 000b 55       		.uleb128 0x55
- 730 000c 17       		.uleb128 0x17
- 731 000d 11       		.uleb128 0x11
- 732 000e 01       		.uleb128 0x1
- 733 000f 10       		.uleb128 0x10
- 734 0010 17       		.uleb128 0x17
- 735 0011 00       		.byte	0
- 736 0012 00       		.byte	0
- 737 0013 02       		.uleb128 0x2
- 738 0014 24       		.uleb128 0x24
- 739 0015 00       		.byte	0
- 740 0016 0B       		.uleb128 0xb
- 741 0017 0B       		.uleb128 0xb
- 742 0018 3E       		.uleb128 0x3e
- 743 0019 0B       		.uleb128 0xb
- 744 001a 03       		.uleb128 0x3
- 745 001b 0E       		.uleb128 0xe
- 746 001c 00       		.byte	0
- 747 001d 00       		.byte	0
- 748 001e 03       		.uleb128 0x3
- 749 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 30
+ 749 025a 07       		.uleb128 0x7
+ 750 025b 15020000 		.4byte	.LASF31
+ 751 025f 01       		.byte	0x1
+ 752 0260 FD02     		.2byte	0x2fd
+ 753 0262 00000000 		.4byte	.LFB10
+ 754 0266 0C000000 		.4byte	.LFE10-.LFB10
+ 755 026a 01       		.uleb128 0x1
+ 756 026b 9C       		.byte	0x9c
+ 757 026c 7F020000 		.4byte	0x27f
+ 758 0270 08       		.uleb128 0x8
+ 759 0271 9A010000 		.4byte	.LASF32
+ 760 0275 01       		.byte	0x1
+ 761 0276 FD02     		.2byte	0x2fd
+ 762 0278 6B000000 		.4byte	0x6b
+ 763 027c 01       		.uleb128 0x1
+ 764 027d 50       		.byte	0x50
+ 765 027e 00       		.byte	0
+ 766 027f 09       		.uleb128 0x9
+ 767 0280 A1020000 		.4byte	.LASF34
+ 768 0284 01       		.byte	0x1
+ 769 0285 1603     		.2byte	0x316
+ 770 0287 77000000 		.4byte	0x77
+ 771 028b 00000000 		.4byte	.LFB11
+ 772 028f 0C000000 		.4byte	.LFE11-.LFB11
+ 773 0293 01       		.uleb128 0x1
+ 774 0294 9C       		.byte	0x9c
+ 775 0295 09       		.uleb128 0x9
+ 776 0296 EE020000 		.4byte	.LASF35
+ 777 029a 01       		.byte	0x1
+ 778 029b 4A03     		.2byte	0x34a
+ 779 029d 77000000 		.4byte	0x77
+ 780 02a1 00000000 		.4byte	.LFB12
+ 781 02a5 0C000000 		.4byte	.LFE12-.LFB12
+ 782 02a9 01       		.uleb128 0x1
+ 783 02aa 9C       		.byte	0x9c
+ 784 02ab 09       		.uleb128 0x9
+ 785 02ac 0B030000 		.4byte	.LASF36
+ 786 02b0 01       		.byte	0x1
+ 787 02b1 5E03     		.2byte	0x35e
+ 788 02b3 77000000 		.4byte	0x77
+ 789 02b7 00000000 		.4byte	.LFB13
+ 790 02bb 0C000000 		.4byte	.LFE13-.LFB13
+ 791 02bf 01       		.uleb128 0x1
+ 792 02c0 9C       		.byte	0x9c
+ 793 02c1 09       		.uleb128 0x9
+ 794 02c2 DE010000 		.4byte	.LASF37
+ 795 02c6 01       		.byte	0x1
+ 796 02c7 7403     		.2byte	0x374
+ 797 02c9 77000000 		.4byte	0x77
+ 798 02cd 00000000 		.4byte	.LFB14
+ 799 02d1 0C000000 		.4byte	.LFE14-.LFB14
+ 800 02d5 01       		.uleb128 0x1
+ 801 02d6 9C       		.byte	0x9c
+ 802 02d7 12       		.uleb128 0x12
+ 803 02d8 41020000 		.4byte	.LASF42
+ 804 02dc 01       		.byte	0x1
+ 805 02dd 20       		.byte	0x20
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 31
 
 
- 750 0020 00       		.byte	0
- 751 0021 0B       		.uleb128 0xb
- 752 0022 0B       		.uleb128 0xb
- 753 0023 3E       		.uleb128 0x3e
- 754 0024 0B       		.uleb128 0xb
- 755 0025 03       		.uleb128 0x3
- 756 0026 08       		.uleb128 0x8
- 757 0027 00       		.byte	0
- 758 0028 00       		.byte	0
- 759 0029 04       		.uleb128 0x4
- 760 002a 16       		.uleb128 0x16
- 761 002b 00       		.byte	0
- 762 002c 03       		.uleb128 0x3
- 763 002d 0E       		.uleb128 0xe
- 764 002e 3A       		.uleb128 0x3a
- 765 002f 0B       		.uleb128 0xb
- 766 0030 3B       		.uleb128 0x3b
- 767 0031 05       		.uleb128 0x5
- 768 0032 49       		.uleb128 0x49
- 769 0033 13       		.uleb128 0x13
- 770 0034 00       		.byte	0
- 771 0035 00       		.byte	0
- 772 0036 05       		.uleb128 0x5
- 773 0037 35       		.uleb128 0x35
- 774 0038 00       		.byte	0
- 775 0039 49       		.uleb128 0x49
- 776 003a 13       		.uleb128 0x13
- 777 003b 00       		.byte	0
- 778 003c 00       		.byte	0
- 779 003d 06       		.uleb128 0x6
- 780 003e 2E       		.uleb128 0x2e
- 781 003f 00       		.byte	0
- 782 0040 3F       		.uleb128 0x3f
- 783 0041 19       		.uleb128 0x19
- 784 0042 03       		.uleb128 0x3
- 785 0043 0E       		.uleb128 0xe
- 786 0044 3A       		.uleb128 0x3a
- 787 0045 0B       		.uleb128 0xb
- 788 0046 3B       		.uleb128 0x3b
- 789 0047 0B       		.uleb128 0xb
- 790 0048 27       		.uleb128 0x27
- 791 0049 19       		.uleb128 0x19
- 792 004a 11       		.uleb128 0x11
- 793 004b 01       		.uleb128 0x1
- 794 004c 12       		.uleb128 0x12
- 795 004d 06       		.uleb128 0x6
- 796 004e 40       		.uleb128 0x40
- 797 004f 18       		.uleb128 0x18
- 798 0050 9742     		.uleb128 0x2117
- 799 0052 19       		.uleb128 0x19
- 800 0053 00       		.byte	0
- 801 0054 00       		.byte	0
- 802 0055 07       		.uleb128 0x7
- 803 0056 2E       		.uleb128 0x2e
- 804 0057 01       		.byte	0x1
- 805 0058 3F       		.uleb128 0x3f
- 806 0059 19       		.uleb128 0x19
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 31
+ 806 02de 6B000000 		.4byte	0x6b
+ 807 02e2 05       		.uleb128 0x5
+ 808 02e3 03       		.byte	0x3
+ 809 02e4 00000000 		.4byte	PWM_Test_Signal_initVar
+ 810 02e8 00       		.byte	0
+ 811              		.section	.debug_abbrev,"",%progbits
+ 812              	.Ldebug_abbrev0:
+ 813 0000 01       		.uleb128 0x1
+ 814 0001 11       		.uleb128 0x11
+ 815 0002 01       		.byte	0x1
+ 816 0003 25       		.uleb128 0x25
+ 817 0004 0E       		.uleb128 0xe
+ 818 0005 13       		.uleb128 0x13
+ 819 0006 0B       		.uleb128 0xb
+ 820 0007 03       		.uleb128 0x3
+ 821 0008 0E       		.uleb128 0xe
+ 822 0009 1B       		.uleb128 0x1b
+ 823 000a 0E       		.uleb128 0xe
+ 824 000b 55       		.uleb128 0x55
+ 825 000c 17       		.uleb128 0x17
+ 826 000d 11       		.uleb128 0x11
+ 827 000e 01       		.uleb128 0x1
+ 828 000f 10       		.uleb128 0x10
+ 829 0010 17       		.uleb128 0x17
+ 830 0011 00       		.byte	0
+ 831 0012 00       		.byte	0
+ 832 0013 02       		.uleb128 0x2
+ 833 0014 24       		.uleb128 0x24
+ 834 0015 00       		.byte	0
+ 835 0016 0B       		.uleb128 0xb
+ 836 0017 0B       		.uleb128 0xb
+ 837 0018 3E       		.uleb128 0x3e
+ 838 0019 0B       		.uleb128 0xb
+ 839 001a 03       		.uleb128 0x3
+ 840 001b 0E       		.uleb128 0xe
+ 841 001c 00       		.byte	0
+ 842 001d 00       		.byte	0
+ 843 001e 03       		.uleb128 0x3
+ 844 001f 24       		.uleb128 0x24
+ 845 0020 00       		.byte	0
+ 846 0021 0B       		.uleb128 0xb
+ 847 0022 0B       		.uleb128 0xb
+ 848 0023 3E       		.uleb128 0x3e
+ 849 0024 0B       		.uleb128 0xb
+ 850 0025 03       		.uleb128 0x3
+ 851 0026 08       		.uleb128 0x8
+ 852 0027 00       		.byte	0
+ 853 0028 00       		.byte	0
+ 854 0029 04       		.uleb128 0x4
+ 855 002a 16       		.uleb128 0x16
+ 856 002b 00       		.byte	0
+ 857 002c 03       		.uleb128 0x3
+ 858 002d 0E       		.uleb128 0xe
+ 859 002e 3A       		.uleb128 0x3a
+ 860 002f 0B       		.uleb128 0xb
+ 861 0030 3B       		.uleb128 0x3b
+ 862 0031 05       		.uleb128 0x5
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 32
 
 
- 807 005a 03       		.uleb128 0x3
- 808 005b 0E       		.uleb128 0xe
- 809 005c 3A       		.uleb128 0x3a
- 810 005d 0B       		.uleb128 0xb
- 811 005e 3B       		.uleb128 0x3b
- 812 005f 05       		.uleb128 0x5
- 813 0060 27       		.uleb128 0x27
- 814 0061 19       		.uleb128 0x19
- 815 0062 11       		.uleb128 0x11
- 816 0063 01       		.uleb128 0x1
- 817 0064 12       		.uleb128 0x12
- 818 0065 06       		.uleb128 0x6
- 819 0066 40       		.uleb128 0x40
- 820 0067 18       		.uleb128 0x18
- 821 0068 9742     		.uleb128 0x2117
- 822 006a 19       		.uleb128 0x19
- 823 006b 01       		.uleb128 0x1
- 824 006c 13       		.uleb128 0x13
- 825 006d 00       		.byte	0
- 826 006e 00       		.byte	0
- 827 006f 08       		.uleb128 0x8
- 828 0070 05       		.uleb128 0x5
- 829 0071 00       		.byte	0
- 830 0072 03       		.uleb128 0x3
- 831 0073 0E       		.uleb128 0xe
- 832 0074 3A       		.uleb128 0x3a
- 833 0075 0B       		.uleb128 0xb
- 834 0076 3B       		.uleb128 0x3b
- 835 0077 05       		.uleb128 0x5
- 836 0078 49       		.uleb128 0x49
- 837 0079 13       		.uleb128 0x13
- 838 007a 02       		.uleb128 0x2
- 839 007b 18       		.uleb128 0x18
- 840 007c 00       		.byte	0
- 841 007d 00       		.byte	0
- 842 007e 09       		.uleb128 0x9
- 843 007f 2E       		.uleb128 0x2e
- 844 0080 00       		.byte	0
- 845 0081 3F       		.uleb128 0x3f
- 846 0082 19       		.uleb128 0x19
- 847 0083 03       		.uleb128 0x3
- 848 0084 0E       		.uleb128 0xe
- 849 0085 3A       		.uleb128 0x3a
- 850 0086 0B       		.uleb128 0xb
- 851 0087 3B       		.uleb128 0x3b
- 852 0088 05       		.uleb128 0x5
- 853 0089 27       		.uleb128 0x27
- 854 008a 19       		.uleb128 0x19
- 855 008b 49       		.uleb128 0x49
- 856 008c 13       		.uleb128 0x13
- 857 008d 11       		.uleb128 0x11
- 858 008e 01       		.uleb128 0x1
- 859 008f 12       		.uleb128 0x12
- 860 0090 06       		.uleb128 0x6
- 861 0091 40       		.uleb128 0x40
- 862 0092 18       		.uleb128 0x18
- 863 0093 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 32
+ 863 0032 49       		.uleb128 0x49
+ 864 0033 13       		.uleb128 0x13
+ 865 0034 00       		.byte	0
+ 866 0035 00       		.byte	0
+ 867 0036 05       		.uleb128 0x5
+ 868 0037 35       		.uleb128 0x35
+ 869 0038 00       		.byte	0
+ 870 0039 49       		.uleb128 0x49
+ 871 003a 13       		.uleb128 0x13
+ 872 003b 00       		.byte	0
+ 873 003c 00       		.byte	0
+ 874 003d 06       		.uleb128 0x6
+ 875 003e 2E       		.uleb128 0x2e
+ 876 003f 00       		.byte	0
+ 877 0040 3F       		.uleb128 0x3f
+ 878 0041 19       		.uleb128 0x19
+ 879 0042 03       		.uleb128 0x3
+ 880 0043 0E       		.uleb128 0xe
+ 881 0044 3A       		.uleb128 0x3a
+ 882 0045 0B       		.uleb128 0xb
+ 883 0046 3B       		.uleb128 0x3b
+ 884 0047 0B       		.uleb128 0xb
+ 885 0048 27       		.uleb128 0x27
+ 886 0049 19       		.uleb128 0x19
+ 887 004a 11       		.uleb128 0x11
+ 888 004b 01       		.uleb128 0x1
+ 889 004c 12       		.uleb128 0x12
+ 890 004d 06       		.uleb128 0x6
+ 891 004e 40       		.uleb128 0x40
+ 892 004f 18       		.uleb128 0x18
+ 893 0050 9742     		.uleb128 0x2117
+ 894 0052 19       		.uleb128 0x19
+ 895 0053 00       		.byte	0
+ 896 0054 00       		.byte	0
+ 897 0055 07       		.uleb128 0x7
+ 898 0056 2E       		.uleb128 0x2e
+ 899 0057 01       		.byte	0x1
+ 900 0058 3F       		.uleb128 0x3f
+ 901 0059 19       		.uleb128 0x19
+ 902 005a 03       		.uleb128 0x3
+ 903 005b 0E       		.uleb128 0xe
+ 904 005c 3A       		.uleb128 0x3a
+ 905 005d 0B       		.uleb128 0xb
+ 906 005e 3B       		.uleb128 0x3b
+ 907 005f 05       		.uleb128 0x5
+ 908 0060 27       		.uleb128 0x27
+ 909 0061 19       		.uleb128 0x19
+ 910 0062 11       		.uleb128 0x11
+ 911 0063 01       		.uleb128 0x1
+ 912 0064 12       		.uleb128 0x12
+ 913 0065 06       		.uleb128 0x6
+ 914 0066 40       		.uleb128 0x40
+ 915 0067 18       		.uleb128 0x18
+ 916 0068 9742     		.uleb128 0x2117
+ 917 006a 19       		.uleb128 0x19
+ 918 006b 01       		.uleb128 0x1
+ 919 006c 13       		.uleb128 0x13
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 33
 
 
- 864 0095 19       		.uleb128 0x19
- 865 0096 00       		.byte	0
- 866 0097 00       		.byte	0
- 867 0098 0A       		.uleb128 0xa
- 868 0099 2E       		.uleb128 0x2e
- 869 009a 01       		.byte	0x1
- 870 009b 3F       		.uleb128 0x3f
- 871 009c 19       		.uleb128 0x19
- 872 009d 03       		.uleb128 0x3
- 873 009e 0E       		.uleb128 0xe
- 874 009f 3A       		.uleb128 0x3a
- 875 00a0 0B       		.uleb128 0xb
- 876 00a1 3B       		.uleb128 0x3b
- 877 00a2 0B       		.uleb128 0xb
- 878 00a3 27       		.uleb128 0x27
- 879 00a4 19       		.uleb128 0x19
- 880 00a5 11       		.uleb128 0x11
- 881 00a6 01       		.uleb128 0x1
- 882 00a7 12       		.uleb128 0x12
- 883 00a8 06       		.uleb128 0x6
- 884 00a9 40       		.uleb128 0x40
- 885 00aa 18       		.uleb128 0x18
- 886 00ab 9742     		.uleb128 0x2117
- 887 00ad 19       		.uleb128 0x19
- 888 00ae 01       		.uleb128 0x1
- 889 00af 13       		.uleb128 0x13
- 890 00b0 00       		.byte	0
- 891 00b1 00       		.byte	0
- 892 00b2 0B       		.uleb128 0xb
- 893 00b3 34       		.uleb128 0x34
- 894 00b4 00       		.byte	0
- 895 00b5 03       		.uleb128 0x3
- 896 00b6 0E       		.uleb128 0xe
- 897 00b7 3A       		.uleb128 0x3a
- 898 00b8 0B       		.uleb128 0xb
- 899 00b9 3B       		.uleb128 0x3b
- 900 00ba 0B       		.uleb128 0xb
- 901 00bb 49       		.uleb128 0x49
- 902 00bc 13       		.uleb128 0x13
- 903 00bd 02       		.uleb128 0x2
- 904 00be 17       		.uleb128 0x17
- 905 00bf 00       		.byte	0
- 906 00c0 00       		.byte	0
- 907 00c1 0C       		.uleb128 0xc
- 908 00c2 898201   		.uleb128 0x4109
- 909 00c5 01       		.byte	0x1
- 910 00c6 11       		.uleb128 0x11
- 911 00c7 01       		.uleb128 0x1
- 912 00c8 31       		.uleb128 0x31
- 913 00c9 13       		.uleb128 0x13
- 914 00ca 01       		.uleb128 0x1
- 915 00cb 13       		.uleb128 0x13
- 916 00cc 00       		.byte	0
- 917 00cd 00       		.byte	0
- 918 00ce 0D       		.uleb128 0xd
- 919 00cf 8A8201   		.uleb128 0x410a
- 920 00d2 00       		.byte	0
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 33
+ 920 006d 00       		.byte	0
+ 921 006e 00       		.byte	0
+ 922 006f 08       		.uleb128 0x8
+ 923 0070 05       		.uleb128 0x5
+ 924 0071 00       		.byte	0
+ 925 0072 03       		.uleb128 0x3
+ 926 0073 0E       		.uleb128 0xe
+ 927 0074 3A       		.uleb128 0x3a
+ 928 0075 0B       		.uleb128 0xb
+ 929 0076 3B       		.uleb128 0x3b
+ 930 0077 05       		.uleb128 0x5
+ 931 0078 49       		.uleb128 0x49
+ 932 0079 13       		.uleb128 0x13
+ 933 007a 02       		.uleb128 0x2
+ 934 007b 18       		.uleb128 0x18
+ 935 007c 00       		.byte	0
+ 936 007d 00       		.byte	0
+ 937 007e 09       		.uleb128 0x9
+ 938 007f 2E       		.uleb128 0x2e
+ 939 0080 00       		.byte	0
+ 940 0081 3F       		.uleb128 0x3f
+ 941 0082 19       		.uleb128 0x19
+ 942 0083 03       		.uleb128 0x3
+ 943 0084 0E       		.uleb128 0xe
+ 944 0085 3A       		.uleb128 0x3a
+ 945 0086 0B       		.uleb128 0xb
+ 946 0087 3B       		.uleb128 0x3b
+ 947 0088 05       		.uleb128 0x5
+ 948 0089 27       		.uleb128 0x27
+ 949 008a 19       		.uleb128 0x19
+ 950 008b 49       		.uleb128 0x49
+ 951 008c 13       		.uleb128 0x13
+ 952 008d 11       		.uleb128 0x11
+ 953 008e 01       		.uleb128 0x1
+ 954 008f 12       		.uleb128 0x12
+ 955 0090 06       		.uleb128 0x6
+ 956 0091 40       		.uleb128 0x40
+ 957 0092 18       		.uleb128 0x18
+ 958 0093 9742     		.uleb128 0x2117
+ 959 0095 19       		.uleb128 0x19
+ 960 0096 00       		.byte	0
+ 961 0097 00       		.byte	0
+ 962 0098 0A       		.uleb128 0xa
+ 963 0099 2E       		.uleb128 0x2e
+ 964 009a 01       		.byte	0x1
+ 965 009b 3F       		.uleb128 0x3f
+ 966 009c 19       		.uleb128 0x19
+ 967 009d 03       		.uleb128 0x3
+ 968 009e 0E       		.uleb128 0xe
+ 969 009f 3A       		.uleb128 0x3a
+ 970 00a0 0B       		.uleb128 0xb
+ 971 00a1 3B       		.uleb128 0x3b
+ 972 00a2 0B       		.uleb128 0xb
+ 973 00a3 27       		.uleb128 0x27
+ 974 00a4 19       		.uleb128 0x19
+ 975 00a5 11       		.uleb128 0x11
+ 976 00a6 01       		.uleb128 0x1
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 34
 
 
- 921 00d3 02       		.uleb128 0x2
- 922 00d4 18       		.uleb128 0x18
- 923 00d5 9142     		.uleb128 0x2111
- 924 00d7 18       		.uleb128 0x18
- 925 00d8 00       		.byte	0
- 926 00d9 00       		.byte	0
- 927 00da 0E       		.uleb128 0xe
- 928 00db 898201   		.uleb128 0x4109
- 929 00de 01       		.byte	0x1
- 930 00df 11       		.uleb128 0x11
- 931 00e0 01       		.uleb128 0x1
- 932 00e1 31       		.uleb128 0x31
- 933 00e2 13       		.uleb128 0x13
- 934 00e3 00       		.byte	0
- 935 00e4 00       		.byte	0
- 936 00e5 0F       		.uleb128 0xf
- 937 00e6 898201   		.uleb128 0x4109
- 938 00e9 00       		.byte	0
- 939 00ea 11       		.uleb128 0x11
- 940 00eb 01       		.uleb128 0x1
- 941 00ec 31       		.uleb128 0x31
- 942 00ed 13       		.uleb128 0x13
- 943 00ee 00       		.byte	0
- 944 00ef 00       		.byte	0
- 945 00f0 10       		.uleb128 0x10
- 946 00f1 2E       		.uleb128 0x2e
- 947 00f2 01       		.byte	0x1
- 948 00f3 3F       		.uleb128 0x3f
- 949 00f4 19       		.uleb128 0x19
- 950 00f5 03       		.uleb128 0x3
- 951 00f6 0E       		.uleb128 0xe
- 952 00f7 3A       		.uleb128 0x3a
- 953 00f8 0B       		.uleb128 0xb
- 954 00f9 3B       		.uleb128 0x3b
- 955 00fa 05       		.uleb128 0x5
- 956 00fb 27       		.uleb128 0x27
- 957 00fc 19       		.uleb128 0x19
- 958 00fd 49       		.uleb128 0x49
- 959 00fe 13       		.uleb128 0x13
- 960 00ff 11       		.uleb128 0x11
- 961 0100 01       		.uleb128 0x1
- 962 0101 12       		.uleb128 0x12
- 963 0102 06       		.uleb128 0x6
- 964 0103 40       		.uleb128 0x40
- 965 0104 18       		.uleb128 0x18
- 966 0105 9742     		.uleb128 0x2117
- 967 0107 19       		.uleb128 0x19
- 968 0108 01       		.uleb128 0x1
- 969 0109 13       		.uleb128 0x13
- 970 010a 00       		.byte	0
- 971 010b 00       		.byte	0
- 972 010c 11       		.uleb128 0x11
- 973 010d 34       		.uleb128 0x34
- 974 010e 00       		.byte	0
- 975 010f 03       		.uleb128 0x3
- 976 0110 0E       		.uleb128 0xe
- 977 0111 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 34
+ 977 00a7 12       		.uleb128 0x12
+ 978 00a8 06       		.uleb128 0x6
+ 979 00a9 40       		.uleb128 0x40
+ 980 00aa 18       		.uleb128 0x18
+ 981 00ab 9742     		.uleb128 0x2117
+ 982 00ad 19       		.uleb128 0x19
+ 983 00ae 01       		.uleb128 0x1
+ 984 00af 13       		.uleb128 0x13
+ 985 00b0 00       		.byte	0
+ 986 00b1 00       		.byte	0
+ 987 00b2 0B       		.uleb128 0xb
+ 988 00b3 34       		.uleb128 0x34
+ 989 00b4 00       		.byte	0
+ 990 00b5 03       		.uleb128 0x3
+ 991 00b6 0E       		.uleb128 0xe
+ 992 00b7 3A       		.uleb128 0x3a
+ 993 00b8 0B       		.uleb128 0xb
+ 994 00b9 3B       		.uleb128 0x3b
+ 995 00ba 0B       		.uleb128 0xb
+ 996 00bb 49       		.uleb128 0x49
+ 997 00bc 13       		.uleb128 0x13
+ 998 00bd 02       		.uleb128 0x2
+ 999 00be 17       		.uleb128 0x17
+ 1000 00bf 00       		.byte	0
+ 1001 00c0 00       		.byte	0
+ 1002 00c1 0C       		.uleb128 0xc
+ 1003 00c2 898201   		.uleb128 0x4109
+ 1004 00c5 01       		.byte	0x1
+ 1005 00c6 11       		.uleb128 0x11
+ 1006 00c7 01       		.uleb128 0x1
+ 1007 00c8 31       		.uleb128 0x31
+ 1008 00c9 13       		.uleb128 0x13
+ 1009 00ca 01       		.uleb128 0x1
+ 1010 00cb 13       		.uleb128 0x13
+ 1011 00cc 00       		.byte	0
+ 1012 00cd 00       		.byte	0
+ 1013 00ce 0D       		.uleb128 0xd
+ 1014 00cf 8A8201   		.uleb128 0x410a
+ 1015 00d2 00       		.byte	0
+ 1016 00d3 02       		.uleb128 0x2
+ 1017 00d4 18       		.uleb128 0x18
+ 1018 00d5 9142     		.uleb128 0x2111
+ 1019 00d7 18       		.uleb128 0x18
+ 1020 00d8 00       		.byte	0
+ 1021 00d9 00       		.byte	0
+ 1022 00da 0E       		.uleb128 0xe
+ 1023 00db 898201   		.uleb128 0x4109
+ 1024 00de 01       		.byte	0x1
+ 1025 00df 11       		.uleb128 0x11
+ 1026 00e0 01       		.uleb128 0x1
+ 1027 00e1 31       		.uleb128 0x31
+ 1028 00e2 13       		.uleb128 0x13
+ 1029 00e3 00       		.byte	0
+ 1030 00e4 00       		.byte	0
+ 1031 00e5 0F       		.uleb128 0xf
+ 1032 00e6 898201   		.uleb128 0x4109
+ 1033 00e9 00       		.byte	0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 35
 
 
- 978 0112 0B       		.uleb128 0xb
- 979 0113 3B       		.uleb128 0x3b
- 980 0114 05       		.uleb128 0x5
- 981 0115 49       		.uleb128 0x49
- 982 0116 13       		.uleb128 0x13
- 983 0117 02       		.uleb128 0x2
- 984 0118 18       		.uleb128 0x18
- 985 0119 00       		.byte	0
- 986 011a 00       		.byte	0
- 987 011b 12       		.uleb128 0x12
- 988 011c 34       		.uleb128 0x34
- 989 011d 00       		.byte	0
- 990 011e 03       		.uleb128 0x3
- 991 011f 0E       		.uleb128 0xe
- 992 0120 3A       		.uleb128 0x3a
- 993 0121 0B       		.uleb128 0xb
- 994 0122 3B       		.uleb128 0x3b
- 995 0123 0B       		.uleb128 0xb
- 996 0124 49       		.uleb128 0x49
- 997 0125 13       		.uleb128 0x13
- 998 0126 3F       		.uleb128 0x3f
- 999 0127 19       		.uleb128 0x19
- 1000 0128 02       		.uleb128 0x2
- 1001 0129 18       		.uleb128 0x18
- 1002 012a 00       		.byte	0
- 1003 012b 00       		.byte	0
- 1004 012c 00       		.byte	0
- 1005              		.section	.debug_loc,"",%progbits
- 1006              	.Ldebug_loc0:
- 1007              	.LLST0:
- 1008 0000 0A000000 		.4byte	.LVL3
- 1009 0004 0E000000 		.4byte	.LVL4
- 1010 0008 0100     		.2byte	0x1
- 1011 000a 53       		.byte	0x53
- 1012 000b 00000000 		.4byte	0
- 1013 000f 00000000 		.4byte	0
- 1014              		.section	.debug_aranges,"",%progbits
- 1015 0000 7C000000 		.4byte	0x7c
- 1016 0004 0200     		.2byte	0x2
- 1017 0006 00000000 		.4byte	.Ldebug_info0
- 1018 000a 04       		.byte	0x4
- 1019 000b 00       		.byte	0
- 1020 000c 0000     		.2byte	0
- 1021 000e 0000     		.2byte	0
- 1022 0010 00000000 		.4byte	.LFB2
- 1023 0014 10000000 		.4byte	.LFE2-.LFB2
- 1024 0018 00000000 		.4byte	.LFB3
- 1025 001c 10000000 		.4byte	.LFE3-.LFB3
- 1026 0020 00000000 		.4byte	.LFB4
- 1027 0024 0C000000 		.4byte	.LFE4-.LFB4
- 1028 0028 00000000 		.4byte	.LFB5
- 1029 002c 14000000 		.4byte	.LFE5-.LFB5
- 1030 0030 00000000 		.4byte	.LFB6
- 1031 0034 0C000000 		.4byte	.LFE6-.LFB6
- 1032 0038 00000000 		.4byte	.LFB7
- 1033 003c 0C000000 		.4byte	.LFE7-.LFB7
- 1034 0040 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 35
+ 1034 00ea 11       		.uleb128 0x11
+ 1035 00eb 01       		.uleb128 0x1
+ 1036 00ec 31       		.uleb128 0x31
+ 1037 00ed 13       		.uleb128 0x13
+ 1038 00ee 00       		.byte	0
+ 1039 00ef 00       		.byte	0
+ 1040 00f0 10       		.uleb128 0x10
+ 1041 00f1 2E       		.uleb128 0x2e
+ 1042 00f2 01       		.byte	0x1
+ 1043 00f3 3F       		.uleb128 0x3f
+ 1044 00f4 19       		.uleb128 0x19
+ 1045 00f5 03       		.uleb128 0x3
+ 1046 00f6 0E       		.uleb128 0xe
+ 1047 00f7 3A       		.uleb128 0x3a
+ 1048 00f8 0B       		.uleb128 0xb
+ 1049 00f9 3B       		.uleb128 0x3b
+ 1050 00fa 05       		.uleb128 0x5
+ 1051 00fb 27       		.uleb128 0x27
+ 1052 00fc 19       		.uleb128 0x19
+ 1053 00fd 49       		.uleb128 0x49
+ 1054 00fe 13       		.uleb128 0x13
+ 1055 00ff 11       		.uleb128 0x11
+ 1056 0100 01       		.uleb128 0x1
+ 1057 0101 12       		.uleb128 0x12
+ 1058 0102 06       		.uleb128 0x6
+ 1059 0103 40       		.uleb128 0x40
+ 1060 0104 18       		.uleb128 0x18
+ 1061 0105 9742     		.uleb128 0x2117
+ 1062 0107 19       		.uleb128 0x19
+ 1063 0108 01       		.uleb128 0x1
+ 1064 0109 13       		.uleb128 0x13
+ 1065 010a 00       		.byte	0
+ 1066 010b 00       		.byte	0
+ 1067 010c 11       		.uleb128 0x11
+ 1068 010d 34       		.uleb128 0x34
+ 1069 010e 00       		.byte	0
+ 1070 010f 03       		.uleb128 0x3
+ 1071 0110 0E       		.uleb128 0xe
+ 1072 0111 3A       		.uleb128 0x3a
+ 1073 0112 0B       		.uleb128 0xb
+ 1074 0113 3B       		.uleb128 0x3b
+ 1075 0114 05       		.uleb128 0x5
+ 1076 0115 49       		.uleb128 0x49
+ 1077 0116 13       		.uleb128 0x13
+ 1078 0117 02       		.uleb128 0x2
+ 1079 0118 18       		.uleb128 0x18
+ 1080 0119 00       		.byte	0
+ 1081 011a 00       		.byte	0
+ 1082 011b 12       		.uleb128 0x12
+ 1083 011c 34       		.uleb128 0x34
+ 1084 011d 00       		.byte	0
+ 1085 011e 03       		.uleb128 0x3
+ 1086 011f 0E       		.uleb128 0xe
+ 1087 0120 3A       		.uleb128 0x3a
+ 1088 0121 0B       		.uleb128 0xb
+ 1089 0122 3B       		.uleb128 0x3b
+ 1090 0123 0B       		.uleb128 0xb
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 36
 
 
- 1035 0044 3C000000 		.4byte	.LFE1-.LFB1
- 1036 0048 00000000 		.4byte	.LFB0
- 1037 004c 1C000000 		.4byte	.LFE0-.LFB0
- 1038 0050 00000000 		.4byte	.LFB8
- 1039 0054 0C000000 		.4byte	.LFE8-.LFB8
- 1040 0058 00000000 		.4byte	.LFB9
- 1041 005c 0C000000 		.4byte	.LFE9-.LFB9
- 1042 0060 00000000 		.4byte	.LFB10
- 1043 0064 0C000000 		.4byte	.LFE10-.LFB10
- 1044 0068 00000000 		.4byte	.LFB11
- 1045 006c 0C000000 		.4byte	.LFE11-.LFB11
- 1046 0070 00000000 		.4byte	.LFB12
- 1047 0074 0C000000 		.4byte	.LFE12-.LFB12
- 1048 0078 00000000 		.4byte	0
- 1049 007c 00000000 		.4byte	0
- 1050              		.section	.debug_ranges,"",%progbits
- 1051              	.Ldebug_ranges0:
- 1052 0000 00000000 		.4byte	.LFB2
- 1053 0004 10000000 		.4byte	.LFE2
- 1054 0008 00000000 		.4byte	.LFB3
- 1055 000c 10000000 		.4byte	.LFE3
- 1056 0010 00000000 		.4byte	.LFB4
- 1057 0014 0C000000 		.4byte	.LFE4
- 1058 0018 00000000 		.4byte	.LFB5
- 1059 001c 14000000 		.4byte	.LFE5
- 1060 0020 00000000 		.4byte	.LFB6
- 1061 0024 0C000000 		.4byte	.LFE6
- 1062 0028 00000000 		.4byte	.LFB7
- 1063 002c 0C000000 		.4byte	.LFE7
- 1064 0030 00000000 		.4byte	.LFB1
- 1065 0034 3C000000 		.4byte	.LFE1
- 1066 0038 00000000 		.4byte	.LFB0
- 1067 003c 1C000000 		.4byte	.LFE0
- 1068 0040 00000000 		.4byte	.LFB8
- 1069 0044 0C000000 		.4byte	.LFE8
- 1070 0048 00000000 		.4byte	.LFB9
- 1071 004c 0C000000 		.4byte	.LFE9
- 1072 0050 00000000 		.4byte	.LFB10
- 1073 0054 0C000000 		.4byte	.LFE10
- 1074 0058 00000000 		.4byte	.LFB11
- 1075 005c 0C000000 		.4byte	.LFE11
- 1076 0060 00000000 		.4byte	.LFB12
- 1077 0064 0C000000 		.4byte	.LFE12
- 1078 0068 00000000 		.4byte	0
- 1079 006c 00000000 		.4byte	0
- 1080              		.section	.debug_line,"",%progbits
- 1081              	.Ldebug_line0:
- 1082 0000 43010000 		.section	.debug_str,"MS",%progbits,1
- 1082      02004C00 
- 1082      00000201 
- 1082      FB0E0D00 
- 1082      01010101 
- 1083              	.LASF15:
- 1084 0000 72656731 		.ascii	"reg16\000"
- 1084      3600
- 1085              	.LASF29:
- 1086 0006 72657375 		.ascii	"result\000"
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 36
+ 1091 0124 49       		.uleb128 0x49
+ 1092 0125 13       		.uleb128 0x13
+ 1093 0126 3F       		.uleb128 0x3f
+ 1094 0127 19       		.uleb128 0x19
+ 1095 0128 02       		.uleb128 0x2
+ 1096 0129 18       		.uleb128 0x18
+ 1097 012a 00       		.byte	0
+ 1098 012b 00       		.byte	0
+ 1099 012c 00       		.byte	0
+ 1100              		.section	.debug_loc,"",%progbits
+ 1101              	.Ldebug_loc0:
+ 1102              	.LLST0:
+ 1103 0000 0A000000 		.4byte	.LVL4
+ 1104 0004 0E000000 		.4byte	.LVL5
+ 1105 0008 0100     		.2byte	0x1
+ 1106 000a 53       		.byte	0x53
+ 1107 000b 00000000 		.4byte	0
+ 1108 000f 00000000 		.4byte	0
+ 1109              		.section	.debug_aranges,"",%progbits
+ 1110 0000 8C000000 		.4byte	0x8c
+ 1111 0004 0200     		.2byte	0x2
+ 1112 0006 00000000 		.4byte	.Ldebug_info0
+ 1113 000a 04       		.byte	0x4
+ 1114 000b 00       		.byte	0
+ 1115 000c 0000     		.2byte	0
+ 1116 000e 0000     		.2byte	0
+ 1117 0010 00000000 		.4byte	.LFB2
+ 1118 0014 10000000 		.4byte	.LFE2-.LFB2
+ 1119 0018 00000000 		.4byte	.LFB3
+ 1120 001c 10000000 		.4byte	.LFE3-.LFB3
+ 1121 0020 00000000 		.4byte	.LFB4
+ 1122 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1123 0028 00000000 		.4byte	.LFB5
+ 1124 002c 14000000 		.4byte	.LFE5-.LFB5
+ 1125 0030 00000000 		.4byte	.LFB6
+ 1126 0034 0C000000 		.4byte	.LFE6-.LFB6
+ 1127 0038 00000000 		.4byte	.LFB7
+ 1128 003c 0C000000 		.4byte	.LFE7-.LFB7
+ 1129 0040 00000000 		.4byte	.LFB8
+ 1130 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1131 0048 00000000 		.4byte	.LFB1
+ 1132 004c 4C000000 		.4byte	.LFE1-.LFB1
+ 1133 0050 00000000 		.4byte	.LFB0
+ 1134 0054 1C000000 		.4byte	.LFE0-.LFB0
+ 1135 0058 00000000 		.4byte	.LFB9
+ 1136 005c 0C000000 		.4byte	.LFE9-.LFB9
+ 1137 0060 00000000 		.4byte	.LFB10
+ 1138 0064 0C000000 		.4byte	.LFE10-.LFB10
+ 1139 0068 00000000 		.4byte	.LFB11
+ 1140 006c 0C000000 		.4byte	.LFE11-.LFB11
+ 1141 0070 00000000 		.4byte	.LFB12
+ 1142 0074 0C000000 		.4byte	.LFE12-.LFB12
+ 1143 0078 00000000 		.4byte	.LFB13
+ 1144 007c 0C000000 		.4byte	.LFE13-.LFB13
+ 1145 0080 00000000 		.4byte	.LFB14
+ 1146 0084 0C000000 		.4byte	.LFE14-.LFB14
+ 1147 0088 00000000 		.4byte	0
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 37
 
 
- 1086      6C7400
- 1087              	.LASF18:
- 1088 000d 50574D5F 		.ascii	"PWM_Test_Signal_Enable\000"
- 1088      54657374 
- 1088      5F536967 
- 1088      6E616C5F 
- 1088      456E6162 
- 1089              	.LASF38:
- 1090 0024 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
- 1090      6F6E6173 
- 1090      68202D20 
- 1090      4C656769 
- 1090      6F6E5C59 
- 1091 0052 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
- 1091      6D706F6E 
- 1091      656E7473 
- 1091      5C436F6C 
- 1091      6F75725F 
- 1092              	.LASF23:
- 1093 007b 70657269 		.ascii	"period\000"
- 1093      6F6400
- 1094              	.LASF3:
- 1095 0082 73686F72 		.ascii	"short unsigned int\000"
- 1095      7420756E 
- 1095      7369676E 
- 1095      65642069 
- 1095      6E7400
- 1096              	.LASF21:
- 1097 0095 50574D5F 		.ascii	"PWM_Test_Signal_WritePeriod\000"
- 1097      54657374 
- 1097      5F536967 
- 1097      6E616C5F 
- 1097      57726974 
- 1098              	.LASF11:
- 1099 00b1 666C6F61 		.ascii	"float\000"
- 1099      7400
- 1100              	.LASF22:
- 1101 00b7 636F756E 		.ascii	"counter\000"
- 1101      74657200 
- 1102              	.LASF1:
- 1103 00bf 756E7369 		.ascii	"unsigned char\000"
- 1103      676E6564 
- 1103      20636861 
- 1103      7200
- 1104              	.LASF36:
- 1105 00cd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1105      43313120 
- 1105      352E342E 
- 1105      31203230 
- 1105      31363036 
- 1106 0100 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1106      20726576 
- 1106      6973696F 
- 1106      6E203233 
- 1106      37373135 
- 1107 0133 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1107      66756E63 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 37
+ 1148 008c 00000000 		.4byte	0
+ 1149              		.section	.debug_ranges,"",%progbits
+ 1150              	.Ldebug_ranges0:
+ 1151 0000 00000000 		.4byte	.LFB2
+ 1152 0004 10000000 		.4byte	.LFE2
+ 1153 0008 00000000 		.4byte	.LFB3
+ 1154 000c 10000000 		.4byte	.LFE3
+ 1155 0010 00000000 		.4byte	.LFB4
+ 1156 0014 0C000000 		.4byte	.LFE4
+ 1157 0018 00000000 		.4byte	.LFB5
+ 1158 001c 14000000 		.4byte	.LFE5
+ 1159 0020 00000000 		.4byte	.LFB6
+ 1160 0024 0C000000 		.4byte	.LFE6
+ 1161 0028 00000000 		.4byte	.LFB7
+ 1162 002c 0C000000 		.4byte	.LFE7
+ 1163 0030 00000000 		.4byte	.LFB8
+ 1164 0034 0C000000 		.4byte	.LFE8
+ 1165 0038 00000000 		.4byte	.LFB1
+ 1166 003c 4C000000 		.4byte	.LFE1
+ 1167 0040 00000000 		.4byte	.LFB0
+ 1168 0044 1C000000 		.4byte	.LFE0
+ 1169 0048 00000000 		.4byte	.LFB9
+ 1170 004c 0C000000 		.4byte	.LFE9
+ 1171 0050 00000000 		.4byte	.LFB10
+ 1172 0054 0C000000 		.4byte	.LFE10
+ 1173 0058 00000000 		.4byte	.LFB11
+ 1174 005c 0C000000 		.4byte	.LFE11
+ 1175 0060 00000000 		.4byte	.LFB12
+ 1176 0064 0C000000 		.4byte	.LFE12
+ 1177 0068 00000000 		.4byte	.LFB13
+ 1178 006c 0C000000 		.4byte	.LFE13
+ 1179 0070 00000000 		.4byte	.LFB14
+ 1180 0074 0C000000 		.4byte	.LFE14
+ 1181 0078 00000000 		.4byte	0
+ 1182 007c 00000000 		.4byte	0
+ 1183              		.section	.debug_line,"",%progbits
+ 1184              	.Ldebug_line0:
+ 1185 0000 67010000 		.section	.debug_str,"MS",%progbits,1
+ 1185      02004C00 
+ 1185      00000201 
+ 1185      FB0E0D00 
+ 1185      01010101 
+ 1186              	.LASF15:
+ 1187 0000 72656731 		.ascii	"reg16\000"
+ 1187      3600
+ 1188              	.LASF18:
+ 1189 0006 50574D5F 		.ascii	"PWM_Test_Signal_Enable\000"
+ 1189      54657374 
+ 1189      5F536967 
+ 1189      6E616C5F 
+ 1189      456E6162 
+ 1190              	.LASF40:
+ 1191 001d 443A5C4D 		.ascii	"D:\\Monash - Legion\\Y4S1\\ECE4191\\ECE4191-G3\\PSo"
+ 1191      6F6E6173 
+ 1191      68202D20 
+ 1191      4C656769 
+ 1191      6F6E5C59 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 38
 
 
- 1107      74696F6E 
- 1107      2D736563 
- 1107      74696F6E 
- 1108              	.LASF37:
- 1109 015b 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_Test_Signal.c\000"
- 1109      72617465 
- 1109      645F536F 
- 1109      75726365 
- 1109      5C50536F 
- 1110              	.LASF14:
- 1111 0184 72656738 		.ascii	"reg8\000"
- 1111      00
- 1112              	.LASF24:
- 1113 0189 50574D5F 		.ascii	"PWM_Test_Signal_WriteCompare\000"
- 1113      54657374 
- 1113      5F536967 
- 1113      6E616C5F 
- 1113      57726974 
- 1114              	.LASF5:
- 1115 01a6 6C6F6E67 		.ascii	"long unsigned int\000"
- 1115      20756E73 
- 1115      69676E65 
- 1115      6420696E 
- 1115      7400
- 1116              	.LASF9:
- 1117 01b8 75696E74 		.ascii	"uint8\000"
- 1117      3800
- 1118              	.LASF31:
- 1119 01be 636F6E74 		.ascii	"control\000"
- 1119      726F6C00 
- 1120              	.LASF35:
- 1121 01c6 50574D5F 		.ascii	"PWM_Test_Signal_ReadPeriod\000"
- 1121      54657374 
- 1121      5F536967 
- 1121      6E616C5F 
- 1121      52656164 
- 1122              	.LASF26:
- 1123 01e1 50574D5F 		.ascii	"PWM_Test_Signal_Init\000"
- 1123      54657374 
- 1123      5F536967 
- 1123      6E616C5F 
- 1123      496E6974 
- 1124              	.LASF12:
- 1125 01f6 646F7562 		.ascii	"double\000"
- 1125      6C6500
- 1126              	.LASF30:
- 1127 01fd 50574D5F 		.ascii	"PWM_Test_Signal_WriteControlRegister\000"
- 1127      54657374 
- 1127      5F536967 
- 1127      6E616C5F 
- 1127      57726974 
- 1128              	.LASF10:
- 1129 0222 75696E74 		.ascii	"uint16\000"
- 1129      313600
- 1130              	.LASF40:
- 1131 0229 50574D5F 		.ascii	"PWM_Test_Signal_initVar\000"
- 1131      54657374 
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 38
+ 1192 004b 4320636F 		.ascii	"C components\\Colour_Sensor\\TCS3200.cydsn\000"
+ 1192      6D706F6E 
+ 1192      656E7473 
+ 1192      5C436F6C 
+ 1192      6F75725F 
+ 1193              	.LASF23:
+ 1194 0074 70657269 		.ascii	"period\000"
+ 1194      6F6400
+ 1195              	.LASF3:
+ 1196 007b 73686F72 		.ascii	"short unsigned int\000"
+ 1196      7420756E 
+ 1196      7369676E 
+ 1196      65642069 
+ 1196      6E7400
+ 1197              	.LASF21:
+ 1198 008e 50574D5F 		.ascii	"PWM_Test_Signal_WritePeriod\000"
+ 1198      54657374 
+ 1198      5F536967 
+ 1198      6E616C5F 
+ 1198      57726974 
+ 1199              	.LASF11:
+ 1200 00aa 666C6F61 		.ascii	"float\000"
+ 1200      7400
+ 1201              	.LASF22:
+ 1202 00b0 636F756E 		.ascii	"counter\000"
+ 1202      74657200 
+ 1203              	.LASF1:
+ 1204 00b8 756E7369 		.ascii	"unsigned char\000"
+ 1204      676E6564 
+ 1204      20636861 
+ 1204      7200
+ 1205              	.LASF38:
+ 1206 00c6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1206      43313120 
+ 1206      352E342E 
+ 1206      31203230 
+ 1206      31363036 
+ 1207 00f9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1207      20726576 
+ 1207      6973696F 
+ 1207      6E203233 
+ 1207      37373135 
+ 1208 012c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1208      66756E63 
+ 1208      74696F6E 
+ 1208      2D736563 
+ 1208      74696F6E 
+ 1209              	.LASF39:
+ 1210 0154 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_Test_Signal.c\000"
+ 1210      72617465 
+ 1210      645F536F 
+ 1210      75726365 
+ 1210      5C50536F 
+ 1211              	.LASF14:
+ 1212 017d 72656738 		.ascii	"reg8\000"
+ 1212      00
+ 1213              	.LASF5:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 39
 
 
- 1131      5F536967 
- 1131      6E616C5F 
- 1131      696E6974 
- 1132              	.LASF8:
- 1133 0241 756E7369 		.ascii	"unsigned int\000"
- 1133      676E6564 
- 1133      20696E74 
- 1133      00
- 1134              	.LASF7:
- 1135 024e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1135      206C6F6E 
- 1135      6720756E 
- 1135      7369676E 
- 1135      65642069 
- 1136              	.LASF34:
- 1137 0265 50574D5F 		.ascii	"PWM_Test_Signal_ReadCompare\000"
- 1137      54657374 
- 1137      5F536967 
- 1137      6E616C5F 
- 1137      52656164 
- 1138              	.LASF20:
- 1139 0281 50574D5F 		.ascii	"PWM_Test_Signal_WriteCounter\000"
- 1139      54657374 
- 1139      5F536967 
- 1139      6E616C5F 
- 1139      57726974 
- 1140              	.LASF33:
- 1141 029e 50574D5F 		.ascii	"PWM_Test_Signal_ReadCapture\000"
- 1141      54657374 
- 1141      5F536967 
- 1141      6E616C5F 
- 1141      52656164 
- 1142              	.LASF17:
- 1143 02ba 73697A65 		.ascii	"sizetype\000"
- 1143      74797065 
- 1143      00
- 1144              	.LASF6:
- 1145 02c3 6C6F6E67 		.ascii	"long long int\000"
- 1145      206C6F6E 
- 1145      6720696E 
- 1145      7400
- 1146              	.LASF13:
- 1147 02d1 63686172 		.ascii	"char\000"
- 1147      00
- 1148              	.LASF19:
- 1149 02d6 50574D5F 		.ascii	"PWM_Test_Signal_Stop\000"
- 1149      54657374 
- 1149      5F536967 
- 1149      6E616C5F 
- 1149      53746F70 
- 1150              	.LASF2:
- 1151 02eb 73686F72 		.ascii	"short int\000"
- 1151      7420696E 
- 1151      7400
- 1152              	.LASF28:
- 1153 02f5 6374726C 		.ascii	"ctrl\000"
- 1153      00
-ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccEKwL5T.s 			page 39
+ 1214 0182 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1214      20756E73 
+ 1214      69676E65 
+ 1214      6420696E 
+ 1214      7400
+ 1215              	.LASF9:
+ 1216 0194 75696E74 		.ascii	"uint8\000"
+ 1216      3800
+ 1217              	.LASF32:
+ 1218 019a 636F6E74 		.ascii	"control\000"
+ 1218      726F6C00 
+ 1219              	.LASF24:
+ 1220 01a2 50574D5F 		.ascii	"PWM_Test_Signal_WriteCompare1\000"
+ 1220      54657374 
+ 1220      5F536967 
+ 1220      6E616C5F 
+ 1220      57726974 
+ 1221              	.LASF26:
+ 1222 01c0 50574D5F 		.ascii	"PWM_Test_Signal_WriteCompare2\000"
+ 1222      54657374 
+ 1222      5F536967 
+ 1222      6E616C5F 
+ 1222      57726974 
+ 1223              	.LASF37:
+ 1224 01de 50574D5F 		.ascii	"PWM_Test_Signal_ReadPeriod\000"
+ 1224      54657374 
+ 1224      5F536967 
+ 1224      6E616C5F 
+ 1224      52656164 
+ 1225              	.LASF27:
+ 1226 01f9 50574D5F 		.ascii	"PWM_Test_Signal_Init\000"
+ 1226      54657374 
+ 1226      5F536967 
+ 1226      6E616C5F 
+ 1226      496E6974 
+ 1227              	.LASF12:
+ 1228 020e 646F7562 		.ascii	"double\000"
+ 1228      6C6500
+ 1229              	.LASF31:
+ 1230 0215 50574D5F 		.ascii	"PWM_Test_Signal_WriteControlRegister\000"
+ 1230      54657374 
+ 1230      5F536967 
+ 1230      6E616C5F 
+ 1230      57726974 
+ 1231              	.LASF10:
+ 1232 023a 75696E74 		.ascii	"uint16\000"
+ 1232      313600
+ 1233              	.LASF42:
+ 1234 0241 50574D5F 		.ascii	"PWM_Test_Signal_initVar\000"
+ 1234      54657374 
+ 1234      5F536967 
+ 1234      6E616C5F 
+ 1234      696E6974 
+ 1235              	.LASF8:
+ 1236 0259 756E7369 		.ascii	"unsigned int\000"
+ 1236      676E6564 
+ 1236      20696E74 
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 40
 
 
- 1154              	.LASF27:
- 1155 02fa 50574D5F 		.ascii	"PWM_Test_Signal_Start\000"
- 1155      54657374 
- 1155      5F536967 
- 1155      6E616C5F 
- 1155      53746172 
- 1156              	.LASF4:
- 1157 0310 6C6F6E67 		.ascii	"long int\000"
- 1157      20696E74 
- 1157      00
- 1158              	.LASF16:
- 1159 0319 6C6F6E67 		.ascii	"long double\000"
- 1159      20646F75 
- 1159      626C6500 
- 1160              	.LASF0:
- 1161 0325 7369676E 		.ascii	"signed char\000"
- 1161      65642063 
- 1161      68617200 
- 1162              	.LASF25:
- 1163 0331 636F6D70 		.ascii	"compare\000"
- 1163      61726500 
- 1164              	.LASF39:
- 1165 0339 50574D5F 		.ascii	"PWM_Test_Signal_ReadControlRegister\000"
- 1165      54657374 
- 1165      5F536967 
- 1165      6E616C5F 
- 1165      52656164 
- 1166              	.LASF32:
- 1167 035d 50574D5F 		.ascii	"PWM_Test_Signal_ReadCounter\000"
- 1167      54657374 
- 1167      5F536967 
- 1167      6E616C5F 
- 1167      52656164 
- 1168              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1236      00
+ 1237              	.LASF7:
+ 1238 0266 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1238      206C6F6E 
+ 1238      6720756E 
+ 1238      7369676E 
+ 1238      65642069 
+ 1239              	.LASF30:
+ 1240 027d 72657375 		.ascii	"result\000"
+ 1240      6C7400
+ 1241              	.LASF20:
+ 1242 0284 50574D5F 		.ascii	"PWM_Test_Signal_WriteCounter\000"
+ 1242      54657374 
+ 1242      5F536967 
+ 1242      6E616C5F 
+ 1242      57726974 
+ 1243              	.LASF34:
+ 1244 02a1 50574D5F 		.ascii	"PWM_Test_Signal_ReadCapture\000"
+ 1244      54657374 
+ 1244      5F536967 
+ 1244      6E616C5F 
+ 1244      52656164 
+ 1245              	.LASF17:
+ 1246 02bd 73697A65 		.ascii	"sizetype\000"
+ 1246      74797065 
+ 1246      00
+ 1247              	.LASF6:
+ 1248 02c6 6C6F6E67 		.ascii	"long long int\000"
+ 1248      206C6F6E 
+ 1248      6720696E 
+ 1248      7400
+ 1249              	.LASF13:
+ 1250 02d4 63686172 		.ascii	"char\000"
+ 1250      00
+ 1251              	.LASF19:
+ 1252 02d9 50574D5F 		.ascii	"PWM_Test_Signal_Stop\000"
+ 1252      54657374 
+ 1252      5F536967 
+ 1252      6E616C5F 
+ 1252      53746F70 
+ 1253              	.LASF35:
+ 1254 02ee 50574D5F 		.ascii	"PWM_Test_Signal_ReadCompare1\000"
+ 1254      54657374 
+ 1254      5F536967 
+ 1254      6E616C5F 
+ 1254      52656164 
+ 1255              	.LASF36:
+ 1256 030b 50574D5F 		.ascii	"PWM_Test_Signal_ReadCompare2\000"
+ 1256      54657374 
+ 1256      5F536967 
+ 1256      6E616C5F 
+ 1256      52656164 
+ 1257              	.LASF2:
+ 1258 0328 73686F72 		.ascii	"short int\000"
+ 1258      7420696E 
+ 1258      7400
+ 1259              	.LASF29:
+ARM GAS  C:\Users\ANDREW~1\AppData\Local\Temp\ccrhH6o2.s 			page 41
+
+
+ 1260 0332 6374726C 		.ascii	"ctrl\000"
+ 1260      00
+ 1261              	.LASF28:
+ 1262 0337 50574D5F 		.ascii	"PWM_Test_Signal_Start\000"
+ 1262      54657374 
+ 1262      5F536967 
+ 1262      6E616C5F 
+ 1262      53746172 
+ 1263              	.LASF4:
+ 1264 034d 6C6F6E67 		.ascii	"long int\000"
+ 1264      20696E74 
+ 1264      00
+ 1265              	.LASF16:
+ 1266 0356 6C6F6E67 		.ascii	"long double\000"
+ 1266      20646F75 
+ 1266      626C6500 
+ 1267              	.LASF0:
+ 1268 0362 7369676E 		.ascii	"signed char\000"
+ 1268      65642063 
+ 1268      68617200 
+ 1269              	.LASF25:
+ 1270 036e 636F6D70 		.ascii	"compare\000"
+ 1270      61726500 
+ 1271              	.LASF41:
+ 1272 0376 50574D5F 		.ascii	"PWM_Test_Signal_ReadControlRegister\000"
+ 1272      54657374 
+ 1272      5F536967 
+ 1272      6E616C5F 
+ 1272      52656164 
+ 1273              	.LASF33:
+ 1274 039a 50574D5F 		.ascii	"PWM_Test_Signal_ReadCounter\000"
+ 1274      54657374 
+ 1274      5F536967 
+ 1274      6E616C5F 
+ 1274      52656164 
+ 1275              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

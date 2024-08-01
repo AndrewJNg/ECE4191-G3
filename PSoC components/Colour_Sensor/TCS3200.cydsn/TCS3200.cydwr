@@ -258,7 +258,10 @@
       <Data key="7f44b8b7-353d-4e25-8d45-bc2efa9d42d4" value="LED_1" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Pin_1" />
       <Data key="68d0f6c6-06e4-43ba-8ed7-b07c8f39c0f6" value="ColourSensor_S3" />
+      <Data key="07859c99-a36a-41c0-a546-713bd2f4113e" value="Servo_1" />
+      <Data key="31359b2a-bb5e-40d0-abbf-fe9a12f5b0a4" value="Servo_2" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx_1" />
+      <Data key="a2a64338-833b-4749-8a64-397bf99e4f37" value="Servo_2" />
       <Data key="d52c479a-6e2b-42a3-8a33-9da9223cd0ac" value="LED_2" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="LED" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx_1" />
@@ -3383,9 +3386,24 @@
         <Data key="Port Format" value="0,3" />
       </Group>
     </Group>
+    <Group key="07859c99-a36a-41c0-a546-713bd2f4113e">
+      <Group key="0">
+        <Data key="Port Format" value="12,5" />
+      </Group>
+    </Group>
+    <Group key="31359b2a-bb5e-40d0-abbf-fe9a12f5b0a4">
+      <Group key="0">
+        <Data key="Port Format" value="12,4" />
+      </Group>
+    </Group>
     <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
       <Group key="0">
         <Data key="Port Format" value="12,6" />
+      </Group>
+    </Group>
+    <Group key="a2a64338-833b-4749-8a64-397bf99e4f37">
+      <Group key="0">
+        <Data key="Port Format" value="12,4" />
       </Group>
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">

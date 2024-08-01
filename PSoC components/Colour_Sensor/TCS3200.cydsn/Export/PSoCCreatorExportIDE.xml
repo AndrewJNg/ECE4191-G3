@@ -37,7 +37,9 @@
       <Folder BuildType="STRICT" Path="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn">
         <Files Root="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
+          <File BuildType="BUILD" Toolchain="">Colour_Sensor.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
+          <File BuildType="BUILD" Toolchain="">Colour_Sensor.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\Generated_Source\PSoC5">
@@ -118,9 +120,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_4.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_5.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_5.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Test_Signal.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Test_Signal.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Test_Signal_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pulse_counter.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pulse_counter.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pulse_counter_PM.c</File>
@@ -144,6 +143,18 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_10ms.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_10ms.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Count7_10ms_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Servo_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Servo_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Servo_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Servo_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Servo_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Servo_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ServoBlock1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ServoBlock1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ServoBlock1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ServoBlock2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ServoBlock2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ServoBlock2_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\Export\ARM_GCC_Generic">

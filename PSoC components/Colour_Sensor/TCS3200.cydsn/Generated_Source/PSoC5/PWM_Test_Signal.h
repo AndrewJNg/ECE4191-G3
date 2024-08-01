@@ -33,7 +33,7 @@ extern uint8 PWM_Test_Signal_initVar;
 #define PWM_Test_Signal_DeadBandMode                   (0u)
 #define PWM_Test_Signal_KillModeMinTime                (0u)
 #define PWM_Test_Signal_KillMode                       (0u)
-#define PWM_Test_Signal_PWMMode                        (0u)
+#define PWM_Test_Signal_PWMMode                        (1u)
 #define PWM_Test_Signal_PWMModeIsCenterAligned         (0u)
 #define PWM_Test_Signal_DeadBandUsed                   (0u)
 #define PWM_Test_Signal_DeadBand2_4                    (0u)
@@ -50,7 +50,7 @@ extern uint8 PWM_Test_Signal_initVar;
     #define PWM_Test_Signal_UseControl                 (0u)
 #endif /* !defined(PWM_Test_Signal_PWMUDB_genblk1_ctrlreg__REMOVED) */
 
-#define PWM_Test_Signal_UseOneCompareMode              (1u)
+#define PWM_Test_Signal_UseOneCompareMode              (0u)
 #define PWM_Test_Signal_MinimumKillTime                (1u)
 #define PWM_Test_Signal_EnableMode                     (0u)
 
@@ -226,9 +226,9 @@ void PWM_Test_Signal_RestoreConfig(void) ;
 /***************************************
 *         Initialization Values
 **************************************/
-#define PWM_Test_Signal_INIT_PERIOD_VALUE          (9u)
-#define PWM_Test_Signal_INIT_COMPARE_VALUE1        (5u)
-#define PWM_Test_Signal_INIT_COMPARE_VALUE2        (63u)
+#define PWM_Test_Signal_INIT_PERIOD_VALUE          (40000u)
+#define PWM_Test_Signal_INIT_COMPARE_VALUE1        (3000u)
+#define PWM_Test_Signal_INIT_COMPARE_VALUE2        (3000u)
 #define PWM_Test_Signal_INIT_INTERRUPTS_MODE       (uint8)(((uint8)(0u <<   \
                                                     PWM_Test_Signal_STATUS_TC_INT_EN_MASK_SHIFT)) | \
                                                     (uint8)((uint8)(0u <<  \
