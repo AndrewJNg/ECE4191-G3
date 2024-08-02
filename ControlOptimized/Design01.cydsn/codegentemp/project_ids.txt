@@ -1,0 +1,6 @@
+D:\Year 4 Sem 1\ECE4191\LatestVersion\ECE4191-G3\ControlOptimized\Design01.cydsn\Design01.cyprj|7e2df747-c867-443f-97d4-f4281c1a01d5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|223ab0a4-0ef4-4ef2-b3bd-a3a8e42d6102
+C:\Users\Nulan\OneDrive - Monash University\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2aec8083-2203-4802-90f2-e7916dc44ebd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|462a9204-6976-435a-bb8d-a30bbc584f8b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|9a810352-f6d8-4000-820e-f6787336c7a2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7d90f120-a1ab-4be2-864a-a89c39202e0e
