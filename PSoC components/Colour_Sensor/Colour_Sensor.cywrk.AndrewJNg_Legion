@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Colour_Sensor\TCS3200\Source Files">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Colour_Sensor\TCS3200\Source Files\Colour_Sensor.c">
 <ExpandedNodeIds>
 <v>Colour_Sensor</v>
 <v>Colour_Sensor\TCS3200</v>
@@ -288,6 +288,8 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\TCS3200.cydsn\TCS3200.cydwr" />
+<name v=".\TCS3200.cydsn\main.c" />
+<name v=".\TCS3200.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -295,7 +297,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2272, 962" SelectedTabbedMdiWindow="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4"><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TCS3200.cydwr" Guid="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4c5062ca-7c5c-4036-9339-a2d340a00f95" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1378, 602" SelectedTabbedMdiWindow="bc7e2688-b1ff-4dbd-bc12-463076cc9e59"><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TCS3200.cydwr" Guid="59ba2939-c1dc-45e9-ab15-40e11cc2ffb4" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\main.c" Guid="57fd7c3a-bf86-44eb-b312-5d573c14aefe" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4c5062ca-7c5c-4036-9339-a2d340a00f95" /><DocumentWindow Key="D:\Monash - Legion\Y4S1\ECE4191\ECE4191-G3\PSoC components\Colour_Sensor\TCS3200.cydsn\TopDesign\TopDesign.cysch" Guid="bc7e2688-b1ff-4dbd-bc12-463076cc9e59" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

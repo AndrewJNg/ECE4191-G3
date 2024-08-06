@@ -37,33 +37,6 @@ void Colour_Sensor_Setup()
     freq_isr_StartEx(colour_sensor_isr);
 }
 
-void colourSensor_Full_Scan()
-{
-    // Calibration values
-    uint32 red   = map(colourSensor_Single_Scan(0,0)  ,120,200   ,0,100);  // min=120 max=260
-    uint32 blue  = map(colourSensor_Single_Scan(0,1)  ,120,200   ,0,100);  // min=100 max=275
-    uint32 clear =  map(colourSensor_Single_Scan(1,0) ,100,1500  ,0,100);  // min=100 max=275
-    uint32 green = map(colourSensor_Single_Scan(1,1)  ,80 ,180   ,0,100);  // min=80  max=170
-    
-    
-    ////////////////////////////////////////////
-    // Printing 
-    char str[50];
-    sprintf(str, "red: %lu     \t green: %lu\t blue: %lu  \t clear: %lu \t", red, green, blue, clear);
-    UART_1_PutString(str);
-    
-    ////////////////////////////////////////////
-    if((red > blue) && (red>green))
-        sprintf(str, "red \n");
-    else if((blue > red) && (blue>green))
-        sprintf(str, "blue \n");
-    else if((green> red) && (green>blue))
-        sprintf(str, "green \n");
-    else
-        sprintf(str, "no answer \n");
-    
-    UART_1_PutString(str);
-}
 
 
 uint32 value = 0;

@@ -2,7 +2,7 @@
 --	Conversion of TCS3200.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Aug 01 08:36:38 2024
+--	Tue Aug 06 09:44:04 2024
 --
 
 USE cypress.cypress.all;
