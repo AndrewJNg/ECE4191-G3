@@ -13,6 +13,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 // Constants
 float Voltage_max = 25000;
@@ -46,8 +47,46 @@ typedef struct FeedForward{
     float K_offset;
     float K_velocity;
     float K_acceleration;
-    
 } FeedForward;
+
+typedef struct motionParams{
+    float ta;
+    float tc;
+    float tcf;
+    float T;
+    float Vm;
+    float s_req;
+    int control_period;
+    float velocity;
+    float acceleration;
+    float time_step;
+    int32 previous_timestep;
+} motionParams;
+
+
+int32 millis()
+{
+    return (GlobalClock_ReadPeriod() - GlobalClock_ReadCounter());   
+}
+
+
+void setupFeedForwardController(motionParams* motion)
+{
+    // Call this before every major action of the controller, since it will 
+    // calculate the controller parameters.
+    motion->Vm = sqrt(motion->s_req * accel_max);
+    if (motion->Vm <= velocity_max){
+        motion->ta = motion->Vm / accel_max;
+        motion->T = 2 * motion->ta;
+        motion->tc = 0;
+        motion->tcf = 0;
+    }else{
+        motion->ta = velocity_max / accel_max;
+        motion->tc = motion->s_req / velocity_max - motion->ta;
+        motion->T = 2 * motion->ta + motion->tc;
+        motion->tcf = motion->T - motion->ta;
+    }
+}
 
 void pidControl(PID* pid, float target_speed, float measured_speed)
 {
@@ -58,7 +97,7 @@ void pidControl(PID* pid, float target_speed, float measured_speed)
 }
 
 void feedForwardControl(FeedForward* ff, float velocity, float acceleration){
-       ff->control_signal = (ff->multiplier) * (ff->K_offset + ff->K_velocity * velocity + ff->K_acceleration * acceleration);
+    ff->control_signal = (ff->multiplier) * (ff->K_offset + ff->K_velocity * velocity + ff->K_acceleration * acceleration);
 }
 
 void writePWM(FeedForward* ff1, PID* pid1, FeedForward* ff2, PID* pid2)
@@ -74,65 +113,51 @@ void writePWM(FeedForward* ff1, PID* pid1, FeedForward* ff2, PID* pid2)
     Motor_2_PWM_WriteCompare(abs(pwm_value));
 }
     
-void feedForwardTrajectory(float s_req, FeedForward* ff1, FeedForward* ff2, PID* pid1, PID* pid2)
+void stopMotion(FeedForward* ff1, FeedForward* ff2, PID* pid1, PID* pid2)
 {
-    float ta = 0;
-    float T = 0;
-    float tc = 0;
-    float t_cf = 0;
-    float Vm = sqrt(s_req * accel_max);
-    int milliseconds_delay = control_period * 1000;
-    if (Vm <= velocity_max){
-        ta = Vm / accel_max;
-        T = 2 * ta;
-    } else {
-        ta = velocity_max / accel_max;
-        tc = s_req / velocity_max - ta;
-        T = 2 * ta + tc;
-        t_cf = T - ta;
-    }
-    
-    double time_step = 0;
-    double i_counter_double = 0.0;
-    double ff_velocity = 0;
-    double ff_accel = 0;
-    int max_counts = (int) (T / control_period) + 1;
-    for (int i = 0; i < max_counts + 1; i++){
-        time_step = i_counter_double * control_period;
-        pid1->current_encoder_val = QuadDec_1_GetCounter();
-        pid2->current_encoder_val = QuadDec_2_GetCounter();
-        
-        if (time_step < ta){
-            ff_velocity = accel_max * time_step;
-            ff_accel = accel_max;
-        } else if (Vm <= velocity_max){
-            ff_velocity = Vm - accel_max * (time_step - ta);
-            ff_accel = -accel_max;
-        } else if ((time_step >= ta) && (time_step <= t_cf)){
-            ff_velocity = velocity_max;
-            ff_accel = 0;
-        } else if (time_step > t_cf){
-            ff_velocity = velocity_max - (time_step - t_cf) * accel_max;
-            ff_accel = -accel_max;
-        }
-        // Update the control blocks with new control signals
-        pidControl(pid1, ff_velocity, (pid1->current_encoder_val - pid1->prev_encoder_val) * pid1->control_freq);
-        pidControl(pid2, ff_velocity, (pid2->current_encoder_val - pid2->prev_encoder_val) * pid2->control_freq); 
-        feedForwardControl(ff1, ff_velocity, ff_accel);
-        feedForwardControl(ff2, ff_velocity, ff_accel);
-        // Write the new signals
-        writePWM(ff1, pid1, ff2, pid2);
-        // Update the previous encoder readings
-        pid1->prev_encoder_val = pid1->current_encoder_val;
-        pid2->prev_encoder_val = pid2->current_encoder_val;
-        i_counter_double += 1;
-        CyDelay(milliseconds_delay);
-    }
     ff1->control_signal = 0;
     ff2->control_signal = 0;
     pid1->control_signal = 0;
     pid2->control_signal = 0;
     writePWM(ff1, pid1, ff2, pid2);
+}
+
+void feedForwardTrajectory(motionParams* motion, FeedForward* ff1, FeedForward* ff2, PID* pid1, PID* pid2)
+{
+    if ( (millis() - motion->previous_timestep) >= motion->control_period ){
+        motion->time_step += control_period;
+        motion->previous_timestep = millis();
+        pid1->current_encoder_val = QuadDec_1_GetCounter();
+        pid2->current_encoder_val = QuadDec_2_GetCounter();
+
+        if (motion->time_step < motion->ta){
+            motion->velocity = accel_max * motion->time_step;
+            motion->acceleration = accel_max;
+        } else if (motion->Vm <= velocity_max){
+            motion->velocity = motion->Vm - accel_max * (motion->time_step - motion->ta);
+            motion->acceleration = -accel_max;
+        } else if ((motion->time_step >= motion->ta) && (motion->time_step <= motion->tcf)){
+            motion->velocity = velocity_max;
+            motion->acceleration = 0;
+        } else if (motion->time_step > motion->tcf){
+            motion->velocity = velocity_max - (motion->time_step - motion->tcf) * accel_max;
+            motion->acceleration = -accel_max;
+        } else {
+            // To reach here we have passed the full duration of the feed forward action, we can stop the motor now.
+            stopMotion(ff1, ff2, pid1, pid2);
+        }
+        // Update the control blocks with new control signals
+        pidControl(pid1, motion->velocity, (pid1->current_encoder_val - pid1->prev_encoder_val) * pid1->control_freq);
+        pidControl(pid2, motion->velocity, (pid2->current_encoder_val - pid2->prev_encoder_val) * pid2->control_freq); 
+        feedForwardControl(ff1, motion->velocity, motion->acceleration);
+        feedForwardControl(ff2, motion->velocity, motion->acceleration);
+        // Write the new signals
+        writePWM(ff1, pid1, ff2, pid2);
+        // Update the previous encoder readings
+        pid1->prev_encoder_val = pid1->current_encoder_val;
+        pid2->prev_encoder_val = pid2->current_encoder_val;
+    }
+    
 }
 
 void trajectory_plan(float ticks_left, float ticks_right, FeedForward* ff1, FeedForward* ff2, PID* pid1, PID* pid2)
@@ -145,9 +170,6 @@ void trajectory_plan(float ticks_left, float ticks_right, FeedForward* ff1, Feed
     pid1->prev_encoder_val = 0;
     pid2->current_encoder_val = 0;
     pid2->prev_encoder_val = 0;
-    
-    
-    feedForwardTrajectory(ticks_left, ff1, ff2, pid1, pid2);
 }
 
 void init_pid(PID* pid)
@@ -185,28 +207,59 @@ void startMotorSystem(PID* pid1, PID* pid2, FeedForward* ff1, FeedForward* ff2)
     QuadDec_2_SetCounter(0);
 }   
 
+void getData(char* data)
+{
+    size_t data_size = UART_2_GetRxBufferSize();
+    uint i;
+    for (i = 0 ; i < data_size ; i++){
+        data[i] = UART_2_GetByte();
+    }
+    data[i] = '\0';
+}
+
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
     UART_1_Start();
+    UART_2_Start();
+    GlobalClock_Start();
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     PID pid1, pid2;
     FeedForward ff1, ff2;
-    UART_1_PutString("\nStarted\n");
+    motionParams motion_parameters;
+
     startMotorSystem(&pid1, &pid2, &ff1, &ff2);
-    trajectory_plan(1222.4 * 10 * 4, 0, &ff1, &ff2, &pid1, &pid2);
-    int counter = QuadDec_1_GetCounter();
-    char transmit_str[20];
-    sprintf(transmit_str, "\nCounter1:%d\n", counter);
-    UART_1_PutString(transmit_str);
-    counter = QuadDec_2_GetCounter();
-    sprintf(transmit_str, "\nCounter2:%d\n", counter);
-    UART_1_PutString(transmit_str);
-    CyDelay(100);
+    
+    int32 counter1 = QuadDec_1_GetCounter();
+    int32 counter2 = QuadDec_2_GetCounter();
+    char transmit_str[50];
+    char rx_data[50];
+    int i;
+    char data_string[20];
     for(;;)
     {
+        i = UART_2_ReadRxStatus();
+        size_t data_size = (size_t)UART_2_GetRxBufferSize();
+        if (UART_2_GetRxBufferSize() > 0)
+        {
+            getData(rx_data);
+            sprintf(transmit_str, "Data Recieved: %s\n", rx_data);
+            UART_2_PutString(transmit_str);
+            for (int i = 0 ; rx_data[i] != '\0' ; i++){
+                data_string[i] = rx_data[i + 1];
+            }
+            sprintf(transmit_str, "Value Recieved: %.2f\n", atof(data_string));
+            UART_2_PutString(transmit_str);
+            trajectory_plan(atof(data_string) * 4, atof(data_string) * 4, &ff1, &ff2, &pid1, &pid2);
+            setupFeedForwardController(&motion_parameters);        
+            // For testing only, reset the quad decoders
+        }
+        feedForwardTrajectory(&motion_parameters, &ff1, &ff2, &pid1, &pid2);
         /* Place your application code here. */
+        CyDelay(100);
     }
+
 }
 
 /* [] END OF FILE */

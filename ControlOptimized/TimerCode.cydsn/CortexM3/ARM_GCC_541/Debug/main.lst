@@ -1,0 +1,872 @@
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.millis,"ax",%progbits
+  20              		.align	2
+  21              		.global	millis
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	millis, %function
+  25              	millis:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <stdio.h>
+  14:main.c        **** 
+  15:main.c        **** int32 current_counter = 0;
+  16:main.c        **** 
+  17:main.c        **** int32 millis()
+  18:main.c        **** {
+  28              		.loc 1 18 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  19:main.c        ****     return (GlobalClock_ReadPeriod() - GlobalClock_ReadCounter());   
+  36              		.loc 1 19 0
+  37 0002 FFF7FEFF 		bl	GlobalClock_ReadPeriod
+  38              	.LVL0:
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 2
+
+
+  39 0006 0446     		mov	r4, r0
+  40 0008 FFF7FEFF 		bl	GlobalClock_ReadCounter
+  41              	.LVL1:
+  20:main.c        **** }
+  42              		.loc 1 20 0
+  43 000c 201A     		subs	r0, r4, r0
+  44 000e 10BD     		pop	{r4, pc}
+  45              		.cfi_endproc
+  46              	.LFE64:
+  47              		.size	millis, .-millis
+  48              		.section	.text.main,"ax",%progbits
+  49              		.align	2
+  50              		.global	main
+  51              		.thumb
+  52              		.thumb_func
+  53              		.type	main, %function
+  54              	main:
+  55              	.LFB65:
+  21:main.c        **** 
+  22:main.c        **** int main(void)
+  23:main.c        **** {
+  56              		.loc 1 23 0
+  57              		.cfi_startproc
+  58              		@ args = 0, pretend = 0, frame = 56
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 00B5     		push	{lr}
+  61              		.cfi_def_cfa_offset 4
+  62              		.cfi_offset 14, -4
+  63 0002 8FB0     		sub	sp, sp, #60
+  64              		.cfi_def_cfa_offset 64
+  24:main.c        ****     GlobalClock_Start();
+  65              		.loc 1 24 0
+  66 0004 FFF7FEFF 		bl	GlobalClock_Start
+  67              	.LVL2:
+  25:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  68              		.loc 1 25 0
+  69              		.syntax unified
+  70              	@ 25 "main.c" 1
+  71 0008 62B6     		CPSIE   i
+  72              	@ 0 "" 2
+  26:main.c        ****     UART_1_Start();
+  73              		.loc 1 26 0
+  74              		.thumb
+  75              		.syntax unified
+  76 000a FFF7FEFF 		bl	UART_1_Start
+  77              	.LVL3:
+  78              	.L4:
+  27:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  28:main.c        ****     char data[50];
+  29:main.c        ****     for(;;)
+  30:main.c        ****     {
+  31:main.c        ****         sprintf(data, "timer:%ld\n", millis());
+  79              		.loc 1 31 0 discriminator 1
+  80 000e FFF7FEFF 		bl	millis
+  81              	.LVL4:
+  82 0012 0246     		mov	r2, r0
+  83 0014 0549     		ldr	r1, .L6
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 3
+
+
+  84 0016 01A8     		add	r0, sp, #4
+  85 0018 FFF7FEFF 		bl	sprintf
+  86              	.LVL5:
+  32:main.c        ****         UART_1_PutString(data);
+  87              		.loc 1 32 0 discriminator 1
+  88 001c 01A8     		add	r0, sp, #4
+  89 001e FFF7FEFF 		bl	UART_1_PutString
+  90              	.LVL6:
+  33:main.c        ****         CyDelay(100);
+  91              		.loc 1 33 0 discriminator 1
+  92 0022 6420     		movs	r0, #100
+  93 0024 FFF7FEFF 		bl	CyDelay
+  94              	.LVL7:
+  95 0028 F1E7     		b	.L4
+  96              	.L7:
+  97 002a 00BF     		.align	2
+  98              	.L6:
+  99 002c 00000000 		.word	.LC0
+ 100              		.cfi_endproc
+ 101              	.LFE65:
+ 102              		.size	main, .-main
+ 103              		.global	current_counter
+ 104              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 105              		.align	2
+ 106              	.LC0:
+ 107 0000 74696D65 		.ascii	"timer:%ld\012\000"
+ 107      723A256C 
+ 107      640A00
+ 108              		.bss
+ 109              		.align	2
+ 110              		.type	current_counter, %object
+ 111              		.size	current_counter, 4
+ 112              	current_counter:
+ 113 0000 00000000 		.space	4
+ 114              		.text
+ 115              	.Letext0:
+ 116              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 117              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 118              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 119              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 120              		.file 6 "Generated_Source\\PSoC5/GlobalClock.h"
+ 121              		.file 7 "Generated_Source\\PSoC5/UART_1.h"
+ 122              		.file 8 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 123              		.file 9 "Generated_Source\\PSoC5/CyLib.h"
+ 124              		.section	.debug_info,"",%progbits
+ 125              	.Ldebug_info0:
+ 126 0000 DC010000 		.4byte	0x1dc
+ 127 0004 0400     		.2byte	0x4
+ 128 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 129 000a 04       		.byte	0x4
+ 130 000b 01       		.uleb128 0x1
+ 131 000c 6A000000 		.4byte	.LASF26
+ 132 0010 0C       		.byte	0xc
+ 133 0011 74010000 		.4byte	.LASF27
+ 134 0015 D5010000 		.4byte	.LASF28
+ 135 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 136 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 4
+
+
+ 137 0021 00000000 		.4byte	.Ldebug_line0
+ 138 0025 02       		.uleb128 0x2
+ 139 0026 01       		.byte	0x1
+ 140 0027 06       		.byte	0x6
+ 141 0028 B8010000 		.4byte	.LASF0
+ 142 002c 02       		.uleb128 0x2
+ 143 002d 01       		.byte	0x1
+ 144 002e 08       		.byte	0x8
+ 145 002f 5C000000 		.4byte	.LASF1
+ 146 0033 02       		.uleb128 0x2
+ 147 0034 02       		.byte	0x2
+ 148 0035 05       		.byte	0x5
+ 149 0036 92010000 		.4byte	.LASF2
+ 150 003a 02       		.uleb128 0x2
+ 151 003b 02       		.byte	0x2
+ 152 003c 07       		.byte	0x7
+ 153 003d 3E000000 		.4byte	.LASF3
+ 154 0041 03       		.uleb128 0x3
+ 155 0042 24000000 		.4byte	.LASF9
+ 156 0046 02       		.byte	0x2
+ 157 0047 3F       		.byte	0x3f
+ 158 0048 4C000000 		.4byte	0x4c
+ 159 004c 02       		.uleb128 0x2
+ 160 004d 04       		.byte	0x4
+ 161 004e 05       		.byte	0x5
+ 162 004f 9C010000 		.4byte	.LASF4
+ 163 0053 02       		.uleb128 0x2
+ 164 0054 04       		.byte	0x4
+ 165 0055 07       		.byte	0x7
+ 166 0056 F8000000 		.4byte	.LASF5
+ 167 005a 02       		.uleb128 0x2
+ 168 005b 08       		.byte	0x8
+ 169 005c 05       		.byte	0x5
+ 170 005d 66010000 		.4byte	.LASF6
+ 171 0061 02       		.uleb128 0x2
+ 172 0062 08       		.byte	0x8
+ 173 0063 07       		.byte	0x7
+ 174 0064 36010000 		.4byte	.LASF7
+ 175 0068 04       		.uleb128 0x4
+ 176 0069 04       		.byte	0x4
+ 177 006a 05       		.byte	0x5
+ 178 006b 696E7400 		.ascii	"int\000"
+ 179 006f 02       		.uleb128 0x2
+ 180 0070 04       		.byte	0x4
+ 181 0071 07       		.byte	0x7
+ 182 0072 29010000 		.4byte	.LASF8
+ 183 0076 03       		.uleb128 0x3
+ 184 0077 55010000 		.4byte	.LASF10
+ 185 007b 03       		.byte	0x3
+ 186 007c 2C       		.byte	0x2c
+ 187 007d 41000000 		.4byte	0x41
+ 188 0081 05       		.uleb128 0x5
+ 189 0082 0A010000 		.4byte	.LASF11
+ 190 0086 04       		.byte	0x4
+ 191 0087 ED01     		.2byte	0x1ed
+ 192 0089 4C000000 		.4byte	0x4c
+ 193 008d 02       		.uleb128 0x2
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 5
+
+
+ 194 008e 04       		.byte	0x4
+ 195 008f 04       		.byte	0x4
+ 196 0090 51000000 		.4byte	.LASF12
+ 197 0094 02       		.uleb128 0x2
+ 198 0095 08       		.byte	0x8
+ 199 0096 04       		.byte	0x4
+ 200 0097 1D010000 		.4byte	.LASF13
+ 201 009b 02       		.uleb128 0x2
+ 202 009c 01       		.byte	0x1
+ 203 009d 08       		.byte	0x8
+ 204 009e 7B010000 		.4byte	.LASF14
+ 205 00a2 02       		.uleb128 0x2
+ 206 00a3 08       		.byte	0x8
+ 207 00a4 04       		.byte	0x4
+ 208 00a5 AC010000 		.4byte	.LASF15
+ 209 00a9 02       		.uleb128 0x2
+ 210 00aa 04       		.byte	0x4
+ 211 00ab 07       		.byte	0x7
+ 212 00ac 5D010000 		.4byte	.LASF16
+ 213 00b0 06       		.uleb128 0x6
+ 214 00b1 A5010000 		.4byte	.LASF29
+ 215 00b5 01       		.byte	0x1
+ 216 00b6 11       		.byte	0x11
+ 217 00b7 81000000 		.4byte	0x81
+ 218 00bb 00000000 		.4byte	.LFB64
+ 219 00bf 10000000 		.4byte	.LFE64-.LFB64
+ 220 00c3 01       		.uleb128 0x1
+ 221 00c4 9C       		.byte	0x9c
+ 222 00c5 DC000000 		.4byte	0xdc
+ 223 00c9 07       		.uleb128 0x7
+ 224 00ca 06000000 		.4byte	.LVL0
+ 225 00ce 92010000 		.4byte	0x192
+ 226 00d2 07       		.uleb128 0x7
+ 227 00d3 0C000000 		.4byte	.LVL1
+ 228 00d7 9D010000 		.4byte	0x19d
+ 229 00db 00       		.byte	0
+ 230 00dc 08       		.uleb128 0x8
+ 231 00dd 24010000 		.4byte	.LASF30
+ 232 00e1 01       		.byte	0x1
+ 233 00e2 16       		.byte	0x16
+ 234 00e3 68000000 		.4byte	0x68
+ 235 00e7 00000000 		.4byte	.LFB65
+ 236 00eb 30000000 		.4byte	.LFE65-.LFB65
+ 237 00ef 01       		.uleb128 0x1
+ 238 00f0 9C       		.byte	0x9c
+ 239 00f1 60010000 		.4byte	0x160
+ 240 00f5 09       		.uleb128 0x9
+ 241 00f6 57000000 		.4byte	.LASF31
+ 242 00fa 01       		.byte	0x1
+ 243 00fb 1C       		.byte	0x1c
+ 244 00fc 60010000 		.4byte	0x160
+ 245 0100 02       		.uleb128 0x2
+ 246 0101 91       		.byte	0x91
+ 247 0102 44       		.sleb128 -60
+ 248 0103 07       		.uleb128 0x7
+ 249 0104 08000000 		.4byte	.LVL2
+ 250 0108 A8010000 		.4byte	0x1a8
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 6
+
+
+ 251 010c 07       		.uleb128 0x7
+ 252 010d 0E000000 		.4byte	.LVL3
+ 253 0111 B3010000 		.4byte	0x1b3
+ 254 0115 07       		.uleb128 0x7
+ 255 0116 12000000 		.4byte	.LVL4
+ 256 011a B0000000 		.4byte	0xb0
+ 257 011e 0A       		.uleb128 0xa
+ 258 011f 1C000000 		.4byte	.LVL5
+ 259 0123 BE010000 		.4byte	0x1be
+ 260 0127 3B010000 		.4byte	0x13b
+ 261 012b 0B       		.uleb128 0xb
+ 262 012c 01       		.uleb128 0x1
+ 263 012d 50       		.byte	0x50
+ 264 012e 02       		.uleb128 0x2
+ 265 012f 91       		.byte	0x91
+ 266 0130 44       		.sleb128 -60
+ 267 0131 0B       		.uleb128 0xb
+ 268 0132 01       		.uleb128 0x1
+ 269 0133 51       		.byte	0x51
+ 270 0134 05       		.uleb128 0x5
+ 271 0135 03       		.byte	0x3
+ 272 0136 00000000 		.4byte	.LC0
+ 273 013a 00       		.byte	0
+ 274 013b 0A       		.uleb128 0xa
+ 275 013c 22000000 		.4byte	.LVL6
+ 276 0140 C9010000 		.4byte	0x1c9
+ 277 0144 4F010000 		.4byte	0x14f
+ 278 0148 0B       		.uleb128 0xb
+ 279 0149 01       		.uleb128 0x1
+ 280 014a 50       		.byte	0x50
+ 281 014b 02       		.uleb128 0x2
+ 282 014c 91       		.byte	0x91
+ 283 014d 44       		.sleb128 -60
+ 284 014e 00       		.byte	0
+ 285 014f 0C       		.uleb128 0xc
+ 286 0150 28000000 		.4byte	.LVL7
+ 287 0154 D4010000 		.4byte	0x1d4
+ 288 0158 0B       		.uleb128 0xb
+ 289 0159 01       		.uleb128 0x1
+ 290 015a 50       		.byte	0x50
+ 291 015b 02       		.uleb128 0x2
+ 292 015c 08       		.byte	0x8
+ 293 015d 64       		.byte	0x64
+ 294 015e 00       		.byte	0
+ 295 015f 00       		.byte	0
+ 296 0160 0D       		.uleb128 0xd
+ 297 0161 9B000000 		.4byte	0x9b
+ 298 0165 70010000 		.4byte	0x170
+ 299 0169 0E       		.uleb128 0xe
+ 300 016a A9000000 		.4byte	0xa9
+ 301 016e 31       		.byte	0x31
+ 302 016f 00       		.byte	0
+ 303 0170 0F       		.uleb128 0xf
+ 304 0171 10010000 		.4byte	.LASF17
+ 305 0175 05       		.byte	0x5
+ 306 0176 1207     		.2byte	0x712
+ 307 0178 7C010000 		.4byte	0x17c
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 7
+
+
+ 308 017c 10       		.uleb128 0x10
+ 309 017d 76000000 		.4byte	0x76
+ 310 0181 11       		.uleb128 0x11
+ 311 0182 2E000000 		.4byte	.LASF18
+ 312 0186 01       		.byte	0x1
+ 313 0187 0F       		.byte	0xf
+ 314 0188 81000000 		.4byte	0x81
+ 315 018c 05       		.uleb128 0x5
+ 316 018d 03       		.byte	0x3
+ 317 018e 00000000 		.4byte	current_counter
+ 318 0192 12       		.uleb128 0x12
+ 319 0193 0D000000 		.4byte	.LASF19
+ 320 0197 0D000000 		.4byte	.LASF19
+ 321 019b 06       		.byte	0x6
+ 322 019c 67       		.byte	0x67
+ 323 019d 12       		.uleb128 0x12
+ 324 019e 2F020000 		.4byte	.LASF20
+ 325 01a2 2F020000 		.4byte	.LASF20
+ 326 01a6 06       		.byte	0x6
+ 327 01a7 69       		.byte	0x69
+ 328 01a8 12       		.uleb128 0x12
+ 329 01a9 80010000 		.4byte	.LASF21
+ 330 01ad 80010000 		.4byte	.LASF21
+ 331 01b1 06       		.byte	0x6
+ 332 01b2 5A       		.byte	0x5a
+ 333 01b3 12       		.uleb128 0x12
+ 334 01b4 00000000 		.4byte	.LASF22
+ 335 01b8 00000000 		.4byte	.LASF22
+ 336 01bc 07       		.byte	0x7
+ 337 01bd 54       		.byte	0x54
+ 338 01be 12       		.uleb128 0x12
+ 339 01bf 4D010000 		.4byte	.LASF23
+ 340 01c3 4D010000 		.4byte	.LASF23
+ 341 01c7 08       		.byte	0x8
+ 342 01c8 E7       		.byte	0xe7
+ 343 01c9 12       		.uleb128 0x12
+ 344 01ca C4010000 		.4byte	.LASF24
+ 345 01ce C4010000 		.4byte	.LASF24
+ 346 01d2 07       		.byte	0x7
+ 347 01d3 8B       		.byte	0x8b
+ 348 01d4 12       		.uleb128 0x12
+ 349 01d5 27020000 		.4byte	.LASF25
+ 350 01d9 27020000 		.4byte	.LASF25
+ 351 01dd 09       		.byte	0x9
+ 352 01de 76       		.byte	0x76
+ 353 01df 00       		.byte	0
+ 354              		.section	.debug_abbrev,"",%progbits
+ 355              	.Ldebug_abbrev0:
+ 356 0000 01       		.uleb128 0x1
+ 357 0001 11       		.uleb128 0x11
+ 358 0002 01       		.byte	0x1
+ 359 0003 25       		.uleb128 0x25
+ 360 0004 0E       		.uleb128 0xe
+ 361 0005 13       		.uleb128 0x13
+ 362 0006 0B       		.uleb128 0xb
+ 363 0007 03       		.uleb128 0x3
+ 364 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 8
+
+
+ 365 0009 1B       		.uleb128 0x1b
+ 366 000a 0E       		.uleb128 0xe
+ 367 000b 55       		.uleb128 0x55
+ 368 000c 17       		.uleb128 0x17
+ 369 000d 11       		.uleb128 0x11
+ 370 000e 01       		.uleb128 0x1
+ 371 000f 10       		.uleb128 0x10
+ 372 0010 17       		.uleb128 0x17
+ 373 0011 00       		.byte	0
+ 374 0012 00       		.byte	0
+ 375 0013 02       		.uleb128 0x2
+ 376 0014 24       		.uleb128 0x24
+ 377 0015 00       		.byte	0
+ 378 0016 0B       		.uleb128 0xb
+ 379 0017 0B       		.uleb128 0xb
+ 380 0018 3E       		.uleb128 0x3e
+ 381 0019 0B       		.uleb128 0xb
+ 382 001a 03       		.uleb128 0x3
+ 383 001b 0E       		.uleb128 0xe
+ 384 001c 00       		.byte	0
+ 385 001d 00       		.byte	0
+ 386 001e 03       		.uleb128 0x3
+ 387 001f 16       		.uleb128 0x16
+ 388 0020 00       		.byte	0
+ 389 0021 03       		.uleb128 0x3
+ 390 0022 0E       		.uleb128 0xe
+ 391 0023 3A       		.uleb128 0x3a
+ 392 0024 0B       		.uleb128 0xb
+ 393 0025 3B       		.uleb128 0x3b
+ 394 0026 0B       		.uleb128 0xb
+ 395 0027 49       		.uleb128 0x49
+ 396 0028 13       		.uleb128 0x13
+ 397 0029 00       		.byte	0
+ 398 002a 00       		.byte	0
+ 399 002b 04       		.uleb128 0x4
+ 400 002c 24       		.uleb128 0x24
+ 401 002d 00       		.byte	0
+ 402 002e 0B       		.uleb128 0xb
+ 403 002f 0B       		.uleb128 0xb
+ 404 0030 3E       		.uleb128 0x3e
+ 405 0031 0B       		.uleb128 0xb
+ 406 0032 03       		.uleb128 0x3
+ 407 0033 08       		.uleb128 0x8
+ 408 0034 00       		.byte	0
+ 409 0035 00       		.byte	0
+ 410 0036 05       		.uleb128 0x5
+ 411 0037 16       		.uleb128 0x16
+ 412 0038 00       		.byte	0
+ 413 0039 03       		.uleb128 0x3
+ 414 003a 0E       		.uleb128 0xe
+ 415 003b 3A       		.uleb128 0x3a
+ 416 003c 0B       		.uleb128 0xb
+ 417 003d 3B       		.uleb128 0x3b
+ 418 003e 05       		.uleb128 0x5
+ 419 003f 49       		.uleb128 0x49
+ 420 0040 13       		.uleb128 0x13
+ 421 0041 00       		.byte	0
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 9
+
+
+ 422 0042 00       		.byte	0
+ 423 0043 06       		.uleb128 0x6
+ 424 0044 2E       		.uleb128 0x2e
+ 425 0045 01       		.byte	0x1
+ 426 0046 3F       		.uleb128 0x3f
+ 427 0047 19       		.uleb128 0x19
+ 428 0048 03       		.uleb128 0x3
+ 429 0049 0E       		.uleb128 0xe
+ 430 004a 3A       		.uleb128 0x3a
+ 431 004b 0B       		.uleb128 0xb
+ 432 004c 3B       		.uleb128 0x3b
+ 433 004d 0B       		.uleb128 0xb
+ 434 004e 49       		.uleb128 0x49
+ 435 004f 13       		.uleb128 0x13
+ 436 0050 11       		.uleb128 0x11
+ 437 0051 01       		.uleb128 0x1
+ 438 0052 12       		.uleb128 0x12
+ 439 0053 06       		.uleb128 0x6
+ 440 0054 40       		.uleb128 0x40
+ 441 0055 18       		.uleb128 0x18
+ 442 0056 9742     		.uleb128 0x2117
+ 443 0058 19       		.uleb128 0x19
+ 444 0059 01       		.uleb128 0x1
+ 445 005a 13       		.uleb128 0x13
+ 446 005b 00       		.byte	0
+ 447 005c 00       		.byte	0
+ 448 005d 07       		.uleb128 0x7
+ 449 005e 898201   		.uleb128 0x4109
+ 450 0061 00       		.byte	0
+ 451 0062 11       		.uleb128 0x11
+ 452 0063 01       		.uleb128 0x1
+ 453 0064 31       		.uleb128 0x31
+ 454 0065 13       		.uleb128 0x13
+ 455 0066 00       		.byte	0
+ 456 0067 00       		.byte	0
+ 457 0068 08       		.uleb128 0x8
+ 458 0069 2E       		.uleb128 0x2e
+ 459 006a 01       		.byte	0x1
+ 460 006b 3F       		.uleb128 0x3f
+ 461 006c 19       		.uleb128 0x19
+ 462 006d 03       		.uleb128 0x3
+ 463 006e 0E       		.uleb128 0xe
+ 464 006f 3A       		.uleb128 0x3a
+ 465 0070 0B       		.uleb128 0xb
+ 466 0071 3B       		.uleb128 0x3b
+ 467 0072 0B       		.uleb128 0xb
+ 468 0073 27       		.uleb128 0x27
+ 469 0074 19       		.uleb128 0x19
+ 470 0075 49       		.uleb128 0x49
+ 471 0076 13       		.uleb128 0x13
+ 472 0077 8701     		.uleb128 0x87
+ 473 0079 19       		.uleb128 0x19
+ 474 007a 11       		.uleb128 0x11
+ 475 007b 01       		.uleb128 0x1
+ 476 007c 12       		.uleb128 0x12
+ 477 007d 06       		.uleb128 0x6
+ 478 007e 40       		.uleb128 0x40
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 10
+
+
+ 479 007f 18       		.uleb128 0x18
+ 480 0080 9742     		.uleb128 0x2117
+ 481 0082 19       		.uleb128 0x19
+ 482 0083 01       		.uleb128 0x1
+ 483 0084 13       		.uleb128 0x13
+ 484 0085 00       		.byte	0
+ 485 0086 00       		.byte	0
+ 486 0087 09       		.uleb128 0x9
+ 487 0088 34       		.uleb128 0x34
+ 488 0089 00       		.byte	0
+ 489 008a 03       		.uleb128 0x3
+ 490 008b 0E       		.uleb128 0xe
+ 491 008c 3A       		.uleb128 0x3a
+ 492 008d 0B       		.uleb128 0xb
+ 493 008e 3B       		.uleb128 0x3b
+ 494 008f 0B       		.uleb128 0xb
+ 495 0090 49       		.uleb128 0x49
+ 496 0091 13       		.uleb128 0x13
+ 497 0092 02       		.uleb128 0x2
+ 498 0093 18       		.uleb128 0x18
+ 499 0094 00       		.byte	0
+ 500 0095 00       		.byte	0
+ 501 0096 0A       		.uleb128 0xa
+ 502 0097 898201   		.uleb128 0x4109
+ 503 009a 01       		.byte	0x1
+ 504 009b 11       		.uleb128 0x11
+ 505 009c 01       		.uleb128 0x1
+ 506 009d 31       		.uleb128 0x31
+ 507 009e 13       		.uleb128 0x13
+ 508 009f 01       		.uleb128 0x1
+ 509 00a0 13       		.uleb128 0x13
+ 510 00a1 00       		.byte	0
+ 511 00a2 00       		.byte	0
+ 512 00a3 0B       		.uleb128 0xb
+ 513 00a4 8A8201   		.uleb128 0x410a
+ 514 00a7 00       		.byte	0
+ 515 00a8 02       		.uleb128 0x2
+ 516 00a9 18       		.uleb128 0x18
+ 517 00aa 9142     		.uleb128 0x2111
+ 518 00ac 18       		.uleb128 0x18
+ 519 00ad 00       		.byte	0
+ 520 00ae 00       		.byte	0
+ 521 00af 0C       		.uleb128 0xc
+ 522 00b0 898201   		.uleb128 0x4109
+ 523 00b3 01       		.byte	0x1
+ 524 00b4 11       		.uleb128 0x11
+ 525 00b5 01       		.uleb128 0x1
+ 526 00b6 31       		.uleb128 0x31
+ 527 00b7 13       		.uleb128 0x13
+ 528 00b8 00       		.byte	0
+ 529 00b9 00       		.byte	0
+ 530 00ba 0D       		.uleb128 0xd
+ 531 00bb 01       		.uleb128 0x1
+ 532 00bc 01       		.byte	0x1
+ 533 00bd 49       		.uleb128 0x49
+ 534 00be 13       		.uleb128 0x13
+ 535 00bf 01       		.uleb128 0x1
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 11
+
+
+ 536 00c0 13       		.uleb128 0x13
+ 537 00c1 00       		.byte	0
+ 538 00c2 00       		.byte	0
+ 539 00c3 0E       		.uleb128 0xe
+ 540 00c4 21       		.uleb128 0x21
+ 541 00c5 00       		.byte	0
+ 542 00c6 49       		.uleb128 0x49
+ 543 00c7 13       		.uleb128 0x13
+ 544 00c8 2F       		.uleb128 0x2f
+ 545 00c9 0B       		.uleb128 0xb
+ 546 00ca 00       		.byte	0
+ 547 00cb 00       		.byte	0
+ 548 00cc 0F       		.uleb128 0xf
+ 549 00cd 34       		.uleb128 0x34
+ 550 00ce 00       		.byte	0
+ 551 00cf 03       		.uleb128 0x3
+ 552 00d0 0E       		.uleb128 0xe
+ 553 00d1 3A       		.uleb128 0x3a
+ 554 00d2 0B       		.uleb128 0xb
+ 555 00d3 3B       		.uleb128 0x3b
+ 556 00d4 05       		.uleb128 0x5
+ 557 00d5 49       		.uleb128 0x49
+ 558 00d6 13       		.uleb128 0x13
+ 559 00d7 3F       		.uleb128 0x3f
+ 560 00d8 19       		.uleb128 0x19
+ 561 00d9 3C       		.uleb128 0x3c
+ 562 00da 19       		.uleb128 0x19
+ 563 00db 00       		.byte	0
+ 564 00dc 00       		.byte	0
+ 565 00dd 10       		.uleb128 0x10
+ 566 00de 35       		.uleb128 0x35
+ 567 00df 00       		.byte	0
+ 568 00e0 49       		.uleb128 0x49
+ 569 00e1 13       		.uleb128 0x13
+ 570 00e2 00       		.byte	0
+ 571 00e3 00       		.byte	0
+ 572 00e4 11       		.uleb128 0x11
+ 573 00e5 34       		.uleb128 0x34
+ 574 00e6 00       		.byte	0
+ 575 00e7 03       		.uleb128 0x3
+ 576 00e8 0E       		.uleb128 0xe
+ 577 00e9 3A       		.uleb128 0x3a
+ 578 00ea 0B       		.uleb128 0xb
+ 579 00eb 3B       		.uleb128 0x3b
+ 580 00ec 0B       		.uleb128 0xb
+ 581 00ed 49       		.uleb128 0x49
+ 582 00ee 13       		.uleb128 0x13
+ 583 00ef 3F       		.uleb128 0x3f
+ 584 00f0 19       		.uleb128 0x19
+ 585 00f1 02       		.uleb128 0x2
+ 586 00f2 18       		.uleb128 0x18
+ 587 00f3 00       		.byte	0
+ 588 00f4 00       		.byte	0
+ 589 00f5 12       		.uleb128 0x12
+ 590 00f6 2E       		.uleb128 0x2e
+ 591 00f7 00       		.byte	0
+ 592 00f8 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 12
+
+
+ 593 00f9 19       		.uleb128 0x19
+ 594 00fa 3C       		.uleb128 0x3c
+ 595 00fb 19       		.uleb128 0x19
+ 596 00fc 6E       		.uleb128 0x6e
+ 597 00fd 0E       		.uleb128 0xe
+ 598 00fe 03       		.uleb128 0x3
+ 599 00ff 0E       		.uleb128 0xe
+ 600 0100 3A       		.uleb128 0x3a
+ 601 0101 0B       		.uleb128 0xb
+ 602 0102 3B       		.uleb128 0x3b
+ 603 0103 0B       		.uleb128 0xb
+ 604 0104 00       		.byte	0
+ 605 0105 00       		.byte	0
+ 606 0106 00       		.byte	0
+ 607              		.section	.debug_aranges,"",%progbits
+ 608 0000 24000000 		.4byte	0x24
+ 609 0004 0200     		.2byte	0x2
+ 610 0006 00000000 		.4byte	.Ldebug_info0
+ 611 000a 04       		.byte	0x4
+ 612 000b 00       		.byte	0
+ 613 000c 0000     		.2byte	0
+ 614 000e 0000     		.2byte	0
+ 615 0010 00000000 		.4byte	.LFB64
+ 616 0014 10000000 		.4byte	.LFE64-.LFB64
+ 617 0018 00000000 		.4byte	.LFB65
+ 618 001c 30000000 		.4byte	.LFE65-.LFB65
+ 619 0020 00000000 		.4byte	0
+ 620 0024 00000000 		.4byte	0
+ 621              		.section	.debug_ranges,"",%progbits
+ 622              	.Ldebug_ranges0:
+ 623 0000 00000000 		.4byte	.LFB64
+ 624 0004 10000000 		.4byte	.LFE64
+ 625 0008 00000000 		.4byte	.LFB65
+ 626 000c 30000000 		.4byte	.LFE65
+ 627 0010 00000000 		.4byte	0
+ 628 0014 00000000 		.4byte	0
+ 629              		.section	.debug_line,"",%progbits
+ 630              	.Ldebug_line0:
+ 631 0000 1F020000 		.section	.debug_str,"MS",%progbits,1
+ 631      0200E701 
+ 631      00000201 
+ 631      FB0E0D00 
+ 631      01010101 
+ 632              	.LASF22:
+ 633 0000 55415254 		.ascii	"UART_1_Start\000"
+ 633      5F315F53 
+ 633      74617274 
+ 633      00
+ 634              	.LASF19:
+ 635 000d 476C6F62 		.ascii	"GlobalClock_ReadPeriod\000"
+ 635      616C436C 
+ 635      6F636B5F 
+ 635      52656164 
+ 635      50657269 
+ 636              	.LASF9:
+ 637 0024 5F5F696E 		.ascii	"__int32_t\000"
+ 637      7433325F 
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 13
+
+
+ 637      7400
+ 638              	.LASF18:
+ 639 002e 63757272 		.ascii	"current_counter\000"
+ 639      656E745F 
+ 639      636F756E 
+ 639      74657200 
+ 640              	.LASF3:
+ 641 003e 73686F72 		.ascii	"short unsigned int\000"
+ 641      7420756E 
+ 641      7369676E 
+ 641      65642069 
+ 641      6E7400
+ 642              	.LASF12:
+ 643 0051 666C6F61 		.ascii	"float\000"
+ 643      7400
+ 644              	.LASF31:
+ 645 0057 64617461 		.ascii	"data\000"
+ 645      00
+ 646              	.LASF1:
+ 647 005c 756E7369 		.ascii	"unsigned char\000"
+ 647      676E6564 
+ 647      20636861 
+ 647      7200
+ 648              	.LASF26:
+ 649 006a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 649      43313120 
+ 649      352E342E 
+ 649      31203230 
+ 649      31363036 
+ 650 009d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 650      20726576 
+ 650      6973696F 
+ 650      6E203233 
+ 650      37373135 
+ 651 00d0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 651      66756E63 
+ 651      74696F6E 
+ 651      2D736563 
+ 651      74696F6E 
+ 652              	.LASF5:
+ 653 00f8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 653      20756E73 
+ 653      69676E65 
+ 653      6420696E 
+ 653      7400
+ 654              	.LASF11:
+ 655 010a 696E7433 		.ascii	"int32\000"
+ 655      3200
+ 656              	.LASF17:
+ 657 0110 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 657      52784275 
+ 657      66666572 
+ 657      00
+ 658              	.LASF13:
+ 659 011d 646F7562 		.ascii	"double\000"
+ 659      6C6500
+ 660              	.LASF30:
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 14
+
+
+ 661 0124 6D61696E 		.ascii	"main\000"
+ 661      00
+ 662              	.LASF8:
+ 663 0129 756E7369 		.ascii	"unsigned int\000"
+ 663      676E6564 
+ 663      20696E74 
+ 663      00
+ 664              	.LASF7:
+ 665 0136 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 665      206C6F6E 
+ 665      6720756E 
+ 665      7369676E 
+ 665      65642069 
+ 666              	.LASF23:
+ 667 014d 73707269 		.ascii	"sprintf\000"
+ 667      6E746600 
+ 668              	.LASF10:
+ 669 0155 696E7433 		.ascii	"int32_t\000"
+ 669      325F7400 
+ 670              	.LASF16:
+ 671 015d 73697A65 		.ascii	"sizetype\000"
+ 671      74797065 
+ 671      00
+ 672              	.LASF6:
+ 673 0166 6C6F6E67 		.ascii	"long long int\000"
+ 673      206C6F6E 
+ 673      6720696E 
+ 673      7400
+ 674              	.LASF27:
+ 675 0174 6D61696E 		.ascii	"main.c\000"
+ 675      2E6300
+ 676              	.LASF14:
+ 677 017b 63686172 		.ascii	"char\000"
+ 677      00
+ 678              	.LASF21:
+ 679 0180 476C6F62 		.ascii	"GlobalClock_Start\000"
+ 679      616C436C 
+ 679      6F636B5F 
+ 679      53746172 
+ 679      7400
+ 680              	.LASF2:
+ 681 0192 73686F72 		.ascii	"short int\000"
+ 681      7420696E 
+ 681      7400
+ 682              	.LASF4:
+ 683 019c 6C6F6E67 		.ascii	"long int\000"
+ 683      20696E74 
+ 683      00
+ 684              	.LASF29:
+ 685 01a5 6D696C6C 		.ascii	"millis\000"
+ 685      697300
+ 686              	.LASF15:
+ 687 01ac 6C6F6E67 		.ascii	"long double\000"
+ 687      20646F75 
+ 687      626C6500 
+ 688              	.LASF0:
+ 689 01b8 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Nulan\AppData\Local\Temp\ccc8xLoT.s 			page 15
+
+
+ 689      65642063 
+ 689      68617200 
+ 690              	.LASF24:
+ 691 01c4 55415254 		.ascii	"UART_1_PutString\000"
+ 691      5F315F50 
+ 691      75745374 
+ 691      72696E67 
+ 691      00
+ 692              	.LASF28:
+ 693 01d5 443A5C59 		.ascii	"D:\\Year 4 Sem 1\\ECE4191\\LatestVersion\\ECE4191-G"
+ 693      65617220 
+ 693      34205365 
+ 693      6D20315C 
+ 693      45434534 
+ 694 0204 335C436F 		.ascii	"3\\ControlOptimized\\TimerCode.cydsn\000"
+ 694      6E74726F 
+ 694      6C4F7074 
+ 694      696D697A 
+ 694      65645C54 
+ 695              	.LASF25:
+ 696 0227 43794465 		.ascii	"CyDelay\000"
+ 696      6C617900 
+ 697              	.LASF20:
+ 698 022f 476C6F62 		.ascii	"GlobalClock_ReadCounter\000"
+ 698      616C436C 
+ 698      6F636B5F 
+ 698      52656164 
+ 698      436F756E 
+ 699              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

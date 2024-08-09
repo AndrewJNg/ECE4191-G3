@@ -8,6 +8,7 @@
 <files />
 <projects>
 <v>.\Design01.cydsn\Design01.cyprj</v>
+<v>.\TimerCode.cydsn\TimerCode.cyprj</v>
 </projects>
 <workspace_id v="eedd4025-8ceb-48a4-8893-2cfdede86f8e" />
 <WriteAppVersionLastSavedWith v="4.4.0.80" />
